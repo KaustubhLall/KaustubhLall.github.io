@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,63776,e=>{"use strict";var t=e.i(18566),r=e.i(71645);e.s(["ExploreRedirect",0,function(){let e=(0,t.useRouter)();return(0,r.useEffect)(()=>{e.replace("/projects/")},[e]),null}])}]);
