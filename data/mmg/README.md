@@ -145,3 +145,32 @@ Its exact hash is recorded in `runtime-checks.json`. No mock state or image edit
 were used. The local source checkpoint separately passed 136 backend tests with
 78 skips and a static-page smoke check. No credentials, account mutations,
 payment actions or repository-visibility changes were part of this checkpoint.
+
+## Displayed ranking: September 20, 2026
+
+`displayed-ranking.json` records the hand-constructed six-row fixture from local
+source `5be207f479c4a2185c7f60db2b6d474d59f99a14`. It explains the displayed
+score, probability / (1 + 20 × volatility), and the fixed probability >= 0.55,
+daily volume >= 5,000 and current-time validity gates. Volume counts items traded
+in completed daily observations. Invalid numeric predictions
+are rejected before calibration or clipping. Equal scores use ascending item ID.
+
+The eligible fixture order is 1, 3, 2: item 2 has higher probability but also a
+larger volatility penalty. Items 4, 5 and 6 fail the probability, expiry and
+volume gates respectively. The probability and volatility columns retain raw
+fixture inputs, including inputs whose displayed outputs are withheld. Item 4
+still has a served score of approximately 0.450 but no rank; scores alone do not
+confer eligibility. Expiry and liquidity gates clear served scores for items 5
+and 6. Top-2 selection happens before outcome labels are
+attached; missing outcomes do not trigger backfill. A spread-only baseline uses
+the same eligible universe, so it compares ordering conditional on those gates,
+not the gates’ independent usefulness. Synthetic outcome scores are omitted
+from this public extract because they are not evidence of predictive gains.
+
+The owner reports 234 passed and 78 skipped tests. The coordinator independently
+ran 45 focused synthetic ranking/validity checks and verified six source hashes.
+These checks overlap and their totals must not be added. No real-data evaluation,
+model fitting or deserialization, prospective collection, historical metric
+recomputation or MMG deployment occurred. This is a local implementation and
+evaluation-contract repair, not validation of a trading recommendation. All
+earlier dated studies and evidence retain their original scope.

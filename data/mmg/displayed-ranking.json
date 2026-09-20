@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-20",
+  "source_commit": "5be207f479c4a2185c7f60db2b6d474d59f99a14",
+  "baseline_commit": "b8d32393a5f37d20e7c4f98920e453e57c421d4b",
+  "scope": "Hand-constructed synthetic serving fixture; local and undeployed; no real model or data evaluation",
+  "source_identity": {
+    "algorithm": "SHA-256 of UTF-8 source after CRLF-to-LF normalization",
+    "files": {
+      "backend/research_ranking.py": "62e2201d9a447452e8cba6ec0ed0304cacc8fa08eaaf6c4f102e417b3d3ce318",
+      "backend/research_rank_eval.py": "75a473d7be2c4b9102741f773041c8a1e3e8681eaa0c341c3a28b77755b387d6",
+      "backend/research_v3_serve.py": "0f8c3f682a645e9b6896345950f4ecb6007d12acc738e24d934f605f0c05ad33",
+      "backend/research_validity.py": "1167e44a2a776fe9c684486a9ea53ab29474f91f8d0a7301e58d15efa558382a",
+      "backend/research_contract.py": "8b393754e0e6fdaaa4b553c7c3bb21cc1dfb6599c49bbb2d77b00a5956dcb211",
+      "backend/tests/test_research_ranking.py": "1b7213ea5207c55796c9b61eb99db8475b6a308f57ebdea46de7e68e0f0cfc05"
+    }
+  },
+  "ranking": {
+    "formula": "p / (1 + 20 * volatility)",
+    "probability_min": 0.55,
+    "volume_min": 5000,
+    "volume_unit": "Items traded in a daily observation; serving uses completed daily observations, not the four-hour forecast or five-minute source interval",
+    "tie_break": "Score descending, then item ID ascending",
+    "current_time": "Source interval completed, source age within limit, forecast target still in the future; upstream validity also required",
+    "nonfinite": "Rejected before calibration or clipping",
+    "selection": "Eligible rows are ordered before top-k and before attaching outcome labels; missing labels do not trigger backfill",
+    "baseline": "Spread ordering on the same model-eligible universe; conditional comparison, not an independent test of the gates"
+  },
+  "fixture": {
+    "kind": "hand_constructed_synthetic_only",
+    "decision_ts": 1800000000,
+    "top_k": 2,
+    "rows": [
+      {
+        "item_id": 1,
+        "volume": 5000,
+        "source_start_ts": 1799999700,
+        "rank": 1,
+        "decision": "Selected in top 2",
+        "probability_raw": 0.800000011920929,
+        "volatility_raw": 0.009999999776482582,
+        "served_score": 0.666666679084301
+      },
+      {
+        "item_id": 3,
+        "volume": 5000,
+        "source_start_ts": 1799999700,
+        "rank": 2,
+        "decision": "Selected in top 2",
+        "probability_raw": 0.800000011920929,
+        "volatility_raw": 0.009999999776482582,
+        "served_score": 0.666666679084301
+      },
+      {
+        "item_id": 2,
+        "volume": 5000,
+        "source_start_ts": 1799999700,
+        "rank": 3,
+        "decision": "Eligible, outside top 2",
+        "probability_raw": 0.8999999761581421,
+        "volatility_raw": 0.03999999910593033,
+        "served_score": 0.49999999172157705
+      },
+      {
+        "item_id": 4,
+        "volume": 5000,
+        "source_start_ts": 1799999700,
+        "rank": null,
+        "decision": "Probability below 0.55",
+        "probability_raw": 0.5400000214576721,
+        "volatility_raw": 0.009999999776482582,
+        "served_score": 0.45000001955777413
+      },
+      {
+        "item_id": 5,
+        "volume": 5000,
+        "source_start_ts": 1799985300,
+        "rank": null,
+        "decision": "Forecast expired",
+        "probability_raw": 0.949999988079071,
+        "volatility_raw": 0.009999999776482582,
+        "served_score": null
+      },
+      {
+        "item_id": 6,
+        "volume": 4999,
+        "source_start_ts": 1799999700,
+        "rank": null,
+        "decision": "Daily volume below 5,000",
+        "probability_raw": 0.8999999761581421,
+        "volatility_raw": 0.009999999776482582,
+        "served_score": null
+      }
+    ],
+    "display_order": [
+      1,
+      3,
+      2
+    ],
+    "spread_baseline_top_k": [
+      2,
+      3
+    ],
+    "presentation": "Probability and volatility are raw fixture inputs. Served scores follow serve_items: item 4 retains a finite score but fails rank eligibility; time/liquidity gates clear scores for items 5 and 6. Other served prediction fields on gated rows are withheld."
+  },
+  "verification": {
+    "owner_suite": {
+      "passed": 234,
+      "skipped": 78,
+      "independently_rerun": false
+    },
+    "independent_coordinator": {
+      "passed": 45,
+      "scope": "31 synthetic ranking checks and 14 serving-validity checks",
+      "source_hashes_verified": 6
+    },
+    "totals": "Overlapping checks, not additive totals"
+  },
+  "limits": [
+    "Baseline compares ordering conditional on model eligibility, not independent gate value",
+    "Hashes and complete cohort declarations are consistency checks, not proof of prospective provenance",
+    "No performance acceptance threshold or inferential confidence interval",
+    "Synthetic outcome scores intentionally omitted; fixture explains selection, not profitability or predictive quality.",
+    "No real evaluation, fitting, model deserialization, prospective collection, public deployment or new compatible model.",
+    "Historical results and dated evidence remain unchanged."
+  ]
+}
