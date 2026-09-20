@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-20",
+  "scope": "Local simulator and native adapter integration, verified with synthetic software fixtures",
+  "source_commit": "e22769854684166f524548f5c0248bc42b67358d",
+  "reference_commit": "9a5dfef3cecf82ca985425852036c3fdc4bbefe5",
+  "publication": "Local codex/v4-runtime-integration branch; not merged, pushed or deployed",
+  "change": "Port v4 physics and observation semantics together, remove the lossy compatibility shim, preserve authoritative touch ownership and pre-reset goal touch, and retain hardened replay admission.",
+  "source_identity": {
+    "algorithm": "SHA-256 after CRLF-to-LF normalization",
+    "files": {
+      "src/ai/challenge_cli.cpp": "5a3208353b24525f5602834a6c7a16727e75df29e33b6b299477f18ba859640e",
+      "src/ai/challenge_cli.hpp": "4212d14eb2f4143d3e7e968e4898e84f9953c9e29d76dae1ee1b43705b3f2c46",
+      "src/ai/challenge_protocol.cpp": "7dadbd41bd51ebbde4618d129b19bbb9c09de24c1f9aa167936b8e85bc419564",
+      "src/ai/challenge_protocol.hpp": "1ee9ba62beecd4121caa63581c63039a9115bda4f570c04d7a374d0b749f43b0",
+      "src/ai/challenge_session.cpp": "f68ac73a129b396dd82d317ba1c43579ef032761b4928f86c970970690a127c4",
+      "src/ai/challenge_session.hpp": "0702229899c66a1f2a43bc05811e9894f9582b1ce84c13b3e5cee4cd8e2fb1f5",
+      "src/ai/challenge_smoke.cpp": "91e67e79bdb38b93b79bcd71244a96ec4cc4555e5cc054e70b30bc6e6e7d3a8e",
+      "src/ai/challenge_smoke.hpp": "fa05adbe07b9e45213ed42b627f4c5bf8a2610778d83847f1e69f32420423ccc",
+      "src/ai/pulse_ai.cpp": "a3b669e179afbcc2200d24ee4199a8c3bb9a4894e6f538daf5e3275530c9c31c",
+      "src/ai/pulse_ai.hpp": "382fc85f0fcd8b241089b8edf0daa6f62175da771c7a8fceda06e7ca1adba3d5",
+      "src/ai/pulse_policy.cpp": "168b4838b182a62c3176996b67f5822749b6bf7b5f6295443e40c18c098b561e",
+      "src/ai/pulse_policy.hpp": "58573a2ac504827fd8eceac1ccebff4f50152a4439a06761ce3fdc7f522a0402",
+      "src/ai/pulse_policy_adapter.cpp": "a05a30fc57b80bf3dc51e6b82bace1f431f2b945213f37282bcea7ccd29ff8e0",
+      "src/ai/pulse_policy_adapter.hpp": "e540f5a9ceaf90ef578540279cd43c479b7de8c3eba0b96d81634ea7d9419766",
+      "src/ai/pulse_policy_devgen.cpp": "086a871bfeb99daa038caf331e8d84447b5c259752ad1fc139a1a2e55bd09d26",
+      "src/ai/pulse_policy_devgen.hpp": "d86bc1dff5e09432186fe07b9a5bdea475fcf756c319239bbb20061fdca56537",
+      "src/ai/scripted_policy.cpp": "a66b271f5c0e515ea8ee6372e860818aa4175e81ae911ba194317ba8c8523751",
+      "src/ai/scripted_policy.hpp": "a6bd56cf422f5706ca9af2e64006efab33cd904729bd8904524900afd018fad5",
+      "src/apps/dev_bundle_main.cpp": "bcada897b2296f824dae4483089be4468da51cbd31b4f7121a108494e5da831e",
+      "src/apps/headless_main.cpp": "404de705cee579101e40814052c5d8b6f2c268a525c9525569a05d8b9139be89",
+      "src/apps/policy_verify_main.cpp": "6f4a6e2898d1fffbd380cdb57518e1792158026777fd06e3fd6f08c26171b69d",
+      "src/apps/replay_v2_verify_main.cpp": "85ae336aea9d9df7f48dfb89e03033893dea1cf335386b82a4d37f8144475e7e",
+      "src/apps/viewer_assets.cpp": "9fd94ac92a53bd042aee6d702a826d6f01973e26bdef40133ecd3f15d7e10ae7",
+      "src/apps/viewer_assets.hpp": "3ec81025ccbfb3f3dbfb1cf2612139fcb56b59d15dba4284d57d0db2e5a2cd91",
+      "src/apps/viewer_d2d.cpp": "49f6eb80bdf7bac8ee5cd1f5962d50a5b804cba13bd5a530957b03569326d36a",
+      "src/apps/viewer_d2d.hpp": "95d649e0ed1ce9f766b27afc6c6bf7663a4425d8c826fbb22dd822813ae778df",
+      "src/apps/viewer_monitor.cpp": "b70ff05425780c60e4760216ec58f507811db6a5643b974c9101d1ea9032b3ed",
+      "src/apps/viewer_monitor.hpp": "4cf49b97ed602845c558c5523fa79cf2f2d7705210ef265674191a749ae83308",
+      "src/apps/viewer_win32.cpp": "3c6abf2cdd9e2f93a9b4c5d6493bc0f26ba9554f18857c5b26bf439e6e75be8c",
+      "src/core/fixed_math.cpp": "ce0f6d56e2155798ccdf81b646dd4ad740446da58d229fd3ee420c3e3f6bbf35",
+      "src/core/fixed_math.hpp": "b3c7ae3a491795442f8af340e5de2e6be9efe6d7d7209113ff085aa33296d911",
+      "src/core/pulse_replay.cpp": "1c15a87d2e76f692eb8aee7c967d7d85b7bfc2ca269ac39eb4e313397de95021",
+      "src/core/pulse_replay.hpp": "795e7435eb32173a0b05fff27fba531f99e4a3980abf4c9a258f01d9bebc0268",
+      "src/core/pulse_sim.cpp": "178f2a51350b7b8a9821ebca86c7abf7942fcb20cef35953bf8ff1466a04849d",
+      "src/core/pulse_sim.hpp": "a7670cac459a7db6917667ccabc918e5602185a8867a959b6c07261525691cfb",
+      "src/compat/v2/fixed_math.cpp": "ce0f6d56e2155798ccdf81b646dd4ad740446da58d229fd3ee420c3e3f6bbf35",
+      "src/compat/v2/fixed_math.hpp": "b3c7ae3a491795442f8af340e5de2e6be9efe6d7d7209113ff085aa33296d911",
+      "src/compat/v2/pulse_replay.cpp": "1c15a87d2e76f692eb8aee7c967d7d85b7bfc2ca269ac39eb4e313397de95021",
+      "src/compat/v2/pulse_replay.hpp": "795e7435eb32173a0b05fff27fba531f99e4a3980abf4c9a258f01d9bebc0268",
+      "src/compat/v2/pulse_sim.cpp": "8378baebe91dae8ed084f2edab14643f10a0c01c0f8fb94eab5758338d74fcbb",
+      "src/compat/v2/pulse_sim.hpp": "7bcdaf4ffe6385241e9a83cf0174442031152dffc8238cc2928805da1a921f26",
+      "tests/challenge_protocol_tests.cpp": "7673a69dd7e9f518d3c576a3cef23a48ccb34b93332ef894d680d7207b547de9",
+      "tests/challenge_tests.cpp": "30618900cb6f13884fe1fa49f91266515cae1c1184735c25767d79386d87df82",
+      "tests/policy_tests.cpp": "ebcbae39d6b3527c505826c1b9fa4b3134a07e59199b5bc1119efb002a705ec1",
+      "tests/sim_tests.cpp": "368fccf1fa644ad600aff7c15c9ad38e13e6db9e8bc44f4d140d7b8cfce9f918",
+      "tests/test_no_dialogs.hpp": "21e2972937ca2c478e5f75c72908c36e330d3377c4149f1cb140bdebaded9509",
+      "tests/v4_adapter_tests.cpp": "caf1cb00293291f2cbee02a530711c27865436354af09927dd60a72713bf672a",
+      "scripts/audit_ruleset_contracts/CMakeLists.txt": "4782b108cc5cab27ac80edfd3c4170aa26bb37ac853d41c490c0f6e0566ee24c",
+      "scripts/audit_ruleset_contracts/probe.cpp": "adcacb0ba4b581f1e00fa6fe26dc0f1655b4a4338a2407388a3e1c4e87eac92a",
+      "scripts/audit_ruleset_contracts/run.py": "457e68e6b6ba8ea9a0ee8c8d632487f55bb2c06ce40f5f0ed973932985799ceb",
+      "CMakeLists.txt": "c5d3d6c4de1691b74c08117012b98d6440eba7cff6d9dd2dfa34404dcb30f8ae",
+      "scripts/verify_preview_checkpoint.py": "35147be0929f70c06e4b1feaf9a07c553604fbafdd513c3c947f08b7ccf25f91"
+    }
+  },
+  "comparison": {
+    "fixtures": 34,
+    "snapshots": 78,
+    "original_fixtures": 32,
+    "original_snapshots": 40,
+    "action_mappings": 648,
+    "mask_comparisons": 156,
+    "observation_differences": 0,
+    "state_touch_differences": 0,
+    "same_ruleset_hash_differences": 0,
+    "repeatability": "Owner repeated each of four probes twice and checked Release/Debug equality; independent execution matched retained output and both builds."
+  },
+  "native_adapter": "Actual observation/action adapter and PolicyController exercised with generated synthetic untrained policies. No trained policy was loaded.",
+  "replay": {
+    "historical_ruleset": 2,
+    "ticks": 5720,
+    "sha256": "35af43287d7c8ae9f4e13d3103fc0f38d62d18b4d41d4a275534aff78c695f28",
+    "compatibility_core_source": "057528df4a749154abceb1eaa617567430262814",
+    "compatibility_files": 6,
+    "result": "Unchanged historical replay verifies through a separate verifier linked to exact frozen v2 core files. Active v4 loader retains hardened admission and rejects foreign rulesets."
+  },
+  "verification": {
+    "owner": {
+      "release_suites": 6,
+      "debug_suites": 6,
+      "native_checks": 30,
+      "viewer": "Compiled in Release and Debug"
+    },
+    "independent": {
+      "checks": 95,
+      "native_invocations": 40,
+      "scope": "Existing owner-built probes, source identities, malformed/foreign replay cases, strict rejection without evidence creation, and focused core/policy/native-adapter tests.",
+      "recompiled": false
+    },
+    "final_commit_identity": {
+      "source_files": 52,
+      "binaries": 20
+    }
+  },
+  "strict_deployment": "Disabled. Ruleset and schema agreement do not bind a trained artifact to accepted certification or golden-reference evidence.",
+  "limits": [
+    "Agreement holds for the exercised fixtures and reference, not every possible game state.",
+    "No trained-model evaluation, training, fresh holdout, certification or human challenge.",
+    "Native graphical controls, rendering and device-loss behavior remain unverified.",
+    "Historical September 18 preview metrics and v2 replay are unchanged."
+  ]
+}

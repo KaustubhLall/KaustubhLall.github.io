@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-20",
+  "scope": "Software accounting checks, not policy evaluation",
+  "source_commit": "9628747e6dd6793c53cdeae1ef3a690a3fe0d5dd",
+  "publication": "Locally committed source repair; no owning-project push or deployment",
+  "defect": "metrics_update and metrics_end_episode_full both incremented the standalone timeout count for one episode. The terminal-reason JSON used only episode completion and was already correct.",
+  "repair": "Episode completion owns timeout and terminal counts. Exhausting an external runner horizon records timeout without adding a synthetic step or reward; a real goal or death on the final step keeps its own terminal reason.",
+  "source_identity": {
+    "algorithm": "SHA-256 of UTF-8 source after CRLF-to-LF normalization",
+    "files": {
+      "src/core/metrics.c": "61b075b28ded155e55ef7bce63a3337fac54cba580c91376793e1f1b980871d6",
+      "src/core/metrics.h": "87c6b27972cfa7e6d48c0d98854c16dd421be9c2bc9d4ab4e989d8b20c697194",
+      "src/sim/runner.c": "8178d8886f762c3ffbbf70c6ae6bde0c6ba6204760f09e989122939a511cb614",
+      "src/sim/runner.h": "17295c96743b132faf80150108ef1ed0304bbc05eef60aa31315c8500d763720",
+      "tests/test_metrics.c": "c9a9d2e03c90d96486db47927981faf3ed6edceee872840592a6f4d9ac76271b",
+      "tests/test_metrics_cli.cmake": "f32f06e8e1ed1fcbe05e524826f6e0f8b244c90a822f6dcb08d88a370e6b6698",
+      "tests/CMakeLists.txt": "4cd57ab0bb893c5559aaf4eb58aab8cf1801fca739f9878913ec5bcb5e2c2c40"
+    }
+  },
+  "fixture_cases": [
+    {
+      "case": "timeout",
+      "episodes": 1,
+      "old_printed_timeouts": 2,
+      "new_printed_timeouts": 1,
+      "terminal_reasons": {
+        "none": 0,
+        "goal": 0,
+        "death_car": 0,
+        "death_water": 0,
+        "timeout": 1,
+        "off_map": 0
+      },
+      "json_and_csv_unchanged": true
+    },
+    {
+      "case": "goal",
+      "episodes": 1,
+      "old_printed_timeouts": 0,
+      "new_printed_timeouts": 0,
+      "terminal_reasons": {
+        "none": 0,
+        "goal": 1,
+        "death_car": 0,
+        "death_water": 0,
+        "timeout": 0,
+        "off_map": 0
+      },
+      "json_and_csv_unchanged": true
+    },
+    {
+      "case": "death",
+      "episodes": 1,
+      "old_printed_timeouts": 0,
+      "new_printed_timeouts": 0,
+      "terminal_reasons": {
+        "none": 0,
+        "goal": 0,
+        "death_car": 1,
+        "death_water": 0,
+        "timeout": 0,
+        "off_map": 0
+      },
+      "json_and_csv_unchanged": true
+    },
+    {
+      "case": "neuro_timeout",
+      "episodes": 1,
+      "old_printed_timeouts": 2,
+      "new_printed_timeouts": 1,
+      "terminal_reasons": {
+        "none": 0,
+        "goal": 0,
+        "death_car": 0,
+        "death_water": 0,
+        "timeout": 1,
+        "off_map": 0
+      },
+      "json_and_csv_unchanged": true
+    }
+  ],
+  "verification": {
+    "owner": "13/13 assertion-enabled CTest checks pass in Release and Debug; pre-repair regression and a deliberately restored external-horizon defect fail.",
+    "independent": "Executed existing owner-built Release and Debug metrics binaries and four actual CLI fixtures in each configuration. Source matched the named commit; JSON/CSV matched retained before-repair bytes.",
+    "frozen_files_verified": 80,
+    "independent_recompilation": false
+  },
+  "limits": [
+    "No saved trained policy was loaded or evaluated.",
+    "No training, reward intervention, benchmark campaign or fresh holdout was run.",
+    "September 18 comparison, policy weights, replay and experiment plan are unchanged.",
+    "Software tests do not establish native graphical viewer acceptance."
+  ]
+}

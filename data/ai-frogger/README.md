@@ -12,10 +12,21 @@ trained-weights.bin is the evaluated native checkpoint. heuristic-replay.bin is 
 
 One small GA run used population 12, 10 generations and eight episodes per candidate. In that run, training maps depended on population index, so candidates did not face identical maps. That run’s automatic post-training evaluation overlapped training seeds and is excluded. No tuning on this held-out set or statistical-significance claim is represented.
 
-Export verification recomputed all episode counts, exact total steps, means from rounded CSV rewards and the shared seed/horizon contract. Checkpoint, config and replay SHA256 hashes match the handoff. CSV does not contain per-episode outcomes, so goal/death/timeout totals are taken from raw aggregate JSON and checked against the comparison; they cannot be independently reconstructed from this CSV alone. Use terminal_reasons.timeout, since the separate CLI text counter double-counts runner timeouts. Scripted and heuristic reward/length records match row for row.
+Export verification recomputed all episode counts, exact total steps, means from rounded CSV rewards and the shared seed/horizon contract. Checkpoint, config and replay SHA256 hashes match the handoff. CSV does not contain per-episode outcomes, so goal/death/timeout totals are taken from raw aggregate JSON and checked against the comparison; they cannot be independently reconstructed from this CSV alone. Use terminal_reasons.timeout for this historical source, since its separate CLI text counter double-counts runner timeouts. Scripted and heuristic reward/length records match row for row.
 
 ## September 20 seed-comparison repair
 
 seed-fairness.json is separate software-maintenance evidence at locally committed source a55f80db9aadd345dd5c3dd49118b19b776522d2, not a new policy evaluation. Its recorded fixture calls the linked seed helper: candidates share the current generation’s eight episode seeds, and the retained incumbent is re-evaluated on that batch from generation 1 onward (zero-based). The batch changes between generations. Old candidate sequences are reconstructed from the historical formula; the old incumbent used a stored earlier score.
 
 The owner reports 12/12 tests passing in both Release and Debug and rejection of four deliberate comparison defects. Independent coordinator checks ran the owner-built Release and Debug genetic tests, reproduced the fixture, checked its arithmetic and four source hashes, and confirmed the September 18 archive was unchanged. This was not an independent recompilation. No training campaign, new held-out evaluation, reward ablation, stronger-policy claim, source push or deployment is represented. All historical result files remain unchanged.
+
+## September 20 timeout accounting repair
+
+`timeout-accounting.json` records the later local source repair
+`9628747e6dd6793c53cdeae1ef3a690a3fe0d5dd`. One timed-out episode now prints one
+timeout, and an external runner cutoff is classified without inventing another
+step or reward. Release and Debug each pass 13 tests. Independent execution used
+the owner-built metrics tests and four tiny CLI fixtures per configuration;
+matched JSON/CSV outputs and all 80 frozen handoff files retain their hashes.
+The original JSON terminal totals, 0/200 result, weights and replay are unchanged.
+No trained policy was rerun, and the repair remains local and unpushed.

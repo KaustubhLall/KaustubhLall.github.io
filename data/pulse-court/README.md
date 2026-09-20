@@ -1,5 +1,26 @@
 # Pulse Court runtime evidence
 
+## Local v4 integration, September 20, 2026
+
+`v4-integration.json` records the later local migration at source
+`e22769854684166f524548f5c0248bc42b67358d`. The simulator and observation semantics
+now match the identified v4 reference on 34 synthetic fixtures and 78 snapshots,
+including the earlier 32/40 subset. Native adapter tests use generated untrained
+policies. Independent checks ran the recorded owner-built binaries and reconciled
+their source to the commit; they did not independently rebuild them. Strict
+deployment remains disabled pending accepted certification and artifact identity.
+The branch is local, unmerged and unpushed. No trained-model or graphical acceptance
+is implied, and the earlier preview results below remain unchanged.
+
+The unchanged historical v2 replay uses a separate frozen-core verifier on this
+new branch, after building it from the identified local source:
+
+```powershell
+& 'build/release/Release/pulse_replay_v2_verify.exe' --replay 'synthetic-preview.pulse'
+```
+
+The v4 loader intentionally rejects that v2 replay. Do not rewrite its header.
+
 ## Ruleset comparison, September 20, 2026
 
 `ruleset-comparison.json` records a synthetic contract audit of native v2 inputs
@@ -51,7 +72,7 @@ synthetic-preview.pulse is game index 4, selected because it is the smallest art
 
 Run from the project root with the downloaded replay there, or supply its actual path. No policy bundle is needed for replay verification. Only this replay is packaged; hashes and outcomes for all six remain in results.json.
 
-The runtime uses ruleset 2. Strict trained-policy play still needs ruleset-v4 integration and deployment parity, latency, certification and human testing. The self-play replay browser and full D2D gameplay migration remain unfinished. The preview policy bundle hash identifies the source fixture but the bundle itself is not included.
+That historical runtime uses ruleset 2; its commands above apply to matching historical source. The later local v4 integration is documented at the top of this guide. Strict trained-policy play still needs deployment-artifact acceptance, latency, certification and human testing. The self-play replay browser and full D2D gameplay migration remain unfinished. The preview policy bundle hash identifies the source fixture but the bundle itself is not included.
 
 ## Local replay admission repair, September 20, 2026
 
