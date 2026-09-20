@@ -1,5 +1,21 @@
 # MMG public-site checkpoint
 
+## Local evaluator contract repair: September 20, 2026
+
+`evaluator-contract.json` records source `b8d32393a5f37d20e7c4f98920e453e57c421d4b`,
+following `dd7b361`. Evaluation now requires an explicit validated PIT training
+artifact and a new output path. Exclusive output creation precedes fitting;
+results bind input, configuration, source and runtime identities. Failed runs
+leave an incomplete reservation instead of replacing a historical result.
+
+The owner reports 203 software tests passed and 78 skipped. An independent run
+passed all nine focused evaluator cases in 2.05 seconds; these are overlapping
+checks, not additive totals. Fitting is intercepted and inputs are synthetic.
+No actual evaluation, new compatible model, historical metric recomputation or
+displayed-rank validation occurred. The repair remains local and undeployed.
+These checks do not guarantee power-loss durability or protect against concurrent
+changes to input/source files. The other dated evidence below remains unchanged.
+
 ## Historical studies and subsequent audit
 
 Added September 19, 2026: `daily-feasibility.json` and `horizon-audit.json`

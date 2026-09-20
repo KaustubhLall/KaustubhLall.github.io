@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-20",
+  "scope": "Seed-assignment fixture, not policy-performance evaluation",
+  "source_commit": "a55f80db9aadd345dd5c3dd49118b19b776522d2",
+  "baseline_commit": "943e8673e064acffe3c2a7499e2bf1490b1c4b57",
+  "publication": "Locally committed repair; no source push or deployment implied",
+  "source_identity": {
+    "algorithm": "SHA-256 of UTF-8 source after CRLF-to-LF normalization",
+    "files": {
+      "src/train/genetic.c": "c5821670265556dbea0d6261cbcaedee12c28a5b51fe3315f8b56b256a05916c",
+      "src/train/genetic.h": "c43949c9905afa6da54de780adbc6492f3c4d1488a3375b7a6837bfd6219ade9",
+      "src/cli/main_train.c": "f996fcfc5a208f5afd7d202f1571f5defb7eac2b26864ee0b9f1fc2a03b1d94b",
+      "tests/test_genetic.c": "926ca9edeea5c0c4abf93c4528e08f1b1ef4c4ea158053fcc1a1888cf7e14d42"
+    }
+  },
+  "fixture": {
+    "base_seed": 20260918,
+    "episodes_per_eval": 8,
+    "old_source": "943e867 src/train/genetic.c: base + episode*7 + candidate*13; no incumbent reevaluation",
+    "new_source": "actual linked ga_episode_seed helper; incumbent only reevaluated after generation 0",
+    "rows": [
+      {
+        "generation": 0,
+        "role": "candidate_0",
+        "old_seeds": [
+          20260918,
+          20260925,
+          20260932,
+          20260939,
+          20260946,
+          20260953,
+          20260960,
+          20260967
+        ],
+        "new_seeds": [
+          20260918,
+          20260919,
+          20260920,
+          20260921,
+          20260922,
+          20260923,
+          20260924,
+          20260925
+        ]
+      },
+      {
+        "generation": 0,
+        "role": "candidate_1",
+        "old_seeds": [
+          20260931,
+          20260938,
+          20260945,
+          20260952,
+          20260959,
+          20260966,
+          20260973,
+          20260980
+        ],
+        "new_seeds": [
+          20260918,
+          20260919,
+          20260920,
+          20260921,
+          20260922,
+          20260923,
+          20260924,
+          20260925
+        ]
+      },
+      {
+        "generation": 0,
+        "role": "incumbent",
+        "old_seeds": null,
+        "new_seeds": null
+      },
+      {
+        "generation": 1,
+        "role": "candidate_0",
+        "old_seeds": [
+          20260918,
+          20260925,
+          20260932,
+          20260939,
+          20260946,
+          20260953,
+          20260960,
+          20260967
+        ],
+        "new_seeds": [
+          20260926,
+          20260927,
+          20260928,
+          20260929,
+          20260930,
+          20260931,
+          20260932,
+          20260933
+        ]
+      },
+      {
+        "generation": 1,
+        "role": "candidate_1",
+        "old_seeds": [
+          20260931,
+          20260938,
+          20260945,
+          20260952,
+          20260959,
+          20260966,
+          20260973,
+          20260980
+        ],
+        "new_seeds": [
+          20260926,
+          20260927,
+          20260928,
+          20260929,
+          20260930,
+          20260931,
+          20260932,
+          20260933
+        ]
+      },
+      {
+        "generation": 1,
+        "role": "incumbent",
+        "old_seeds": null,
+        "new_seeds": [
+          20260926,
+          20260927,
+          20260928,
+          20260929,
+          20260930,
+          20260931,
+          20260932,
+          20260933
+        ]
+      }
+    ]
+  },
+  "verification": {
+    "owner": {
+      "release_tests_passed": 12,
+      "debug_tests_passed": 12,
+      "mutants_rejected": [
+        "candidate-index",
+        "stale-incumbent",
+        "previous-incumbent",
+        "next-incumbent"
+      ]
+    },
+    "independent_coordinator": {
+      "release_genetic_test_exit": 0,
+      "debug_genetic_test_exit": 0,
+      "fixture_matches_archive": true,
+      "fixture_matches_independent_arithmetic": true,
+      "assertions_enabled": true,
+      "september18_archive_unchanged": true,
+      "independent_recompilation": false
+    }
+  },
+  "limits": [
+    "Fixture calls the actual linked seed helper; old candidate seeds are reconstructed from the historical formula.",
+    "An incumbent exists only after generation 0; old incumbent scores were retained rather than re-evaluated on the current batch.",
+    "Fixture lists seed assignments, not episode outcomes. Full-suite and mutant results are owner evidence; the coordinator independently ran the owner-built focused binaries.",
+    "No new training, policy-strength evaluation, reward ablation or held-out consumption. September 18 metrics and checkpoint remain unchanged."
+  ]
+}

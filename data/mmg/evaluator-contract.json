@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-20",
+  "scope": "Local evaluator artifact-safety repair; synthetic fixtures with fitting intercepted",
+  "source_commit": "b8d32393a5f37d20e7c4f98920e453e57c421d4b",
+  "baseline_commit": "dd7b36122354da8984be73c228bc5dc47d814d28",
+  "publication": "Local source checkpoint; no MMG source push or deployment",
+  "source_identity": {
+    "files": {
+      "backend/research_v3_eval.py": "8ae8fd16de963f0ae10beb3a0447745da2572cdc12af194e46b74680daa53c65",
+      "backend/tests/test_research_pit_eval.py": "ff09c349ebcbf956d45413450a730654dd1cdf31ca894962f0aa4f9643b877fd"
+    },
+    "algorithm": "SHA-256 of UTF-8 source after CRLF-to-LF normalization"
+  },
+  "contract": {
+    "failure": "A failed run retains an incomplete reservation that cannot be reused; nonfinite results are rejected before JSON is written",
+    "output_identity": [
+      "training manifest and manifest hash",
+      "training data hash",
+      "transformation configuration hash",
+      "evaluator settings and feature lists with configuration hash",
+      "evaluator and shared-contract source hashes",
+      "runtime dependency versions",
+      "combined identity hash"
+    ],
+    "destination": "Explicit new path; existing files and final-path symlinks rejected; exclusive creation reserves the output before fitting",
+    "input": "Explicit PIT training artifact; shared manifest, hash, schema, feature-order and label-time validation before fitting",
+    "output_schema": "research_component_evaluation_v1",
+    "additional_checks": "Binary evaluator labels, current eligibility and minimum interval count"
+  },
+  "verification": {
+    "scope_note": "Overlapping runs, not additive totals. All nine focused cases use synthetic inputs and intercept model fitting.",
+    "independent_source_review": "No actionable defect found within evaluator artifact-safety scope",
+    "owner_backend_suite": {
+      "skipped": 78,
+      "warnings": 2,
+      "passed": 203
+    },
+    "independent_focused_run": {
+      "exit_code": 0,
+      "seconds": 2.05,
+      "passed": 9
+    }
+  },
+  "limits": [
+    "No actual component evaluation, real-data fitting, new model, metric recomputation or fresh holdout was performed.",
+    "The historical component procedure does not evaluate the exact displayed serving rank; its statistical methodology has not been revalidated.",
+    "No compatible real PIT dataset or model was produced. Historical metrics and artifacts remain unchanged.",
+    "No MMG deployment or hosted acceptance follows from these checks.",
+    "Exclusive output creation is not a power-loss durability guarantee or protection against concurrent mutation of input or source files."
+  ]
+}

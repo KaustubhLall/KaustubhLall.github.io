@@ -1,0 +1,293 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-20",
+  "verdict": "NON_PARITY_ON_SYNTHETIC_FIXTURES",
+  "scope": "Hand-constructed simulator and observation contracts; one-tick transitions",
+  "source": {
+    "v4": {
+      "sha256": {
+        "src/core/fixed_math.cpp": "11051591f98d1ad07f3663bf2f62901faf74b502bb19dae3048580f5e2ea080a",
+        "src/core/fixed_math.hpp": "32d76ff4cfa19e3d083832cc779712876ad9882d394b332bcac52fec62c02d5f",
+        "src/core/pulse_sim.cpp": "2555ab685e401dca29f4e2955c1bdcd307f1e553aec25a2a69177145498b41e7",
+        "src/core/pulse_sim.hpp": "b8930912067459502c5e3ec11740c0a156d03ebf3206c0ddb48c1d62729f917d",
+        "src/core/pulse_replay.cpp": "f593e88519007769a656c1d62e0ade2a9bb3dc2935f12554b9556ea2cfade059",
+        "src/core/pulse_replay.hpp": "67c9bb9a13dd23834de89079756fa27cd7baab006926958ac1182fc3e8b9cbed",
+        "src/ai/pulse_ai.cpp": "a4f435713ed63634428fbeca2482d2e467056eca5ae8eeff3610690c84984ccb",
+        "src/ai/pulse_ai.hpp": "a1a0b671cb8da9fdc652908455d21bfa121966a1062af20f987951a4c97e6ea9"
+      },
+      "commit": "9a5dfef3cecf82ca985425852036c3fdc4bbefe5"
+    },
+    "tooling_commit": "0e28c2217590c05776e059fd6af9ef0ff0c7481a",
+    "raw_probe_sha256": {
+      "v4": "9cd6e4fc9b9466e6659e96d0ea3df6cb56f213a2c222e90c200ca74cac62b9f6",
+      "v2": "151f3a3a39e1bafcc49a2023d6adc104f577bcfed6b9ab088f09bd33e17ce804"
+    },
+    "evidence_commit": "057528df4a749154abceb1eaa617567430262814",
+    "v2": {
+      "sha256": {
+        "src/core/fixed_math.cpp": "11051591f98d1ad07f3663bf2f62901faf74b502bb19dae3048580f5e2ea080a",
+        "src/core/fixed_math.hpp": "32d76ff4cfa19e3d083832cc779712876ad9882d394b332bcac52fec62c02d5f",
+        "src/core/pulse_sim.cpp": "c12633a9fd777a84282cf967284a8ad47495d999c3c8a0bffd6eb1903d6ddb47",
+        "src/core/pulse_sim.hpp": "4e6a22b5f41850055b5338acf571265b1f8de5d3e7b3c525af82ec99bac5252a",
+        "src/core/pulse_replay.cpp": "a50b1aeb1718d39aef1ca258767902e483788e79db56be231c4d817c023c05c4",
+        "src/core/pulse_replay.hpp": "795e7435eb32173a0b05fff27fba531f99e4a3980abf4c9a258f01d9bebc0268",
+        "src/ai/pulse_ai.cpp": "4c749cd7c6bdf757768cfcb97925dedaabe9fdc8125e6a7e967c2066f27493ad",
+        "src/ai/pulse_ai.hpp": "75ab610b7004e30aaf9f88cbc954fed9749871ede011c0e5d451b96a5b30ee16",
+        "src/ai/pulse_core_compat.hpp": "c526e498221053b480153bf7cbca6721cb0b309e0f7006094028b402d41e7570"
+      },
+      "commit": "3a3fe53030fb71e60f26c0e969462e825985bffd"
+    },
+    "executable_sha256": {
+      "Release-v2": "dbe28b2f5f828bf8f3f942de445aa0351caeb824063bde08c778512fb7bec7f7",
+      "Release-v4": "3bac0f27bd376431b1ed3e7d4c1719f4f262081cf5fe1e734dabc80b4d13553b",
+      "Debug-v2": "8ec575c54cd8463ff8beeca9fd9753c412561ed4b914257fcbc6b4fa362ac9cc",
+      "Debug-v4": "7ae2fa02a9e700efc422fd816ba4a4c51eee6180f182906918daa1008c568877"
+    },
+    "tooling_sha256": {
+      "CMakeLists.txt": "dc6d012846f03e26b31600931875d88fe1f028083897947d80daa357061f2633",
+      "probe.cpp": "d2ea9b79c8c75796507b13318db60618528324302dcd783b50675a48c2514641",
+      "run.py": "098243fe24dade301450b027fe8eeb14acbbdf1524e709f15aa718fd62bc7040"
+    }
+  },
+  "comparison": {
+    "state_touch_record_differences": 16,
+    "observation_width": 64,
+    "observation_slot_differences": 78,
+    "snapshots": 40,
+    "agent_contract_version": 2,
+    "counts_are_diagnostics_not_strength": true,
+    "fixtures": 32,
+    "action_mappings_matched": 648,
+    "mask_comparisons_matched": 80,
+    "action_scope": "324 Simulation::decode_action indices, both physical seats with horizontal mirroring",
+    "one_tick_transitions": 8
+  },
+  "contrasts": [
+    {
+      "scope": "Before stepping: core velocity (160, -80) in fixed-point units; seat 0 observation slots 2/3 are unitless.",
+      "meaning": "Different normalization caps change the input despite equal observation width.",
+      "v2": "(0.421052635, -0.210526317)",
+      "label": "Same velocity, different input",
+      "v4": "(0.5, -0.25)"
+    },
+    {
+      "scope": "One tick from zero core velocity; resulting vx in fixed-point velocity units.",
+      "meaning": "Strike motion and recorded touch type differ.",
+      "v2": "vx 209; seat 0; PlayerBody shim",
+      "label": "Ordinary strike",
+      "v4": "vx 179; seat 0; Strike"
+    },
+    {
+      "scope": "One tick from core vx -200; resulting vx in fixed-point velocity units.",
+      "meaning": "Equal resulting motion does not preserve who touched the core.",
+      "v2": "vx 174; seat -1; None",
+      "label": "Player-body contact",
+      "v4": "vx 174; seat 0; PlayerBody"
+    }
+  ],
+  "selected_raw_records": {
+    "v4": [
+      {
+        "fixture": "velocity_normalization",
+        "stage": "before",
+        "core_fixed_point": [
+          19456,
+          11264,
+          160,
+          -80
+        ],
+        "touch_seat": -1,
+        "touch_kind": 0,
+        "seat0_observation_velocity": [
+          0.5,
+          -0.25
+        ]
+      },
+      {
+        "fixture": "strike",
+        "stage": "before",
+        "core_fixed_point": [
+          10823,
+          11264,
+          0,
+          0
+        ],
+        "touch_seat": -1,
+        "touch_kind": 0,
+        "seat0_observation_velocity": [
+          0,
+          0
+        ]
+      },
+      {
+        "fixture": "strike",
+        "stage": "after_one_tick",
+        "core_fixed_point": [
+          11051,
+          11264,
+          179,
+          0
+        ],
+        "touch_seat": 0,
+        "touch_kind": 1,
+        "seat0_observation_velocity": [
+          0.559374988,
+          0
+        ]
+      },
+      {
+        "fixture": "player_body",
+        "stage": "before",
+        "core_fixed_point": [
+          10723,
+          11264,
+          -200,
+          0
+        ],
+        "touch_seat": -1,
+        "touch_kind": 0,
+        "seat0_observation_velocity": [
+          -0.625,
+          0
+        ]
+      },
+      {
+        "fixture": "player_body",
+        "stage": "after_one_tick",
+        "core_fixed_point": [
+          10910,
+          11264,
+          174,
+          0
+        ],
+        "touch_seat": 0,
+        "touch_kind": 2,
+        "seat0_observation_velocity": [
+          0.543749988,
+          0
+        ]
+      }
+    ],
+    "v2": [
+      {
+        "fixture": "velocity_normalization",
+        "stage": "before",
+        "core_fixed_point": [
+          19456,
+          11264,
+          160,
+          -80
+        ],
+        "touch_seat": -1,
+        "touch_kind": 0,
+        "seat0_observation_velocity": [
+          0.421052635,
+          -0.210526317
+        ]
+      },
+      {
+        "fixture": "strike",
+        "stage": "before",
+        "core_fixed_point": [
+          10823,
+          11264,
+          0,
+          0
+        ],
+        "touch_seat": -1,
+        "touch_kind": 0,
+        "seat0_observation_velocity": [
+          0,
+          0
+        ]
+      },
+      {
+        "fixture": "strike",
+        "stage": "after_one_tick",
+        "core_fixed_point": [
+          11081,
+          11264,
+          209,
+          0
+        ],
+        "touch_seat": 0,
+        "touch_kind": 2,
+        "seat0_observation_velocity": [
+          0.550000012,
+          0
+        ]
+      },
+      {
+        "fixture": "player_body",
+        "stage": "before",
+        "core_fixed_point": [
+          10723,
+          11264,
+          -200,
+          0
+        ],
+        "touch_seat": -1,
+        "touch_kind": 0,
+        "seat0_observation_velocity": [
+          -0.526315808,
+          0
+        ]
+      },
+      {
+        "fixture": "player_body",
+        "stage": "after_one_tick",
+        "core_fixed_point": [
+          10910,
+          11264,
+          174,
+          0
+        ],
+        "touch_seat": -1,
+        "touch_kind": 0,
+        "seat0_observation_velocity": [
+          0.457894742,
+          0
+        ]
+      }
+    ]
+  },
+  "record_conventions": {
+    "touch_seat_minus_one": "No recorded owner",
+    "core_fixed_point": "[x, y, vx, vy]",
+    "touch_kind": {
+      "PlayerBody": 2,
+      "AnchorWell": 3,
+      "PulseGate": 4,
+      "None": 0,
+      "Strike": 1
+    },
+    "v2_touch_kind": "Compatibility shim; not an authoritative kind field"
+  },
+  "owner_verification": {
+    "two_runs_per_binary_exact": true,
+    "replay_boundary_checks": 12,
+    "release_debug_binaries_built": 4,
+    "full_project_suites_rerun": false,
+    "release_debug_exact": true
+  },
+  "independent_verification": {
+    "read_only_replay_checks": 12,
+    "binary_hashes_verified": 4,
+    "checked_at": "2026-09-20T22:20:37.448Z",
+    "tool_hashes_verified": 3,
+    "native_probe_runs_matching": 4,
+    "independent_recompilation": false,
+    "source_hashes_verified": 17
+  },
+  "replay_boundary": "Own-ruleset one-tick replays verify; cross-ruleset replays reject. Historical v2 replay verifies 5720 ticks only under v2.",
+  "historical_replay_sha256": "35af43287d7c8ae9f4e13d3103fc0f38d62d18b4d41d4a275534aff78c695f28",
+  "limits": [
+    "No authoritative core migration, guard bypass or deployment.",
+    "No policy inference, model loading, training, fresh holdout, strength evaluation or certification.",
+    "Probe directly links core and observation encoder; policy adapter and C ABI wrapper were not executed.",
+    "Matching action/mask fixtures do not prove full state-space parity.",
+    "Raw state hashes include ruleset identity and are not cross-ruleset semantic equality criteria.",
+    "Minimum-forward-speed enforcement and broader multi-tick behavior were not isolated.",
+    "Historical preview and replay evidence remain unchanged."
+  ]
+}
