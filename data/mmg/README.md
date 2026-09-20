@@ -17,6 +17,14 @@ code was repaired or experiment rerun for the original September 19 export.
 
 ## Per-item serving repair: September 20, 2026
 
+`future-data-fixture.json` records an isolated synthetic reproduction of the
+older feature builder at source `a9b99f4`. Removing only Item B's future bar
+removes B's current row and changes Item A's present momentum percentile from
+1 to 0, although both items' present histories stay fixed. The interactive
+case-study figure switches between these measured outputs. These are feature
+percentiles, not predictions, and this fixture does not measure the effect on
+historical model scores or prove a later repair.
+
 `serving-validity.json` separates two later checkpoints: read-only observations
 of the public application and a local repair verified with synthetic fixtures.
 The public snapshot was still dated July 11. Celastrus bark displayed stale risk

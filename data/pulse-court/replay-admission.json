@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-20",
+  "scope": "Local structural replay admission repair",
+  "source_commit": "596d1f5e8d139bfb39c981e2296f0e8430a7e889",
+  "documentation_commit": "3a3fe53030fb71e60f26c0e969462e825985bffd",
+  "source_publication": "Locally committed; unpushed",
+  "source_files": {
+    "src/core/pulse_replay.cpp": {
+      "worktree_sha256": "a50b1aeb1718d39aef1ca258767902e483788e79db56be231c4d817c023c05c4",
+      "git_blob_sha1": "5e3308c482a60f8f321abdab17488ffd8b1f3218",
+      "lf_normalized_sha256": "1c15a87d2e76f692eb8aee7c967d7d85b7bfc2ca269ac39eb4e313397de95021"
+    },
+    "src/core/pulse_replay.hpp": {
+      "worktree_sha256": "795e7435eb32173a0b05fff27fba531f99e4a3980abf4c9a258f01d9bebc0268",
+      "git_blob_sha1": "6e085b51bc3631f4bf6308398a7a2956f073636d",
+      "lf_normalized_sha256": "795e7435eb32173a0b05fff27fba531f99e4a3980abf4c9a258f01d9bebc0268"
+    },
+    "tests/sim_tests.cpp": {
+      "worktree_sha256": "c3b0cd1ee525f745ed2fce8b3540725dd23531a63b93de8061c1fcc5047b4d84",
+      "git_blob_sha1": "d41be2d95194402d4712cc0329b107a17f121c16",
+      "lf_normalized_sha256": "c3b0cd1ee525f745ed2fce8b3540725dd23531a63b93de8061c1fcc5047b4d84"
+    }
+  },
+  "contract": {
+    "exact_bytes": "34 + 18 * tick_count",
+    "failed_load_preserves_destination": true,
+    "validation_before_tick_allocation": true,
+    "format_version": 1,
+    "ruleset": 2,
+    "successful_load_clears_error": true,
+    "count_widened_before_multiplication": true
+  },
+  "owner_verification": {
+    "native_checks_total": 14,
+    "native_checks_passed": 14,
+    "release_ctest_total": 4,
+    "debug_ctest_passed": 4,
+    "coverage": {
+      "all_proper_prefixes_of_70_byte_fixture": 70,
+      "huge_counts_in_34_byte_files": [
+        268435455,
+        2147483648,
+        4294967295
+      ],
+      "always_active_in_release": true,
+      "release_ctest_suites_passed": 4,
+      "debug_ctest_suites_passed": 4,
+      "native_checks_passed": 14,
+      "other_cases": [
+        "trailing byte including zero-tick replay",
+        "populated destination preserved on all rejected fixtures",
+        "invalid magic, format, ruleset, missing file",
+        "valid replay after failure clears stale error",
+        "byte-identical load-save roundtrip",
+        "zero-tick replay accepted"
+      ]
+    },
+    "release_ctest_passed": 4,
+    "executable_sha256": {
+      "build/release/Release/pulse_headless.exe": "1df10b9b0625341d69087953b605ab9c96f14b805ea57ed1b19930b009650c0f",
+      "build/debug/Debug/pulse_headless.exe": "ac6ef9467e902756ace20b6621d70419a3216d7598c853fdc5dcec3803c76179",
+      "build/release/Release/pulse_tests.exe": "d815fb69cbb25595ae84b726ba740527340d1ffd5946e0f6a30742d4adb2141a",
+      "build/debug/Debug/pulse_tests.exe": "1c79daf6888d47963883351d936efb68b3d48735e5bbfb13666222808b2fceb2"
+    },
+    "debug_ctest_total": 4
+  },
+  "independent_verification": {
+    "native_checks_total": 7,
+    "caller_state_scope": "Covered by core tests; not observable through the CLI",
+    "native_checks_passed": 7,
+    "native_cases": [
+      {
+        "case": "valid",
+        "bytes": 102994,
+        "exit_code": 0,
+        "passed": true
+      },
+      {
+        "case": "zero_ticks",
+        "bytes": 34,
+        "exit_code": 0,
+        "passed": true
+      },
+      {
+        "case": "trailing_byte",
+        "bytes": 102995,
+        "exit_code": 1,
+        "passed": true
+      },
+      {
+        "case": "truncated_header",
+        "bytes": 10,
+        "exit_code": 1,
+        "passed": true
+      },
+      {
+        "case": "truncated_frame",
+        "bytes": 43,
+        "exit_code": 1,
+        "passed": true
+      },
+      {
+        "case": "truncated_hash",
+        "bytes": 102993,
+        "exit_code": 1,
+        "passed": true
+      },
+      {
+        "case": "forged_max_count",
+        "bytes": 34,
+        "exit_code": 1,
+        "passed": true
+      }
+    ],
+    "release_ctest_passed": 4,
+    "release_executable_sha256": "1df10b9b0625341d69087953b605ab9c96f14b805ea57ed1b19930b009650c0f",
+    "release_ctest_total": 4
+  },
+  "before_probe": {
+    "historical_replay_exit_code": 0,
+    "appended_byte_exit_code": 0,
+    "source_identity": "Preexisting binary; not independently rebuilt from a source commit",
+    "huge_count_executed": false,
+    "executable_sha256": "784bef895a263ed08b91a186d80b3905827ccf1b9a6cd868e10d9aa3f0ae15b2"
+  },
+  "historical_replay": {
+    "sha256": "35af43287d7c8ae9f4e13d3103fc0f38d62d18b4d41d4a275534aff78c695f28",
+    "ticks": 5720,
+    "unchanged": true,
+    "file": "synthetic-preview.pulse",
+    "bytes": 102994
+  },
+  "limitations": [
+    "Structural admission does not establish semantic input or physics validation.",
+    "No file-size quota, allocation-exception policy or concurrent-file snapshot guarantee added.",
+    "No ruleset-v4 certification, graphical acceptance, policy promotion or learned-strength claim.",
+    "No training, fresh holdout or new gameplay evaluation.",
+    "September 18 preview results remain historical and unchanged."
+  ]
+}

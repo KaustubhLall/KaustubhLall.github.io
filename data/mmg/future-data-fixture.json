@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-20",
+  "source_commit": "a9b99f4aeb973310a73d89fada026536b97d48d0",
+  "scope": "Historical baseline, isolated synthetic fixture. Present histories stay identical between cases. Item A's future bar is retained in both cases.",
+  "feature": "momentum_1h_rank",
+  "issue_bucket_ts": 1783040400,
+  "items": [
+    { "item_id": 1, "label": "Item A" },
+    { "item_id": 2, "label": "Item B" }
+  ],
+  "cases": [
+    {
+      "name": "both_future_bars",
+      "item_b_future_bar": true,
+      "rows_at_issue": [
+        { "item_id": 1, "momentum_1h_rank": 1.0 },
+        { "item_id": 2, "momentum_1h_rank": 0.0 }
+      ]
+    },
+    {
+      "name": "remove_item2_future",
+      "item_b_future_bar": false,
+      "rows_at_issue": [
+        { "item_id": 1, "momentum_1h_rank": 0.0 }
+      ]
+    }
+  ],
+  "limits": "Feature percentiles only, not predicted rankings or model quality. These baseline measurements do not demonstrate a repaired implementation or quantify the impact on historical scores."
+}
