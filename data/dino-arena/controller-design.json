@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "evidence_kind": "source_inspection",
+  "inspected_on": "2026-09-19",
+  "source": {
+    "repository": "https://github.com/KaustubhLall/dino-arena",
+    "base_commit": "c722e52a289b850c797467542163fddb95762e18",
+    "working_tree_dirty": true,
+    "files": [
+      { "path": "app/game/agents.ts", "sha256": "7a24337c3799ddb40d2cb88bfc1aa24422be8198f20f5e3c93479106866f3910" },
+      { "path": "app/game/core.ts", "sha256": "ae2c1dc8f50fe33624d7f2addf506048621e9ab75673b941b23a8330e750262e" },
+      { "path": "scripts/benchmark-agents.ts", "sha256": "d618e6d4e5367f9b91eea72abf4a7ff55ae75eabc912b342dcefb23250d84c05" }
+    ]
+  },
+  "limitations": [
+    "Source properties only. No new benchmark, training or runtime verification.",
+    "The inspected working copy includes uncommitted controller and collision changes. Historical July scores do not measure this snapshot.",
+    "Information used describes policy behavior, not enforced observation permissions. Each autonomous controller receives the ordinary observation; Course Cartographer additionally reconstructs the course from its seed.",
+    "The ordinary observation encodes up to three upcoming hazards, not strictly on-screen hazards. Distance is clamped during encoding.",
+    "Line references identify inspected working-copy files, not the base commit. Hashes identify source bytes; this extract does not include those source files."
+  ],
+  "controllers": [
+    { "name": "Manual Sparring", "information": "Human keyboard input", "mechanism": "Manual practice", "budget": "Excluded from autonomous benchmark", "source_lines": "agents.ts:118-127,461-469; benchmark-agents.ts:49" },
+    { "name": "Clockwork Hopper", "information": "Tick and grounded state; seed sets phase; no obstacle data", "mechanism": "Open-loop cadence", "budget": "Jump attempt every 61 ticks", "source_lines": "agents.ts:130-143" },
+    { "name": "Late Reflex", "information": "Next obstacle and grounded state", "mechanism": "Fixed-distance thresholds", "budget": "Checks each tick; no rollout", "source_lines": "agents.ts:150-164" },
+    { "name": "TTC Pilot", "information": "Next obstacle, runner state and speed", "mechanism": "Time-to-collision heuristic", "budget": "Samples every 8 ticks; no rollout", "source_lines": "agents.ts:176-200" },
+    { "name": "FSM Sentinel", "information": "Next obstacle, runner state and speed", "mechanism": "Approach / duck / recover state machine", "budget": "Normally 10-tick sampling, except while ducking; 12-tick jump recovery", "source_lines": "agents.ts:215-263" },
+    { "name": "Arc Analyst", "information": "Next obstacle, runner state, speed and known physics", "mechanism": "Jump-window solver plus hand-set thresholds", "budget": "Checks each tick; no rollout", "source_lines": "agents.ts:93-115,279-289" },
+    { "name": "Horizon Scout", "information": "Up to three encoded upcoming obstacles and runner state", "mechanism": "Rollout with shared ballistic continuation policy", "budget": "3 initial actions, up to 78 ticks each; replans each tick", "source_lines": "agents.ts:343-401; core.ts:431-455" },
+    { "name": "Course Cartographer", "information": "Course reconstructed from seed; next six hazards used", "mechanism": "Same rollout and ballistic continuation policy", "budget": "3 initial actions, up to 120 ticks each; replans each tick", "source_lines": "agents.ts:343-385,413-448" }
+  ]
+}
