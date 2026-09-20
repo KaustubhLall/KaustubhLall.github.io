@@ -1,3 +1,10 @@
+function setReplayLoadState(ready, failed=false){
+  document.querySelectorAll('[data-replay-control]').forEach(control=>{control.disabled=!ready;});
+  const stack=document.querySelector('.stack');
+  if(stack){stack.inert=!ready;stack.setAttribute('aria-busy',String(!ready&&!failed));}
+  const status=document.getElementById('replayLoadStatus');
+  if(status)status.textContent=ready?'Replay ready. Choose Step or Play to begin.':failed?'Could not load this replay. Controls are unavailable. Reload the page to try again.':'Loading replay history. Controls will be available when ready.';
+}
 (async function(){
   "use strict";
   const tag=document.getElementById("history"),response=await fetch(tag.dataset.src);
@@ -150,5 +157,5 @@
   document.querySelectorAll(".fps-btn").forEach(btn=>btn.onclick=()=>{document.querySelectorAll(".fps-btn").forEach(b=>b.classList.remove("active"));document.querySelectorAll(".speed-btn").forEach(b=>b.classList.remove("active"));btn.classList.add("active");currentFps=Number(btn.dataset.fps);});
   const scrubEl=$("frameScrub");if(scrubEl)scrubEl.oninput=e=>scrubToFrame(Number(e.target.value));
   function loop(now){if(playing&&game?.alive){acc+=(now-last)/1000*currentFps;last=now;let n=0;while(acc>=1&&n++<120){oneStep();acc--;}}else last=now;const scrubEl=$("frameScrub");if(scrubEl)scrubEl.value=tick;requestAnimationFrame(loop);}window.addEventListener("resize",()=>{drawMuller();drawCurves();renderReplay();});
-  renderGeneration();requestAnimationFrame(loop);
-})().catch(error=>{console.error(error);document.querySelector("main").innerHTML=`<section class="panel empty"><h1>Could not load this history</h1><p>${String(error.message||error)}</p><p>Serve <code>docs/viz</code> over HTTP so the compressed history can be loaded.</p></section>`;});
+  renderGeneration();setReplayLoadState(true);requestAnimationFrame(loop);
+})().catch(error=>{console.error(error);setReplayLoadState(false,true);});
