@@ -20,8 +20,7 @@ code was repaired or experiment rerun for the original September 19 export.
 `future-data-fixture.json` records an isolated synthetic reproduction of the
 older feature builder at source `a9b99f4`. Removing only Item B's future bar
 removes B's current row and changes Item A's present momentum percentile from
-1 to 0, although both items' present histories stay fixed. The interactive
-case-study figure switches between these measured outputs. These are feature
+1 to 0, although both items' present histories stay fixed. These are feature
 percentiles, not predictions, and this fixture does not measure the effect on
 historical model scores or prove a later repair.
 
@@ -49,9 +48,53 @@ the local Git checkpoint. Skipped tests and acceptance limits remain explicit.
 
 This source repair has not been deployed to the public MMG application. It
 does not establish model accuracy, authenticated service operation, account
-sync, or point-in-time-safe feature construction. The labelled-row loader and
-future-dependent features remain the next research-pipeline work. No new
+sync, or point-in-time-safe feature construction. The subsequent feature repair
+below addresses the labelled-row loader and future-dependent features. No new
 training, holdout evaluation or historical metric recomputation was performed.
+
+## Subsequent point-in-time repair: September 20, 2026
+
+`feature-timing-comparison.json` independently reruns the old builder and the
+repaired shared transform on the same synthetic current histories. The figure
+switches between the two future-bar cases and shows both source versions.
+Removing B's future bar now keeps A at 1 and B at 0 while leaving B's training
+target unknown. All 26 current rows, including feature values and missingness,
+remain identical across four tested variants: both future bars, only A's future
+bar, no future bars, and a later volume observation. The original builder fails
+when neither future bar exists. These short histories have missing longer-window
+features, so the comparison proves no model-ready or predictive result.
+
+`point-in-time-repair.json` records local source commit
+`dd7b36122354da8984be73c228bc5dc47d814d28` and 11 verified source-file hashes.
+Current features, eligible rank cohorts and the market factor are constructed
+before exact four-hour labels are attached. Rolling extras use full current
+history before selecting training rows. Unknown labels remain unknown, and
+extreme future returns are retained and flagged.
+
+Serving reads a separate unlabelled inference artifact. New immutable artifacts
+carry manifests and content hashes. Schema, feature order, horizon, configuration
+and missingness mismatches fail closed before model loading or prediction.
+The `reject_nonfinite` policy makes the whole requested batch unavailable if a
+latest row is ineligible or nonfinite. It does not fall back to older rows.
+Historical weights cannot serve under this contract; missing new compatible
+artifacts intentionally leave research unavailable.
+
+The owner reports 194 passed, 78 skipped and two warnings, including 31 synthetic
+point-in-time cases. The coordinator independently reran those 31 cases in 4.42
+seconds with one warning. A separate read-only review passed nine in-memory
+checks, including future-tail invariance and complete feature/NaN-mask parity.
+These overlapping runs are recorded separately. They are software-contract
+evidence, not model-performance measurements.
+
+Bar availability assumes interval end. Daily volumes and guides assume date end,
+with backward per-item joins and a 24-hour age limit. Item metadata is known only
+from its observed snapshot timestamp, without historical backfill. No real
+dataset rebuild, retraining, metric recomputation, fresh holdout or public MMG
+deployment occurred. Real-data and real-model readiness remain unverified.
+Earlier browser checks cover the per-item validity repair only. Historical
+studies, weights, scores and evidence bundles remain unchanged. The older
+`future-data-fixture.json` remains baseline-only evidence and does not itself
+prove the repair.
 
 The original endpoint observations below retain their September 18 date and scope.
 

@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-20",
+  "before_source_commit": "a9b99f4aeb973310a73d89fada026536b97d48d0",
+  "after_source_commit": "dd7b36122354da8984be73c228bc5dc47d814d28",
+  "scope": "Independent isolated synthetic comparison of the historical label-filtered builder and repaired shared current-feature transform. No model inference or training.",
+  "feature": "momentum_1h_rank",
+  "issue_bucket_ts": 1783040400,
+  "issue_available_at_ts": 1783040700,
+  "items": [
+    {
+      "item_id": 1,
+      "label": "Item A"
+    },
+    {
+      "item_id": 2,
+      "label": "Item B"
+    }
+  ],
+  "fixture": {
+    "current_bars": 26,
+    "bars_per_item": 13,
+    "bar_seconds": 300,
+    "horizon_seconds": 14400,
+    "metadata_available_at_ts": 1783036800,
+    "current_daily_volume": 10000,
+    "volume_available_at_ts": 1783036800,
+    "metadata_note": "Synthetic metadata explicitly observed at fixture start. The historical adapter receives the same item/name/limit values without an availability field. This is not reconstructed real metadata."
+  },
+  "cases": [
+    {
+      "name": "both_future_bars",
+      "item_b_future_bar": true,
+      "before": {
+        "status": "ok",
+        "rows_at_issue": [
+          {
+            "item_id": 1,
+            "momentum_1h_rank": 1.0,
+            "daily_volume": 10000.0
+          },
+          {
+            "item_id": 2,
+            "momentum_1h_rank": 0.0,
+            "daily_volume": 10000.0
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "current_row_count": 26,
+        "rows_at_issue": [
+          {
+            "item_id": 1,
+            "momentum_1h_rank": 1.0,
+            "daily_volume": 10000.0
+          },
+          {
+            "item_id": 2,
+            "momentum_1h_rank": 0.0,
+            "daily_volume": 10000.0
+          }
+        ],
+        "labels_at_issue": [
+          {
+            "item_id": 1,
+            "target_return_known": true
+          },
+          {
+            "item_id": 2,
+            "target_return_known": true
+          }
+        ],
+        "current_prefix_equal_to_reference": true,
+        "retrospective_prefix_equal_to_current": true
+      }
+    },
+    {
+      "name": "remove_item2_future",
+      "item_b_future_bar": false,
+      "before": {
+        "status": "ok",
+        "rows_at_issue": [
+          {
+            "item_id": 1,
+            "momentum_1h_rank": 0.0,
+            "daily_volume": 10000.0
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "current_row_count": 26,
+        "rows_at_issue": [
+          {
+            "item_id": 1,
+            "momentum_1h_rank": 1.0,
+            "daily_volume": 10000.0
+          },
+          {
+            "item_id": 2,
+            "momentum_1h_rank": 0.0,
+            "daily_volume": 10000.0
+          }
+        ],
+        "labels_at_issue": [
+          {
+            "item_id": 1,
+            "target_return_known": true
+          },
+          {
+            "item_id": 2,
+            "target_return_known": false
+          }
+        ],
+        "current_prefix_equal_to_reference": true,
+        "retrospective_prefix_equal_to_current": true
+      }
+    },
+    {
+      "name": "no_future_bars",
+      "item_b_future_bar": false,
+      "before": {
+        "status": "error",
+        "error_type": "TypeError"
+      },
+      "after": {
+        "status": "ok",
+        "current_row_count": 26,
+        "rows_at_issue": [
+          {
+            "item_id": 1,
+            "momentum_1h_rank": 1.0,
+            "daily_volume": 10000.0
+          },
+          {
+            "item_id": 2,
+            "momentum_1h_rank": 0.0,
+            "daily_volume": 10000.0
+          }
+        ],
+        "labels_at_issue": [
+          {
+            "item_id": 1,
+            "target_return_known": false
+          },
+          {
+            "item_id": 2,
+            "target_return_known": false
+          }
+        ],
+        "current_prefix_equal_to_reference": true,
+        "retrospective_prefix_equal_to_current": true
+      }
+    },
+    {
+      "name": "append_future_volume",
+      "item_b_future_bar": true,
+      "before": {
+        "status": "ok",
+        "rows_at_issue": [
+          {
+            "item_id": 1,
+            "momentum_1h_rank": 0.0,
+            "daily_volume": 20000.0
+          }
+        ]
+      },
+      "after": {
+        "status": "ok",
+        "current_row_count": 26,
+        "rows_at_issue": [
+          {
+            "item_id": 1,
+            "momentum_1h_rank": 1.0,
+            "daily_volume": 10000.0
+          },
+          {
+            "item_id": 2,
+            "momentum_1h_rank": 0.0,
+            "daily_volume": 10000.0
+          }
+        ],
+        "labels_at_issue": [
+          {
+            "item_id": 1,
+            "target_return_known": true
+          },
+          {
+            "item_id": 2,
+            "target_return_known": true
+          }
+        ],
+        "current_prefix_equal_to_reference": true,
+        "retrospective_prefix_equal_to_current": true
+      }
+    }
+  ],
+  "limits": [
+    "Feature percentiles, not predicted rankings or model quality.",
+    "All 26 current rows and their feature values including missingness match across tested future perturbations.",
+    "Short synthetic history includes missing longer-window features; the fixture does not establish model-ready inputs.",
+    "No compatible model was loaded or trained, no historical score recomputed and no MMG deployment performed."
+  ]
+}

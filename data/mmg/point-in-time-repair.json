@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-20",
+  "scope": "Local point-in-time feature and artifact-contract repair; synthetic verification only",
+  "source_commit": "dd7b36122354da8984be73c228bc5dc47d814d28",
+  "baseline_commit": "a9b99f4aeb973310a73d89fada026536b97d48d0",
+  "source_publication": "Locally committed; no MMG push or deployment",
+  "source_identity": {
+    "algorithm": "SHA-256 of UTF-8 source after CRLF-to-LF normalization",
+    "verified_files": 11,
+    "files": {
+      "backend/api.py": "0f9e901b63be24942554d2d25cc0461712c141e2794e283aed520f08af60f47b",
+      "backend/export_snapshot.py": "a0cae3dc1c3a4901e826b3ac962ba7437f88238c9bde506af6b13d948c4057c8",
+      "backend/research_contract.py": "8b393754e0e6fdaaa4b553c7c3bb21cc1dfb6599c49bbb2d77b00a5956dcb211",
+      "backend/research_v2_dataset.py": "413855fee6fa6c4ff90d997f54aad8562641b3c6a1480185c8122624b44010dd",
+      "backend/research_v3_dataset.py": "0a3053f9bc431128f175139876d15730f160b8ece5eceb58bef95796b3d53959",
+      "backend/research_v3_serve.py": "6d4986d76f14d9bcc9e89cb1ac2331f3631e188a6fbe7c55a3a47be59a237273",
+      "backend/research_v3_train.py": "6cc5083d6912a714522b211f5945ee442c361dbbd51414cf2e6d61225947f95c",
+      "backend/tests/test_research_pit_contract.py": "17ad73a7dc122b93f17e1f0a71fdd10352ed3b437c6a2eb39bfb6109a69ff09d",
+      "backend/tests/test_research_pit_features.py": "958fbdb3e0421c3ecb68523792428f11d2db711cf2a401c1cc3d2d64847b7fc4",
+      "backend/tests/test_research_pit_pipeline.py": "aa894c364a57c96d935565d721866e83194d706b4df912718b492286a3c96e91",
+      "backend/tests/test_research_pit_serving.py": "5f2fa6a0e9af8d36a9c520aefb935b849e640a1eb5cb2785de50a640dc288d4e"
+    }
+  },
+  "feature_contract": {
+    "additional_current_features": 6,
+    "feature_schema": "intraday_pit_v1",
+    "unknown_labels": "Preserved as unknown; extreme future returns retained and flagged",
+    "availability": {
+      "volume_and_guide": "Daily-date-end assumption; backward per-item join with 24-hour age limit",
+      "metadata": "Observed snapshot timestamp; no historical backfill",
+      "bars": "Interval-end assumption"
+    },
+    "inference": "Separate unlabelled inference artifact; latest completed row per item",
+    "bar_seconds": 300,
+    "model_base_features": 29,
+    "horizon_seconds": 14400,
+    "construction": "Current features and eligible rank/market cohorts are computed before attaching exact-horizon labels; rolling extras use full current history before training-row selection."
+  },
+  "artifact_contract": {
+    "inner_bundle": "Checked against manifest before prediction",
+    "immutable_pairs": true,
+    "namespace": "research_pit_v1",
+    "historical_weights": "Incompatible with the new contract",
+    "missing_compatible_artifacts": "Intentionally unavailable with inspectable reasons",
+    "frame_model_pair": "Schema, horizon, bar duration and transformation configuration must match",
+    "checks_before_model_deserialization": [
+      "schema",
+      "ordered model features",
+      "horizon and bar duration",
+      "transformation configuration",
+      "missingness policy",
+      "bundle file hash"
+    ],
+    "batch_behavior": "An ineligible or nonfinite latest row makes the whole requested batch unavailable; no older-row fallback or invented imputation",
+    "missingness_policy": "reject_nonfinite",
+    "metrics": "Require matching model, training-data and bundle identity"
+  },
+  "verification": {
+    "independent_read_only_review": {
+      "writes": false,
+      "in_memory_checks_passed": 9,
+      "real_model_load": false,
+      "scope": [
+        "Four future-tail perturbation seeds",
+        "Training/inference full-frame and NaN-mask parity",
+        "Extreme future labels",
+        "Missing metadata",
+        "Empty current eligibility",
+        "Configuration incompatibility"
+      ]
+    },
+    "independent_coordinator": {
+      "duration_seconds": 4.42,
+      "warnings": 1,
+      "synthetic_pit_cases_passed": 31
+    },
+    "owner_backend_suite": {
+      "skip_reasons": {
+        "postgres": 68,
+        "optional_research_artifacts": 10
+      },
+      "includes_synthetic_pit_cases": 31,
+      "passed": 194,
+      "warnings": 2,
+      "skipped": 78
+    },
+    "scope_note": "These are separate runs with overlapping cases, not additive test totals."
+  },
+  "limits": [
+    "Availability conventions are assumptions, not observed ingestion receipts.",
+    "Historical metadata is not reconstructed.",
+    "Synthetic feature and contract checks do not establish real-data or real-model readiness.",
+    "No real dataset rebuild, retraining, metric recomputation, fresh holdout or public MMG deployment.",
+    "Historical weights, studies, scores and earlier evidence bundles are unchanged; their performance is not transferable to the new contract.",
+    "Earlier browser acceptance covers the per-item validity repair only.",
+    "The earlier two-item reproduction remains baseline-only evidence; this file contains no new before/after measurements."
+  ]
+}
