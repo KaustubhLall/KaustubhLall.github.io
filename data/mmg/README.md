@@ -13,7 +13,37 @@ reproduction. Future data availability affects rank features, and a global
 timestamp masks some items' actual age. Historical scores need revalidation
 after these issues are repaired. The effect on reported metrics is unmeasured.
 The clock-controlled reproduction does not describe today's live UI. No project
-code was repaired or experiment rerun while preparing this portfolio export.
+code was repaired or experiment rerun for the original September 19 export.
+
+## Per-item serving repair: September 20, 2026
+
+`serving-validity.json` separates two later checkpoints: read-only observations
+of the public application and a local repair verified with synthetic fixtures.
+The public snapshot was still dated July 11. Celastrus bark displayed stale risk
+and margin-direction labels beside current prices; no expired forecast cone was
+observed against its current price chart. Account liveness passed, but readiness
+timed out after eight seconds. Tutorial dismissal worked in this later check.
+
+The local repair gives daily and intraday records their own source, issue,
+target and expiry times; republishing cannot renew source data. Expired,
+incomplete or gated records withhold current ranks and model outputs. Invalid
+records cannot change the relative-risk comparison group for current items.
+Source availability uses an explicit interval-end assumption because the
+archive has no observed ingestion timestamps.
+
+Verification includes 27 independently run backend validity tests, the owning
+task's broader suite (163 passed, 78 skipped), ten JavaScript contract groups,
+and browser checks against the real consumer pages with synthetic data and
+mocked service/auth responses. Browser checks cover automatic expiry, withheld
+stale cones, keyboard focus, modal escape and an unsaved Notes draft. A narrow
+375 by 812 viewport was also checked. The record includes source hashes and
+the local Git checkpoint. Skipped tests and acceptance limits remain explicit.
+
+This source repair has not been deployed to the public MMG application. It
+does not establish model accuracy, authenticated service operation, account
+sync, or point-in-time-safe feature construction. The labelled-row loader and
+future-dependent features remain the next research-pipeline work. No new
+training, holdout evaluation or historical metric recomputation was performed.
 
 The original endpoint observations below retain their September 18 date and scope.
 

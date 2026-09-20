@@ -1,0 +1,140 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-20",
+  "scope": "Dated public observations followed by a local synthetic serving-contract repair. The MMG application repair is not deployed.",
+  "public_before": {
+    "observed_on": "2026-09-20",
+    "endpoints": [
+      {
+        "service": "account liveness",
+        "observed_at": "2026-09-20T19:04:56Z",
+        "http_status": 200,
+        "ok": true
+      },
+      {
+        "service": "database-backed readiness",
+        "observed_at": "2026-09-20T19:04:56Z",
+        "outcome": "Timed out after eight seconds; response code and root cause not established"
+      },
+      {
+        "url": "https://osrs-mmg-analyzer.pages.dev/snapshot/manifest.json",
+        "observed_at": "2026-09-20T19:04:56Z",
+        "http_status": 200,
+        "generated_at": "2026-07-11T00:44:11Z",
+        "source_commit": "bc3c804"
+      }
+    ],
+    "browser": {
+      "url": "https://osrs-mmg-analyzer.pages.dev/flip",
+      "steps": [
+        "Dismiss introductory tour",
+        "Enable Research overlay and Forecast cone",
+        "Search Celastrus bark",
+        "Disable Positive margin only after live price refresh removes the row"
+      ],
+      "visible_snapshot_age": "1722.4h ago",
+      "research_cell": "unranked Low risk ▲ margin gated",
+      "tooltips": {
+        "unranked": "Not ranked (low tax-clearing probability or below the liquidity floor).",
+        "risk": "Predicted 4h volatility band (adverse-selection risk). Low = calmer to quote into; High = price likely to move against an open offer.",
+        "margin": "Predicted spread expansion (margin may widen) of 0.5% vs current. Estimate.",
+        "gate": "Gated out of the ranking: stale snapshot (140h old)."
+      },
+      "finding": "Already-gated, unranked records retain stale predicted risk and margin direction beside live prices. The gate tooltip contains a frozen age inconsistent with current snapshot age.",
+      "forecast_limit": "No expired forecast cone was observed in the expanded current-history chart. Source and synthetic fixtures must separately check stale-history cases.",
+      "deterministic_scanner": "Current public prices continued updating while the research labels remained unchanged. This is not execution-price or profitability validation.",
+      "tutorial_dismissal": "Passed on September 20; September 18 interaction remained inconclusive"
+    },
+    "unverified": [
+      "Hosted login",
+      "Session refresh",
+      "State sync",
+      "Hosted planner editing"
+    ]
+  },
+  "local_repair": {
+    "schema_version": 1,
+    "date": "2026-09-20",
+    "source": {
+      "baseline_commit": "4b03c23a1c6513e5c100e1c453e69c7384fceff3",
+      "branch": "codex/research-serving-contracts",
+      "identity_format": "SHA-256 of UTF-8 files after CRLF-to-LF normalization; enclosing Git commit is supplied separately to avoid self-reference",
+      "sha256": {
+        "assets/method-card.js": "c0ea823f6631aca5fecf64bd58eb2da80015118e053c44ba50c704747ef28423",
+        "assets/research-validity.js": "9ce580b45dd0faca720a155e45b1eaeef0399483623dfd0b994b162308b9536d",
+        "backend/export_snapshot.py": "19f7a7d02d088d6ca0779359d5be1482d39dd77407348e1971d12a4656bbfef4",
+        "backend/research_serve.py": "f728a28c0cf3de7999b61348d6e7116ae315b0f78472d8379c34d4022ee3116a",
+        "backend/research_v3_serve.py": "3710096e6b547e69fb29d7711dba92321c34986ef4a91bb2eaea277b868d756e",
+        "backend/research_validity.py": "1167e44a2a776fe9c684486a9ea53ab29474f91f8d0a7301e58d15efa558382a",
+        "backend/tests/test_jwt_util.py": "4f51e597e4c78263e3608f4358bd9e868ab19af284ef6c8fbebdcb3a0107b422",
+        "backend/tests/test_research_daily_freshness.py": "77d3e21a6efa48250dca3019e4ccf7c562637f5b6fe0c950161f4bc4e85ab34b",
+        "backend/tests/test_research_v3_validity.py": "f627ba770f342fe57a06d191c4e5d1ddf2191eae0ced2ae3ed0a2afa937c2c63",
+        "index.html": "0e4037749156458e7bd1b0c516cb9582a793a2b929002b237c8923734590f23b",
+        "flip.html": "fdef6379b641ee338587fcbd12837e017f35257f21f472098be2b0be09e72049",
+        "trends.html": "21e06f97097554be3c83beae55d8d8cfa77b6f906661529d62c043ed2b22aae2",
+        "planner.html": "bc5fa98195945229570042e665e77bda853fa1ab7b1001e6ac5b3a51e0bf6916",
+        "tests/research-validity.mjs": "e2b9d4e20a99065e57d90d032e58880a38ff32385144be91c29102c7683395dd",
+        "tests/fixtures/research-validity-server.mjs": "df96f15e96e28488353ab1d0958851aa3d4b7b1bca294400409f1575e10d02a2"
+      },
+      "commit": "a9b99f4aeb973310a73d89fada026536b97d48d0"
+    },
+    "checks": {
+      "owner_backend_suite": {
+        "passed": 163,
+        "skipped": 78,
+        "skips": {
+          "postgres": 68,
+          "optional_research_artifacts": 10
+        },
+        "warnings": 1
+      },
+      "coordinator_backend_validity": {
+        "passed": 27
+      },
+      "node_contract_groups": {
+        "passed": 10
+      },
+      "syntax": "passed for shared scripts and four consumer inline scripts",
+      "static_smoke": "passed all five pages and shared assets",
+      "documentation_links": "passed",
+      "diff_whitespace": "passed"
+    },
+    "browser": {
+      "fixture": "tests/fixtures/research-validity-server.mjs",
+      "modes": [
+        "snapshot",
+        "mocked local helper"
+      ],
+      "mixed_age": "fresh displays research; expired and legacy withhold estimates and cones",
+      "natural_expiry": [
+        "flip cells and open cone",
+        "trends ranks and ranges",
+        "index inline sensitivity",
+        "planner shared sensitivity"
+      ],
+      "planner_keyboard": "focused Price Sensitivity retained across expiry; Tab to Close; Shift+Tab back; Escape restores invoking method",
+      "planner_notes": "unsaved draft retained across expiry with focus moved to Notes tab; later research pane shows Expired",
+      "narrow_viewport": [
+        375,
+        812
+      ],
+      "trends_focused_link": "passed natural expiry: same item wiki anchor/href retained; no console warnings or errors",
+      "visibility_resume": "shared helper routing source-reviewed only; actual browser tab visibility switching was unavailable"
+    },
+    "boundaries": [
+      "synthetic data and model doubles only",
+      "mocked browser auth; no authenticated service acceptance",
+      "no production database or artifact mutation",
+      "no training or new holdout",
+      "no snapshot publication, push, or deployment",
+      "aggregate health describes source age, not per-record eligibility or model quality"
+    ],
+    "next_brick": "Separate unlabelled inference from labelled training rows and establish point-in-time feature construction",
+    "availability_basis": "Completed source interval end is an assumption about availability, not an observed ingestion timestamp."
+  },
+  "acceptance_limits": [
+    "Browser consumers used synthetic data, mocked helper routing and mocked auth; these are not live backend integration or account acceptance.",
+    "The Trends visibility-resume path shares the focus-preserving helper; it was source-reviewed, not independently accepted through a real browser tab switch.",
+    "The labelled-row loader and future-dependent feature construction are still unresolved. Historical model metrics are not revalidated by this repair."
+  ]
+}
