@@ -1,0 +1,103 @@
+{
+  "checkedAt": "2026-09-20T21:27:27.375787+00:00",
+  "beforeCommit": "a88149c3dbd70ae66c33538e0cf7d7deb5f9c8cc",
+  "afterCommit": "6f1dfac9830c197760b4fc06755d66f7e37f82c2",
+  "graphvizVersion": "dot - graphviz version 16.1.0 (20260904.0139)",
+  "officialArchiveSha256": "733e49626c492242eb8dca30ea627b6ead20710e207998c7933b4909d92d6abc",
+  "sourcePage": "https://graphviz.org/download/",
+  "fixture": "Hand-constructed real NEAT genes; disconnected branch, useful cycle, disabled bridge, isolated required output. Artificial statistics only. No evolution or model loaded.",
+  "results": {
+    "old_default": {
+      "nodes": [
+        "-1",
+        "-2",
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "edges": [
+        "-1->1",
+        "-2->0",
+        "-2->2",
+        "1->0",
+        "1->4",
+        "2->3",
+        "4->1"
+      ]
+    },
+    "new_default": {
+      "nodes": [
+        "-1",
+        "-2",
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "edges": [
+        "-1->1",
+        "-2->0",
+        "-2->2",
+        "1->0",
+        "1->4",
+        "2->3",
+        "4->1"
+      ]
+    },
+    "old_pruned_error": "'DefaultConnectionGene' object has no attribute 'in_node_id'",
+    "new_pruned": {
+      "nodes": [
+        "-1",
+        "0",
+        "1",
+        "4",
+        "5"
+      ],
+      "edges": [
+        "-1->1",
+        "1->0",
+        "1->4",
+        "4->1"
+      ]
+    },
+    "new_pruned_disabled": {
+      "nodes": [
+        "-1",
+        "-2",
+        "0",
+        "1",
+        "4",
+        "5"
+      ],
+      "edges": [
+        "-1->1",
+        "-2->0",
+        "1->0",
+        "1->4",
+        "4->1"
+      ]
+    }
+  },
+  "sourceStatus": "Additional local commit; not pushed, not included in the public draft PR or default branch.",
+  "ownerSoftwareTests": {
+    "passed": 15,
+    "seconds": 8.383
+  },
+  "independentSoftwareTests": {
+    "passed": 15,
+    "seconds": 8.977
+  },
+  "visualAcceptance": "Six native SVG outputs inspected in a browser: default networks before/after, pruned graph with and without disabled edges, artificial fitness and species plots. Default node/edge sets match. Expected pruned node/edge sets checked directly in SVG.",
+  "limits": [
+    "No biomedical data fitting, new model, holdout, paper reproduction or predictive-performance claim.",
+    "Artificial statistics are render fixtures, not training results.",
+    "view=False with a portable Graphviz binary; no interactive desktop plotting or full graphical CLI acceptance.",
+    "The five additional pruning regressions intercept native rendering; the separate root checks invoke the actual dot executable.",
+    "The original verification.json and downloadable test/lock files still describe the published a88149c repair."
+  ]
+}

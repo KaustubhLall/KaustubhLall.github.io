@@ -16,8 +16,8 @@
   },
   {
     "path": "README.md",
-    "bytes": 1828,
-    "sha256": "6a4a9c8840bdf3cf3105bddb82259a8522fb12edb7b8203e13f3ba4fa87602bf"
+    "bytes": 2836,
+    "sha256": "6b87e9db9c1f2c4b26b205ac9db681bdcdc41a1ac217d67a7c74d17453078484"
   },
   {
     "path": "requirements-lock.txt",
@@ -33,5 +33,10 @@
     "path": "verification.json",
     "bytes": 3001,
     "sha256": "91973a52094f8c5a1a5e4a30746b35d08000a0da2b4f1fd4277afe0a1d2fe638"
+  },
+  {
+    "path": "visualization-checks.json",
+    "bytes": 2831,
+    "sha256": "07bdca6fe22e798da8833346b293fbaf906d145109de14e8a55cebb25b95f328"
   }
 ]

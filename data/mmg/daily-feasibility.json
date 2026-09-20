@@ -12,6 +12,7 @@
     "test_dates": ["2026-04-27", "2026-06-26"],
     "direction_accuracy_pct": 57.43,
     "majority_baseline_accuracy_pct": 54.86,
+    "tax_hurdle_target": "next daily midpoint return > 2.1%, an approximate tax threshold rather than net execution profit",
     "tax_hurdle_roc_auc": 0.727,
     "selected_call_precision_pct": 45.67,
     "tax_hurdle_base_rate_pct_rounded": 17.2,

@@ -17,3 +17,9 @@ The tests use temporary outputs. The ordinary interactive program still requires
 The two Python test files and dependency lock in this package are byte-identical to the repair commit. baseline-failures.txt retains the three pre-repair failures with machine paths reduced to filenames. The clean source snapshot reused the same isolated dependency installation. SHA256SUMS.json identifies every file in this package except itself.
 
 The 2020 publication is a separate source: https://doi.org/10.1074/jbc.RA119.010729. This maintenance audit neither replicates nor invalidates its experimental results. Tests and code are covered by the repository's MIT license.
+
+## Additional local visualization check
+
+The separately dated visualization-checks.json covers local commit 6f1dfac9830c197760b4fc06755d66f7e37f82c2, which has not been pushed and is not included in the public draft PR. It fixes the optional prune_unused mode for current NEAT connection genes and removes disconnected nodes and edges. Both ordinary GA callers leave that optional mode off. Five additional synthetic tests pass; all 15 software tests were independently rerun.
+
+A separate native check used the official portable Graphviz 16.1.0 binary and Matplotlib Agg to render hand-constructed graphs and artificial statistics. SVG node/edge sets were checked and the six rendered files inspected in a browser. Required output paths and disabled-edge policy are preserved. This is file-rendering acceptance with view=False, not interactive desktop plotting, trained-network evaluation or a reproduction of the paper. The original downloadable tests and verification.json above remain pinned to a88149c.
