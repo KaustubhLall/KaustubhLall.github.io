@@ -1,0 +1,89 @@
+{
+  "checkedAt": "2026-09-20T18:33:12.838588+00:00",
+  "project": "drug-transporter-ml",
+  "baselineCommit": "4cd3f66a5ce7a41a71ad6ef10d1c1ce11188fe5b",
+  "repairCommit": "a88149c3dbd70ae66c33538e0cf7d7deb5f9c8cc",
+  "repairStatus": "Published review branch; unmerged draft PR",
+  "reviewUrl": "https://github.com/KaustubhLall/drug-transporter-ml/pull/1",
+  "platform": "Windows, CPython 3.12.14",
+  "testCommand": "python -B -m unittest discover -s tests -v",
+  "baseline": {
+    "tests": 3,
+    "failures": 3,
+    "observed": [
+      "Classifier receives a 4x3 matrix instead of the named 4x2 subset",
+      "Zero results written for a three-combination run",
+      "Ten results written for a twelve-combination run"
+    ]
+  },
+  "repaired": {
+    "tests": 10,
+    "failures": 0,
+    "testsRun": [
+      "test_each_classifier_receives_only_named_feature_pair",
+      "test_final_partial_batch_is_written",
+      "test_full_batch_and_tail_are_written_once",
+      "test_packaged_data_loads_outside_module_directory",
+      "test_all_configs_create_networks_without_evolution",
+      "test_checkpoint_creates_output_and_round_trips",
+      "test_dataset_entrypoints_create_and_close_csv",
+      "test_documented_cli_quits_successfully",
+      "test_selection_entrypoint_one_synthetic_generation",
+      "test_engineering_entrypoint_one_synthetic_generation"
+    ],
+    "rootIndependentRunSeconds": 8.583,
+    "cleanSourceSnapshotTests": 10,
+    "dependencyCheck": "No broken requirements found"
+  },
+  "datasets": [
+    {
+      "name": "OAT1OAT3Small.csv",
+      "rows": 51,
+      "columns": 32,
+      "classes": 3
+    },
+    {
+      "name": "OAT1OAT3Big.csv",
+      "rows": 73,
+      "columns": 32,
+      "classes": 3
+    },
+    {
+      "name": "OAT1OAT3OATP.csv",
+      "rows": 137,
+      "columns": 32,
+      "classes": 6
+    }
+  ],
+  "syntheticGA": {
+    "entrypoints": [
+      "FeatureSelectionGA.metabolite_small_dataset",
+      "FeatureEngineering.metabolite_small_dataset"
+    ],
+    "rows": 6,
+    "features": 32,
+    "labels": [
+      0,
+      1,
+      2,
+      0,
+      1,
+      2
+    ],
+    "seed": 1729,
+    "population": 2,
+    "generations": 1,
+    "randomForestTrees": 2,
+    "minimumSpeciesSize": 1,
+    "leaveOneOutFolds": 6,
+    "graphics": "draw_net, plot_stats, plot_species intercepted; no visual acceptance"
+  },
+  "limits": [
+    "No biomedical-data classifier fitting, exhaustive search, fresh holdout evaluation or paper reproduction",
+    "Synthetic execution confirms software paths, not predictive performance",
+    "Interactive plots and Graphviz executable not exercised",
+    "Clean source snapshot reused the installed isolated environment; not a second dependency installation",
+    "Historical scratch charts lack retained raw run provenance and have been withdrawn",
+    "Default branch still contains the earlier implementation until the repair is reviewed and merged"
+  ]
+}

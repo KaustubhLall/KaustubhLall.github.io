@@ -1,0 +1,37 @@
+[
+  {
+    "path": "baseline-failures.txt",
+    "bytes": 3667,
+    "sha256": "10c3b8c2cd64748c48bb9cff5d9f5a49f986340dd006f4d5b27c441e9803995a"
+  },
+  {
+    "path": "ga_smoke.py",
+    "bytes": 2170,
+    "sha256": "031690d6dd0dba2be6c4eb24d1381073963c4cf6ce0c35288e3003f4ecaf1309"
+  },
+  {
+    "path": "LICENSE",
+    "bytes": 1070,
+    "sha256": "2ee7ededb6b056044e62df8d3cb446a11af64d54265ed9b9393226eaeee1c5d9"
+  },
+  {
+    "path": "README.md",
+    "bytes": 1828,
+    "sha256": "6a4a9c8840bdf3cf3105bddb82259a8522fb12edb7b8203e13f3ba4fa87602bf"
+  },
+  {
+    "path": "requirements-lock.txt",
+    "bytes": 386,
+    "sha256": "894007aae3854fea7ff05b6118477bf7e9d73c3dc0f286181babee4e650ab717"
+  },
+  {
+    "path": "test_reproducibility.py",
+    "bytes": 6638,
+    "sha256": "0644898c63b0837016865ec8382f15c9155c70e0a768418d66d8d78aa8905d32"
+  },
+  {
+    "path": "verification.json",
+    "bytes": 3001,
+    "sha256": "91973a52094f8c5a1a5e4a30746b35d08000a0da2b4f1fd4277afe0a1d2fe638"
+  }
+]
