@@ -1,0 +1,71 @@
+{
+  "observed_on_utc": "2026-09-18",
+  "source_checkpoint": "c55eace",
+  "handoff_commit": "3375b59",
+  "source_evidence_sha256": "2e1a24f971d84da5eec96130b722eb3a5f2246d4da0e5d41f11fd82cb83cbaec",
+  "probes": [
+    {
+      "utc": "2026-09-18T02:31:57.0986234Z",
+      "method": "GET",
+      "status": 200,
+      "allow_origin": [
+        "*"
+      ],
+      "generated_at": "2026-07-11T00:44:11Z",
+      "source_commit": "bc3c804",
+      "export_errors": [],
+      "service": "public website",
+      "path": "/snapshot/manifest.json"
+    },
+    {
+      "utc": "2026-09-18T02:31:57.3179879Z",
+      "method": "GET",
+      "status": 200,
+      "allow_origin": [
+        "https://osrs-mmg-analyzer.pages.dev"
+      ],
+      "ok": true,
+      "service": "accounts service",
+      "path": "/health"
+    },
+    {
+      "utc": "2026-09-18T02:31:57.3908552Z",
+      "method": "GET",
+      "status": null,
+      "outcome": "request_timeout",
+      "service": "accounts service",
+      "path": "/status"
+    },
+    {
+      "utc": "2026-09-18T02:32:12.4172753Z",
+      "method": "GET",
+      "status": 401,
+      "allow_origin": [
+        "https://osrs-mmg-analyzer.pages.dev"
+      ],
+      "service": "accounts service",
+      "path": "/state"
+    },
+    {
+      "utc": "2026-09-18T02:32:12.4938622Z",
+      "method": "OPTIONS",
+      "status": 200,
+      "allow_origin": [
+        "https://osrs-mmg-analyzer.pages.dev"
+      ],
+      "service": "accounts service",
+      "path": "/auth/register"
+    }
+  ],
+  "limits": [
+    "Read-only unauthenticated probes. No successful login, session refresh or account-state sync verified.",
+    "The final status probe timed out. The handoff separately records an earlier503. Database failure cause was not diagnosed.",
+    "No production configuration, credential, or repository visibility change.",
+    "Public site page availability is separate from button-interaction acceptance."
+  ],
+  "screenshot": {
+    "path": "/images/mmg/trends-2026-09-18.jpg",
+    "sha256": "17198006f48846f1219541522da4d617294f23ae33dd2c85d1db97e2ae892b47",
+    "description": "Actual public Trends page with five-page navigation, helper unavailable, and dated published-snapshot label."
+  }
+}

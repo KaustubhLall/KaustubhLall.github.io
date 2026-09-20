@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "experiment_id": "frogger-bounded-20260918",
+  "source_commit": "8c368f91e556e75a90356dbf3f9ffa47990c6f4a",
+  "generated_utc": "2026-09-18T02:22:29.3824079Z",
+  "training_plan": "experiment-plan.json",
+  "config": "config.json",
+  "config_sha256": "02cabf7a7b29a4e7627feefb92b1099a1883e09d34bce5d269cd430bbcd1e749",
+  "checkpoint": "trained-weights.bin",
+  "checkpoint_sha256": "c2e3aad09c71de6a377cac5fc52118ffc2e25b442fa747f0bfda28a47c44b68d",
+  "replay": "heuristic-replay.bin",
+  "replay_seed": 20360918,
+  "replay_sha256": "15e9931ada6364b3a9092f9298fc7c3c6207128170b88043a039f3800f8dc0e5",
+  "results": [
+    {
+      "agent": "random",
+      "source_commit": "8c368f91e556e75a90356dbf3f9ffa47990c6f4a",
+      "checkpoint_sha256": null,
+      "episodes": 200,
+      "seed_first": 20360918,
+      "seed_last": 20361117,
+      "max_steps": 500,
+      "wins": 0,
+      "win_rate": 0,
+      "avg_reward": -0.8318,
+      "avg_episode_length": 9.71,
+      "terminal_reasons": {
+        "none": 0,
+        "goal": 0,
+        "death_car": 199,
+        "death_water": 1,
+        "timeout": 0,
+        "off_map": 0
+      },
+      "raw_summary": "summaries/random.json",
+      "action_distribution": {
+        "up": 458,
+        "down": 162,
+        "left": 440,
+        "right": 456,
+        "wait": 426
+      }
+    },
+    {
+      "agent": "scripted",
+      "source_commit": "8c368f91e556e75a90356dbf3f9ffa47990c6f4a",
+      "checkpoint_sha256": null,
+      "episodes": 200,
+      "seed_first": 20360918,
+      "seed_last": 20361117,
+      "max_steps": 500,
+      "wins": 159,
+      "win_rate": 0.795,
+      "avg_reward": 5.3792,
+      "avg_episode_length": 32.18,
+      "terminal_reasons": {
+        "none": 0,
+        "goal": 159,
+        "death_car": 6,
+        "death_water": 3,
+        "timeout": 0,
+        "off_map": 32
+      },
+      "raw_summary": "summaries/scripted.json",
+      "action_distribution": {
+        "up": 2426,
+        "down": 0,
+        "left": 1515,
+        "right": 2278,
+        "wait": 217
+      }
+    },
+    {
+      "agent": "heuristic",
+      "source_commit": "8c368f91e556e75a90356dbf3f9ffa47990c6f4a",
+      "checkpoint_sha256": null,
+      "episodes": 200,
+      "seed_first": 20360918,
+      "seed_last": 20361117,
+      "max_steps": 500,
+      "wins": 159,
+      "win_rate": 0.795,
+      "avg_reward": 5.3792,
+      "avg_episode_length": 32.18,
+      "terminal_reasons": {
+        "none": 0,
+        "goal": 159,
+        "death_car": 6,
+        "death_water": 3,
+        "timeout": 0,
+        "off_map": 32
+      },
+      "raw_summary": "summaries/heuristic.json",
+      "action_distribution": {
+        "up": 2426,
+        "down": 0,
+        "left": 1515,
+        "right": 2278,
+        "wait": 217
+      }
+    },
+    {
+      "agent": "greedy",
+      "source_commit": "8c368f91e556e75a90356dbf3f9ffa47990c6f4a",
+      "checkpoint_sha256": null,
+      "episodes": 200,
+      "seed_first": 20360918,
+      "seed_last": 20361117,
+      "max_steps": 500,
+      "wins": 0,
+      "win_rate": 0,
+      "avg_reward": -0.6821,
+      "avg_episode_length": 2.96,
+      "terminal_reasons": {
+        "none": 0,
+        "goal": 0,
+        "death_car": 179,
+        "death_water": 21,
+        "timeout": 0,
+        "off_map": 0
+      },
+      "raw_summary": "summaries/greedy.json",
+      "action_distribution": {
+        "up": 592,
+        "down": 0,
+        "left": 0,
+        "right": 0,
+        "wait": 0
+      }
+    },
+    {
+      "agent": "neuro",
+      "source_commit": "8c368f91e556e75a90356dbf3f9ffa47990c6f4a",
+      "checkpoint_sha256": "c2e3aad09c71de6a377cac5fc52118ffc2e25b442fa747f0bfda28a47c44b68d",
+      "episodes": 200,
+      "seed_first": 20360918,
+      "seed_last": 20361117,
+      "max_steps": 500,
+      "wins": 0,
+      "win_rate": 0,
+      "avg_reward": -0.1,
+      "avg_episode_length": 500,
+      "terminal_reasons": {
+        "none": 0,
+        "goal": 0,
+        "death_car": 0,
+        "death_water": 0,
+        "timeout": 200,
+        "off_map": 0
+      },
+      "raw_summary": "summaries/neuro.json",
+      "action_distribution": {
+        "up": 0,
+        "down": 0,
+        "left": 49400,
+        "right": 50600,
+        "wait": 0
+      }
+    }
+  ],
+  "caveats": [
+    "One small GA run, not a sweep or general performance claim.",
+    "Training candidates see different maps because seeds depend on population index.",
+    "Automatic post-training evaluation overlaps training seeds and is excluded from the reported comparison.",
+    "Terminal-reason JSON counts are used; the standalone text timeout counter double-counts runner timeouts.",
+    "CSV rewards and JSON averages are rounded to four decimal places by the CLI.",
+    "Scripted and heuristic are behaviorally equivalent here, not independent algorithmic baselines.",
+    "Per-episode CSV records reward and length, not terminal reasons; outcome totals come from raw aggregate JSON.",
+    "The replay is illustrative heuristic play, not trained neuro play, and requires the native project viewer."
+  ],
+  "exported_on_utc": "2026-09-18"
+}

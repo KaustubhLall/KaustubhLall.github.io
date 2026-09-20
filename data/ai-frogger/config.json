@@ -1,0 +1,17 @@
+{
+    "width": 13,
+    "height": 14,
+    "mode": "crossing",
+    "max_steps": 500,
+    "seed": 1337,
+    "river_start_row": 1,
+    "river_end_row": 6,
+    "road_start_row": 7,
+    "road_end_row": 12,
+    "goal_row": 0,
+    "start_row": 13,
+    "log_speed_min": 0.5,
+    "log_speed_max": 2.0,
+    "car_speed_min": 0.5,
+    "car_speed_max": 2.5
+}

@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "exported_on_utc": "2026-09-18",
+  "source": {
+    "commit": "ef5a8a0abab5b02960e3f91b8445ce5bcaf5d1d4",
+    "path": "results/summary/headline.json",
+    "source_file_last_commit": "79b66d48e257be4c4c49790378dc7e3577c0e72a",
+    "source_file_commit_date": "2026-07-05T21:06:05-07:00",
+    "experiment_execution_date": "not recorded in this summary",
+    "sha256": "f7c797e68866e84b7caa786d912b403bde53c03541af3a15c55d49e36084989e"
+  },
+  "fields": {
+    "regime": "fixed = one reused training world; random = newly randomized training worlds",
+    "train_course_score": "reported score on the training-course evaluation",
+    "unseen_score": "reported score on an unseen-course evaluation",
+    "score_unit": "game-specific score convention; values are not comparable across games"
+  },
+  "limitations": [
+    "Export of existing summary data, not a new experiment or rerun.",
+    "Eight summary rows, not independent replicated trial records. No seed-count or uncertainty claim is made for this ablation.",
+    "Training/evaluation seeds, horizons and raw trial outcomes are not included in this small export.",
+    "The 2048 source summary reports a maximum-tile score convention, but values such as 6 and 42 should not be interpreted as literal individual board tiles without the aggregation protocol."
+  ],
+  "rows": [
+    {
+      "game": "flappy",
+      "regime": "fixed",
+      "train_course_score": 6,
+      "unseen_score": 2,
+      "score_unit": "pipes"
+    },
+    {
+      "game": "flappy",
+      "regime": "random",
+      "train_course_score": 54,
+      "unseen_score": 54,
+      "score_unit": "pipes"
+    },
+    {
+      "game": "snake",
+      "regime": "fixed",
+      "train_course_score": 31,
+      "unseen_score": 10,
+      "score_unit": "apples"
+    },
+    {
+      "game": "snake",
+      "regime": "random",
+      "train_course_score": 12,
+      "unseen_score": 25,
+      "score_unit": "apples"
+    },
+    {
+      "game": "2048",
+      "regime": "fixed",
+      "train_course_score": 128,
+      "unseen_score": 6,
+      "score_unit": "reported maximum tile"
+    },
+    {
+      "game": "2048",
+      "regime": "random",
+      "train_course_score": 64,
+      "unseen_score": 42,
+      "score_unit": "reported maximum tile"
+    },
+    {
+      "game": "pacman",
+      "regime": "fixed",
+      "train_course_score": 40,
+      "unseen_score": 15,
+      "score_unit": "pellets"
+    },
+    {
+      "game": "pacman",
+      "regime": "random",
+      "train_course_score": 66,
+      "unseen_score": 41,
+      "score_unit": "pellets"
+    }
+  ]
+}

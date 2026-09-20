@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "declared_before_training": true,
+  "source_base_commit": "7ff8d51",
+  "experiment_id": "frogger-bounded-20260918",
+  "map": "assets/config/default.json",
+  "max_steps": 500,
+  "training": {
+    "existing_weights_found": false,
+    "population": 12,
+    "generations": 10,
+    "episodes_per_individual": 8,
+    "elite": 4,
+    "mutation": 0.05,
+    "base_seed": 20260918,
+    "seed_formula": "base_seed + episode_index * 7 + population_index * 13",
+    "minimum_seed": 20260918,
+    "maximum_seed": 20261110,
+    "candidate_evaluations": 120,
+    "episode_evaluations": 960
+  },
+  "evaluation": {
+    "base_seed": 20360918,
+    "episodes": 200,
+    "last_seed": 20361117,
+    "agents": [
+      "random",
+      "scripted",
+      "heuristic",
+      "greedy",
+      "neuro"
+    ],
+    "same_config_and_horizon": true,
+    "seed_formula": "base_seed + episode_index",
+    "tuning_allowed": false
+  },
+  "reservation_check": "No repository seed-reservation or holdout manifest was found. These ranges do not use existing example/test seeds 1, 7, 42, 1337, or 9999.",
+  "claims_limit": "Single training run and one declared held-out set; no general superiority or statistical significance claim."
+}

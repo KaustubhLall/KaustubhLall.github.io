@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "kind": "historical_report_extract",
+  "study_completed": "2026-07-03 PDT / 2026-07-04 UTC",
+  "exported_on": "2026-09-19",
+  "source_commit": "3375b592da54397bcf413951d26139d55b0c3a55",
+  "source_report": "reports/MODEL_FEASIBILITY_REPORT.md",
+  "source_report_sha256": "52d2403281bdd3c622c117d56a08d7e874b83dd7b45c4a6a7e2d766b11a32b65",
+  "primary_evaluation": {
+    "horizon": "next daily bar within a contiguous item history",
+    "liquid_test_rows": 22511,
+    "test_dates": ["2026-04-27", "2026-06-26"],
+    "direction_accuracy_pct": 57.43,
+    "majority_baseline_accuracy_pct": 54.86,
+    "tax_hurdle_roc_auc": 0.727,
+    "selected_call_precision_pct": 45.67,
+    "tax_hurdle_base_rate_pct_rounded": 17.2,
+    "selected_call_precision_lift_rounded": 2.65
+  },
+  "daily_holding_proxy": {
+    "selected_trades": 1629,
+    "profit_gp": -1529993,
+    "win_rate_pct": 33.7,
+    "mean_trade_roi_pct": -3.06,
+    "execution": "historical tax/slippage-aware proxy, not actual filled offers"
+  },
+  "limitations": [
+    "Extracted from a historical report, not recomputed from raw trades in this export.",
+    "Prediction metrics and holding-proxy profit measure different outcomes.",
+    "Aggregate public prices do not establish offer fill order or time to fill.",
+    "The September audit requires point-in-time and serving validation before historical model gains support current product claims. See audit-summary.json.",
+    "No new training, backtest, live trade or profitability claim."
+  ]
+}

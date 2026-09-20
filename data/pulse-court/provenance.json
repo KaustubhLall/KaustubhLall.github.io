@@ -1,0 +1,19 @@
+{
+  "source_commit": "661f35dba583d51bb33a32e398b3471b29b48e12",
+  "observed_at_utc": "2026-09-18T02:27:14.426091+00:00",
+  "exported_on_utc": "2026-09-18",
+  "source_handoff": "ai-docs/portfolio-handoff-2026-09-18",
+  "source_results_sha256": "136fe7641d3c192dd483f386ef6b22bd4d85fb8718ae82e7949a964871eae314",
+  "included_replay_sha256": "35af43287d7c8ae9f4e13d3103fc0f38d62d18b4d41d4a275534aff78c695f28",
+  "synthetic_policy_bundle_sha256": "f1a478e078f2bc409d96fd29e8074fdfc01ea4ab2c75dd8c06eddd7145ae16ac",
+  "policy_bundle_included": false,
+  "verified_during_export": [
+    "Six replay rows sum to 9483 native decisions",
+    "Six recorded native verifier commands return exit 0 and ticks OK",
+    "Release and Debug logs each contain four passed suites and zero failures",
+    "Missing-input strict command returns exit 1; source evidence reports no output directory created",
+    "Packaged game-4 replay SHA256 matches both included-replay and per-game records"
+  ],
+  "new_native_runs": false,
+  "source_timing_note": "Handoff states run evidence used the same production source before final commit; the final rebuild changed regression-test assertions only."
+}

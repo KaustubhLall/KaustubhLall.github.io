@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "source_commit": "8c368f91e556e75a90356dbf3f9ffa47990c6f4a",
+  "original_generated_utc": "2026-09-18T02:22:29.3824079Z",
+  "exported_on_utc": "2026-09-18",
+  "source_handoff": "ai-docs/portfolio-handoff-2026-09-18",
+  "verification": {
+    "random": {
+      "episodes": 200,
+      "total_steps": 1942,
+      "mean_reward_from_rounded_csv": -0.8318000000000005,
+      "mean_length": 9.71
+    },
+    "scripted": {
+      "episodes": 200,
+      "total_steps": 6436,
+      "mean_reward_from_rounded_csv": 5.379250000000001,
+      "mean_length": 32.18
+    },
+    "heuristic": {
+      "episodes": 200,
+      "total_steps": 6436,
+      "mean_reward_from_rounded_csv": 5.379250000000001,
+      "mean_length": 32.18
+    },
+    "greedy": {
+      "episodes": 200,
+      "total_steps": 592,
+      "mean_reward_from_rounded_csv": -0.6821000000000004,
+      "mean_length": 2.96
+    },
+    "neuro": {
+      "episodes": 200,
+      "total_steps": 100000,
+      "mean_reward_from_rounded_csv": -0.10000000000000007,
+      "mean_length": 500
+    }
+  },
+  "config_sha256": "02cabf7a7b29a4e7627feefb92b1099a1883e09d34bce5d269cd430bbcd1e749",
+  "checkpoint_sha256": "c2e3aad09c71de6a377cac5fc52118ffc2e25b442fa747f0bfda28a47c44b68d",
+  "replay_sha256": "15e9931ada6364b3a9092f9298fc7c3c6207128170b88043a039f3800f8dc0e5",
+  "limitations": [
+    "One small GA run, not a sweep or general performance claim.",
+    "Training candidates see different maps because seeds depend on population index.",
+    "Automatic post-training evaluation overlaps training seeds and is excluded from the reported comparison.",
+    "Terminal-reason JSON counts are used; the standalone text timeout counter double-counts runner timeouts.",
+    "CSV rewards and JSON averages are rounded to four decimal places by the CLI.",
+    "Scripted and heuristic are behaviorally equivalent here, not independent algorithmic baselines.",
+    "Per-episode CSV records reward and length, not terminal reasons; outcome totals come from raw aggregate JSON.",
+    "The replay is illustrative heuristic play, not trained neuro play, and requires the native project viewer.",
+    "Native visual playback requires --seed 20360918; the viewer does not restore the recording seed automatically.",
+    "Per-episode seed metadata is derived from the declared CLI sequence, not independently emitted by the runner."
+  ],
+  "new_runs_during_export": false
+}

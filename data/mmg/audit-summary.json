@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "kind": "source_audit_and_saved_artifact_reproduction_summary",
+  "reviewed_at_utc": "2026-09-19T06:55:12.876839+00:00",
+  "source_baseline": "3375b59",
+  "audit_documentation_commit": "4b03c23a1c6513e5c100e1c453e69c7384fceff3",
+  "source_report": "reports/PREDICTIVE_VALUE_REVIEW_2026-09-18.md",
+  "source_report_sha256": "ae01e0e547ad738b66ffca9de58a0f57f181fb1e81f7441fa5321e35a4a3328e",
+  "source_evidence_sha256": "8385f378b5156109c3210c03e2adbd0e1ddd9b939ac3e5cdf66ad612bff3bf3a",
+  "findings": [
+    {
+      "name": "future_availability_conditions_present_features",
+      "observation": "The v2 builder joins future targets before computing cross-item percentile features. V3 derives its market-return factor from that filtered frame.",
+      "verification": "Source inspection and isolated in-memory SQL reproduction of the join/rank sequence.",
+      "reproduction": "Two current items had rank features 0 and 1. Removing only the first item's future row changed the second item's current rank from 1 to 0, with current history unchanged.",
+      "metric_impact": "unmeasured"
+    },
+    {
+      "name": "global_timestamp_masks_item_staleness",
+      "observation": "The serving path assigns the newest timestamp across items to every item.",
+      "verification": "Controlled serving-clock reproduction using saved local artifacts, not today's live UI.",
+      "simulated_now_unix": 1783228500,
+      "newest_source_timestamp_unix": 1783228200,
+      "latest_item_rows": 789,
+      "incorrect_reported_source_timestamp": 694,
+      "items_over_12_hours_old_but_not_gated": 242
+    },
+    {
+      "name": "inference_reads_labelled_training_rows",
+      "observation": "V3 serves each item's latest labelled training-parquet row, which requires a future four-hour bar to exist.",
+      "verification": "Source inspection."
+    },
+    {
+      "name": "displayed_score_not_independently_evaluated",
+      "observation": "The served probability/volatility ranking differs from the raw scores in the historical evaluator. Calibration-slice diagnostics are not independent holdout evidence.",
+      "verification": "Source inspection of serving, evaluation and training paths."
+    }
+  ],
+  "conclusion": "Historical exploratory scores need revalidation after point-in-time feature and serving fixes before supporting current ranking or profitability claims.",
+  "limits": [
+    "This export summarizes the owning project's audit and preserves its evidence levels.",
+    "The portfolio integrator independently inspected the future-join/rank ordering and global timestamp source, but did not rerun the saved-artifact reproduction.",
+    "No inflation estimate, new training, live UI acceptance, profitable trading claim or application-code repair is represented."
+  ]
+}

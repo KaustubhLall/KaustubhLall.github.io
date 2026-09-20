@@ -1,0 +1,305 @@
+{
+  "format_version": 1,
+  "generated_at_utc": "2026-09-18T02:28:41.084898Z",
+  "diagnostic_only": true,
+  "claims": {
+    "historical_canary_rerun": false,
+    "holdout_claim": false,
+    "strength_claim": false
+  },
+  "device": "cuda",
+  "evaluation_settings": {
+    "gates_opponent_model": "self",
+    "seeds": [
+      5000001,
+      5000002,
+      5000003,
+      5000004,
+      5000005,
+      5000006
+    ],
+    "simulations": 96
+  },
+  "native_executable_sha256": "05ef85a5debe4c52387dc472eee8ff9d8caedfd970ffc07e5226714ab336a19b",
+  "seed_note": "Standalone gates use native seeds 5000001..5000006. They differ from the historical training canary seeds 9900001..9900006 and must not be treated as an exact canary rerun.",
+  "semantic_differences": {
+    "ladder_floor_fraction": {
+      "champion": "0",
+      "latest": "0.25"
+    },
+    "ladder_mirror_fraction": {
+      "champion": "0",
+      "latest": "0.2"
+    },
+    "mirror_past_fraction": {
+      "champion": "0",
+      "latest": "0.2"
+    }
+  },
+  "scenario_comparison": {
+    "bomb-and-escape": {
+      "champion": {
+        "raw_passed": true,
+        "raw_steps": 4,
+        "raw_terminal": "pass",
+        "search_passed": true,
+        "search_steps": 4,
+        "search_terminal": "pass",
+        "trap_prior": null
+      },
+      "latest": {
+        "raw_passed": true,
+        "raw_steps": 4,
+        "raw_terminal": "pass",
+        "search_passed": true,
+        "search_steps": 4,
+        "search_terminal": "pass",
+        "trap_prior": null
+      }
+    },
+    "chase": {
+      "champion": {
+        "raw_passed": false,
+        "raw_steps": 30,
+        "raw_terminal": "step_budget_exhausted",
+        "search_passed": false,
+        "search_steps": 30,
+        "search_terminal": "step_budget_exhausted",
+        "trap_prior": null
+      },
+      "latest": {
+        "raw_passed": false,
+        "raw_steps": 30,
+        "raw_terminal": "step_budget_exhausted",
+        "search_passed": false,
+        "search_steps": 30,
+        "search_terminal": "step_budget_exhausted",
+        "trap_prior": null
+      }
+    },
+    "corridor-clear": {
+      "champion": {
+        "raw_passed": true,
+        "raw_steps": 12,
+        "raw_terminal": "pass",
+        "search_passed": true,
+        "search_steps": 12,
+        "search_terminal": "pass",
+        "trap_prior": null
+      },
+      "latest": {
+        "raw_passed": true,
+        "raw_steps": 12,
+        "raw_terminal": "pass",
+        "search_passed": true,
+        "search_steps": 10,
+        "search_terminal": "pass",
+        "trap_prior": null
+      }
+    },
+    "flame-timing": {
+      "champion": {
+        "raw_passed": false,
+        "raw_steps": 15,
+        "raw_terminal": "step_budget_exhausted",
+        "search_passed": false,
+        "search_steps": 15,
+        "search_terminal": "step_budget_exhausted",
+        "trap_prior": null
+      },
+      "latest": {
+        "raw_passed": false,
+        "raw_steps": 15,
+        "raw_terminal": "step_budget_exhausted",
+        "search_passed": false,
+        "search_steps": 15,
+        "search_terminal": "step_budget_exhausted",
+        "trap_prior": null
+      }
+    },
+    "stall-break": {
+      "champion": {
+        "raw_passed": true,
+        "raw_steps": 4,
+        "raw_terminal": "pass",
+        "search_passed": true,
+        "search_steps": 4,
+        "search_terminal": "pass",
+        "trap_prior": null
+      },
+      "latest": {
+        "raw_passed": false,
+        "raw_steps": 25,
+        "raw_terminal": "step_budget_exhausted",
+        "search_passed": false,
+        "search_steps": 25,
+        "search_terminal": "step_budget_exhausted",
+        "trap_prior": null
+      }
+    },
+    "trap": {
+      "champion": {
+        "raw_passed": true,
+        "raw_steps": 4,
+        "raw_terminal": "pass",
+        "search_passed": true,
+        "search_steps": 4,
+        "search_terminal": "pass",
+        "trap_prior": 0.416308932
+      },
+      "latest": {
+        "raw_passed": true,
+        "raw_steps": 4,
+        "raw_terminal": "pass",
+        "search_passed": true,
+        "search_steps": 4,
+        "search_terminal": "pass",
+        "trap_prior": 0.627638258
+      }
+    }
+  },
+  "wrapper_source_sha256": "4880fa5d5778c8e54954c8f3432db1f6d3b87b69122ca17a4cdd6b4392e80f49",
+  "source_report_sha256": "5f4c9c4c0e16990cebe4919a77dfffa0cb215750ffce44f1a53ad1964611732e",
+  "audit_implementation_commit": "70fa8b8",
+  "roles": {
+    "champion": {
+      "iteration": 65,
+      "checkpoint_sha256": "ed18763c9309fda18ba1361867c092f4d1739715494da5a7d0333e42d8a6cbac",
+      "native_git_commit": "d75f8b98b6c3",
+      "resolved_semantics": "flame_duration=2;sudden_death_start=120;shrink_interval=4;timeout_draw_value=-0.5;mutual_death_value=-0.2;arena_crush_win_value=0.1;selfkill_win_value=0.3;league_heuristic_fraction=0;c_puct=1.5;dirichlet_alpha=1.5;dirichlet_fraction=0.25;forced_playouts_k=2;search_contempt_nscl=0;temperature=1;temperature_steps=60;temperature_final=0.25;temperature_anneal=true;learning_rate=0.0002;min_learning_rate=1e-05;learning_rate_schedule_start_update=0;learning_rate_schedule_updates=51200;seed=1;replay_cause_balance_cap=0;teacher_agents=mcts,mcts,heuristic,heuristic;policy_entropy_bonus=0.01;value_only_iterations=4;ladder_rungs=random,evasive,greedy,heuristic,alphabeta,mcts64,mcts256;ladder_promote_winrate=0.55;ladder_demote_winrate=0.45;ladder_mirror_fraction=0;combat_window_fraction=0.25;ladder_floor_fraction=0;mirror_past_fraction=0;mirror_freeze_trap_prior=0.1",
+      "runtime_config_signature": "games=128;simulations=96;train_steps=128;batch_size=1024;learning_rate=0.0002;min_learning_rate=1e-05;lr_schedule_start=0;lr_schedule_updates=51200;weight_decay=0.0001;c_puct=1.5;dirichlet_alpha=1.5;dirichlet_fraction=0.25;forced_playouts_k=2;search_contempt_nscl=0;temperature=1;temperature_steps=60;temperature_final=0.25;temperature_anneal=true;teacher_agents=mcts,mcts,heuristic,heuristic;teacher_games=32;teacher_iterations=20;bootstrap_weight=0.75;bootstrap_iterations=30;evaluation_games=32;evaluation_simulations=96;promotion_games=128;promotion_simulations=96;baseline_mcts_simulations=512;baseline_mcts_depth=16;seed=1;replay_cause_balance_cap=0;policy_entropy_bonus=0.01;value_only_iterations=4;ladder_rungs=random,evasive,greedy,heuristic,alphabeta,mcts64,mcts256;ladder_promote_winrate=0.55;ladder_demote_winrate=0.45;ladder_mirror_fraction=0;combat_window_fraction=0.25;ladder_floor_fraction=0;mirror_past_fraction=0;mirror_freeze_trap_prior=0.1",
+      "scenarios": {
+        "bomb-and-escape": {
+          "raw_passed": true,
+          "raw_steps": 4,
+          "raw_terminal": "pass",
+          "search_passed": true,
+          "search_steps": 4,
+          "search_terminal": "pass",
+          "trap_prior": null
+        },
+        "chase": {
+          "raw_passed": false,
+          "raw_steps": 30,
+          "raw_terminal": "step_budget_exhausted",
+          "search_passed": false,
+          "search_steps": 30,
+          "search_terminal": "step_budget_exhausted",
+          "trap_prior": null
+        },
+        "corridor-clear": {
+          "raw_passed": true,
+          "raw_steps": 12,
+          "raw_terminal": "pass",
+          "search_passed": true,
+          "search_steps": 12,
+          "search_terminal": "pass",
+          "trap_prior": null
+        },
+        "flame-timing": {
+          "raw_passed": false,
+          "raw_steps": 15,
+          "raw_terminal": "step_budget_exhausted",
+          "search_passed": false,
+          "search_steps": 15,
+          "search_terminal": "step_budget_exhausted",
+          "trap_prior": null
+        },
+        "stall-break": {
+          "raw_passed": true,
+          "raw_steps": 4,
+          "raw_terminal": "pass",
+          "search_passed": true,
+          "search_steps": 4,
+          "search_terminal": "pass",
+          "trap_prior": null
+        },
+        "trap": {
+          "raw_passed": true,
+          "raw_steps": 4,
+          "raw_terminal": "pass",
+          "search_passed": true,
+          "search_steps": 4,
+          "search_terminal": "pass",
+          "trap_prior": 0.416308932
+        }
+      },
+      "totals": {
+        "raw_passed": 4,
+        "search_passed": 4
+      }
+    },
+    "latest": {
+      "iteration": 110,
+      "checkpoint_sha256": "113730548a835331771e1800de40f37ce851584e8980c1c6dad74b75435f6ee7",
+      "native_git_commit": "d75f8b98b6c3",
+      "resolved_semantics": "flame_duration=2;sudden_death_start=120;shrink_interval=4;timeout_draw_value=-0.5;mutual_death_value=-0.2;arena_crush_win_value=0.1;selfkill_win_value=0.3;league_heuristic_fraction=0;c_puct=1.5;dirichlet_alpha=1.5;dirichlet_fraction=0.25;forced_playouts_k=2;search_contempt_nscl=0;temperature=1;temperature_steps=60;temperature_final=0.25;temperature_anneal=true;learning_rate=0.0002;min_learning_rate=1e-05;learning_rate_schedule_start_update=0;learning_rate_schedule_updates=51200;seed=1;replay_cause_balance_cap=0;teacher_agents=mcts,mcts,heuristic,heuristic;policy_entropy_bonus=0.01;value_only_iterations=4;ladder_rungs=random,evasive,greedy,heuristic,alphabeta,mcts64,mcts256;ladder_promote_winrate=0.55;ladder_demote_winrate=0.45;ladder_mirror_fraction=0.2;combat_window_fraction=0.25;ladder_floor_fraction=0.25;mirror_past_fraction=0.2;mirror_freeze_trap_prior=0.1",
+      "runtime_config_signature": "games=128;simulations=96;train_steps=128;batch_size=1024;learning_rate=0.0002;min_learning_rate=1e-05;lr_schedule_start=0;lr_schedule_updates=51200;weight_decay=0.0001;c_puct=1.5;dirichlet_alpha=1.5;dirichlet_fraction=0.25;forced_playouts_k=2;search_contempt_nscl=0;temperature=1;temperature_steps=60;temperature_final=0.25;temperature_anneal=true;teacher_agents=mcts,mcts,heuristic,heuristic;teacher_games=32;teacher_iterations=20;bootstrap_weight=0.75;bootstrap_iterations=30;evaluation_games=32;evaluation_simulations=96;promotion_games=128;promotion_simulations=96;baseline_mcts_simulations=512;baseline_mcts_depth=16;seed=1;replay_cause_balance_cap=0;policy_entropy_bonus=0.01;value_only_iterations=4;ladder_rungs=random,evasive,greedy,heuristic,alphabeta,mcts64,mcts256;ladder_promote_winrate=0.55;ladder_demote_winrate=0.45;ladder_mirror_fraction=0.2;combat_window_fraction=0.25;ladder_floor_fraction=0.25;mirror_past_fraction=0.2;mirror_freeze_trap_prior=0.1",
+      "scenarios": {
+        "bomb-and-escape": {
+          "raw_passed": true,
+          "raw_steps": 4,
+          "raw_terminal": "pass",
+          "search_passed": true,
+          "search_steps": 4,
+          "search_terminal": "pass",
+          "trap_prior": null
+        },
+        "chase": {
+          "raw_passed": false,
+          "raw_steps": 30,
+          "raw_terminal": "step_budget_exhausted",
+          "search_passed": false,
+          "search_steps": 30,
+          "search_terminal": "step_budget_exhausted",
+          "trap_prior": null
+        },
+        "corridor-clear": {
+          "raw_passed": true,
+          "raw_steps": 12,
+          "raw_terminal": "pass",
+          "search_passed": true,
+          "search_steps": 10,
+          "search_terminal": "pass",
+          "trap_prior": null
+        },
+        "flame-timing": {
+          "raw_passed": false,
+          "raw_steps": 15,
+          "raw_terminal": "step_budget_exhausted",
+          "search_passed": false,
+          "search_steps": 15,
+          "search_terminal": "step_budget_exhausted",
+          "trap_prior": null
+        },
+        "stall-break": {
+          "raw_passed": false,
+          "raw_steps": 25,
+          "raw_terminal": "step_budget_exhausted",
+          "search_passed": false,
+          "search_steps": 25,
+          "search_terminal": "step_budget_exhausted",
+          "trap_prior": null
+        },
+        "trap": {
+          "raw_passed": true,
+          "raw_steps": 4,
+          "raw_terminal": "pass",
+          "search_passed": true,
+          "search_steps": 4,
+          "search_terminal": "pass",
+          "trap_prior": 0.627638258
+        }
+      },
+      "totals": {
+        "raw_passed": 3,
+        "search_passed": 3
+      }
+    }
+  },
+  "limits": [
+    "Observational comparison of two training checkpoints, not a causal ablation.",
+    "Six constructed scenarios, not a full-game win rate or an independent held-out strength result.",
+    "Local filesystem paths and nonbundled evidence links removed for public export."
+  ]
+}

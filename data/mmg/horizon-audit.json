@@ -1,0 +1,32 @@
+{
+  "schema_version": 1,
+  "kind": "historical_report_extract",
+  "study_date": "2026-07-04",
+  "exported_on": "2026-09-19",
+  "source_commit": "3375b592da54397bcf413951d26139d55b0c3a55",
+  "source_report": "reports/RESEARCH_EVALUATION_V2_2026-07-04.md",
+  "source_report_sha256": "65d58b20697cbcc23bd1926d84ad3dc4415e295196bb628eab13d18f34050aa7",
+  "continuity_audit": {
+    "cohort": "top 100 items by volume",
+    "rows_audited": 839687,
+    "interior_gaps": 22830,
+    "labels_from_48_row_shift": 834887,
+    "labels_exactly_14400_seconds_apart": 580076,
+    "correct_share_pct_rounded": 69.48
+  },
+  "rebuilt_feature_dataset": {
+    "cohort": "789 items in the separate v2 feature dataset",
+    "exact_horizon_feature_rows": 802443,
+    "items": 789,
+    "raw_five_minute_bars": 13327126,
+    "price_rise_at_least_one_pct_base_rate_pct": 22.88,
+    "conservative_after_tax_positive_base_rate_pct": 2.19
+  },
+  "label_contract": "Join the same item's target at source bucket timestamp plus 14400 seconds. Restart rolling feature windows at data gaps.",
+  "limitations": [
+    "The continuity audit and rebuilt feature dataset use different item cohorts; their row counts are not a before/after retention comparison.",
+    "Exact label timing does not by itself prove that features were available at prediction time.",
+    "The later source audit found future-availability-conditioned rank features. Its effect on historical metrics remains unmeasured. See audit-summary.json.",
+    "This export performed no new model fitting, evaluation or data collection."
+  ]
+}

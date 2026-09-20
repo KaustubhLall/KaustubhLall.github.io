@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "exported_on_utc": "2026-09-18",
+  "pinned_source_commit": "42aa8ac684766f5c544aa94b5af73af0613dc0e8",
+  "local_comparison_commit": "1381a60134a5c0b28a3f801b108cab3245a76a00",
+  "source_data_last_commit_date": "2026-03-27T17:39:37-07:00",
+  "experiment_execution_date": "not established by this export",
+  "source_files": [
+    "output/publication_assets/data/baseline_task_results.csv",
+    "src/registry.py",
+    "output/publication_assets/data/baseline_track_summary.csv"
+  ],
+  "equivalence": "These three source blobs are identical at both commits; working files match after line-ending normalization. Other working-tree changes were not used.",
+  "counts": {
+    "sequence": {
+      "registry_tasks": 17,
+      "scored_tasks": 16,
+      "verdicts": {
+        "STRONG": 0,
+        "MODERATE": 1,
+        "WEAK": 2,
+        "NEGATIVE": 11,
+        "INCONCLUSIVE": 2
+      },
+      "best_iid_accuracy": {
+        "n": 16,
+        "mean": 0.3807083333333333
+      },
+      "best_ood_accuracy": {
+        "n": 15,
+        "mean": 0.25911661540981157
+      }
+    },
+    "classification": {
+      "registry_tasks": 15,
+      "scored_tasks": 14,
+      "verdicts": {
+        "STRONG": 3,
+        "MODERATE": 9,
+        "WEAK": 0,
+        "NEGATIVE": 1,
+        "INCONCLUSIVE": 1
+      },
+      "best_iid_accuracy": {
+        "n": 14,
+        "mean": 0.9356190476190477
+      },
+      "best_ood_accuracy": {
+        "n": 13,
+        "mean": 0.9701704088867315
+      }
+    }
+  },
+  "unscored_registry_tasks": [
+    "S0.2_lookup_table",
+    "C0.2_majority_class"
+  ],
+  "limitations": [
+    "Existing aggregate results only; no experiments were rerun.",
+    "Task-level best IID and best OOD models can differ. Means are unweighted across nonmissing task rows, not pooled trial accuracy.",
+    "Random-label controls have missing OOD fields by design; missing does not mean zero.",
+    "Raw seed-level predictions, checkpoint files and full reproducibility environment are outside this extract."
+  ]
+}

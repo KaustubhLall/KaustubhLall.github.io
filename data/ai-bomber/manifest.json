@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "kind": "native-v4-replay",
+  "diagnostic_only": true,
+  "seed": 900001,
+  "selection": "First predetermined diagnostic seed; first seat replay; no seed search",
+  "learner_role": "champion",
+  "checkpoint_iteration": 65,
+  "checkpoint_sha256": "ed18763c9309fda18ba1361867c092f4d1739715494da5a7d0333e42d8a6cbac",
+  "native_executable_sha256": "05ef85a5debe4c52387dc472eee8ff9d8caedfd970ffc07e5226714ab336a19b",
+  "native_compiled_git_commit": "d75f8b98b6c3",
+  "opponent": "heuristic (trained-on class)",
+  "frames": 121,
+  "terminal_step": 121,
+  "outcome": "champion wins by arena crush; no bomb-kill",
+  "replay_bytes": 27096192,
+  "replay_sha256": "44b9f4cdf099508a7745ea204813972c87413293cf5df23c0c5e199d12398f9d",
+  "gzip_sha256": "5a572a3561caa2a8279bfde5631c39c8f32b8f30410a31ecb35785c2cf5bc0c5",
+  "screenshot_frame_index": 40,
+  "screenshot_step": 41,
+  "screenshot_sha256": "5befbaa54ca794905ae7a0a9982d0c205f8fef4f4303b8b5d21d0560a2c2a90b",
+  "verification": [
+    "Native v4 viewer loaded replay and rendered frame index40; screenshot visually inspected",
+    "Native headless analyzer read all121 frames and identified arena-crush death at121"
+  ],
+  "limits": [
+    "Single illustrative diagnostic replay; no held-out or SD-off evidence",
+    "Saved state playback and rendering verified; deterministic resimulation not run for this artifact"
+  ]
+}

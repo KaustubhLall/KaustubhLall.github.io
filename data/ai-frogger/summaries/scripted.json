@@ -1,0 +1,28 @@
+{
+  "episodes": 200,
+  "total_steps": 6436,
+  "total_reward": 1075.8497,
+  "avg_reward": 5.3792,
+  "max_reward": 7.3200,
+  "wins": 159,
+  "losses": 41,
+  "deaths": 41,
+  "win_rate": 0.7950,
+  "death_rate": 0.2050,
+  "avg_episode_length": 32.2,
+  "terminal_reasons": {
+    "none": 0,
+    "goal": 159,
+    "death_car": 6,
+    "death_water": 3,
+    "timeout": 0,
+    "off_map": 32
+  },
+  "action_distribution": {
+    "up": 2426,
+    "down": 0,
+    "left": 1515,
+    "right": 2278,
+    "wait": 217
+  }
+}
