@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-21",
+  "scope": "Prospective evaluated-runtime identity software integration; no policy evaluation or certification",
+  "source_commit": "8e4c1efe5d8ac3febf7ec6bd57a586a4bff669e4",
+  "documentation_commit": "f4c01db210ff27c77c7fe677e6287593fe208354",
+  "publication": "Local owner checkpoint; unmerged, unpushed and not deployed, as recorded by owner evidence. Current local HEAD and clean status rechecked; no remote fetch performed.",
+  "change": {
+    "same_library": "The getter probe and environment wrapper share ProtectedLibrary. The wrapper uses its CDLL while a Windows handle denies writing and deletion throughout the environment lifetime.",
+    "close": "Native state destruction precedes final identity verification and protection release. Uncertain destruction quarantines the owner, handle and CDLL until process exit, without retry or completed evidence.",
+    "evaluator": "Both evaluator entrypoints require explicit receipt, independently supplied pin, DLL, source and configuration; completed identity is read after context exit.",
+    "producer": "Pure identity checks precede ML imports and checkpoint loading. Exact completed identity, receipt/DLL/digest/configuration/ABI and process/path checks precede report serialization.",
+    "report_field": "evaluation_runtime_identity",
+    "report_schema": "pulse-evaluation-runtime-identity/v1"
+  },
+  "artifact_identity": {
+    "receipt_sha256": "14c5b1d9c6ec07b24187b06be019893d733ea8f0d419a1ebf404b50fae7ab2bc",
+    "dll_sha256": "a610aadc87c9c73ce759cea3fc3131f667d225075a6ec12a568e7878a9bf66d2",
+    "dll_bytes": 60928,
+    "input_digest": "8074368ca21d643a6a72ca037d05b3eaa0cc40c2d80a2c4265aae3b1527d8738",
+    "configuration": "Release",
+    "architecture": "x64",
+    "trust": "Unsigned local observed receipt requiring an independent caller pin; not signed attestation"
+  },
+  "retained_software_checks": {
+    "executed_on": "2026-09-21",
+    "total_methods": 62,
+    "categories": [
+      {
+        "category": "Wrapper lifecycle and both evaluator entrypoints",
+        "methods": 8,
+        "retained_result": "PASS",
+        "log_sha256": "fc69bb04e70870dcd6084957498f0046d7b2b8961bbe913bef13c1eda0c4c238"
+      },
+      {
+        "category": "Producer identity propagation and export rejection",
+        "methods": 17,
+        "retained_result": "PASS",
+        "log_sha256": "c35f9204bbb3854557c9ee508f022ff656c69d51ee5c8707a79076373a12122f"
+      },
+      {
+        "category": "Pinned receipt, retained Windows handle and module identity",
+        "methods": 15,
+        "retained_result": "PASS",
+        "log_sha256": "6bdb9ed63246a98a5c944b7e2df9be25250ea3efb507e33a43930b572535167d"
+      },
+      {
+        "category": "Offline policy identity preflight",
+        "methods": 22,
+        "retained_result": "PASS",
+        "log_sha256": "2e7cff33a06a233a505f9cb3ceec8220735e15c942eb8851eed58b983c5d5f1e"
+      }
+    ],
+    "method": "Actual wrapper/evaluator/producer code with synthetic native and ML bodies; receipt tests also exercise actual Windows file protection. These are software checks, not model runs.",
+    "independent_repetition": "The earlier coordinator record reports an independent 62-method pass. This publication review did not rerun those tests."
+  },
+  "retained_native_probe": {
+    "status": "BUILD_AND_ABI_IDENTITY_VERIFIED",
+    "called": [
+      "pulse_env_build_identity",
+      "pulse_env_api_version",
+      "pulse_env_ruleset_version",
+      "pulse_env_agent_contract_version",
+      "pulse_env_observation_size"
+    ],
+    "abi": {
+      "pulse_env_api_version": 1,
+      "pulse_env_ruleset_version": 4,
+      "pulse_env_agent_contract_version": 2,
+      "pulse_env_observation_size": 64
+    },
+    "write_delete_lock_retained": true,
+    "evaluation_performed": false,
+    "promotion_allowed": false,
+    "scope": "Five getters only after ordinary Windows DLL loading; no environment create, reset or step and no model deserialization or inference.",
+    "independent_repetition": "The earlier coordinator record reports a second getter-only probe against the same receipt, DLL and digest; no new native call was made for this publication review."
+  },
+  "fresh_publication_review": {
+    "mode": "Read-only Git, source and retained-artifact reconciliation",
+    "source_files_verified": 12,
+    "source_hash_convention": "Working-byte SHA256 and Git-blob SHA256 checked separately; CRLF/LF differences preserved",
+    "receipt_and_dll_hashes_verified": true,
+    "retained_log_counts_verified": true,
+    "tests_rerun": false,
+    "native_calls": false
+  },
+  "source_identity": [
+    {
+      "path": "scripts/env_receipt_common.py",
+      "working_byte_sha256": "2d3573d46984b8aa6cac67386b71e3a43b3c5af34c66bd516ac00abe59de5a8d",
+      "git_blob_sha256": "4d8fa46ea0b79f1a245f036d2da5ae90cfa0352659c0580a9b5d9e233f6d2961"
+    },
+    {
+      "path": "scripts/evaluation_runtime_identity.py",
+      "working_byte_sha256": "cd8a6ea3a57a4c42e558a38f351d1977c63dde652f913632df9a54cc94196c94",
+      "git_blob_sha256": "b02771466ad5e577ec6342d781684f9703422362b3105d7246e241682afd14f4"
+    },
+    {
+      "path": "scripts/probe_env_build_identity.py",
+      "working_byte_sha256": "630e20063fda050769626af3e5784ffa7a1c861e1c6aebb79e134a3e702c95e5",
+      "git_blob_sha256": "06db3c109c05df07423f70f618fecf3deb53c1e9a8fe0454403cdcba3f8a5148"
+    },
+    {
+      "path": "tests/test_evaluation_runtime_identity.py",
+      "working_byte_sha256": "b1a99c53a12358a38f1705df63de4746b055b7b4542ee0ecb5187d8c8be05b22",
+      "git_blob_sha256": "b1a99c53a12358a38f1705df63de4746b055b7b4542ee0ecb5187d8c8be05b22"
+    },
+    {
+      "path": "tests/test_producer_identity.py",
+      "working_byte_sha256": "14185fa521dd0bc105ffa6d1787d7bf2ea08ca6b0ad825154e8616b47ed5c22c",
+      "git_blob_sha256": "079002ff773daf51f125794431356e10ec1da1f05a04309d0dafe935d0d47c2c"
+    },
+    {
+      "path": "training/certify_candidate.py",
+      "working_byte_sha256": "b4a18808fcbd0632bb450bbaa69379666c0ef27dae071b1ad9dd66ee5df7e30e",
+      "git_blob_sha256": "8c42fccad1d1c0593c790ef2a4b2cb9a3b0bd2958f53107d4176088d104eb3fe"
+    },
+    {
+      "path": "training/pulse_zero/curriculum.py",
+      "working_byte_sha256": "3c93273f017b7188d11602df694de06678697d69565af911652e3f0b5868b0c7",
+      "git_blob_sha256": "6c4490a85c61838ede69d164736a5b07d9fc8331a4e62f3e3c74b86e45635343"
+    },
+    {
+      "path": "training/pulse_zero/env.py",
+      "working_byte_sha256": "861af4dc5300dca23f9a4db448deba309876c40ed932eb8f3ffa3a9a76c85e78",
+      "git_blob_sha256": "d7d58552a2fa382bbe5bac071afc77924347237a5a4cc68076fef1f6a17fd882"
+    },
+    {
+      "path": "training/pulse_zero/evaluator.py",
+      "working_byte_sha256": "66c28f33acc28e395f18f02bf29a91c4b62a085aa0a0812ccf6a2d4ad8e6bc7c",
+      "git_blob_sha256": "827eb0fd20603eb516bf4890e9a0be01b014e2b36a8b3d451513c233066906c0"
+    },
+    {
+      "path": "training/pulse_zero/model.py",
+      "working_byte_sha256": "78c2edf504506ec7bf599c76108f91cad66980d127d47d13226481c898b59e60",
+      "git_blob_sha256": "0d98a358685954831def5359a82f3c0facc47f93c70d7770073829fb09da7446"
+    },
+    {
+      "path": "training/pulse_zero/ppo.py",
+      "working_byte_sha256": "04a9a819cbd588a925906067393117c168210f91409425a37d33c814a9548ee4",
+      "git_blob_sha256": "5fd3e9aa796637a40a0e3dd63bddb09dc351c2d05b1c4e957636844b5bbcd9cb"
+    },
+    {
+      "path": "training/runtime-import-source.json",
+      "working_byte_sha256": "418daf04befc7d7ac6a580eacffacbe41a1b3ea8c7d7a639e08e6d6fbf89a03c",
+      "git_blob_sha256": "4f0f5345493fb1a0d6873643349dac95c09639aafa5cc7fb5ee23d12348769cf"
+    }
+  ],
+  "evidence_identity": {
+    "owner_readme_sha256": "06054636847d58a1d69713047dbf78744dd6aab1ed7170fc2365a7b0f2d6ed93",
+    "source_verification_sha256": "02e1a430ec8122b462ead603c2d9fc095b84b8057b87575364e7b70c7642f955",
+    "getter_probe_sha256": "6fb9cdd1312bb4738c154a72a3a119c29ab779b1e432452157d8a43b3ec328de"
+  },
+  "unchanged_gates": {
+    "historical_checkpoint_binding": "SOURCE_TO_DLL_UNBOUND",
+    "export": "REJECTED",
+    "strict_deployment": false,
+    "training_dll_binding_established": false,
+    "policy_evaluation_performed": false,
+    "model_strength_claim": false
+  },
+  "limitations": [
+    "Prospective evaluated-DLL identity does not identify a historical training DLL or backfill prior reports.",
+    "Old unbound trainer callers require explicit migration; no trainer migration occurred.",
+    "Synthetic lifecycle tests use fake native destruction and ML bodies; they do not establish a completed real policy evaluation.",
+    "Build source pre/post checks are not an immutable build snapshot. System tool, header and link hashes are observed after build.",
+    "Dynamic runtime dependency identity is outside scope; normal Windows loader and CRT initialization occurs.",
+    "Native input digest covers build inputs, not Python evaluation code; Python source hashes are separate.",
+    "No training, fresh holdout, certification, graphical/input acceptance, latency benchmark, promotion or competitive-strength result is established.",
+    "No adversarial in-process protection or signed attestation is claimed. Raw receipts, logs, native sources and binaries are not included in this public summary."
+  ]
+}

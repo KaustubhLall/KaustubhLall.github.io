@@ -1,5 +1,33 @@
 # Pulse Court runtime evidence
 
+## Prospective runtime identity, September 21, 2026
+
+`runtime-identity.json` records source `8e4c1ef` and its local documentation
+checkpoint `f4c01db`. Both evaluator entrypoints retain the same checked, loaded
+DLL through environment teardown. A completed identity record is required before
+the producer writes a report. Uncertain native destruction retains ownership
+until process exit and produces no completed record.
+
+The retained logs cover 62 software test methods: eight wrapper/evaluator,
+17 producer/export, 15 receipt/protection and 22 offline preflight methods.
+The integration tests exercise actual entrypoints with synthetic native and ML
+dependencies. Receipt tests also exercise Windows file protection. Separately,
+a native child process called exactly five build-identity/ABI getters. It did
+not create, reset or step an environment, deserialize a model or run inference.
+
+The publication review rechecked the 12 source files, Git identities, receipt,
+DLL and retained logs. It did not rerun those executions. The public JSON is a
+curated summary with hashes, not a runnable raw receipt. Its local caller pin is
+not signed attestation. Build pre/post checks are not an immutable source snapshot,
+and dynamic runtime dependencies remain outside scope.
+
+Historical checkpoint binding remains `SOURCE_TO_DLL_UNBOUND`. Export remains
+rejected and strict deployment disabled. This prospective evaluated-DLL contract
+does not backfill historical training identity, certify a policy or establish
+playing strength. The owner checkpoint is local, unmerged and unpushed according
+to its documentation; the publication review checked local state without a remote
+fetch. The earlier evidence below remains unchanged.
+
 ## Local v4 integration, September 20, 2026
 
 `v4-integration.json` records the later local migration at source
