@@ -1,0 +1,692 @@
+{
+  "checkedDate": "2026-09-21",
+  "scope": "Four fixed diagnostic episodes of genomes represented in the public histories; seed12345 is not a displayed history course.",
+  "noTrainingOrNewHoldout": true,
+  "nativeRecorder": {
+    "ownerBaseCommit": "ef5a8a0abab5b02960e3f91b8445ce5bcaf5d1d4",
+    "workingTreeSnapshot": true,
+    "snapshotManifestSha256": "56a87894be652f72887c50e1d6083213cf5477571b16df49bdccb8373baf4efc",
+    "binarySha256": "2d76679ecb5c33f6550cbb08a2b9e28d4fb0f46190794c2ea6533be22a633753",
+    "compiler": "gcc (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "flags": [
+      "-O2",
+      "-Wall",
+      "-Wextra",
+      "-Iinclude",
+      "-lm"
+    ],
+    "maxStepsPerCase": 1000,
+    "sourceFiles": [
+      {
+        "path": "src/sim.c",
+        "bytes": 6090,
+        "sha256": "1b28d2fad98ecb8449f0ec081114b5d9b4286415f4bc88ca94fcb0d8d6adb225"
+      },
+      {
+        "path": "src/env.c",
+        "bytes": 1098,
+        "sha256": "501b44dbd6584b56a44e703247790ddd2ada37e09698901f76647145029767aa"
+      },
+      {
+        "path": "src/games/flappy.c",
+        "bytes": 3779,
+        "sha256": "9938e8316a5238ba0c82dd31d2ed2d4cb16092a55d9c01d6a7284060b1d5aaa7"
+      },
+      {
+        "path": "src/games/snake.c",
+        "bytes": 15921,
+        "sha256": "61bb662fb8d1787279fd790186aa37318fc28ffd7fedd3a1cd616861b501fcdd"
+      },
+      {
+        "path": "src/games/g2048.c",
+        "bytes": 11812,
+        "sha256": "8a30d6cdd336c361890b9288cbb923f15245dda9e829e461116ee7638c9228c8"
+      },
+      {
+        "path": "src/games/pacman.c",
+        "bytes": 19888,
+        "sha256": "6d456580b5e1c172b39b68d3d3f37327104ea18ea193d05cfee7babc087a1a0c"
+      },
+      {
+        "path": "src/neat_rng.c",
+        "bytes": 1745,
+        "sha256": "05df9bf153c3af67d4b57b6d7f554d447ab91d1eda6a2d5df983f35f04a05603"
+      },
+      {
+        "path": "src/neat_genome.c",
+        "bytes": 16707,
+        "sha256": "11eb8852008c47bb75deb26de9a9a26b8f2ad126496c993da2b5495f2c3e8c27"
+      },
+      {
+        "path": "src/neat_network.c",
+        "bytes": 8252,
+        "sha256": "ec2a09aa5830dcb2b19a9f4a118db71f630987eeebf4e86e49bda3920d2b2bd0"
+      },
+      {
+        "path": "src/neat_config.c",
+        "bytes": 16865,
+        "sha256": "94fb753dce649fc461c98ac5a24130f24b066f197f49c3320b3435e5c8fc8913"
+      },
+      {
+        "path": "src/neat_population.c",
+        "bytes": 18465,
+        "sha256": "7da1d3d2668c6ef99e9e61c03672369e06520ed55cf401a9c76cdeab243bfee0"
+      },
+      {
+        "path": "src/neat_serialize.c",
+        "bytes": 16044,
+        "sha256": "333bd90ff7f4b847c608cfd2e58b0ca6bce9d14df65c101392f926181d6678bb"
+      },
+      {
+        "path": "src/neat_hyperneat.c",
+        "bytes": 8325,
+        "sha256": "45eeaa8372251ad828ad4a9b815d095f17f7708eda8edcd8d00a8b312940eae8"
+      },
+      {
+        "path": "examples/neat_record.c",
+        "bytes": 5371,
+        "sha256": "09e1cd735d4fbb4da2b6519e009cdad6772bb303a489a98cfd8e8f5a642944ae"
+      },
+      {
+        "path": "include/env.h",
+        "bytes": 3712,
+        "sha256": "1f3cb02f70cab8bdaa88ee97e425591f3fc43d0547cb0f0ec54355b729a2a33e"
+      },
+      {
+        "path": "include/flappy.h",
+        "bytes": 2418,
+        "sha256": "2b985bdb5e1c705d19f6e86a265a8988231a2b6c05d89dfa12f359dbff151c5b"
+      },
+      {
+        "path": "include/flappy_shm.h",
+        "bytes": 2214,
+        "sha256": "fa156c7417c9efe6fd5735555fc3cd5e5f1dda1c046794521b205fa1fb3c6004"
+      },
+      {
+        "path": "include/neat.h",
+        "bytes": 16120,
+        "sha256": "224c8abd6a4f7c85021125139ec5954efd7c25246f6627fd7f53522958704730"
+      }
+    ]
+  },
+  "engineSha256": "b2051e7d8ff2d57b59eb17b04c8788eece766cf0e69a56a06d349f63d479b329",
+  "checkerSha256": "57ce75358cecc80ddf57b7efba30bcc839e2621d0751cbe3a02042914719cfa1",
+  "cases": [
+    {
+      "game": "flappy",
+      "historicalRecordSha256": "c230fe25b32899dc5e2a9529ea9c768ba913f9cca23353a56e0516970f173ea4",
+      "freshRecordSha256": "c230fe25b32899dc5e2a9529ea9c768ba913f9cca23353a56e0516970f173ea4",
+      "originalConfigSha256": "d7b7c1606425f551246fcc575a68ef736cf18eafd24748db2e125457fd82b85d",
+      "historySha256": "1f4a342c961e9cdd6e395faa0298832e0a7f02e328336ef29cb18f470ab7f8d2",
+      "matchingHistoryGenomes": [
+        {
+          "generation": 117,
+          "species": 35
+        },
+        {
+          "generation": 118,
+          "species": 35
+        },
+        {
+          "generation": 119,
+          "species": 467
+        }
+      ],
+      "diagnosticSeedIsAHistoryCourse": false,
+      "freshVsHistorical": {
+        "allFieldsExceptObservationLabelsEqual": true,
+        "observationLabelsChanged": false,
+        "rawBytesEqual": true
+      },
+      "check": {
+        "status": "PASS",
+        "game": "flappy",
+        "seed": "12345",
+        "ticks": 1000,
+        "final_score": 8,
+        "config": {
+          "game": "flappy",
+          "obs_mode": "features",
+          "network_type": 0,
+          "activation_steps": 1,
+          "sigmoid_slope": 4.900000095367432,
+          "input_count": 6,
+          "output_count": 2
+        },
+        "maxDeviations": {
+          "observations": 4.999999999999449e-05,
+          "activations": 0.0005000119209289666,
+          "connectionWeights": 4.2552947998153456e-05,
+          "flappyPositionVelocity": 0.04537353515627274,
+          "flappyPipes": 0.4965362548828125
+        },
+        "genomeSha256": "bbf59439b9af05880943e2da262b4c8ddf04cfeaa8d867da0facfa549ead7f50",
+        "configSha256": "9c75a3e96da33074f699fa52afa3571dc34a9ac74917e10e3acafd4d57c7ac04",
+        "scope": "Deterministic recorded pre-step observations, actions, scores, activations, render state and post-final-step score only",
+        "limitations": [
+          "No recorded final state or terminal flag; no native provenance or model-quality claim",
+          "Record omits node biases/functions and full precision weights; genome agreement is limited to fields present in record",
+          "Config is supplied explicitly but record has no configuration identity",
+          "Observation label text is unchecked; only string type and dimension are validated"
+        ],
+        "recordSha256": "c230fe25b32899dc5e2a9529ea9c768ba913f9cca23353a56e0516970f173ea4",
+        "engineSha256": "b2051e7d8ff2d57b59eb17b04c8788eece766cf0e69a56a06d349f63d479b329"
+      }
+    },
+    {
+      "game": "snake",
+      "historicalRecordSha256": "11ae0ad1ddb6a544c26e097dac54a1cd78be98c9277e7767e8ebae5575d0a7b9",
+      "freshRecordSha256": "06c90312da244e442ba1c441170aed125123422e8fd69963a1c945c2e3cc32d2",
+      "originalConfigSha256": "448081a26d0e9c428d2bc5961ad24056a789b17e56877f8e037e565d57e4b7f6",
+      "historySha256": "5332145b96ba5df16590ccaceef810bb201bc2eaf3a2f878bcc374fd494b559b",
+      "matchingHistoryGenomes": [
+        {
+          "generation": 90,
+          "species": 1495
+        },
+        {
+          "generation": 91,
+          "species": 1495
+        },
+        {
+          "generation": 92,
+          "species": 1493
+        },
+        {
+          "generation": 93,
+          "species": 1574
+        },
+        {
+          "generation": 95,
+          "species": 1574
+        },
+        {
+          "generation": 96,
+          "species": 1493
+        },
+        {
+          "generation": 100,
+          "species": 1653
+        },
+        {
+          "generation": 101,
+          "species": 1653
+        },
+        {
+          "generation": 102,
+          "species": 1738
+        },
+        {
+          "generation": 103,
+          "species": 1738
+        },
+        {
+          "generation": 107,
+          "species": 1730
+        },
+        {
+          "generation": 108,
+          "species": 1730
+        },
+        {
+          "generation": 110,
+          "species": 1730
+        },
+        {
+          "generation": 111,
+          "species": 1730
+        },
+        {
+          "generation": 114,
+          "species": 1730
+        },
+        {
+          "generation": 115,
+          "species": 1730
+        },
+        {
+          "generation": 116,
+          "species": 1730
+        },
+        {
+          "generation": 117,
+          "species": 1730
+        },
+        {
+          "generation": 118,
+          "species": 1730
+        },
+        {
+          "generation": 119,
+          "species": 1730
+        },
+        {
+          "generation": 120,
+          "species": 1730
+        },
+        {
+          "generation": 122,
+          "species": 1730
+        },
+        {
+          "generation": 123,
+          "species": 1730
+        },
+        {
+          "generation": 125,
+          "species": 1730
+        },
+        {
+          "generation": 126,
+          "species": 1730
+        },
+        {
+          "generation": 127,
+          "species": 1730
+        },
+        {
+          "generation": 128,
+          "species": 1730
+        },
+        {
+          "generation": 129,
+          "species": 1730
+        },
+        {
+          "generation": 136,
+          "species": 1730
+        },
+        {
+          "generation": 137,
+          "species": 2496
+        },
+        {
+          "generation": 138,
+          "species": 2496
+        },
+        {
+          "generation": 140,
+          "species": 2496
+        },
+        {
+          "generation": 141,
+          "species": 2496
+        },
+        {
+          "generation": 142,
+          "species": 2496
+        },
+        {
+          "generation": 146,
+          "species": 2496
+        },
+        {
+          "generation": 147,
+          "species": 2748
+        },
+        {
+          "generation": 148,
+          "species": 2748
+        },
+        {
+          "generation": 149,
+          "species": 2857
+        },
+        {
+          "generation": 150,
+          "species": 2857
+        },
+        {
+          "generation": 151,
+          "species": 2857
+        },
+        {
+          "generation": 152,
+          "species": 2857
+        },
+        {
+          "generation": 155,
+          "species": 2971
+        },
+        {
+          "generation": 156,
+          "species": 2971
+        },
+        {
+          "generation": 157,
+          "species": 2971
+        },
+        {
+          "generation": 158,
+          "species": 2971
+        },
+        {
+          "generation": 159,
+          "species": 2971
+        },
+        {
+          "generation": 160,
+          "species": 2971
+        },
+        {
+          "generation": 161,
+          "species": 2971
+        },
+        {
+          "generation": 162,
+          "species": 2971
+        },
+        {
+          "generation": 163,
+          "species": 2971
+        },
+        {
+          "generation": 164,
+          "species": 2971
+        },
+        {
+          "generation": 165,
+          "species": 3199
+        },
+        {
+          "generation": 166,
+          "species": 2971
+        },
+        {
+          "generation": 173,
+          "species": 2971
+        },
+        {
+          "generation": 174,
+          "species": 2971
+        },
+        {
+          "generation": 175,
+          "species": 2971
+        },
+        {
+          "generation": 176,
+          "species": 2971
+        },
+        {
+          "generation": 178,
+          "species": 2971
+        },
+        {
+          "generation": 179,
+          "species": 2971
+        },
+        {
+          "generation": 180,
+          "species": 2971
+        },
+        {
+          "generation": 181,
+          "species": 2971
+        },
+        {
+          "generation": 182,
+          "species": 2971
+        },
+        {
+          "generation": 183,
+          "species": 2971
+        },
+        {
+          "generation": 185,
+          "species": 2971
+        },
+        {
+          "generation": 186,
+          "species": 2971
+        },
+        {
+          "generation": 187,
+          "species": 2971
+        },
+        {
+          "generation": 188,
+          "species": 2971
+        },
+        {
+          "generation": 191,
+          "species": 2971
+        },
+        {
+          "generation": 192,
+          "species": 2971
+        },
+        {
+          "generation": 194,
+          "species": 2971
+        },
+        {
+          "generation": 195,
+          "species": 2971
+        },
+        {
+          "generation": 198,
+          "species": 2971
+        },
+        {
+          "generation": 199,
+          "species": 2971
+        },
+        {
+          "generation": 200,
+          "species": 2971
+        },
+        {
+          "generation": 202,
+          "species": 2971
+        },
+        {
+          "generation": 203,
+          "species": 2971
+        },
+        {
+          "generation": 204,
+          "species": 2971
+        },
+        {
+          "generation": 205,
+          "species": 2971
+        },
+        {
+          "generation": 208,
+          "species": 2971
+        },
+        {
+          "generation": 209,
+          "species": 2971
+        },
+        {
+          "generation": 210,
+          "species": 2971
+        },
+        {
+          "generation": 211,
+          "species": 2971
+        },
+        {
+          "generation": 212,
+          "species": 2971
+        },
+        {
+          "generation": 213,
+          "species": 2971
+        },
+        {
+          "generation": 215,
+          "species": 2971
+        },
+        {
+          "generation": 216,
+          "species": 2971
+        },
+        {
+          "generation": 217,
+          "species": 4568
+        },
+        {
+          "generation": 218,
+          "species": 4568
+        }
+      ],
+      "diagnosticSeedIsAHistoryCourse": false,
+      "freshVsHistorical": {
+        "allFieldsExceptObservationLabelsEqual": true,
+        "observationLabelsChanged": true,
+        "rawBytesEqual": false
+      },
+      "check": {
+        "status": "PASS",
+        "game": "snake",
+        "seed": "12345",
+        "ticks": 1000,
+        "final_score": 41,
+        "config": {
+          "game": "snake",
+          "obs_mode": "hybrid",
+          "network_type": 0,
+          "activation_steps": 1,
+          "sigmoid_slope": 4.900000095367432,
+          "input_count": 32,
+          "output_count": 3
+        },
+        "maxDeviations": {
+          "observations": 4.444775581360916e-05,
+          "activations": 0.0005000000000000004,
+          "connectionWeights": 4.969913959503025e-05,
+          "flappyPositionVelocity": 0,
+          "flappyPipes": 0
+        },
+        "genomeSha256": "13fca9aa424c10602926850e3a170dd32194954c3bc6789be82015ad3f904cc7",
+        "configSha256": "9eb859bc1f05c7de1190e8e07314f703b479f1cb97f221d092c3e8031f095949",
+        "scope": "Deterministic recorded pre-step observations, actions, scores, activations, render state and post-final-step score only",
+        "limitations": [
+          "No recorded final state or terminal flag; no native provenance or model-quality claim",
+          "Record omits node biases/functions and full precision weights; genome agreement is limited to fields present in record",
+          "Config is supplied explicitly but record has no configuration identity",
+          "Observation label text is unchecked; only string type and dimension are validated"
+        ],
+        "recordSha256": "06c90312da244e442ba1c441170aed125123422e8fd69963a1c945c2e3cc32d2",
+        "engineSha256": "b2051e7d8ff2d57b59eb17b04c8788eece766cf0e69a56a06d349f63d479b329"
+      }
+    },
+    {
+      "game": "2048",
+      "historicalRecordSha256": "a47bff75e32df0e6f52b1aba1e7d0f11f9f2996521424753f1a29ed98b2f9160",
+      "freshRecordSha256": "6fe9aff7b3edc07b8614e372c46aadca7e5d040b3d499f1bcb71140ccd38236d",
+      "originalConfigSha256": "e835ac9d5e1441cc42f8ea2cb299cb1d151938edfc2567ff9257af04a18ee4a8",
+      "historySha256": "fcce8a7b063179b0bc6a3f1eaabcf530df9ae5e9920e12df9a48bab1b1af08c5",
+      "matchingHistoryGenomes": [
+        {
+          "generation": 259,
+          "species": 2568
+        }
+      ],
+      "diagnosticSeedIsAHistoryCourse": false,
+      "freshVsHistorical": {
+        "allFieldsExceptObservationLabelsEqual": true,
+        "observationLabelsChanged": true,
+        "rawBytesEqual": false
+      },
+      "check": {
+        "status": "PASS",
+        "game": "2048",
+        "seed": "12345",
+        "ticks": 30,
+        "final_score": 16,
+        "config": {
+          "game": "2048",
+          "obs_mode": "both",
+          "network_type": 0,
+          "activation_steps": 1,
+          "sigmoid_slope": 4.900000095367432,
+          "input_count": 25,
+          "output_count": 4
+        },
+        "maxDeviations": {
+          "observations": 5.000000000000143e-05,
+          "activations": 0.0005000000000000004,
+          "connectionWeights": 4.9874496459878515e-05,
+          "flappyPositionVelocity": 0,
+          "flappyPipes": 0
+        },
+        "genomeSha256": "9cdbf7976b0c700e8a176e5b9c40d94bf9a1989e5a82febf06088a19ddf4ded9",
+        "configSha256": "eb37e912a5fc665894b5278676a18a3a4add3fd60fe502195c6e796b59bd0c72",
+        "scope": "Deterministic recorded pre-step observations, actions, scores, activations, render state and post-final-step score only",
+        "limitations": [
+          "No recorded final state or terminal flag; no native provenance or model-quality claim",
+          "Record omits node biases/functions and full precision weights; genome agreement is limited to fields present in record",
+          "Config is supplied explicitly but record has no configuration identity",
+          "Observation label text is unchecked; only string type and dimension are validated"
+        ],
+        "recordSha256": "6fe9aff7b3edc07b8614e372c46aadca7e5d040b3d499f1bcb71140ccd38236d",
+        "engineSha256": "b2051e7d8ff2d57b59eb17b04c8788eece766cf0e69a56a06d349f63d479b329"
+      }
+    },
+    {
+      "game": "pacman",
+      "historicalRecordSha256": "04c966067d7c4f6e77f9b84e7786b5ed0d6b3e394a80e76ea5bb4e831b068aa4",
+      "freshRecordSha256": "840af497209bc3c263e2b9b33c666c27596a8746cce8528d289d0d93c2a9e422",
+      "originalConfigSha256": "e0e0a9c43866920d54aa256885f8f18a05adf6e92cbc111ca71e53699f9be9e6",
+      "historySha256": "9676d4296b08fae8da11229e43447bf6a7a99906b5168e96411a5fc497b0de0a",
+      "matchingHistoryGenomes": [
+        {
+          "generation": 219,
+          "species": 2009
+        }
+      ],
+      "diagnosticSeedIsAHistoryCourse": false,
+      "freshVsHistorical": {
+        "allFieldsExceptObservationLabelsEqual": true,
+        "observationLabelsChanged": true,
+        "rawBytesEqual": false
+      },
+      "check": {
+        "status": "PASS",
+        "game": "pacman",
+        "seed": "12345",
+        "ticks": 9,
+        "final_score": 9,
+        "config": {
+          "game": "pacman",
+          "obs_mode": "hybrid",
+          "network_type": 0,
+          "activation_steps": 1,
+          "sigmoid_slope": 4.900000095367432,
+          "input_count": 41,
+          "output_count": 4
+        },
+        "maxDeviations": {
+          "observations": 5.000000000000143e-05,
+          "activations": 0.0005000000000000004,
+          "connectionWeights": 4.960479736348944e-05,
+          "flappyPositionVelocity": 0,
+          "flappyPipes": 0
+        },
+        "genomeSha256": "acd764d731a8d577094312fbeb0cfaf870c392daf8f21c979392eff8c5e48ac0",
+        "configSha256": "35408d7621318a92c51d7c4d41474c1d5c77ff362f73f5ab3563c18c20e4a21a",
+        "scope": "Deterministic recorded pre-step observations, actions, scores, activations, render state and post-final-step score only",
+        "limitations": [
+          "No recorded final state or terminal flag; no native provenance or model-quality claim",
+          "Record omits node biases/functions and full precision weights; genome agreement is limited to fields present in record",
+          "Config is supplied explicitly but record has no configuration identity",
+          "Observation label text is unchecked; only string type and dimension are validated"
+        ],
+        "recordSha256": "840af497209bc3c263e2b9b33c666c27596a8746cce8528d289d0d93c2a9e422",
+        "engineSha256": "b2051e7d8ff2d57b59eb17b04c8788eece766cf0e69a56a06d349f63d479b329"
+      }
+    }
+  ],
+  "limitations": [
+    "The original native executable identity is unknown; this receipt identifies a current-source rebuild, not the historical producer.",
+    "No guarantee for every species, generation, course, platform, or model strength.",
+    "The recorder omits final state and alive/terminal flags. Only final score is compared after the final step.",
+    "Observation label strings are not compared; count and type are checked. Numeric observations are compared.",
+    "C sources remain in the private owning repository. This bundle reproduces JavaScript checks against the included C traces, not a public native build.",
+    "The minimal configs contain replay-effective fields. CPPN mode0 is the pinned source default; dimensions come from the recorder Env."
+  ]
+}
