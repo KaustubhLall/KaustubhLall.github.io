@@ -8,7 +8,7 @@ Five named policies share 200 held-out environment seeds 20360918 through 203611
 
 comparison.json is the page's data source. episodes.csv contains 1,000 episode rows with agent, seed, horizon, rounded reward, length and source/checkpoint provenance. Per-row seeds are derived from the declared CLI seed sequence, rather than independently logged by the native runner. summaries/ contains the five raw aggregate reports. experiment-plan.json records the declared training/evaluation plan. config.json is byte-for-byte the evaluated config; its seed 1337 is overridden by the evaluation seed schedule. provenance.json records export checks. SHA256SUMS.txt covers every exported file.
 
-trained-weights.bin is the evaluated native checkpoint. heuristic-replay.bin is illustrative heuristic play on seed 20360918, not trained neuro play. Both are native project formats; the replay needs the project's viewer with --seed 20360918 because the viewer does not restore the recorded seed automatically. It is not a browser-playable demo or video.
+trained-weights.bin is the evaluated native checkpoint. heuristic-replay.bin is illustrative heuristic play on seed 20360918, not trained neuro play. Both are native project formats; the replay needs the project's viewer with --seed 20360918 because the viewer does not restore the recorded seed automatically. The separate replay-frames.json export now supports browser display of this recording; the binary itself is not a browser format or video.
 
 One small GA run used population 12, 10 generations and eight episodes per candidate. In that run, training maps depended on population index, so candidates did not face identical maps. That run’s automatic post-training evaluation overlapped training seeds and is excluded. No tuning on this held-out set or statistical-significance claim is represented.
 
@@ -30,3 +30,25 @@ the owner-built metrics tests and four tiny CLI fixtures per configuration;
 matched JSON/CSV outputs and all 80 frozen handoff files retain their hashes.
 The original JSON terminal totals, 0/200 result, weights and replay are unchanged.
 No trained policy was rerun, and the repair remains local and unpushed.
+
+## September 21 recorded-state browser viewer
+
+`replay-frames.json` contains17 snapshots reconstructed from the existing
+heuristic recording: reset state, then state after each of16 recorded actions.
+The native exporter restores both configuration and seed and invokes only
+`env_step` for those actions. No policy is consulted. It stops on `StepResult.done`,
+including the final goal where `frog.alive` remains true. Two repeated native
+exports, independently repeated by the portfolio integrator, match every state
+and the retained summary: seed20360918,16steps,goal,frog(9,0),reward6.42000008.
+
+All24 compiled/transitive core source files match accepted8c368f91 after newline
+normalization. JSON retains source, replay and exporter hashes. Frames include
+tiles[y][x], frog coordinates and active car/log positions and lengths. X increases
+rightward; Y increases downward. Fractional object positions are retained.
+
+The browser renders these states and supplies playback/step/scrub controls. It
+does not simulate physics or run a policy. Fractional object extents are clipped
+at the board boundary without extra wrapping. The native viewer truncates object
+X into display cells, so this browser drawing is not native visual equivalence.
+Playback timing is presentation only. This is one illustrative heuristic success,
+not new held-out evidence or an improvement to the failed learned policy.

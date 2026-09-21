@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-21",
+  "scope": "Isolated execution of original source with fictional records and deterministic dependencies. The actual consumer call was intercepted; no model, Django server, database or agent internals ran.",
+  "source": {
+    "base_commit": "399c253edb36fda18df11ca869953feeea02bc57",
+    "snapshot": "Current local files, including uncommitted chat-view changes. Base commit alone does not identify this snapshot.",
+    "files": [
+      {
+        "path": "backend/LifeLine/api/utils/constants.py",
+        "sha256": "6804bbecd18ed4bcbcb772b68a31a752894e93d9c5bd5e42ce42030f87f9a4d2",
+        "local_changes": false
+      },
+      {
+        "path": "backend/LifeLine/api/utils/prompts.py",
+        "sha256": "e8071db247e26af42220634a46db7dc22a35e0846105904350452ae89f0f5674",
+        "local_changes": false
+      },
+      {
+        "path": "backend/LifeLine/api/utils/memory_utils.py",
+        "sha256": "f345c0b5c10077bd9e2e28dd20a5efeeba69de3834875cd5a4a01da062738c4f",
+        "local_changes": false
+      },
+      {
+        "path": "backend/LifeLine/api/views/views.py",
+        "sha256": "cb7698f5ed460f2e0b56058d57f4c677f3990d3a34d2a73a5b26a11b52dc3dae",
+        "local_changes": true
+      }
+    ],
+    "probe_sha256": "695e6b8f638746f54f8a07fd1d24efd915a9ee7922cf35cc68e5506625fad338"
+  },
+  "method": "Exact source AST functions and whole original post method (decorators removed); literal assignments only; source imports restricted to extracted prompt functions. Fake ORM/provider/clock, no Django. BaseException sentinel captures actual consumer call and stops before response processing/extraction. Debug-only token formatting deliberately uses original ImportError fallback.",
+  "fixture": {
+    "user": "Alex (fictional)",
+    "clock": "2026-09-21T00:00:00+00:00",
+    "query": "Help me plan the next workshop.",
+    "query_embedding": [
+      1,
+      0
+    ],
+    "embedding_rule": "[stipulated similarity, sqrt(1-similarity squared)]; all descriptions, similarities, importance and timestamps invented.",
+    "memories": [
+      {
+        "id": "A",
+        "content": "Prefer diagrams in tutorials.",
+        "similarity": 0.95,
+        "importance": 0.1,
+        "age_days": 0,
+        "created_days": 10,
+        "conversation": false
+      },
+      {
+        "id": "B",
+        "content": "Prepare a short workshop outline.",
+        "similarity": 0.6,
+        "importance": 0.8,
+        "age_days": 15,
+        "created_days": 20,
+        "conversation": true
+      },
+      {
+        "id": "C",
+        "content": "Keep examples runnable. Use a tiny fictional sample. Use a tiny fictional sample. Use a tiny fictional sample. Use a tiny fictional sample. Use a tiny fictional sample. ",
+        "similarity": 0.7,
+        "importance": 0.5,
+        "age_days": 0,
+        "created_days": 5,
+        "conversation": false
+      },
+      {
+        "id": "D",
+        "content": "Try a new garden layout.",
+        "similarity": 0.29,
+        "importance": 1,
+        "age_days": 0,
+        "created_days": 1,
+        "conversation": true
+      }
+    ],
+    "history": [
+      {
+        "role": "user",
+        "content": "Let us plan a fictional workshop.",
+        "created_at": "2026-09-20T23:58:00+00:00",
+        "is_bot": false
+      },
+      {
+        "role": "assistant",
+        "content": "We can start with a small example.",
+        "created_at": "2026-09-20T23:59:00+00:00",
+        "is_bot": true
+      }
+    ]
+  },
+  "ordinary": {
+    "retrieved_ids": [
+      "A",
+      "C",
+      "B"
+    ],
+    "conversation_ids": [
+      "D",
+      "B"
+    ],
+    "combined_ids": [
+      "A",
+      "C",
+      "B",
+      "D"
+    ],
+    "memory_lines": [
+      "• D: Try a new garden layout.",
+      "• B: Prepare a short workshop outline.",
+      "• C: Keep examples runnable. Use a tiny fictional sample. Use a tiny fictional sample. Use a tiny f...",
+      "• A: Prefer diagrams in tutorials."
+    ],
+    "consumer": "call_llm_text",
+    "model": "fictional-model",
+    "prompt": "You are LifeLine, a smart AI assistant that knows the user well and provides helpful, contextual responses.\n\nCore Principles:\n- Be concise but warm - no unnecessary verbosity\n- Use memories naturally without explicitly stating \"I remember\"\n- Infer context from past conversations and user patterns\n- Provide direct answers first, then elaborate if needed\n- Adapt to the user's communication style and preferences\n\nMemory Usage:\n- Seamlessly integrate what you know about the user\n- Reference past topics, preferences, and goals naturally\n- Build on previous conversations without over-explaining\n- Use context to provide more relevant, personalized responses\n\nResponse Style:\n- Direct and helpful, not chatty\n- Use markdown for clarity (headers, lists, emphasis)\n- Anticipate follow-up needs\n- Be proactive with suggestions based on user patterns\n\nExample approach:\n- Instead of: \"I remember you mentioned you like coffee. Would you like me to help you find coffee shops?\"\n- Say: \"Here are some highly-rated coffee shops near your office in downtown SD.\"\n\nBe smart, contextual, and efficient.\n\nUser: Alex\n\nContext about Alex:\n• D: Try a new garden layout.\n• B: Prepare a short workshop outline.\n• C: Keep examples runnable. Use a tiny fictional sample. Use a tiny fictional sample. Use a tiny f...\n• A: Prefer diagrams in tutorials.\n\n\nRecent conversation:\nUser: Let us plan a fictional workshop.\nAssistant: We can start with a small example.\n\nUser: Help me plan the next workshop."
+  },
+  "empty_vs_failure": {
+    "same_prompt": true,
+    "prompt": "You are LifeLine, a smart AI assistant that knows the user well and provides helpful, contextual responses.\n\nCore Principles:\n- Be concise but warm - no unnecessary verbosity\n- Use memories naturally without explicitly stating \"I remember\"\n- Infer context from past conversations and user patterns\n- Provide direct answers first, then elaborate if needed\n- Adapt to the user's communication style and preferences\n\nMemory Usage:\n- Seamlessly integrate what you know about the user\n- Reference past topics, preferences, and goals naturally\n- Build on previous conversations without over-explaining\n- Use context to provide more relevant, personalized responses\n\nResponse Style:\n- Direct and helpful, not chatty\n- Use markdown for clarity (headers, lists, emphasis)\n- Anticipate follow-up needs\n- Be proactive with suggestions based on user patterns\n\nExample approach:\n- Instead of: \"I remember you mentioned you like coffee. Would you like me to help you find coffee shops?\"\n- Say: \"Here are some highly-rated coffee shops near your office in downtown SD.\"\n\nBe smart, contextual, and efficient.\n\nUser: Alex\n\nRecent conversation:\nUser: Let us plan a fictional workshop.\nAssistant: We can start with a small example.\n\nUser: Help me plan the next workshop.",
+    "empty_error_logs": [],
+    "failed_error_logs": [
+      {
+        "level": "error",
+        "message": "[RAG RETRIEVAL] Error in get_relevant_memories: injected fictional embedding failure"
+      }
+    ],
+    "condition": "Both scenarios have no conversation-associated records. The empty case sets all similarities below threshold; the failure case raises in the embedding stub."
+  },
+  "agent": {
+    "consumer": "run_agent",
+    "question": "Help me plan the next workshop.",
+    "history": [
+      {
+        "role": "user",
+        "content": "Let us plan a fictional workshop.",
+        "created_at": "2026-09-20T23:58:00+00:00",
+        "is_bot": false
+      },
+      {
+        "role": "assistant",
+        "content": "We can start with a small example.",
+        "created_at": "2026-09-20T23:59:00+00:00",
+        "is_bot": true
+      }
+    ],
+    "argument_names": [
+      "user",
+      "conversation_id",
+      "question",
+      "model",
+      "temperature",
+      "conversation_history"
+    ],
+    "receives_enhanced_prompt": false
+  },
+  "limits": [
+    "Not Django integration, real DB authorization/isolation or real model/embedding/provider execution.",
+    "No response generation, persistence/extraction, mailbox, voice, network, quality or availability acceptance.",
+    "In-memory queryset semantics are test doubles; original application selection/dedup/format/consumer logic executes unchanged.",
+    "Agent interception is at run_agent call boundary; agent internals are not executed.",
+    "Empty/failure scenarios deliberately have no conversation-associated records."
+  ],
+  "runtime_warnings": [
+    "Mean of empty slice.",
+    "invalid value encountered in scalar divide"
+  ]
+}

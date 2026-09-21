@@ -1,8 +1,9 @@
-# Lifeline memory selection: source and fictional arithmetic
+# Lifeline memory selection and prompt consumption
 
-This package explains the ordinary-chat memory path inspected September 20, 2026.
-It does not contain a captured conversation, embeddings, a model result, or a
-runtime test report. All memory descriptions and inputs are invented.
+This package explains the ordinary-chat memory path inspected September 20, 2026,
+and exercised in an isolated source probe on September 21. All records, queries,
+history and embedding inputs are fictional. No real conversation or model answer
+is included. The two JSON files have different verification scopes below.
 
 ## Source identity
 
@@ -13,7 +14,7 @@ the inspected implementation. `memory-selection.json` records SHA-256 hashes
 of the exact bytes of six inspected files, with the modified file marked.
 Source files, personal data, and deployment configuration are not redistributed.
 
-## What to recompute
+## Seven-row arithmetic example: memory-selection.json
 
 For each fictional row, use the stipulated cosine similarity, importance, and
 nonnegative whole-day age. No vector similarity calculation or embedding call
@@ -48,7 +49,7 @@ was accessed. This is an explanatory fixture, not a regression-test pass.
   creation time, at most 8 entries, each shortened to at most 100 characters.
 - `api/utils/prompts.py:338-405`: ordinary prompt assembly uses recent-message
   and character limits, not the supplied history-token parameter as a guarantee.
-- `api/views/views.py:429-441,532-540,566-572`: separate agent call, ordinary
+- `api/views/views.py:435-442,527,568-572`: separate agent call, ordinary
   text call with enhanced prompt, and later background extraction.
 - `api/models/chat.py`: stored memory fields and prompt-debug schema.
 - `api/utils/llm.py:291-387`: LLM extraction of the user/assistant pair.
@@ -60,11 +61,39 @@ could enter through that branch. The inspected Gmail-agent call receives the
 question and history, not the enhanced memory prompt. Memory-related response
 metadata must not be treated as proof of agent consumption.
 
+## Four-record consumer trace: prompt-trace.json
+
+This separate fixture executes exact source functions and the original
+`MessageListCreateView.post` method extracted from Python AST. Only its schema
+decorators are removed. Literal constants/templates are taken from the same
+hashed source. In-memory querysets, records, clock and embedding provider replace
+external dependencies. The original selection, deduplication, formatting and
+branching logic runs unchanged. A sentinel stops at `call_llm_text` or `run_agent`
+before any response, extraction or agent internals run. Debug-only history
+formatting exercises its existing missing-tokenizer fallback.
+
+The query embedding is [1,0]; each invented memory vector is
+[similarity,sqrt(1-similarity squared)]. Actual cosine comparison selects A,C,B.
+Conversation selection adds D,B. Deduplication yields A,C,B,D, and the actual
+formatter emits D,B,C,A. C is shortened to100 characters including title/ellipsis.
+D's similarity0.29 fails semantic retrieval but its conversation membership
+admits it. The JSON stores the exact ordinary prompt intercepted at the consumer.
+
+Two more ordinary cases have no conversation-associated memories. One makes all
+similarities fall below threshold; the other injects an embedding exception.
+Their captured prompts are identical, while the failure has an error log.
+Empty-match mean-score logging also emits two NumPy warnings, retained in JSON.
+The agent case receives the raw query/history, without the assembled prompt.
+Independent execution reproduced all four cases and reconciled exact source
+hashes before and after. This is source execution with test doubles, not a Django
+or database integration test. The inspected chat view remains locally modified.
+
 ## Evidence limits
 
-The package establishes inspectable source choices and example arithmetic only.
+The package establishes source choices, example arithmetic and the specific
+isolated prompt-consumption paths described above.
 It does not establish extraction accuracy, persistence reliability, isolation,
 retrieval quality, response quality, latency, privacy, or current hosted availability.
 The historical EC2 deployment is not a current live-service claim. No new
-application execution, model calls, deployment, or scientific evaluation occurred.
+application-server execution, model calls, deployment, or scientific evaluation occurred.
 The broader product plan is not used as evidence of implemented integrations.
