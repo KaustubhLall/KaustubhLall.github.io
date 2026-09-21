@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-labelledby="title description">
+  <title id="title">Lifeline: context now, memory later</title>
+  <desc id="description">Source-derived ordinary-chat flow. Retrieve up to five relevant memories and three conversation memories, deduplicate, reorder and shorten context, then respond. Afterward, background extraction from the user and assistant pair may save a memory for later retrieval. This is a diagram, not a captured session.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#4ade80"/></marker>
+    <marker id="return" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0 10 5 0 10Z" fill="#fbbf24"/></marker>
+  </defs>
+  <rect width="1200" height="750" fill="#070a08"/>
+  <rect width="1200" height="8" fill="#4ade80"/>
+  <g transform="translate(0 30)" font-family="ui-monospace, Consolas, monospace">
+    <text x="54" y="62" fill="#4ade80" font-size="19" letter-spacing="3">LIFELINE / ORDINARY CHAT</text>
+    <text x="54" y="119" fill="#e9f2ec" font-size="42" font-weight="700">Context now. Memory later.</text>
+    <text x="54" y="160" fill="#9fb4a6" font-size="21">Two passes through a conversation</text>
+
+    <g fill="#0c120e" stroke="#2f4636" stroke-width="2">
+      <rect x="54" y="215" width="324" height="212" rx="12"/>
+      <rect x="438" y="215" width="324" height="212" rx="12"/>
+      <rect x="822" y="215" width="324" height="212" rx="12"/>
+    </g>
+    <g fill="#4ade80" font-size="17" letter-spacing="2">
+      <text x="78" y="250">01 / RETRIEVE</text>
+      <text x="462" y="250">02 / PREPARE</text>
+      <text x="846" y="250">03 / RESPOND</text>
+    </g>
+    <g fill="#e9f2ec" font-size="29" font-weight="700">
+      <text x="78" y="298">Select context</text>
+      <text x="462" y="298">Shape the prompt</text>
+      <text x="846" y="298">Answer now</text>
+    </g>
+    <g fill="#9fb4a6" font-size="20">
+      <text x="78" y="342">Up to 5 relevant</text>
+      <text x="78" y="374">+ up to 3 conversation</text>
+      <text x="78" y="402">memories</text>
+      <text x="462" y="342">Deduplicate · reorder</text>
+      <text x="462" y="374">Shorten entries</text>
+      <text x="462" y="402">Add recent messages</text>
+      <text x="846" y="342">Ordinary text model</text>
+      <text x="846" y="374">Save the response</text>
+    </g>
+    <g fill="none" stroke="#4ade80" stroke-width="3" marker-end="url(#arrow)">
+      <path d="M384 321H427"/>
+      <path d="M768 321H811"/>
+    </g>
+
+    <path d="M984 438V489" fill="none" stroke="#fbbf24" stroke-width="3" marker-end="url(#return)"/>
+    <rect x="438" y="500" width="708" height="100" rx="12" fill="#17170d" stroke="#655522" stroke-width="2"/>
+    <text x="462" y="534" fill="#fbbf24" font-size="18" letter-spacing="1">AFTERWARD / BACKGROUND EXTRACTION</text>
+    <text x="462" y="573" fill="#e9f2ec" font-size="22">User + assistant pair → may save a memory</text>
+    <path d="M426 550H216V440" fill="none" stroke="#fbbf24" stroke-width="3" stroke-dasharray="8 6" marker-end="url(#return)"/>
+    <text x="62" y="588" fill="#fbbf24" font-size="18">Later retrieval</text>
+    <text x="54" y="647" fill="#9fb4a6" font-size="16">Source-derived diagram · Extraction can fail after a response succeeds.</text>
+  </g>
+</svg>

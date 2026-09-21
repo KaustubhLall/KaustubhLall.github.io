@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "date": "2026-09-20",
+  "scope": "Fictional scoring arithmetic only. No application, embedding model, database, mailbox, or actual retrieval function was executed.",
+  "source": {
+    "base_commit": "399c253edb36fda18df11ca869953feeea02bc57",
+    "snapshot": "Current local files, including uncommitted chat-view changes. Base commit alone does not identify this snapshot.",
+    "hash_algorithm": "SHA-256 of exact file bytes",
+    "files": [
+      {
+        "path": "backend/LifeLine/api/utils/memory_utils.py",
+        "sha256": "f345c0b5c10077bd9e2e28dd20a5efeeba69de3834875cd5a4a01da062738c4f",
+        "local_changes": false
+      },
+      {
+        "path": "backend/LifeLine/api/utils/constants.py",
+        "sha256": "6804bbecd18ed4bcbcb772b68a31a752894e93d9c5bd5e42ce42030f87f9a4d2",
+        "local_changes": false
+      },
+      {
+        "path": "backend/LifeLine/api/utils/prompts.py",
+        "sha256": "e8071db247e26af42220634a46db7dc22a35e0846105904350452ae89f0f5674",
+        "local_changes": false
+      },
+      {
+        "path": "backend/LifeLine/api/views/views.py",
+        "sha256": "cb7698f5ed460f2e0b56058d57f4c677f3990d3a34d2a73a5b26a11b52dc3dae",
+        "local_changes": true
+      },
+      {
+        "path": "backend/LifeLine/api/models/chat.py",
+        "sha256": "3712c442ae218cf3dc00e0c413b5b44cf20bae43e0429277330dea50c78bfe8c",
+        "local_changes": false
+      },
+      {
+        "path": "backend/LifeLine/api/utils/llm.py",
+        "sha256": "6b228195017e39d94fdf42d2a708b37614fb43ba8097eaca3425ad5703761ffb",
+        "local_changes": false
+      }
+    ]
+  },
+  "policy": {
+    "caller_limit": 5,
+    "min_similarity": 0.3,
+    "similarity_weight": 0.6,
+    "importance_weight": 0.3,
+    "recency_weight": 0.1,
+    "recency_days": 30,
+    "recency_definition": "1 - min(1, whole days since updated_at / 30)",
+    "formula": "0.6 * similarity + 0.3 * importance + 0.1 * recency",
+    "filter_before_scoring": true
+  },
+  "fixture": {
+    "input_basis": "All descriptions, cosine similarities, importance scores and nonnegative whole-day ages are stipulated. No embeddings or query relevance were measured.",
+    "rows": [
+      {
+        "id": "A",
+        "memory": "Prefer diagrams in tutorials",
+        "similarity": 0.9,
+        "importance": 0.2,
+        "age_days": 30,
+        "recency": 0,
+        "eligible": true,
+        "score": 0.6,
+        "rank": 3,
+        "selected": true
+      },
+      {
+        "id": "B",
+        "memory": "Prepare a short workshop outline",
+        "similarity": 0.8,
+        "importance": 0.9,
+        "age_days": 3,
+        "recency": 0.9,
+        "eligible": true,
+        "score": 0.84,
+        "rank": 1,
+        "selected": true
+      },
+      {
+        "id": "C",
+        "memory": "Keep examples runnable",
+        "similarity": 0.7,
+        "importance": 0.5,
+        "age_days": 0,
+        "recency": 1,
+        "eligible": true,
+        "score": 0.67,
+        "rank": 2,
+        "selected": true
+      },
+      {
+        "id": "D",
+        "memory": "Use a small sample project",
+        "similarity": 0.6,
+        "importance": 0.5,
+        "age_days": 15,
+        "recency": 0.5,
+        "eligible": true,
+        "score": 0.56,
+        "rank": 4,
+        "selected": true
+      },
+      {
+        "id": "E",
+        "memory": "Include a glossary",
+        "similarity": 0.5,
+        "importance": 0.2,
+        "age_days": 0,
+        "recency": 1,
+        "eligible": true,
+        "score": 0.46,
+        "rank": 5,
+        "selected": true
+      },
+      {
+        "id": "F",
+        "memory": "Archive old workshop notes",
+        "similarity": 0.4,
+        "importance": 0.1,
+        "age_days": 30,
+        "recency": 0,
+        "eligible": true,
+        "score": 0.27,
+        "rank": 6,
+        "selected": false
+      },
+      {
+        "id": "G",
+        "memory": "Try a new garden layout",
+        "similarity": 0.29,
+        "importance": 1,
+        "age_days": 0,
+        "recency": 1,
+        "eligible": false,
+        "score": null,
+        "rank": null,
+        "selected": false
+      }
+    ],
+    "expected_ranked_ids": [
+      "B",
+      "C",
+      "A",
+      "D",
+      "E",
+      "F"
+    ],
+    "expected_selected_ids": [
+      "B",
+      "C",
+      "A",
+      "D",
+      "E"
+    ]
+  },
+  "downstream": {
+    "conversation_limit": 3,
+    "conversation_order": "importance descending, creation time descending",
+    "deduplication": "Memory ID across relevant and conversation lists",
+    "formatter_order": "importance descending, creation time descending",
+    "formatter_limit": 8,
+    "entry_character_limit": 100,
+    "branch": "Ordinary chat only. The inspected Gmail-agent call does not receive the enhanced memory prompt."
+  },
+  "limits": [
+    "Arithmetic is not retrieval quality, an application regression test, or observed runtime behavior.",
+    "No end-to-end persistence, user-isolation, reliability, latency, or live availability result.",
+    "This fixture has no score ties and does not establish tie behavior.",
+    "Similarity rejection applies only to the relevant-memory branch, not conversation-memory selection.",
+    "Source files are identified but not redistributed. No personal conversation or deployment configuration is included."
+  ]
+}
