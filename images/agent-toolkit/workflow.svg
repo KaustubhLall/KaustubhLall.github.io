@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-labelledby="title description">
+  <title id="title">Agent Toolkit: reviewed export and owned installation</title>
+  <desc id="description">Source-derived diagram with two lanes. Publisher with review required for a new export: enrolled sources, sanitized diff and review fingerprint, exact reviewed export. Pending-commit retries follow separate checks. Consumer: verified manifest, planned owned writes, installed skills and local receipt. Private configuration stays local. This describes the source contract at commit 06c24b3, not a captured execution.</desc>
+  <!-- Source: agent-toolkit README.md and docs/SYNC.md at 06c24b37b4655317844a2d7092270ab1a1aad5a4. -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#4ade80"/></marker>
+  </defs>
+  <rect width="1200" height="750" fill="#070a08"/>
+  <rect width="1200" height="8" fill="#4ade80"/>
+  <g font-family="ui-monospace, Consolas, monospace">
+    <text x="54" y="65" fill="#4ade80" font-size="19" letter-spacing="3">AGENT TOOLKIT / DISTRIBUTION CONTRACT</text>
+    <text x="54" y="122" fill="#e9f2ec" font-size="40" font-weight="700">Review the export. Plan the install.</text>
+    <text x="54" y="161" fill="#9fb4a6" font-size="21">Two paths from maintained sources to a receiving machine</text>
+
+    <text x="54" y="211" fill="#4ade80" font-size="18" letter-spacing="2">PUBLISHER / NEW EXPORT WITH REVIEW REQUIRED</text>
+    <text x="54" y="416" fill="#4ade80" font-size="18" letter-spacing="2">CONSUMER</text>
+
+    <g fill="#0c120e" stroke="#2f4636" stroke-width="2">
+      <rect x="54" y="230" width="324" height="145" rx="12"/>
+      <rect x="438" y="230" width="324" height="145" rx="12"/>
+      <rect x="822" y="230" width="324" height="145" rx="12"/>
+      <rect x="54" y="435" width="324" height="145" rx="12"/>
+      <rect x="438" y="435" width="324" height="145" rx="12"/>
+      <rect x="822" y="435" width="324" height="145" rx="12"/>
+    </g>
+    <g fill="none" stroke="#4ade80" stroke-width="3" marker-end="url(#arrow)">
+      <path d="M388 302H426"/>
+      <path d="M772 302H810"/>
+      <path d="M388 507H426"/>
+      <path d="M772 507H810"/>
+    </g>
+    <g fill="#e9f2ec" font-size="25" font-weight="700">
+      <text x="78" y="271">Enrolled sources</text>
+      <text x="462" y="271">New export review</text>
+      <text x="846" y="271">Public bundle</text>
+      <text x="78" y="476">Verified manifest</text>
+      <text x="462" y="476">Plan installation</text>
+      <text x="846" y="476">Installed skills</text>
+    </g>
+    <g fill="#9fb4a6" font-size="20">
+      <text x="78" y="315">Selected skills and</text>
+      <text x="78" y="345">preference sections</text>
+      <text x="462" y="315">Sanitized diff and</text>
+      <text x="462" y="345">review fingerprint</text>
+      <text x="846" y="315">Exact reviewed export</text>
+      <text x="846" y="345">Manifest and licenses</text>
+      <text x="78" y="520">Check file hashes</text>
+      <text x="78" y="550">before installation</text>
+      <text x="462" y="520">Preview target changes</text>
+      <text x="462" y="550">Local conflicts stop</text>
+      <text x="846" y="520">Local ownership receipt</text>
+      <text x="846" y="550">and backups retained</text>
+    </g>
+    <path d="M54 618H1146" stroke="#2f4636" stroke-width="2"/>
+    <text x="54" y="645" fill="#fbbf24" font-size="21">Private configuration stays local.</text>
+    <text x="54" y="673" fill="#9fb4a6" font-size="18">Credentials, personal vault content and host sign-in stay outside the bundle.</text>
+    <text x="54" y="700" fill="#9fb4a6" font-size="18">Pending-commit retries follow separate checks.</text>
+    <text x="54" y="731" fill="#9fb4a6" font-size="16">Source-derived diagram · README + SYNC · 06c24b3 · not a captured execution</text>
+  </g>
+</svg>

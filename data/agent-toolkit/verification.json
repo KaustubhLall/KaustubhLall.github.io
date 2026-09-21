@@ -1,0 +1,116 @@
+{
+  "schema": "agent-toolkit-portfolio-verification/v1",
+  "checkedAt": "2026-09-21T19:56:55.056Z",
+  "sourceCommit": "06c24b37b4655317844a2d7092270ab1a1aad5a4",
+  "repository": "https://github.com/KaustubhLall/agent-toolkit",
+  "standaloneSkills": 25,
+  "manifestSha256": "b9d050524b749ae193a5472edb12c97049e73e93c9cd84830f5aed2eea060fbb",
+  "ci": {
+    "url": "https://github.com/KaustubhLall/agent-toolkit/actions/runs/35645682954",
+    "nodeMajor": 22,
+    "conclusion": "success",
+    "jobs": [
+      {
+        "platform": "Linux",
+        "runner": "ubuntu-latest",
+        "tests": 23,
+        "passed": 23,
+        "failed": 0,
+        "url": "https://github.com/KaustubhLall/agent-toolkit/actions/runs/35645682954/job/106485456979"
+      },
+      {
+        "platform": "Windows",
+        "runner": "windows-latest",
+        "tests": 23,
+        "passed": 23,
+        "failed": 0,
+        "url": "https://github.com/KaustubhLall/agent-toolkit/actions/runs/35645682954/job/106485457175"
+      },
+      {
+        "platform": "macOS",
+        "runner": "macos-latest",
+        "tests": 23,
+        "passed": 23,
+        "failed": 0,
+        "url": "https://github.com/KaustubhLall/agent-toolkit/actions/runs/35645682954/job/106485457180"
+      }
+    ],
+    "observation": "Existing GitHub Actions run and each job log were read on September 21, 2026. The portfolio review did not rerun these tests."
+  },
+  "limitations": [
+    "The same 23 tests ran on three operating systems. This is not 69 distinct tests.",
+    "Tests exercise distribution, file ownership, installation and local Git publication. They do not establish skill invocation in every assistant or productivity gains.",
+    "Public instruction files do not restore account sessions, native tool-backed plugins, permissions, model settings or host-specific hook trust.",
+    "Publishing requires the configured machine and automation runner to be available. Consumers pull and rerun the installer; this is not two-way synchronization.",
+    "Hashes identify public source bytes and detect changes relative to the manifest. They are not signed provenance or proof that review found every disclosure.",
+    "The review fingerprint gates newly generated exports only when requireReview is enabled. Pending-commit retry checks history and content, without a persisted fingerprint receipt for the commit."
+  ],
+  "sources": [
+    {
+      "path": "README.md",
+      "url": "https://github.com/KaustubhLall/agent-toolkit/blob/06c24b37b4655317844a2d7092270ab1a1aad5a4/README.md",
+      "sha256": "a5c5f551d29782b50c70106ab112304202824f1a54d79c7af31b4aae07384ae1",
+      "identity": "Git blob bytes at sourceCommit"
+    },
+    {
+      "path": "AUTHORSHIP.md",
+      "url": "https://github.com/KaustubhLall/agent-toolkit/blob/06c24b37b4655317844a2d7092270ab1a1aad5a4/AUTHORSHIP.md",
+      "sha256": "644b08569cfffcde329f68bcc3cedc43441b5faafb25c8c3a3136d4fa906214f",
+      "identity": "Git blob bytes at sourceCommit"
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "url": "https://github.com/KaustubhLall/agent-toolkit/blob/06c24b37b4655317844a2d7092270ab1a1aad5a4/THIRD_PARTY.md",
+      "sha256": "24ece993a7439956c52525a5a59bf96ad70e601898628d718b1534206da4341e",
+      "identity": "Git blob bytes at sourceCommit"
+    },
+    {
+      "path": "bundle.manifest.json",
+      "url": "https://github.com/KaustubhLall/agent-toolkit/blob/06c24b37b4655317844a2d7092270ab1a1aad5a4/bundle.manifest.json",
+      "sha256": "b9d050524b749ae193a5472edb12c97049e73e93c9cd84830f5aed2eea060fbb",
+      "identity": "Git blob bytes at sourceCommit"
+    },
+    {
+      "path": "tools/install.mjs",
+      "url": "https://github.com/KaustubhLall/agent-toolkit/blob/06c24b37b4655317844a2d7092270ab1a1aad5a4/tools/install.mjs",
+      "sha256": "66f9959ace28f8abd8089465a979f1e4ab648fdcd6e1470b501b5ea5e3afd97a",
+      "identity": "Git blob bytes at sourceCommit"
+    },
+    {
+      "path": "tools/sync.mjs",
+      "url": "https://github.com/KaustubhLall/agent-toolkit/blob/06c24b37b4655317844a2d7092270ab1a1aad5a4/tools/sync.mjs",
+      "sha256": "a19f1f0205be79f2f1fb4e7db2b88c86381609f201cbfeb593afee1ab91ff6cf",
+      "identity": "Git blob bytes at sourceCommit"
+    },
+    {
+      "path": "tests/install.test.mjs",
+      "url": "https://github.com/KaustubhLall/agent-toolkit/blob/06c24b37b4655317844a2d7092270ab1a1aad5a4/tests/install.test.mjs",
+      "sha256": "f216baba4389bd69a9cdce423848aae4dfdd3883d03476f09444a6dbfeeca529",
+      "identity": "Git blob bytes at sourceCommit"
+    },
+    {
+      "path": "tests/sync.test.mjs",
+      "url": "https://github.com/KaustubhLall/agent-toolkit/blob/06c24b37b4655317844a2d7092270ab1a1aad5a4/tests/sync.test.mjs",
+      "sha256": "88dd51099ab21262b49ab055303bfbd30ef90685b7394280dd5f38a6e58be399",
+      "identity": "Git blob bytes at sourceCommit"
+    },
+    {
+      "path": ".github/workflows/verify.yml",
+      "url": "https://github.com/KaustubhLall/agent-toolkit/blob/06c24b37b4655317844a2d7092270ab1a1aad5a4/.github/workflows/verify.yml",
+      "sha256": "ff63a9609cb7a721f1efd880815a4c76ef3e85b0db8c5fd99a5c3b5783456887",
+      "identity": "Git blob bytes at sourceCommit"
+    },
+    {
+      "path": "docs/SYNC.md",
+      "url": "https://github.com/KaustubhLall/agent-toolkit/blob/06c24b37b4655317844a2d7092270ab1a1aad5a4/docs/SYNC.md",
+      "sha256": "e9ed2f57e78ce4a2b1c95520f485518c54359631d73d7a2f541dbd0d1a400238",
+      "identity": "Git blob bytes at sourceCommit"
+    },
+    {
+      "path": "docs/COMPATIBILITY.md",
+      "url": "https://github.com/KaustubhLall/agent-toolkit/blob/06c24b37b4655317844a2d7092270ab1a1aad5a4/docs/COMPATIBILITY.md",
+      "sha256": "7a92c1df6cc1bfbaf2c356a418a03326ee4f0a6dd48e00079233a6d68882fabf",
+      "identity": "Git blob bytes at sourceCommit"
+    }
+  ]
+}
