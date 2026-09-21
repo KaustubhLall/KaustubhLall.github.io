@@ -3,7 +3,7 @@
 This package explains the ordinary-chat memory path inspected September 20, 2026,
 and exercised in an isolated source probe on September 21. All records, queries,
 history and embedding inputs are fictional. No real conversation or model answer
-is included. The three JSON files have different verification scopes below.
+is included. The four JSON files have different verification scopes below.
 
 ## Source identity
 
@@ -139,10 +139,47 @@ missing-tokenizer fallback is deliberately selected. Agent and auto-title
 branches are outside the exercised path, and real provider, deployment settings,
 credentials and personal data are not loaded.
 
+## Local ownership and input repair: ownership-repair.json
+
+The lifecycle finding prompted a separate repair starting from the clean base
+`399c253edb36fda18df11ca869953feeea02bc57`, rather than the locally modified
+snapshot used above. Repair commit `faaedc156a249afd6b6fbbb7981b28d699c98f36`
+is on an isolated local branch. It has not been merged into the original checkout
+or deployed as a backend service. The earlier three JSON artifacts are unchanged.
+
+The repair lets the framework handle missing or foreign conversations as 404,
+scopes note access through the message's conversation owner, and requires a
+non-empty string for message/note content before processing. Ownership is checked
+first: foreign or missing objects still return 404 even with invalid content.
+Invalid owner content returns 400. Valid text is preserved exactly.
+
+The standalone regression harness exercises 62 request cases: 20 ordinary
+ownership/compatibility cases and 42 invalid-body cases. The latter combine two
+POST handlers, three actor/object relationships, and seven invalid payloads.
+The same final harness reports 51 failed assertions on the original API and zero
+after repair; an independent repaired run also passes. Multiple assertions can
+fail for one request, so 51 is not a count of independent experiments.
+
+The JSON retains each before/after response or propagated exception, changed-row
+counts, provider/callback counts, and exact source/harness identities. Denied or
+invalid requests are checked against complete persisted rows, not just counts.
+No such request changes rows, calls a provider, or queues a callback after repair.
+Valid owner reads and writes remain covered, including stored text/relationships.
+
+This uses real DRF request parsing, handlers, response rendering and ORM with
+fictional users, forced authentication and disposable SQLite. Providers are
+fixed doubles and scheduled callbacks remain held. Source hashes are checked
+before and after; outbound operations are blocked. A null response status means
+the directly invoked view raised an exception, not an observed HTTP 500.
+It does not test login/JWT, URL routing, malformed JSON syntax, an HTTP server,
+migrations, concurrency, real providers, or hosted security. The fresh schema is
+created from models without loading deployment settings or an existing database.
+
 ## Evidence limits
 
 The package establishes source choices, example arithmetic, isolated
-prompt-consumption paths and the specific backend lifecycle described above.
+prompt-consumption paths, the specific backend lifecycle, and the bounded local
+ownership/input repair described above.
 It does not establish extraction accuracy, production persistence reliability,
 broad isolation, retrieval quality, response quality, latency, privacy, or current hosted availability.
 The historical EC2 deployment is not a current live-service claim. No new

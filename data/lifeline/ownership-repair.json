@@ -1,0 +1,1615 @@
+{
+  "schema_version": 1,
+  "recorded_date": "2026-09-21",
+  "status": "Local repair branch; not merged into the original checkout or deployed as a service.",
+  "summary": {
+    "request_cases": 62,
+    "original_failed_assertions": 51,
+    "repaired_failed_assertions": 0,
+    "independent_failed_assertions": 0,
+    "invalid_payload_cases": 42
+  },
+  "original_source": {
+    "base_commit": "399c253edb36fda18df11ca869953feeea02bc57",
+    "api_file_sha256": {
+      "models/__init__.py": "3567b503d306fdbed6e32c1fca703de36ad64619bbe12389d3297fa6a45ce1a4",
+      "models/chat.py": "3712c442ae218cf3dc00e0c413b5b44cf20bae43e0429277330dea50c78bfe8c",
+      "models/user_auth.py": "83d6c47b7bb185d0510e6eddaea388ea912868ff94a18c5f0d01b495a66adf18",
+      "models/mcp_connectors.py": "4d949648af23c94762e42dcf150654a1c9c88caff5d6b8e942b2d42dcc3e4358",
+      "serializers.py": "e071cd8a4a9c28966e503bc4a1f251961197412e93ebb080094d9a94943f2209",
+      "utils/constants.py": "6804bbecd18ed4bcbcb772b68a31a752894e93d9c5bd5e42ce42030f87f9a4d2",
+      "utils/prompts.py": "e8071db247e26af42220634a46db7dc22a35e0846105904350452ae89f0f5674",
+      "utils/memory_utils.py": "f345c0b5c10077bd9e2e28dd20a5efeeba69de3834875cd5a4a01da062738c4f",
+      "utils/llm.py": "6b228195017e39d94fdf42d2a708b37614fb43ba8097eaca3425ad5703761ffb",
+      "views/views.py": "91cef9fd1ddbf10cec6668207285df74f20f7178521355d07891bab2f1ce5622"
+    }
+  },
+  "repaired_source": {
+    "commit": "faaedc156a249afd6b6fbbb7981b28d699c98f36",
+    "api_file_sha256": {
+      "models/__init__.py": "3567b503d306fdbed6e32c1fca703de36ad64619bbe12389d3297fa6a45ce1a4",
+      "models/chat.py": "3712c442ae218cf3dc00e0c413b5b44cf20bae43e0429277330dea50c78bfe8c",
+      "models/user_auth.py": "83d6c47b7bb185d0510e6eddaea388ea912868ff94a18c5f0d01b495a66adf18",
+      "models/mcp_connectors.py": "4d949648af23c94762e42dcf150654a1c9c88caff5d6b8e942b2d42dcc3e4358",
+      "serializers.py": "e071cd8a4a9c28966e503bc4a1f251961197412e93ebb080094d9a94943f2209",
+      "utils/constants.py": "6804bbecd18ed4bcbcb772b68a31a752894e93d9c5bd5e42ce42030f87f9a4d2",
+      "utils/prompts.py": "e8071db247e26af42220634a46db7dc22a35e0846105904350452ae89f0f5674",
+      "utils/memory_utils.py": "f345c0b5c10077bd9e2e28dd20a5efeeba69de3834875cd5a4a01da062738c4f",
+      "utils/llm.py": "6b228195017e39d94fdf42d2a708b37614fb43ba8097eaca3425ad5703761ffb",
+      "views/views.py": "ae33d7d30619996a3cd983339c095ea06bb2bc619161a10fec8c345ae997124e"
+    }
+  },
+  "harness_sha256": "02f59c0e6f835dae59b784b8ce68252bcb78b0ace828289f8112800e16e0a0eb",
+  "versions": {
+    "Python": "3.12.14",
+    "Django": "5.2.17",
+    "djangorestframework": "3.18.1"
+  },
+  "protocol": [
+    "Original and repaired allowlisted API source copied unchanged; fresh disposable SQLite schema from models.",
+    "Real DRF request parsing, handlers, response rendering and ORM. Fictional users; force_authenticate bypasses login.",
+    "Twenty ordinary ownership/compatibility cases, plus seven invalid payloads across two POST handlers and three actor/object relationships.",
+    "Invalid payloads: missing/null/integer/list/whitespace content, list root body and string root body.",
+    "Full persisted row equality checked before and after denied or invalid requests, including values beyond row counts.",
+    "Fixed text/embedding providers; callbacks held. Denied or invalid requests must call neither providers nor callbacks.",
+    "A null response status means the direct view raised an exception; no HTTP-server status is inferred.",
+    "The same final harness runs before and after. Assertion failures may describe the same request and are not independent experiments."
+  ],
+  "boundaries": [
+    "Original clean-base source is distinct from the locally modified source in backend-lifecycle.json; both snapshots retain exact file hashes.",
+    "No login/JWT, deployed routing, malformed JSON syntax, migrations, HTTP server, concurrency, real provider or hosted-service acceptance.",
+    "A focused ownership/content repair, not broad security or privacy certification."
+  ],
+  "cases": [
+    {
+      "id": "test_invalid_messages_foreign_integer_content",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "TypeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_foreign_list_content",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": true,
+      "before": {
+        "status": 500,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_foreign_missing_content",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": true,
+      "before": {
+        "status": 500,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_foreign_null_content",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "TypeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_foreign_root_list",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "AttributeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_foreign_root_string",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "AttributeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_foreign_whitespace_content",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": true,
+      "before": {
+        "status": 500,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_missing_integer_content",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "TypeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_missing_list_content",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": true,
+      "before": {
+        "status": 500,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_missing_missing_content",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": true,
+      "before": {
+        "status": 500,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_missing_null_content",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "TypeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_missing_root_list",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "AttributeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_missing_root_string",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "AttributeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_missing_whitespace_content",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": true,
+      "before": {
+        "status": 500,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_owner_integer_content",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "TypeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_owner_list_content",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": true,
+      "before": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_owner_missing_content",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": true,
+      "before": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_owner_null_content",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "TypeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_owner_root_list",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "AttributeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_owner_root_string",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "AttributeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_messages_owner_whitespace_content",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": true,
+      "before": {
+        "status": 201,
+        "exception": null,
+        "persisted_rows_unchanged": false,
+        "messages_added": 2,
+        "notes_added": 0,
+        "provider_calls": 2,
+        "held_callbacks": 2
+      },
+      "after": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_foreign_integer_content",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": true,
+      "before": {
+        "status": 201,
+        "exception": null,
+        "persisted_rows_unchanged": false,
+        "messages_added": 0,
+        "notes_added": 1,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_foreign_list_content",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": true,
+      "before": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_foreign_missing_content",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": true,
+      "before": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_foreign_null_content",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": true,
+      "before": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_foreign_root_list",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "AttributeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_foreign_root_string",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "AttributeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_foreign_whitespace_content",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": true,
+      "before": {
+        "status": 201,
+        "exception": null,
+        "persisted_rows_unchanged": false,
+        "messages_added": 0,
+        "notes_added": 1,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_missing_integer_content",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": true,
+      "before": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_missing_list_content",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": true,
+      "before": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_missing_missing_content",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": true,
+      "before": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_missing_null_content",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": true,
+      "before": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_missing_root_list",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "AttributeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_missing_root_string",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "AttributeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_missing_whitespace_content",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": true,
+      "before": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_owner_integer_content",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": true,
+      "before": {
+        "status": 201,
+        "exception": null,
+        "persisted_rows_unchanged": false,
+        "messages_added": 0,
+        "notes_added": 1,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_owner_list_content",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": true,
+      "before": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_owner_missing_content",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": true,
+      "before": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_owner_null_content",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": true,
+      "before": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_owner_root_list",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "AttributeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_owner_root_string",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": true,
+      "before": {
+        "status": null,
+        "exception": "AttributeError",
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_invalid_notes_owner_whitespace_content",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": true,
+      "before": {
+        "status": 201,
+        "exception": null,
+        "persisted_rows_unchanged": false,
+        "messages_added": 0,
+        "notes_added": 1,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_messages_get_anonymous",
+      "endpoint": "messages",
+      "method": "GET",
+      "actor": "anonymous",
+      "invalid_payload": false,
+      "before": {
+        "status": 403,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 403,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_messages_get_foreign",
+      "endpoint": "messages",
+      "method": "GET",
+      "actor": "foreign",
+      "invalid_payload": false,
+      "before": {
+        "status": 500,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_messages_get_missing",
+      "endpoint": "messages",
+      "method": "GET",
+      "actor": "missing",
+      "invalid_payload": false,
+      "before": {
+        "status": 500,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_messages_get_owner",
+      "endpoint": "messages",
+      "method": "GET",
+      "actor": "owner",
+      "invalid_payload": false,
+      "before": {
+        "status": 200,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 200,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_messages_post_anonymous",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "anonymous",
+      "invalid_payload": false,
+      "before": {
+        "status": 403,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 403,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_messages_post_foreign",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": false,
+      "before": {
+        "status": 500,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_messages_post_missing",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": false,
+      "before": {
+        "status": 500,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_messages_post_owner",
+      "endpoint": "messages",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": false,
+      "before": {
+        "status": 201,
+        "exception": null,
+        "persisted_rows_unchanged": false,
+        "messages_added": 2,
+        "notes_added": 0,
+        "provider_calls": 2,
+        "held_callbacks": 2
+      },
+      "after": {
+        "status": 201,
+        "exception": null,
+        "persisted_rows_unchanged": false,
+        "messages_added": 2,
+        "notes_added": 0,
+        "provider_calls": 2,
+        "held_callbacks": 2
+      }
+    },
+    {
+      "id": "test_notes_get_anonymous",
+      "endpoint": "notes",
+      "method": "GET",
+      "actor": "anonymous",
+      "invalid_payload": false,
+      "before": {
+        "status": 403,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 403,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_notes_get_foreign",
+      "endpoint": "notes",
+      "method": "GET",
+      "actor": "foreign",
+      "invalid_payload": false,
+      "before": {
+        "status": 200,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_notes_get_general",
+      "endpoint": "notes",
+      "method": "GET",
+      "actor": "general",
+      "invalid_payload": false,
+      "before": {
+        "status": 200,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 200,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_notes_get_missing",
+      "endpoint": "notes",
+      "method": "GET",
+      "actor": "missing",
+      "invalid_payload": false,
+      "before": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_notes_get_owner",
+      "endpoint": "notes",
+      "method": "GET",
+      "actor": "owner",
+      "invalid_payload": false,
+      "before": {
+        "status": 200,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 200,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_notes_get_zero",
+      "endpoint": "notes",
+      "method": "GET",
+      "actor": "zero",
+      "invalid_payload": false,
+      "before": {
+        "status": 200,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_notes_post_anonymous",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "anonymous",
+      "invalid_payload": false,
+      "before": {
+        "status": 403,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 403,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_notes_post_foreign",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "foreign",
+      "invalid_payload": false,
+      "before": {
+        "status": 201,
+        "exception": null,
+        "persisted_rows_unchanged": false,
+        "messages_added": 0,
+        "notes_added": 1,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_notes_post_general",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "general",
+      "invalid_payload": false,
+      "before": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_notes_post_missing",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "missing",
+      "invalid_payload": false,
+      "before": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_notes_post_owner",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "owner",
+      "invalid_payload": false,
+      "before": {
+        "status": 201,
+        "exception": null,
+        "persisted_rows_unchanged": false,
+        "messages_added": 0,
+        "notes_added": 1,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 201,
+        "exception": null,
+        "persisted_rows_unchanged": false,
+        "messages_added": 0,
+        "notes_added": 1,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    },
+    {
+      "id": "test_notes_post_zero",
+      "endpoint": "notes",
+      "method": "POST",
+      "actor": "zero",
+      "invalid_payload": false,
+      "before": {
+        "status": 400,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      },
+      "after": {
+        "status": 404,
+        "exception": null,
+        "persisted_rows_unchanged": true,
+        "messages_added": 0,
+        "notes_added": 0,
+        "provider_calls": 0,
+        "held_callbacks": 0
+      }
+    }
+  ]
+}
