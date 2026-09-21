@@ -1,0 +1,591 @@
+{
+  "schema_version": 1,
+  "export_date": "2026-09-21",
+  "source_commit": "ef5a8a0abab5b02960e3f91b8445ce5bcaf5d1d4",
+  "scope": "Projection and descriptive arithmetic over existing saved measurements. No training, model execution, or new evaluation.",
+  "exporter_sha256": "0ac5b40175c115713d5d348f1f4f90f021d08542dd8a64fcc71d236598a473bf",
+  "hash_algorithm": "SHA-256 of exact bytes, without newline normalization",
+  "sources": [
+    {
+      "path": "results/raw/learning_flappy_s1.csv",
+      "sha256": "b38e42652d55fbfe38474bc4e2b1ce9594817608befdbf7ec233438357987a9a",
+      "head_sha256": "b38e42652d55fbfe38474bc4e2b1ce9594817608befdbf7ec233438357987a9a",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_flappy_s2.csv",
+      "sha256": "717b1f1f36343ce17a4462ef4d20672b3d914dbd8dfda77c3886fef5f4e9b4c8",
+      "head_sha256": "717b1f1f36343ce17a4462ef4d20672b3d914dbd8dfda77c3886fef5f4e9b4c8",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_flappy_s3.csv",
+      "sha256": "7a9df87e7ca346f13da2d80fa2fa609c6dd3008c84d75d602e5f957fb8180614",
+      "head_sha256": "7a9df87e7ca346f13da2d80fa2fa609c6dd3008c84d75d602e5f957fb8180614",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_flappy_s4.csv",
+      "sha256": "106a5392d8b4d04c9b90177b59077abe094c2a682ae2def3bb8771d78df1a8da",
+      "head_sha256": "106a5392d8b4d04c9b90177b59077abe094c2a682ae2def3bb8771d78df1a8da",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_flappy_s5.csv",
+      "sha256": "69672bd95d337294fab3f334f13be1b77aeedd63eeb00e50cfd89d0f2975356e",
+      "head_sha256": "69672bd95d337294fab3f334f13be1b77aeedd63eeb00e50cfd89d0f2975356e",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_snake_s1.csv",
+      "sha256": "547426760f6a943c61c9204998c80a1b4770189ee9f39b66f04abaedb44cdf06",
+      "head_sha256": "547426760f6a943c61c9204998c80a1b4770189ee9f39b66f04abaedb44cdf06",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_snake_s2.csv",
+      "sha256": "55b5fd166e62cc0f9ac59b9857fb70ac6e0644f6171578eb3b25044ef2cf26f3",
+      "head_sha256": "55b5fd166e62cc0f9ac59b9857fb70ac6e0644f6171578eb3b25044ef2cf26f3",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_snake_s3.csv",
+      "sha256": "a6b11a4b6bd0745fd37d7d9b4e92c675d38c0dc16bd56aaf1c5caf43ac84ebc7",
+      "head_sha256": "a6b11a4b6bd0745fd37d7d9b4e92c675d38c0dc16bd56aaf1c5caf43ac84ebc7",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_snake_s4.csv",
+      "sha256": "1d09034b496fa1ef01311656307f032e38327ead0af65edfc3f90043cc3420fa",
+      "head_sha256": "1d09034b496fa1ef01311656307f032e38327ead0af65edfc3f90043cc3420fa",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_snake_s5.csv",
+      "sha256": "cfbe27f7d9660dbca3e47d3b851caf937f86bd66cf427c148b4c472f7fdbc211",
+      "head_sha256": "cfbe27f7d9660dbca3e47d3b851caf937f86bd66cf427c148b4c472f7fdbc211",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_2048_s1.csv",
+      "sha256": "43f69ae9a82a6527189828fc538f09b810b8f03fba1d753df9abefb4915eaf45",
+      "head_sha256": "43f69ae9a82a6527189828fc538f09b810b8f03fba1d753df9abefb4915eaf45",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_2048_s2.csv",
+      "sha256": "4d6d509230c28b3ea1e81f3c84d578b1de62391e7e13e09f22118c76ac7beacb",
+      "head_sha256": "4d6d509230c28b3ea1e81f3c84d578b1de62391e7e13e09f22118c76ac7beacb",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_2048_s3.csv",
+      "sha256": "34d8acb4eabd507c051e97e7e99386d7215c52f9975fb7c243dfeba051c74f22",
+      "head_sha256": "34d8acb4eabd507c051e97e7e99386d7215c52f9975fb7c243dfeba051c74f22",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_2048_s4.csv",
+      "sha256": "a6e978f46b6b56d2d94aedd1c09693172671c7c889edb6916aebe2682b62aa15",
+      "head_sha256": "a6e978f46b6b56d2d94aedd1c09693172671c7c889edb6916aebe2682b62aa15",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_2048_s5.csv",
+      "sha256": "6dd2ae8a96d652d7ab8306256a38d39a7b0d7079d4ccae1398254f98fb2bbeb3",
+      "head_sha256": "6dd2ae8a96d652d7ab8306256a38d39a7b0d7079d4ccae1398254f98fb2bbeb3",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_pacman_s1.csv",
+      "sha256": "a5e3c7bc098f9b734dcfcdcf1389cf9105c45865afdbdddbc712d806da1ad9e5",
+      "head_sha256": "a5e3c7bc098f9b734dcfcdcf1389cf9105c45865afdbdddbc712d806da1ad9e5",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_pacman_s2.csv",
+      "sha256": "dd792a766efc5dd07b487d352798507ee4d18930c49983617b727cf46145a122",
+      "head_sha256": "dd792a766efc5dd07b487d352798507ee4d18930c49983617b727cf46145a122",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_pacman_s3.csv",
+      "sha256": "3576e5b9d1b1484857d5fbdf5f9447a5071c91230a024b61b8f9be3f7dfbd2cf",
+      "head_sha256": "3576e5b9d1b1484857d5fbdf5f9447a5071c91230a024b61b8f9be3f7dfbd2cf",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_pacman_s4.csv",
+      "sha256": "9594739abc69e5d39c6813aff947d63c0711790128ed0ecf83e8d28c8ed5221e",
+      "head_sha256": "9594739abc69e5d39c6813aff947d63c0711790128ed0ecf83e8d28c8ed5221e",
+      "matches_head": true
+    },
+    {
+      "path": "results/raw/learning_pacman_s5.csv",
+      "sha256": "87d98985d19d9852446f86f93e3394e0c6785a6f3521f6c6bde1694e27e4d261",
+      "head_sha256": "87d98985d19d9852446f86f93e3394e0c6785a6f3521f6c6bde1694e27e4d261",
+      "matches_head": true
+    },
+    {
+      "path": "results/summary/ablation_selection.csv",
+      "sha256": "8080783dc5e93a24f106181dc8cc5beff77f0a2241f5cb2e15a4839c764384db",
+      "head_sha256": "8080783dc5e93a24f106181dc8cc5beff77f0a2241f5cb2e15a4839c764384db",
+      "matches_head": true
+    }
+  ],
+  "protocol_sources": [
+    {
+      "path": "experiments/run_all.sh",
+      "referenced_bytes": "committed HEAD",
+      "sha256": "e91bb6c69e38e904c3ba530f4bf25560710d455332677333419f7fe7a8b930c7",
+      "working_tree_sha256": "e91bb6c69e38e904c3ba530f4bf25560710d455332677333419f7fe7a8b930c7",
+      "working_tree_matches_head": true
+    },
+    {
+      "path": "experiments/analyze.py",
+      "referenced_bytes": "committed HEAD",
+      "sha256": "f681d7f5542e300b0aff6710fa84b7c4466a5acd847cf798f344dc9157864ebf",
+      "working_tree_sha256": "f681d7f5542e300b0aff6710fa84b7c4466a5acd847cf798f344dc9157864ebf",
+      "working_tree_matches_head": true
+    },
+    {
+      "path": "src/neat_trainer_main.c",
+      "referenced_bytes": "committed HEAD",
+      "sha256": "4eb1ed0b9d5114145965e89e781a11b2851ea36536513283eca5b59a838ed975",
+      "working_tree_sha256": "4eb1ed0b9d5114145965e89e781a11b2851ea36536513283eca5b59a838ed975",
+      "working_tree_matches_head": true
+    },
+    {
+      "path": "src/neat_serialize.c",
+      "referenced_bytes": "committed HEAD",
+      "sha256": "39029a96bf7d763bbe27874456bc917ba8a22a378787fe8001932c1c0b7b99d7",
+      "working_tree_sha256": "333bd90ff7f4b847c608cfd2e58b0ca6bce9d14df65c101392f926181d6678bb",
+      "working_tree_matches_head": false
+    },
+    {
+      "path": "examples/neat_verify.c",
+      "referenced_bytes": "committed HEAD",
+      "sha256": "4cecec3d593bd83c2a829116a451b02210c900ba999f9f9a98877d2dc9d0ad73",
+      "working_tree_sha256": "4cecec3d593bd83c2a829116a451b02210c900ba999f9f9a98877d2dc9d0ad73",
+      "working_tree_matches_head": true
+    },
+    {
+      "path": "configs/flappy.cfg",
+      "referenced_bytes": "committed HEAD",
+      "sha256": "70a8a5f46c5af5a47820ed3c715b8d6f6daedf2c2e43ed6e61d2a14ba0d5781a",
+      "working_tree_sha256": "70a8a5f46c5af5a47820ed3c715b8d6f6daedf2c2e43ed6e61d2a14ba0d5781a",
+      "working_tree_matches_head": true
+    },
+    {
+      "path": "configs/snake.cfg",
+      "referenced_bytes": "committed HEAD",
+      "sha256": "9c5926ae67ae014386d4b466aad39cff12f5089afac8b4ee30e19ad54b67495c",
+      "working_tree_sha256": "9c5926ae67ae014386d4b466aad39cff12f5089afac8b4ee30e19ad54b67495c",
+      "working_tree_matches_head": true
+    },
+    {
+      "path": "configs/2048.cfg",
+      "referenced_bytes": "committed HEAD",
+      "sha256": "5d71545b33e4070668866e10315e2084a92a29a1191cc09676a543e646cef3ac",
+      "working_tree_sha256": "5d71545b33e4070668866e10315e2084a92a29a1191cc09676a543e646cef3ac",
+      "working_tree_matches_head": true
+    },
+    {
+      "path": "configs/pacman.cfg",
+      "referenced_bytes": "committed HEAD",
+      "sha256": "1b3d34e7c7ed7707edc944f1d27fcd13dacc8f1798bb5584bb420626fd243ff6",
+      "working_tree_sha256": "1b3d34e7c7ed7707edc944f1d27fcd13dacc8f1798bb5584bb420626fd243ff6",
+      "working_tree_matches_head": true
+    }
+  ],
+  "projections": {
+    "learning": "All rows from 20 learning files, ordered by game flappy/snake/2048/pacman, filename seed 1-5, and original generation order. Only game, filename seed label, generation, test_mean. Original generation and test_mean field text retained. UTF-8 CSV with LF endings. No filtering, interpolation, smoothing, or inferred values.",
+    "selection": "Complete results/summary/ablation_selection.csv copied byte-for-byte, including header, order and line endings."
+  },
+  "outputs": [
+    {
+      "file": "learning-measurements.csv",
+      "sha256": "887761c3aa103b85924c4b6be2ed67d0134f4f067efdd56e5b2bf2a51a81d61d",
+      "data_rows": 4500
+    },
+    {
+      "file": "selection-comparison.csv",
+      "sha256": "8080783dc5e93a24f106181dc8cc5beff77f0a2241f5cb2e15a4839c764384db",
+      "data_rows": 24
+    }
+  ],
+  "validation": {
+    "all_measurement_source_bytes_match_head": true,
+    "source_bytes_unchanged_after_read": true,
+    "head_unchanged_after_read": true,
+    "learning_file_count": 20,
+    "finite_integer_test_means": true,
+    "unique_contiguous_generations_starting_at_zero": true,
+    "five_aligned_seed_series_per_game": true,
+    "selection_rows": 24,
+    "unique_selection_game_method_seed": true
+  },
+  "learning_final_summary": [
+    {
+      "game": "flappy",
+      "seeds": 5,
+      "generations_per_seed": 100,
+      "first_generation": 0,
+      "final_generation": 99,
+      "final_values": [
+        {
+          "seed": 1,
+          "generation": 99,
+          "test_mean": 54
+        },
+        {
+          "seed": 2,
+          "generation": 99,
+          "test_mean": 54
+        },
+        {
+          "seed": 3,
+          "generation": 99,
+          "test_mean": 54
+        },
+        {
+          "seed": 4,
+          "generation": 99,
+          "test_mean": 54
+        },
+        {
+          "seed": 5,
+          "generation": 99,
+          "test_mean": 54
+        }
+      ],
+      "final_summary": {
+        "n": 5,
+        "mean": 54,
+        "population_sd": 0
+      }
+    },
+    {
+      "game": "snake",
+      "seeds": 5,
+      "generations_per_seed": 250,
+      "first_generation": 0,
+      "final_generation": 249,
+      "final_values": [
+        {
+          "seed": 1,
+          "generation": 249,
+          "test_mean": 30
+        },
+        {
+          "seed": 2,
+          "generation": 249,
+          "test_mean": 25
+        },
+        {
+          "seed": 3,
+          "generation": 249,
+          "test_mean": 27
+        },
+        {
+          "seed": 4,
+          "generation": 249,
+          "test_mean": 27
+        },
+        {
+          "seed": 5,
+          "generation": 249,
+          "test_mean": 29
+        }
+      ],
+      "final_summary": {
+        "n": 5,
+        "mean": 27.6,
+        "population_sd": 1.7435595774162693
+      }
+    },
+    {
+      "game": "2048",
+      "seeds": 5,
+      "generations_per_seed": 300,
+      "first_generation": 0,
+      "final_generation": 299,
+      "final_values": [
+        {
+          "seed": 1,
+          "generation": 299,
+          "test_mean": 42
+        },
+        {
+          "seed": 2,
+          "generation": 299,
+          "test_mean": 38
+        },
+        {
+          "seed": 3,
+          "generation": 299,
+          "test_mean": 339
+        },
+        {
+          "seed": 4,
+          "generation": 299,
+          "test_mean": 40
+        },
+        {
+          "seed": 5,
+          "generation": 299,
+          "test_mean": 54
+        }
+      ],
+      "final_summary": {
+        "n": 5,
+        "mean": 102.6,
+        "population_sd": 118.33106101104646
+      }
+    },
+    {
+      "game": "pacman",
+      "seeds": 5,
+      "generations_per_seed": 250,
+      "first_generation": 0,
+      "final_generation": 249,
+      "final_values": [
+        {
+          "seed": 1,
+          "generation": 249,
+          "test_mean": 41
+        },
+        {
+          "seed": 2,
+          "generation": 249,
+          "test_mean": 30
+        },
+        {
+          "seed": 3,
+          "generation": 249,
+          "test_mean": 38
+        },
+        {
+          "seed": 4,
+          "generation": 249,
+          "test_mean": 21
+        },
+        {
+          "seed": 5,
+          "generation": 249,
+          "test_mean": 34
+        }
+      ],
+      "final_summary": {
+        "n": 5,
+        "mean": 32.8,
+        "population_sd": 6.968500556073739
+      }
+    }
+  ],
+  "selection_summary": [
+    {
+      "game": "flappy",
+      "methods": [
+        {
+          "method": "testbatch",
+          "values": [
+            {
+              "seed": 1,
+              "unseen_mean": 54
+            },
+            {
+              "seed": 2,
+              "unseen_mean": 54
+            },
+            {
+              "seed": 3,
+              "unseen_mean": 54
+            }
+          ],
+          "n": 3,
+          "mean": 54,
+          "population_sd": 0
+        },
+        {
+          "method": "fitness",
+          "values": [
+            {
+              "seed": 1,
+              "unseen_mean": 46
+            },
+            {
+              "seed": 2,
+              "unseen_mean": 54
+            },
+            {
+              "seed": 3,
+              "unseen_mean": 54
+            }
+          ],
+          "n": 3,
+          "mean": 51.333333333333336,
+          "population_sd": 3.7712361663282534
+        }
+      ]
+    },
+    {
+      "game": "snake",
+      "methods": [
+        {
+          "method": "testbatch",
+          "values": [
+            {
+              "seed": 1,
+              "unseen_mean": 25
+            },
+            {
+              "seed": 2,
+              "unseen_mean": 25
+            },
+            {
+              "seed": 3,
+              "unseen_mean": 31
+            }
+          ],
+          "n": 3,
+          "mean": 27,
+          "population_sd": 2.8284271247461903
+        },
+        {
+          "method": "fitness",
+          "values": [
+            {
+              "seed": 1,
+              "unseen_mean": 23
+            },
+            {
+              "seed": 2,
+              "unseen_mean": 28
+            },
+            {
+              "seed": 3,
+              "unseen_mean": 26
+            }
+          ],
+          "n": 3,
+          "mean": 25.666666666666668,
+          "population_sd": 2.0548046676563256
+        }
+      ]
+    },
+    {
+      "game": "2048",
+      "methods": [
+        {
+          "method": "testbatch",
+          "values": [
+            {
+              "seed": 1,
+              "unseen_mean": 38
+            },
+            {
+              "seed": 2,
+              "unseen_mean": 42
+            },
+            {
+              "seed": 3,
+              "unseen_mean": 33
+            }
+          ],
+          "n": 3,
+          "mean": 37.666666666666664,
+          "population_sd": 3.6817870057290873
+        },
+        {
+          "method": "fitness",
+          "values": [
+            {
+              "seed": 1,
+              "unseen_mean": 36
+            },
+            {
+              "seed": 2,
+              "unseen_mean": 32
+            },
+            {
+              "seed": 3,
+              "unseen_mean": 38
+            }
+          ],
+          "n": 3,
+          "mean": 35.333333333333336,
+          "population_sd": 2.494438257849294
+        }
+      ]
+    },
+    {
+      "game": "pacman",
+      "methods": [
+        {
+          "method": "testbatch",
+          "values": [
+            {
+              "seed": 1,
+              "unseen_mean": 33
+            },
+            {
+              "seed": 2,
+              "unseen_mean": 29
+            },
+            {
+              "seed": 3,
+              "unseen_mean": 29
+            }
+          ],
+          "n": 3,
+          "mean": 30.333333333333332,
+          "population_sd": 1.8856180831641267
+        },
+        {
+          "method": "fitness",
+          "values": [
+            {
+              "seed": 1,
+              "unseen_mean": 33
+            },
+            {
+              "seed": 2,
+              "unseen_mean": 29
+            },
+            {
+              "seed": 3,
+              "unseen_mean": 29
+            }
+          ],
+          "n": 3,
+          "mean": 30.333333333333332,
+          "population_sd": 1.8856180831641267
+        }
+      ]
+    }
+  ],
+  "semantics": {
+    "test_mean": "Recorded integer mean from the trainer's champion-selection test batch. Integer values are retained, not reconstructed episode scores. This same batch participates in selecting the champion and is not an independent final evaluation.",
+    "final_summary": "Arithmetic mean and population standard deviation (denominator n=5) across the five final logged test_mean values for each game. Descriptive between-run spread, not a confidence interval.",
+    "selection_summary": "Arithmetic means and population standard deviations (denominator n=3) of the retained unseen_mean rows within each game/method. The referenced verifier prints integer total / n_seeds, so each retained input is already an integer-truncated batch mean. No significance claim.",
+    "score_units": {
+      "2048": "maximum tile per episode, averaged and integer-truncated in the logged batch mean",
+      "flappy": "pipes",
+      "snake": "apples",
+      "pacman": "pellets"
+    }
+  },
+  "source_described_protocol": {
+    "evidence_boundary": "These settings describe the committed script, not independently recovered execution manifests for the saved runs.",
+    "learning": "E1 uses filename seed labels 1-5 as master_seed, game-dependent generation counts, test_interval=1, test_seeds=20, test_tick_cap=6000, with base configs and per-game tuned overrides.",
+    "selection": "E4 uses master seeds 1-3, 150 training generations, then verifies champion_best.txt using 30 seeds starting at 3000 and a 6000-tick cap. Testbatch and fitness differ in champion-selection configuration."
+  },
+  "limits": [
+    "Run labels are parsed from filenames or retained seed fields; source hashes identify saved files, not proof of prospective experimental collection.",
+    "Export date is not an experiment execution date. Unrelated dirty visualization files are neither exported nor modified.",
+    "Learning curves and selection comparisons are distinct protocols. Their scores must not be combined as one evaluation.",
+    "Scores are game-specific and not comparable across games. Population SD summarizes these saved runs only.",
+    "No grokking onset, causal explanation, fresh generalization result, or improvement in model quality is asserted."
+  ]
+}
