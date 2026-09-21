@@ -1,0 +1,603 @@
+{
+  "schema": "pacman-ai-source-diagnostics",
+  "schemaVersion": 1,
+  "checkedAt": "2026-09-21",
+  "scope": "Selected deterministic software-state and replay-container diagnostics. No policy execution or learning evaluation.",
+  "source": {
+    "repository": "https://github.com/KaustubhLall/PacManAI",
+    "commits": {
+      "main": "9ec4040d006195cfce175ee3452df714e58cca5c",
+      "hardening": "7a1c89bbc1c6ad3f35f5f93934980debc21aaff4"
+    },
+    "hardeningBranch": "dqn-training-cli-hardening"
+  },
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "platform": "Windows x64",
+    "missingDependencies": [
+      "pytest",
+      "tqdm"
+    ]
+  },
+  "fixture": {
+    "kind": "constructed software-state fixture",
+    "rows": [
+      "#####",
+      "#P.G#",
+      "#####"
+    ],
+    "height": 3,
+    "width": 5,
+    "trailingNewline": true,
+    "qlCell": [
+      1,
+      2,
+      0
+    ]
+  },
+  "tinyState": {
+    "main": {
+      "initialCounts": [
+        1,
+        1
+      ],
+      "resetCounts": [
+        {
+          "counts": [
+            2,
+            2
+          ],
+          "error": null
+        },
+        {
+          "counts": [
+            3,
+            3
+          ],
+          "error": null
+        }
+      ],
+      "qlBefore": 1.0,
+      "qlAfter": 1.0,
+      "flatError": "ValueError: cannot reshape array of size 15 into shape (1024,)"
+    },
+    "hardening": {
+      "initialCounts": [
+        1,
+        1
+      ],
+      "resetCounts": [
+        {
+          "counts": [
+            1,
+            1
+          ],
+          "error": null
+        },
+        {
+          "counts": [
+            1,
+            1
+          ],
+          "error": null
+        }
+      ],
+      "qlBefore": 1.0,
+      "qlAfter": -1.0,
+      "flatShape": [
+        15
+      ]
+    }
+  },
+  "selectedChecks": [
+    {
+      "name": "reset_replaces_episode",
+      "main": {
+        "passed": false,
+        "observed": {
+          "before": [
+            256,
+            1
+          ],
+          "after": [
+            511,
+            2
+          ],
+          "score": 0,
+          "lives": 3
+        }
+      },
+      "hardening": {
+        "passed": true,
+        "observed": {
+          "before": [
+            256,
+            1
+          ],
+          "after": [
+            256,
+            1
+          ],
+          "score": 0,
+          "lives": 3
+        }
+      }
+    },
+    {
+      "name": "encoding_dimensions",
+      "main": {
+        "passed": false,
+        "exception": "ValueError: cannot reshape array of size 868 into shape (1024,)"
+      },
+      "hardening": {
+        "passed": true,
+        "observed": [
+          [
+            868
+          ],
+          [
+            31,
+            28,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "name": "removed_pellet_encoding",
+      "main": {
+        "passed": false,
+        "observed": {
+          "before": 1.0,
+          "after": 1.0
+        }
+      },
+      "hardening": {
+        "passed": true,
+        "observed": {
+          "before": 1.0,
+          "after": -1.0
+        }
+      }
+    },
+    {
+      "name": "terminal_loss_and_win",
+      "main": {
+        "passed": false,
+        "observed": {
+          "initial": false,
+          "loss": true,
+          "win": false
+        }
+      },
+      "hardening": {
+        "passed": true,
+        "observed": {
+          "initial": false,
+          "loss": true,
+          "win": true
+        }
+      }
+    },
+    {
+      "name": "sumtree_occupancy",
+      "main": {
+        "passed": false,
+        "observed": {
+          "emptyLength": 3,
+          "twoEntryLength": 3,
+          "total": 3.0
+        }
+      },
+      "hardening": {
+        "passed": true,
+        "observed": {
+          "emptyLength": 0,
+          "twoEntryLength": 2,
+          "total": 3.0
+        }
+      }
+    },
+    {
+      "name": "sumtree_overwrite",
+      "main": {
+        "passed": true,
+        "observed": {
+          "length": 2,
+          "data": [
+            "third",
+            "second"
+          ],
+          "total": 2.0
+        }
+      },
+      "hardening": {
+        "passed": true,
+        "observed": {
+          "length": 2,
+          "data": [
+            "third",
+            "second"
+          ],
+          "total": 2.0
+        }
+      }
+    },
+    {
+      "name": "sumtree_empty_sampling",
+      "main": {
+        "passed": false,
+        "observed": {
+          "returned": [
+            2,
+            0.0,
+            0
+          ]
+        }
+      },
+      "hardening": {
+        "passed": true,
+        "observed": {
+          "rejected": "cannot sample from an empty SumTree"
+        }
+      }
+    }
+  ],
+  "mazeDimensions": {
+    "main": {
+      "maze1": {
+        "height": 31,
+        "width": 28,
+        "pellets": 256,
+        "ghosts": 1
+      },
+      "maze2": {
+        "height": 32,
+        "width": 32,
+        "pellets": 330,
+        "ghosts": 4
+      },
+      "maze3": {
+        "height": 32,
+        "width": 32,
+        "pellets": 332,
+        "ghosts": 1
+      }
+    },
+    "hardening": {
+      "maze1": {
+        "height": 31,
+        "width": 28,
+        "pellets": 256,
+        "ghosts": 1
+      },
+      "maze2": {
+        "height": 32,
+        "width": 32,
+        "pellets": 330,
+        "ghosts": 4
+      },
+      "maze3": {
+        "height": 32,
+        "width": 32,
+        "pellets": 332,
+        "ghosts": 1
+      }
+    }
+  },
+  "cli": {
+    "verificationLevel": "AST and source inspection only. Neither training CLI imported.",
+    "main": {
+      "topLevelLoops": 1,
+      "mainGuard": false,
+      "topLevelImports": [
+        "import os",
+        "import pickle",
+        "from datetime import datetime",
+        "from keras import backend as K",
+        "from keras.callbacks import LearningRateScheduler",
+        "from tqdm import tqdm",
+        "from ai.environments.deepql_env import DQNAgent, PacmanEnv"
+      ],
+      "functions": [
+        "lr_scheduler"
+      ]
+    },
+    "hardening": {
+      "topLevelLoops": 0,
+      "mainGuard": true,
+      "topLevelImports": [
+        "import argparse",
+        "import pickle",
+        "import random",
+        "from datetime import datetime",
+        "from pathlib import Path",
+        "import numpy as np",
+        "from tqdm import tqdm"
+      ],
+      "functions": [
+        "lr_scheduler",
+        "_set_learning_rate",
+        "_set_seed",
+        "_save_replay",
+        "train_dqn",
+        "parse_args",
+        "main"
+      ]
+    },
+    "runtimeImportVerified": false
+  },
+  "existingTests": {
+    "gameState": {
+      "passed": 4,
+      "total": 4,
+      "names": [
+        "test_reset_replaces_episode_state_without_duplicates",
+        "test_encoding_shape_matches_loaded_maze_dimensions",
+        "test_removed_pellet_disappears_from_q_learning_encoding",
+        "test_game_over_covers_loss_and_win_conditions"
+      ]
+    },
+    "overlap": "These four directly invoked functions overlap four of the seven selected checks. Do not add the denominators.",
+    "sumTree": "Three contracts mirrored against the actual module. The pytest-dependent test module was not run.",
+    "cliImport": "Not run. tqdm and pytest are absent, and CLI import was deliberately excluded.",
+    "fullPytestSuiteRun": false
+  },
+  "capacityOne": {
+    "separateProbe": true,
+    "operation": "SumTree(1).add(1.0, 'only')",
+    "subprocessTimeoutSeconds": 5,
+    "main": {
+      "outcome": "RecursionError",
+      "exitCode": 1,
+      "timedOut": false
+    },
+    "hardening": {
+      "outcome": "RecursionError",
+      "exitCode": 1,
+      "timedOut": false
+    },
+    "status": "Unresolved in both pinned revisions"
+  },
+  "probe": {
+    "file": "probe.py",
+    "sha256": "650d4e5b96fe89180b5514839d3ccad909ecfa3d7dc3900361d8c712e95ab83e",
+    "identity": "Exact bytes of the reviewed diagnostic probe. No embedded private paths."
+  },
+  "sourceFiles": [
+    {
+      "revision": "main",
+      "commit": "9ec4040d006195cfce175ee3452df714e58cca5c",
+      "path": "game/__init__.py",
+      "gitBlob": "405db13bda5fe620cca28891e2f0189005361bdb",
+      "sha256": "99d8c0cadd87467067f8d4f261a5b9b62e859b400549d7ef4fa6b7ca0ea3bb13",
+      "bytes": 132
+    },
+    {
+      "revision": "main",
+      "commit": "9ec4040d006195cfce175ee3452df714e58cca5c",
+      "path": "game/entities.py",
+      "gitBlob": "ee08efc11ce54801acb7fee5603d5d4d1e1c47a5",
+      "sha256": "e701b34b7262635c70f73661ac494e46573cce47c28eaa83f0069c885d7bad1e",
+      "bytes": 682
+    },
+    {
+      "revision": "main",
+      "commit": "9ec4040d006195cfce175ee3452df714e58cca5c",
+      "path": "game/game_state.py",
+      "gitBlob": "2bff87307a113592d0656dee7e3df7e6e7091b77",
+      "sha256": "1c351988a9214bea811168fe6f8d406808aa5c2bd4799bffd75eb0b406bb8547",
+      "bytes": 4617
+    },
+    {
+      "revision": "main",
+      "commit": "9ec4040d006195cfce175ee3452df714e58cca5c",
+      "path": "ai/__init__.py",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "revision": "main",
+      "commit": "9ec4040d006195cfce175ee3452df714e58cca5c",
+      "path": "ai/environments/__init__.py",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "revision": "main",
+      "commit": "9ec4040d006195cfce175ee3452df714e58cca5c",
+      "path": "ai/environments/sumtree.py",
+      "gitBlob": "95ae6951cf81530ca26296fb4826339516f9b670",
+      "sha256": "908ae1f8d22b3187233d40fa74f0a8eba3d7bc94656588423a1e698894cf05f4",
+      "bytes": 1320
+    },
+    {
+      "revision": "main",
+      "commit": "9ec4040d006195cfce175ee3452df714e58cca5c",
+      "path": "ai/deepQL.py",
+      "gitBlob": "fbb12f32b1bdefe2eafedf9b619a7fd93f9ecf4d",
+      "sha256": "92b0bce5d4bfd21635e67d8c6b3125ebd235a175c3230e092f868e94813a83aa",
+      "bytes": 3419
+    },
+    {
+      "revision": "main",
+      "commit": "9ec4040d006195cfce175ee3452df714e58cca5c",
+      "path": "mazes/1.txt",
+      "gitBlob": "fce974b172a8c4752254ed7c8014b847dcbe567f",
+      "sha256": "a66329a51393581f66386f274b66d2081d22cf0192e020908be4660cb4e5f95f",
+      "bytes": 898
+    },
+    {
+      "revision": "main",
+      "commit": "9ec4040d006195cfce175ee3452df714e58cca5c",
+      "path": "mazes/2.txt",
+      "gitBlob": "bbe3b68d9fdef76b40c3af08c168db13d1d47387",
+      "sha256": "37a6080773894a27dae547de9ed6a8e4c7ff258b27a23044c115e2a88160870b",
+      "bytes": 1055
+    },
+    {
+      "revision": "main",
+      "commit": "9ec4040d006195cfce175ee3452df714e58cca5c",
+      "path": "mazes/3.txt",
+      "gitBlob": "e32a02a99a0659e48613ea0b5531980f35fab848",
+      "sha256": "2c35ad97f9b641c106ebffe7d4b86fc8e04ca9d9379157fb001f22228ce9e5f5",
+      "bytes": 1055
+    },
+    {
+      "revision": "hardening",
+      "commit": "7a1c89bbc1c6ad3f35f5f93934980debc21aaff4",
+      "path": "game/__init__.py",
+      "gitBlob": "405db13bda5fe620cca28891e2f0189005361bdb",
+      "sha256": "99d8c0cadd87467067f8d4f261a5b9b62e859b400549d7ef4fa6b7ca0ea3bb13",
+      "bytes": 132
+    },
+    {
+      "revision": "hardening",
+      "commit": "7a1c89bbc1c6ad3f35f5f93934980debc21aaff4",
+      "path": "game/entities.py",
+      "gitBlob": "ee08efc11ce54801acb7fee5603d5d4d1e1c47a5",
+      "sha256": "e701b34b7262635c70f73661ac494e46573cce47c28eaa83f0069c885d7bad1e",
+      "bytes": 682
+    },
+    {
+      "revision": "hardening",
+      "commit": "7a1c89bbc1c6ad3f35f5f93934980debc21aaff4",
+      "path": "game/game_state.py",
+      "gitBlob": "2a753210192e298dafa08b78d96ad45b27dc7f98",
+      "sha256": "ac1ebd4f194c5f0a61fa93f9a5fb6d331f9f8924fcd4ad9b9f9ad4817da80e2b",
+      "bytes": 4840
+    },
+    {
+      "revision": "hardening",
+      "commit": "7a1c89bbc1c6ad3f35f5f93934980debc21aaff4",
+      "path": "ai/__init__.py",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "revision": "hardening",
+      "commit": "7a1c89bbc1c6ad3f35f5f93934980debc21aaff4",
+      "path": "ai/environments/__init__.py",
+      "gitBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "revision": "hardening",
+      "commit": "7a1c89bbc1c6ad3f35f5f93934980debc21aaff4",
+      "path": "ai/environments/sumtree.py",
+      "gitBlob": "2a20ac04e226ad4ee98881b7f23cb23e4de10f8e",
+      "sha256": "2959164db0280957666d89f4590286a0a19f968746d23549f3cef3a8f3be21e9",
+      "bytes": 1711
+    },
+    {
+      "revision": "hardening",
+      "commit": "7a1c89bbc1c6ad3f35f5f93934980debc21aaff4",
+      "path": "ai/deepQL.py",
+      "gitBlob": "53d71538d47d05926f064d8645aa7f86da0a66b4",
+      "sha256": "bc140485284e11fcbfd5f28e6fe6a1c41598bd066dba8f6680e9e83754ff7f81",
+      "bytes": 6628
+    },
+    {
+      "revision": "hardening",
+      "commit": "7a1c89bbc1c6ad3f35f5f93934980debc21aaff4",
+      "path": "mazes/1.txt",
+      "gitBlob": "fce974b172a8c4752254ed7c8014b847dcbe567f",
+      "sha256": "a66329a51393581f66386f274b66d2081d22cf0192e020908be4660cb4e5f95f",
+      "bytes": 898
+    },
+    {
+      "revision": "hardening",
+      "commit": "7a1c89bbc1c6ad3f35f5f93934980debc21aaff4",
+      "path": "mazes/2.txt",
+      "gitBlob": "bbe3b68d9fdef76b40c3af08c168db13d1d47387",
+      "sha256": "37a6080773894a27dae547de9ed6a8e4c7ff258b27a23044c115e2a88160870b",
+      "bytes": 1055
+    },
+    {
+      "revision": "hardening",
+      "commit": "7a1c89bbc1c6ad3f35f5f93934980debc21aaff4",
+      "path": "mazes/3.txt",
+      "gitBlob": "e32a02a99a0659e48613ea0b5531980f35fab848",
+      "sha256": "2c35ad97f9b641c106ebffe7d4b86fc8e04ca9d9379157fb001f22228ce9e5f5",
+      "bytes": 1055
+    },
+    {
+      "revision": "hardening",
+      "commit": "7a1c89bbc1c6ad3f35f5f93934980debc21aaff4",
+      "path": "tests/test_game_state.py",
+      "gitBlob": "2b47018a7ae08cf60dabf61a1a2976792e1cda2a",
+      "sha256": "d120422e795556d005a9bb2b2ab97f786028ec966b1a1b9eb75be74a38715c0c",
+      "bytes": 1515
+    },
+    {
+      "revision": "hardening",
+      "commit": "7a1c89bbc1c6ad3f35f5f93934980debc21aaff4",
+      "path": "tests/test_sumtree.py",
+      "gitBlob": "84088348ed2e8755664e87254a634a9771b84103",
+      "sha256": "9303b4a76801715af46952288ebca8c1b46c57039ccb13a633f00959e229930e",
+      "bytes": 653
+    },
+    {
+      "revision": "hardening",
+      "commit": "7a1c89bbc1c6ad3f35f5f93934980debc21aaff4",
+      "path": "tests/test_deepql_cli.py",
+      "gitBlob": "d7a34492af4a74d987ffec6c0986a01e4d98ac67",
+      "sha256": "8f7f985b87c2dd7fa364abcd02cb5afaf907757f0ca97097c28161f8e0b3d9cf",
+      "bytes": 163
+    }
+  ],
+  "limitations": [
+    "No gameplay, training, model loading, checkpoint loading, pickle deserialization or game UI ran.",
+    "The CLI result is source inspection, not verified runtime import or training acceptance.",
+    "The replay-container positive cases cover capacities 2 and 3. Capacity 1 remains a confirmed failure.",
+    "The selected checks target known changes. They do not measure overall reliability or learning performance.",
+    "No current policy quality, historical score reproducibility or generalization claim is established."
+  ],
+  "replayState": {
+    "main": {
+      "occupancy": {
+        "emptyLength": 3,
+        "twoEntryLength": 3,
+        "total": 3.0
+      },
+      "overwrite": {
+        "length": 2,
+        "data": [
+          "third",
+          "second"
+        ],
+        "total": 2.0
+      },
+      "emptySampling": {
+        "returned": [
+          2,
+          0.0,
+          0
+        ]
+      }
+    },
+    "hardening": {
+      "occupancy": {
+        "emptyLength": 0,
+        "twoEntryLength": 2,
+        "total": 3.0
+      },
+      "overwrite": {
+        "length": 2,
+        "data": [
+          "third",
+          "second"
+        ],
+        "total": 2.0
+      },
+      "emptySampling": {
+        "rejected": "cannot sample from an empty SumTree"
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750" role="img" aria-labelledby="title description">
+  <title id="title">PacMan AI: reset should replace the episode state</title>
+  <desc id="description">Recorded software-state diagnostic using a three-row, five-column maze with one pellet and one ghost. On main commit 9ec4040, the pellet and ghost counts both increase from one to two to three across two resets. On audited branch 7a1c89b, both counts remain one. This is a source-derived diagram, not a gameplay capture.</desc>
+  <!-- Source: public/data/pacman-ai/verification.json, tinyState, observed 2026-09-21. -->
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 10 5 0 10Z" fill="#9fb4a6"/></marker>
+  </defs>
+  <rect width="1200" height="750" fill="#070a08"/>
+  <rect width="1200" height="8" fill="#4ade80"/>
+  <g font-family="ui-monospace, Consolas, monospace">
+    <text x="54" y="66" fill="#4ade80" font-size="19" letter-spacing="3">PACMAN AI / STATE CONTRACT</text>
+    <text x="54" y="124" fill="#e9f2ec" font-size="39" font-weight="700">Reset should replace the episode.</text>
+    <text x="54" y="164" fill="#9fb4a6" font-size="21">The same tiny maze, two resets, no movement</text>
+
+    <rect x="54" y="210" width="270" height="351" rx="12" fill="#0c120e" stroke="#2f4636" stroke-width="2"/>
+    <text x="78" y="251" fill="#9fb4a6" font-size="17" letter-spacing="2">3 × 5 FIXTURE</text>
+    <g fill="#4ade80" font-size="37" letter-spacing="7">
+      <text x="91" y="312">#####</text>
+      <text x="91" y="362">#P.G#</text>
+      <text x="91" y="412">#####</text>
+    </g>
+    <text x="78" y="464" fill="#e9f2ec" font-size="20">P = Pac-Man</text>
+    <text x="78" y="497" fill="#e9f2ec" font-size="20">. = pellet</text>
+    <text x="78" y="530" fill="#e9f2ec" font-size="20">G = ghost</text>
+
+    <text x="374" y="238" fill="#fbbf24" font-size="21" font-weight="700">MAIN / 9ec4040</text>
+    <text x="374" y="268" fill="#9fb4a6" font-size="18">Pellets and ghosts accumulate</text>
+    <text x="374" y="437" fill="#4ade80" font-size="21" font-weight="700">AUDITED BRANCH / 7a1c89b</text>
+    <text x="374" y="467" fill="#9fb4a6" font-size="18">Pellets and ghosts are replaced</text>
+
+    <g fill="#0c120e" stroke="#2f4636" stroke-width="2">
+      <rect x="374" y="289" width="218" height="95" rx="10"/>
+      <rect x="650" y="289" width="218" height="95" rx="10"/>
+      <rect x="926" y="289" width="218" height="95" rx="10"/>
+      <rect x="374" y="488" width="218" height="95" rx="10"/>
+      <rect x="650" y="488" width="218" height="95" rx="10"/>
+      <rect x="926" y="488" width="218" height="95" rx="10"/>
+    </g>
+    <g fill="#9fb4a6" font-size="16" text-anchor="middle">
+      <text x="483" y="316">INITIAL</text><text x="759" y="316">RESET 1</text><text x="1035" y="316">RESET 2</text>
+      <text x="483" y="515">INITIAL</text><text x="759" y="515">RESET 1</text><text x="1035" y="515">RESET 2</text>
+    </g>
+    <g fill="#e9f2ec" font-size="20" text-anchor="middle">
+      <text x="483" y="345">1 pellet<tspan x="483" dy="27">1 ghost</tspan></text>
+      <text x="759" y="345">2 pellets<tspan x="759" dy="27">2 ghosts</tspan></text>
+      <text x="1035" y="345">3 pellets<tspan x="1035" dy="27">3 ghosts</tspan></text>
+      <text x="483" y="544">1 pellet<tspan x="483" dy="27">1 ghost</tspan></text>
+      <text x="759" y="544">1 pellet<tspan x="759" dy="27">1 ghost</tspan></text>
+      <text x="1035" y="544">1 pellet<tspan x="1035" dy="27">1 ghost</tspan></text>
+    </g>
+    <g fill="none" stroke="#9fb4a6" stroke-width="3" marker-end="url(#arrow)">
+      <path d="M603 338H638"/><path d="M879 338H914"/>
+      <path d="M603 537H638"/><path d="M879 537H914"/>
+    </g>
+    <path d="M54 625H1146" stroke="#2f4636" stroke-width="2"/>
+    <text x="54" y="663" fill="#9fb4a6" font-size="19">Observed September 21, 2026 · actual GameState modules · constructed fixture</text>
+    <text x="54" y="713" fill="#4ade80" font-size="20">Software-state diagnostic · no gameplay capture</text>
+  </g>
+</svg>
