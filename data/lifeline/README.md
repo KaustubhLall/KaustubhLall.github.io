@@ -1,9 +1,9 @@
-# Lifeline memory selection and prompt consumption
+# Lifeline memory lifecycle, selection and prompt consumption
 
 This package explains the ordinary-chat memory path inspected September 20, 2026,
 and exercised in an isolated source probe on September 21. All records, queries,
 history and embedding inputs are fictional. No real conversation or model answer
-is included. The two JSON files have different verification scopes below.
+is included. The three JSON files have different verification scopes below.
 
 ## Source identity
 
@@ -75,8 +75,8 @@ formatting exercises its existing missing-tokenizer fallback.
 The query embedding is [1,0]; each invented memory vector is
 [similarity,sqrt(1-similarity squared)]. Actual cosine comparison selects A,C,B.
 Conversation selection adds D,B. Deduplication yields A,C,B,D, and the actual
-formatter emits D,B,C,A. C is shortened to100 characters including title/ellipsis.
-D's similarity0.29 fails semantic retrieval but its conversation membership
+formatter emits D,B,C,A. C is shortened to 100 characters including title/ellipsis.
+D's similarity 0.29 fails semantic retrieval but its conversation membership
 admits it. The JSON stores the exact ordinary prompt intercepted at the consumer.
 
 Two more ordinary cases have no conversation-associated memories. One makes all
@@ -88,12 +88,63 @@ Independent execution reproduced all four cases and reconciled exact source
 hashes before and after. This is source execution with test doubles, not a Django
 or database integration test. The inspected chat view remains locally modified.
 
+## Backend lifecycle: backend-lifecycle.json
+
+This later probe imports 11 complete source files unchanged into an isolated
+Django/DRF environment and creates a fresh disposable SQLite schema from their
+models. The real request handler, ORM, serializers and JSON renderer run.
+The original extraction prompt builder and JSON parser also run. Text replies,
+extraction JSON and embedding vectors are fixed provider doubles. The ordinary
+chat handler schedules the original extraction callback into a controlled queue,
+which the probe drains only after the response has been rendered.
+
+The ordering is imposed by the probe. The application's original thread starts
+before the API response is constructed, and could finish at a different time.
+No scheduling, concurrency or durable-job guarantee is inferred from this run.
+
+| Observed stage | Messages in this conversation | Memory result |
+| --- | --- | --- |
+| First response, callback held | 2 | 0 memories saved |
+| Original extraction callback released | 2 | 1 memory saved with source links |
+| New conversation, same fictional user | 2 | Saved memory reaches the actual prompt |
+| New conversation, other fictional user | 2 | No selected memory |
+| Extraction-provider failure after response | 2 retained | No new memory |
+| Memory-embedding failure after response | 2 retained | No new memory |
+
+The later conversation has no earlier transcript and supplies zero
+conversation-specific memories. Its semantic retrieval selects the persisted
+preference, increments the real access count, and passes the preference into the
+captured ordinary-chat prompt. The public JSON contains that exact prompt, the
+fictional message, stipulated reply, stored memory fields and source links.
+
+The two failure cases leave the previously saved memory intact. They exercise
+separate failures in the queued storage path; the embedding failure is enabled
+only after the chat response, so it does not also break initial retrieval.
+
+A request by the other user for the first user's conversation writes no messages
+but returns HTTP 500. The broad handler catches Django's Http404. This is an
+observed error-handling defect, not a passing authorization-error contract.
+The two-user example does not establish broad privacy or isolation.
+
+Root independently reran the probe. Its displayed observations match the worker
+run, and all 11 source hashes match before copying, in the imported copy and
+after execution. `backend-lifecycle.json` records the exact source/probe hashes
+and tested dependency versions. The inspected schema and chat view have local
+changes; the repository base alone does not identify their bytes.
+
+This is a separately pinned probe environment, not the historic deployment.
+Authentication is forced for the test; there is no login/JWT verification or HTTP
+server. Schema creation does not verify migration history. The existing
+missing-tokenizer fallback is deliberately selected. Agent and auto-title
+branches are outside the exercised path, and real provider, deployment settings,
+credentials and personal data are not loaded.
+
 ## Evidence limits
 
-The package establishes source choices, example arithmetic and the specific
-isolated prompt-consumption paths described above.
-It does not establish extraction accuracy, persistence reliability, isolation,
-retrieval quality, response quality, latency, privacy, or current hosted availability.
+The package establishes source choices, example arithmetic, isolated
+prompt-consumption paths and the specific backend lifecycle described above.
+It does not establish extraction accuracy, production persistence reliability,
+broad isolation, retrieval quality, response quality, latency, privacy, or current hosted availability.
 The historical EC2 deployment is not a current live-service claim. No new
-application-server execution, model calls, deployment, or scientific evaluation occurred.
+HTTP server, real model calls, deployment, or scientific evaluation occurred.
 The broader product plan is not used as evidence of implemented integrations.
