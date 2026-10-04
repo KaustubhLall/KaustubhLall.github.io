@@ -1,0 +1,13 @@
+{
+  "schema": "lifeline-ranking-freeze/v1",
+  "frozenAt": "2026-10-04T01:18:08.5011371Z",
+  "stage": "exploratory",
+  "files": {
+    "corpus.json": "bd2469d937c50176d42387f1016920568e9b2c4ba4d7bb0b8d8e48095f9880c0",
+    "labels.json": "7e0db2724e7174ae1b5a0f1e32044d8411e64937f089690fc80a0cd7e599ab81",
+    "protocol.md": "ac6b1bec5a78a12e5f6c57012f4f349d73917faecba170ed06913eeff4ec8364",
+    "evaluate.py": "4001be0935097ee9a9bd07f1794123268e452a9f406602233cf88ebf98929183"
+  },
+  "labelReviewSha256": "ee31c5064346494494e6b45007f46fd6d55d45096daa552ece9294f639220887",
+  "runtimeAcquisitionSha256": "3ca4f403c0f1b65457cdb7e4d6be96729120ad8bb35cb60aefb85dcb7b0003bb"
+}

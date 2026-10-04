@@ -1,0 +1,5712 @@
+{
+  "schema": "lifeline-ranking-results-v1",
+  "status": "COMPLETE",
+  "stage": "exploratory",
+  "startedAt": "2026-10-04T01:18:14.342713+00:00",
+  "endedAt": "2026-10-04T01:18:15.651175+00:00",
+  "clock": "2026-10-04T00:00:00+00:00",
+  "matchedPairs": 16,
+  "answerableCount": 12,
+  "unanswerableCount": 4,
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "modelRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "modelFilesSha256": {
+    "config.json": "953f9c0d463486b10a6871cc2fd59f223b2c70184f49815e7efbcab5d8908b41",
+    "model.onnx": "6fd5d72fe4589f189f8ebc006442dbb529bb7ce38f8082112682524616046452",
+    "modules.json": "84e40c8e006c9b1d6c122e02cba9b02458120b5fb0c87b746c41e0207cf642cf",
+    "pooling_config.json": "4be450dde3b0273bb9787637cfbd28fe04a7ba6ab9d36ac48e92b11e350ffc23",
+    "sentence_bert_config.json": "fc1993fde0a95c24ec6c022539d41cf6e2f7c9721e5415d6fb6897472a9cd4b7",
+    "special_tokens_map.json": "303df45a03609e4ead04bc3dc1536d0ab19b5358db685b6f3da123d05ec200e3",
+    "tokenizer.json": "be50c3628f2bf5bb5e3a7f17b1f74611b2561a3a27eeab05e5aa30f411572037",
+    "tokenizer_config.json": "acb92769e8195aabd29b7b2137a9e6d6e25c476a4f15aa4355c233426c61576b"
+  },
+  "sourceSha256": {
+    "backend/LifeLine/api/utils/memory_utils.py": "f345c0b5c10077bd9e2e28dd20a5efeeba69de3834875cd5a4a01da062738c4f",
+    "backend/LifeLine/api/utils/constants.py": "6804bbecd18ed4bcbcb772b68a31a752894e93d9c5bd5e42ce42030f87f9a4d2",
+    "backend/LifeLine/api/utils/prompts.py": "e8071db247e26af42220634a46db7dc22a35e0846105904350452ae89f0f5674"
+  },
+  "sourceSpans": [
+    {
+      "path": "backend/LifeLine/api/utils/memory_utils.py",
+      "function": "cosine_similarity",
+      "start": 26,
+      "end": 30
+    },
+    {
+      "path": "backend/LifeLine/api/utils/memory_utils.py",
+      "function": "get_relevant_memories",
+      "start": 177,
+      "end": 260
+    },
+    {
+      "path": "backend/LifeLine/api/utils/prompts.py",
+      "function": "format_memory_context",
+      "start": 196,
+      "end": 249
+    }
+  ],
+  "frozenInputsSha256": {
+    "corpus.json": "bd2469d937c50176d42387f1016920568e9b2c4ba4d7bb0b8d8e48095f9880c0",
+    "labels.json": "7e0db2724e7174ae1b5a0f1e32044d8411e64937f089690fc80a0cd7e599ab81",
+    "protocol.md": "ac6b1bec5a78a12e5f6c57012f4f349d73917faecba170ed06913eeff4ec8364",
+    "evaluate.py": "4001be0935097ee9a9bd07f1794123268e452a9f406602233cf88ebf98929183"
+  },
+  "freezeSha256": "319cd5389d78ad4f9ab16e3d9348bc55beaa3046d5ae8564b4bde8633ce19822",
+  "embeddingsSha256": "2763033f094335a73304af363df199f7679b4b60638b6201a82240217ccb731a",
+  "allInputsUnchangedAfter": true,
+  "runtime": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.5.3",
+      "onnxruntime": "1.30.0",
+      "tokenizers": "0.23.2"
+    },
+    "providers": [
+      "CPUExecutionProvider"
+    ],
+    "threads": 1,
+    "ortTelemetryDisabled": true
+  },
+  "embeddingControls": {
+    "duplicateText": "PASS",
+    "batchVsSingle": "PASS",
+    "truncation": "PASS",
+    "batchVsSingleTolerance": {
+      "atol": 2e-05,
+      "rtol": 2e-05
+    }
+  },
+  "macroAnswerable": {
+    "composite": {
+      "essentialRecall": 1.0,
+      "precisionAtReturnedCount": 0.28750000000000003,
+      "ndcgAt5": 0.7689486782553251,
+      "essentialFactRecallAfterFormat": 0.4583333333333333,
+      "selectedFactsLostToFormatter": 0.6666666666666666,
+      "supersededCount": 0.08333333333333333
+    },
+    "cosine": {
+      "essentialRecall": 1.0,
+      "precisionAtReturnedCount": 0.28750000000000003,
+      "ndcgAt5": 0.8786425158767921,
+      "essentialFactRecallAfterFormat": 0.4583333333333333,
+      "selectedFactsLostToFormatter": 0.6666666666666666,
+      "supersededCount": 0.08333333333333333
+    }
+  },
+  "pairedAnswerable": {
+    "essentialRecall": {
+      "compositeWins": 0,
+      "ties": 12,
+      "compositeLosses": 0
+    },
+    "precisionAtReturnedCount": {
+      "compositeWins": 0,
+      "ties": 12,
+      "compositeLosses": 0
+    },
+    "ndcgAt5": {
+      "compositeWins": 2,
+      "ties": 4,
+      "compositeLosses": 6
+    },
+    "essentialFactRecallAfterFormat": {
+      "compositeWins": 0,
+      "ties": 12,
+      "compositeLosses": 0
+    },
+    "selectedFactsLostToFormatter": {
+      "compositeWins": 0,
+      "ties": 12,
+      "compositeLosses": 0
+    },
+    "supersededCount": {
+      "compositeWins": 0,
+      "ties": 12,
+      "compositeLosses": 0
+    }
+  },
+  "selectionOpportunity": {
+    "moreThanFiveEligibleCaseIds": [
+      "q03",
+      "q04",
+      "q05",
+      "q06",
+      "q09",
+      "q10",
+      "q14",
+      "q15",
+      "q16"
+    ],
+    "identicalSelectedSetsCaseIds": [
+      "q01",
+      "q02",
+      "q06",
+      "q07",
+      "q08",
+      "q11",
+      "q12",
+      "q13",
+      "q16"
+    ],
+    "identicalFormattedContextsCaseIds": [
+      "q01",
+      "q02",
+      "q06",
+      "q07",
+      "q08",
+      "q11",
+      "q12",
+      "q13",
+      "q16"
+    ]
+  },
+  "unanswerable": {
+    "composite": {
+      "anySelectionCount": 4,
+      "selectedMemoryCount": 18
+    },
+    "cosine": {
+      "anySelectionCount": 4,
+      "selectedMemoryCount": 18
+    }
+  },
+  "cases": [
+    {
+      "id": "q01",
+      "designSlice": "direct object-location recall",
+      "answerable": true,
+      "intendedAnswerable": true,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q01-m06",
+            "q01-m03",
+            "q01-m07",
+            "q01-m08",
+            "q01-m02",
+            "q01-m04",
+            "q01-m01",
+            "q01-m05"
+          ],
+          "scores": [
+            {
+              "id": "q01-m06",
+              "cosine": 0.25479578083118,
+              "composite": 0.4882108018320413,
+              "eligible": false
+            },
+            {
+              "id": "q01-m03",
+              "cosine": 0.22895448051993675,
+              "composite": 0.39837268831196204,
+              "eligible": false
+            },
+            {
+              "id": "q01-m07",
+              "cosine": 0.37592561172793243,
+              "composite": 0.5308887003700927,
+              "eligible": true
+            },
+            {
+              "id": "q01-m08",
+              "cosine": 0.18777479887302448,
+              "composite": 0.42033154599048134,
+              "eligible": false
+            },
+            {
+              "id": "q01-m02",
+              "cosine": 0.8095810338838113,
+              "composite": 0.6927486203302867,
+              "eligible": true
+            },
+            {
+              "id": "q01-m04",
+              "cosine": 0.6294325115402833,
+              "composite": 0.55165950692417,
+              "eligible": true
+            },
+            {
+              "id": "q01-m01",
+              "cosine": 0.44070388800438315,
+              "composite": 0.3934223328026299,
+              "eligible": true
+            },
+            {
+              "id": "q01-m05",
+              "cosine": 0.20250153594526016,
+              "composite": 0.24516758823382273,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q01-m07",
+            "q01-m02",
+            "q01-m04",
+            "q01-m01"
+          ],
+          "selectedIds": [
+            "q01-m02",
+            "q01-m04",
+            "q01-m07",
+            "q01-m01"
+          ],
+          "formattedContext": "• Weekend painting: I want to finish the harbor watercolor this weekend.\n• Brush storage: My narrow watercolor brushes are in the blue pencil roll on the top shelf.\n• Wide brushes: The wide house-painting brushes hang above the utility sink.\n• Paper cupboard: The watercolor paper is in the tall cupboard beside the desk.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q01-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q01-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q01-m07",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q01-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 46"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q01-m07: similarity=0.376, importance=0.840, composite=0.531"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q01-m02: similarity=0.810, importance=0.690, composite=0.693"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q01-m04: similarity=0.629, importance=0.580, composite=0.552"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q01-m01: similarity=0.441, importance=0.430, composite=0.393"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 4 relevant memories for user fictional-user (avg similarity: 0.564)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 4 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.25,
+            "ndcgAt5": 1.0,
+            "essentialFactRecallAfterFormat": 1.0,
+            "essentialFactIdsRetained": [
+              "q01-f01"
+            ],
+            "selectedEssentialFactIds": [
+              "q01-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 4,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q01-m06",
+            "q01-m03",
+            "q01-m07",
+            "q01-m08",
+            "q01-m02",
+            "q01-m04",
+            "q01-m01",
+            "q01-m05"
+          ],
+          "scores": [
+            {
+              "id": "q01-m06",
+              "cosine": 0.25479578083118,
+              "composite": 0.4882108018320413,
+              "eligible": false
+            },
+            {
+              "id": "q01-m03",
+              "cosine": 0.22895448051993675,
+              "composite": 0.39837268831196204,
+              "eligible": false
+            },
+            {
+              "id": "q01-m07",
+              "cosine": 0.37592561172793243,
+              "composite": 0.5308887003700927,
+              "eligible": true
+            },
+            {
+              "id": "q01-m08",
+              "cosine": 0.18777479887302448,
+              "composite": 0.42033154599048134,
+              "eligible": false
+            },
+            {
+              "id": "q01-m02",
+              "cosine": 0.8095810338838113,
+              "composite": 0.6927486203302867,
+              "eligible": true
+            },
+            {
+              "id": "q01-m04",
+              "cosine": 0.6294325115402833,
+              "composite": 0.55165950692417,
+              "eligible": true
+            },
+            {
+              "id": "q01-m01",
+              "cosine": 0.44070388800438315,
+              "composite": 0.3934223328026299,
+              "eligible": true
+            },
+            {
+              "id": "q01-m05",
+              "cosine": 0.20250153594526016,
+              "composite": 0.24516758823382273,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q01-m07",
+            "q01-m02",
+            "q01-m04",
+            "q01-m01"
+          ],
+          "selectedIds": [
+            "q01-m02",
+            "q01-m04",
+            "q01-m01",
+            "q01-m07"
+          ],
+          "formattedContext": "• Weekend painting: I want to finish the harbor watercolor this weekend.\n• Brush storage: My narrow watercolor brushes are in the blue pencil roll on the top shelf.\n• Wide brushes: The wide house-painting brushes hang above the utility sink.\n• Paper cupboard: The watercolor paper is in the tall cupboard beside the desk.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q01-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q01-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q01-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q01-m07",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 4 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.25,
+            "ndcgAt5": 1.0,
+            "essentialFactRecallAfterFormat": 1.0,
+            "essentialFactIdsRetained": [
+              "q01-f01"
+            ],
+            "selectedEssentialFactIds": [
+              "q01-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 4,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": false,
+      "identicalSelectedSets": true,
+      "identicalFormattedContexts": true
+    },
+    {
+      "id": "q02",
+      "designSlice": "durable preference with paraphrase",
+      "answerable": true,
+      "intendedAnswerable": true,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q02-m01",
+            "q02-m08",
+            "q02-m06",
+            "q02-m05",
+            "q02-m07",
+            "q02-m04",
+            "q02-m03",
+            "q02-m02"
+          ],
+          "scores": [
+            {
+              "id": "q02-m01",
+              "cosine": 0.524399636216752,
+              "composite": 0.579306448396718,
+              "eligible": true
+            },
+            {
+              "id": "q02-m08",
+              "cosine": 0.3230057269494741,
+              "composite": 0.4188034361696844,
+              "eligible": true
+            },
+            {
+              "id": "q02-m06",
+              "cosine": 0.25208468980297327,
+              "composite": 0.442250813881784,
+              "eligible": false
+            },
+            {
+              "id": "q02-m05",
+              "cosine": 0.37761555891528803,
+              "composite": 0.4972360020158395,
+              "eligible": true
+            },
+            {
+              "id": "q02-m07",
+              "cosine": 0.35864501028058643,
+              "composite": 0.4358536728350185,
+              "eligible": true
+            },
+            {
+              "id": "q02-m04",
+              "cosine": 0.44473925983588075,
+              "composite": 0.41084355590152843,
+              "eligible": true
+            },
+            {
+              "id": "q02-m03",
+              "cosine": 0.2793854931637978,
+              "composite": 0.30563129589827864,
+              "eligible": false
+            },
+            {
+              "id": "q02-m02",
+              "cosine": 0.2997445163191393,
+              "composite": 0.22784670979148358,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q02-m01",
+            "q02-m08",
+            "q02-m05",
+            "q02-m07",
+            "q02-m04"
+          ],
+          "selectedIds": [
+            "q02-m01",
+            "q02-m05",
+            "q02-m07",
+            "q02-m08",
+            "q02-m04"
+          ],
+          "formattedContext": "• Showcase room: For showing finished models to visitors, I like the bright room next to the cafe.\n• Library room: The library has a meeting room with a projector; I have not tried working there.\n• Club social: The model club social is more fun in a lively shared space.\n• Public demo: I volunteered to demonstrate paper gliders at the noisy exhibition hall.\n• Building conditions: For fiddly model assembly I have always preferred a quiet enclosed room with...\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q02-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q02-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q02-m07",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q02-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q02-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 92"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q02-m01: similarity=0.524, importance=0.860, composite=0.579"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q02-m08: similarity=0.323, importance=0.750, composite=0.419"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q02-m05: similarity=0.378, importance=0.580, composite=0.497"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q02-m07: similarity=0.359, importance=0.480, composite=0.436"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q02-m04: similarity=0.445, importance=0.480, composite=0.411"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 5 relevant memories for user fictional-user (avg similarity: 0.406)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.2,
+            "ndcgAt5": 0.38685280723454163,
+            "essentialFactRecallAfterFormat": 0.0,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [
+              "q02-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [
+              "q02-f01"
+            ],
+            "selectedFactsLostToFormatter": 1,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q02-m01",
+            "q02-m08",
+            "q02-m06",
+            "q02-m05",
+            "q02-m07",
+            "q02-m04",
+            "q02-m03",
+            "q02-m02"
+          ],
+          "scores": [
+            {
+              "id": "q02-m01",
+              "cosine": 0.524399636216752,
+              "composite": 0.579306448396718,
+              "eligible": true
+            },
+            {
+              "id": "q02-m08",
+              "cosine": 0.3230057269494741,
+              "composite": 0.4188034361696844,
+              "eligible": true
+            },
+            {
+              "id": "q02-m06",
+              "cosine": 0.25208468980297327,
+              "composite": 0.442250813881784,
+              "eligible": false
+            },
+            {
+              "id": "q02-m05",
+              "cosine": 0.37761555891528803,
+              "composite": 0.4972360020158395,
+              "eligible": true
+            },
+            {
+              "id": "q02-m07",
+              "cosine": 0.35864501028058643,
+              "composite": 0.4358536728350185,
+              "eligible": true
+            },
+            {
+              "id": "q02-m04",
+              "cosine": 0.44473925983588075,
+              "composite": 0.41084355590152843,
+              "eligible": true
+            },
+            {
+              "id": "q02-m03",
+              "cosine": 0.2793854931637978,
+              "composite": 0.30563129589827864,
+              "eligible": false
+            },
+            {
+              "id": "q02-m02",
+              "cosine": 0.2997445163191393,
+              "composite": 0.22784670979148358,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q02-m01",
+            "q02-m08",
+            "q02-m05",
+            "q02-m07",
+            "q02-m04"
+          ],
+          "selectedIds": [
+            "q02-m01",
+            "q02-m04",
+            "q02-m05",
+            "q02-m07",
+            "q02-m08"
+          ],
+          "formattedContext": "• Showcase room: For showing finished models to visitors, I like the bright room next to the cafe.\n• Library room: The library has a meeting room with a projector; I have not tried working there.\n• Club social: The model club social is more fun in a lively shared space.\n• Public demo: I volunteered to demonstrate paper gliders at the noisy exhibition hall.\n• Building conditions: For fiddly model assembly I have always preferred a quiet enclosed room with...\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q02-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q02-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q02-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q02-m07",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q02-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.2,
+            "ndcgAt5": 0.6309297535714574,
+            "essentialFactRecallAfterFormat": 0.0,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [
+              "q02-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [
+              "q02-f01"
+            ],
+            "selectedFactsLostToFormatter": 1,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": false,
+      "identicalSelectedSets": true,
+      "identicalFormattedContexts": true
+    },
+    {
+      "id": "q03",
+      "designSlice": "explicit supersession of schedule",
+      "answerable": true,
+      "intendedAnswerable": true,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q03-m07",
+            "q03-m03",
+            "q03-m02",
+            "q03-m08",
+            "q03-m01",
+            "q03-m04",
+            "q03-m05",
+            "q03-m06"
+          ],
+          "scores": [
+            {
+              "id": "q03-m07",
+              "cosine": 0.588506339576399,
+              "composite": 0.5661038037458394,
+              "eligible": true
+            },
+            {
+              "id": "q03-m03",
+              "cosine": 0.5573190665759261,
+              "composite": 0.6383914399455556,
+              "eligible": true
+            },
+            {
+              "id": "q03-m02",
+              "cosine": 0.8680033559252507,
+              "composite": 0.7038020135551504,
+              "eligible": true
+            },
+            {
+              "id": "q03-m08",
+              "cosine": 0.6724063132492134,
+              "composite": 0.568443787949528,
+              "eligible": true
+            },
+            {
+              "id": "q03-m01",
+              "cosine": 0.6118936963187332,
+              "composite": 0.47213621779123993,
+              "eligible": true
+            },
+            {
+              "id": "q03-m04",
+              "cosine": 0.18983255006986358,
+              "composite": 0.25423286337525147,
+              "eligible": false
+            },
+            {
+              "id": "q03-m05",
+              "cosine": 0.4475315342457927,
+              "composite": 0.3225189205474756,
+              "eligible": true
+            },
+            {
+              "id": "q03-m06",
+              "cosine": 0.7485590066479004,
+              "composite": 0.5868020706554069,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q03-m07",
+            "q03-m03",
+            "q03-m02",
+            "q03-m08",
+            "q03-m01",
+            "q03-m05",
+            "q03-m06"
+          ],
+          "selectedIds": [
+            "q03-m02",
+            "q03-m03",
+            "q03-m06",
+            "q03-m08",
+            "q03-m07"
+          ],
+          "formattedContext": "• Room cleanup: We stack stools after the pottery group leaves.\n• Sketch group: The sketch group meets on Wednesdays at 19:00.\n• Pottery spring schedule: As of 2026-05-03, pottery group meets Tuesdays at 18:00.\n• Pottery exhibition: The pottery exhibition opens Saturday at 11:00; this is a one-off exhibition ...\n• Pottery schedule change: On 2026-09-30 the pottery group moved to Thursdays at 18:30, replacing i...\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q03-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q03-m03",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q03-m06",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q03-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q03-m07",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 36"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q03-m07: similarity=0.589, importance=0.710, composite=0.566"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q03-m03: similarity=0.557, importance=0.680, composite=0.638"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q03-m02: similarity=0.868, importance=0.610, composite=0.704"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q03-m08: similarity=0.672, importance=0.550, composite=0.568"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q03-m01: similarity=0.612, importance=0.350, composite=0.472"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q03-m05: similarity=0.448, importance=0.180, composite=0.323"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q03-m06: similarity=0.749, importance=0.170, composite=0.587"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 5 relevant memories for user fictional-user (avg similarity: 0.687)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.2,
+            "ndcgAt5": 0.5,
+            "essentialFactRecallAfterFormat": 1.0,
+            "essentialFactIdsRetained": [
+              "q03-f01"
+            ],
+            "selectedEssentialFactIds": [
+              "q03-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 1,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q03-m07",
+            "q03-m03",
+            "q03-m02",
+            "q03-m08",
+            "q03-m01",
+            "q03-m04",
+            "q03-m05",
+            "q03-m06"
+          ],
+          "scores": [
+            {
+              "id": "q03-m07",
+              "cosine": 0.588506339576399,
+              "composite": 0.5661038037458394,
+              "eligible": true
+            },
+            {
+              "id": "q03-m03",
+              "cosine": 0.5573190665759261,
+              "composite": 0.6383914399455556,
+              "eligible": true
+            },
+            {
+              "id": "q03-m02",
+              "cosine": 0.8680033559252507,
+              "composite": 0.7038020135551504,
+              "eligible": true
+            },
+            {
+              "id": "q03-m08",
+              "cosine": 0.6724063132492134,
+              "composite": 0.568443787949528,
+              "eligible": true
+            },
+            {
+              "id": "q03-m01",
+              "cosine": 0.6118936963187332,
+              "composite": 0.47213621779123993,
+              "eligible": true
+            },
+            {
+              "id": "q03-m04",
+              "cosine": 0.18983255006986358,
+              "composite": 0.25423286337525147,
+              "eligible": false
+            },
+            {
+              "id": "q03-m05",
+              "cosine": 0.4475315342457927,
+              "composite": 0.3225189205474756,
+              "eligible": true
+            },
+            {
+              "id": "q03-m06",
+              "cosine": 0.7485590066479004,
+              "composite": 0.5868020706554069,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q03-m07",
+            "q03-m03",
+            "q03-m02",
+            "q03-m08",
+            "q03-m01",
+            "q03-m05",
+            "q03-m06"
+          ],
+          "selectedIds": [
+            "q03-m02",
+            "q03-m06",
+            "q03-m08",
+            "q03-m01",
+            "q03-m07"
+          ],
+          "formattedContext": "• Room cleanup: We stack stools after the pottery group leaves.\n• Pottery spring schedule: As of 2026-05-03, pottery group meets Tuesdays at 18:00.\n• Pottery exhibition: The pottery exhibition opens Saturday at 11:00; this is a one-off exhibition ...\n• Pottery supplies: I bring my own apron to pottery group.\n• Pottery schedule change: On 2026-09-30 the pottery group moved to Thursdays at 18:30, replacing i...\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q03-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q03-m06",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q03-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q03-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q03-m07",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.2,
+            "ndcgAt5": 0.6309297535714574,
+            "essentialFactRecallAfterFormat": 1.0,
+            "essentialFactIdsRetained": [
+              "q03-f01"
+            ],
+            "selectedEssentialFactIds": [
+              "q03-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 1,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": true,
+      "identicalSelectedSets": false,
+      "identicalFormattedContexts": false
+    },
+    {
+      "id": "q04",
+      "designSlice": "two independent supporting facts",
+      "answerable": true,
+      "intendedAnswerable": true,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q04-m07",
+            "q04-m04",
+            "q04-m06",
+            "q04-m03",
+            "q04-m02",
+            "q04-m01",
+            "q04-m05",
+            "q04-m08"
+          ],
+          "scores": [
+            {
+              "id": "q04-m07",
+              "cosine": 0.5796222107287038,
+              "composite": 0.7054399931038889,
+              "eligible": true
+            },
+            {
+              "id": "q04-m04",
+              "cosine": 0.5799271339273028,
+              "composite": 0.6646229470230482,
+              "eligible": true
+            },
+            {
+              "id": "q04-m06",
+              "cosine": 0.315025147340784,
+              "composite": 0.4086817550711371,
+              "eligible": true
+            },
+            {
+              "id": "q04-m03",
+              "cosine": 0.3375196957297005,
+              "composite": 0.4538451507711536,
+              "eligible": true
+            },
+            {
+              "id": "q04-m02",
+              "cosine": 0.7070093591991052,
+              "composite": 0.6162056155194631,
+              "eligible": true
+            },
+            {
+              "id": "q04-m01",
+              "cosine": 0.6473984679917454,
+              "composite": 0.6411057474617139,
+              "eligible": true
+            },
+            {
+              "id": "q04-m05",
+              "cosine": 0.3673671403250545,
+              "composite": 0.3224202841950327,
+              "eligible": true
+            },
+            {
+              "id": "q04-m08",
+              "cosine": 0.193270856029272,
+              "composite": 0.24362918028422986,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q04-m07",
+            "q04-m04",
+            "q04-m06",
+            "q04-m03",
+            "q04-m02",
+            "q04-m01",
+            "q04-m05"
+          ],
+          "selectedIds": [
+            "q04-m07",
+            "q04-m04",
+            "q04-m01",
+            "q04-m02",
+            "q04-m03"
+          ],
+          "formattedContext": "• Picnic meeting point: The sketch-club picnic meeting point is the fountain by the park south entr...\n• Rain location: If the sketch-club picnic gets canceled, we will choose a replacement outing later.\n• Solo sketching: On solo outings I prefer a blanket under a shady tree.\n• Picnic menu: The sketch-club picnic will have sandwiches and fruit.\n• Picnic seat: For the sketch-club picnic I agreed to bring the folding stool rather than the picni...\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q04-m07",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q04-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q04-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q04-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q04-m03",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 83"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q04-m07: similarity=0.580, importance=0.870, composite=0.705"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q04-m04: similarity=0.580, importance=0.800, composite=0.665"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q04-m06: similarity=0.315, importance=0.710, composite=0.409"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q04-m03: similarity=0.338, importance=0.660, composite=0.454"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q04-m02: similarity=0.707, importance=0.640, composite=0.616"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q04-m01: similarity=0.647, importance=0.520, composite=0.641"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q04-m05: similarity=0.367, importance=0.340, composite=0.322"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 5 relevant memories for user fictional-user (avg similarity: 0.570)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.4,
+            "ndcgAt5": 0.9197207891481876,
+            "essentialFactRecallAfterFormat": 0.5,
+            "essentialFactIdsRetained": [
+              "q04-f01"
+            ],
+            "selectedEssentialFactIds": [
+              "q04-f01",
+              "q04-f02"
+            ],
+            "selectedFactIdsLostToFormatter": [
+              "q04-f02"
+            ],
+            "selectedFactsLostToFormatter": 1,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q04-m07",
+            "q04-m04",
+            "q04-m06",
+            "q04-m03",
+            "q04-m02",
+            "q04-m01",
+            "q04-m05",
+            "q04-m08"
+          ],
+          "scores": [
+            {
+              "id": "q04-m07",
+              "cosine": 0.5796222107287038,
+              "composite": 0.7054399931038889,
+              "eligible": true
+            },
+            {
+              "id": "q04-m04",
+              "cosine": 0.5799271339273028,
+              "composite": 0.6646229470230482,
+              "eligible": true
+            },
+            {
+              "id": "q04-m06",
+              "cosine": 0.315025147340784,
+              "composite": 0.4086817550711371,
+              "eligible": true
+            },
+            {
+              "id": "q04-m03",
+              "cosine": 0.3375196957297005,
+              "composite": 0.4538451507711536,
+              "eligible": true
+            },
+            {
+              "id": "q04-m02",
+              "cosine": 0.7070093591991052,
+              "composite": 0.6162056155194631,
+              "eligible": true
+            },
+            {
+              "id": "q04-m01",
+              "cosine": 0.6473984679917454,
+              "composite": 0.6411057474617139,
+              "eligible": true
+            },
+            {
+              "id": "q04-m05",
+              "cosine": 0.3673671403250545,
+              "composite": 0.3224202841950327,
+              "eligible": true
+            },
+            {
+              "id": "q04-m08",
+              "cosine": 0.193270856029272,
+              "composite": 0.24362918028422986,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q04-m07",
+            "q04-m04",
+            "q04-m06",
+            "q04-m03",
+            "q04-m02",
+            "q04-m01",
+            "q04-m05"
+          ],
+          "selectedIds": [
+            "q04-m02",
+            "q04-m01",
+            "q04-m04",
+            "q04-m07",
+            "q04-m05"
+          ],
+          "formattedContext": "• Picnic meeting point: The sketch-club picnic meeting point is the fountain by the park south entr...\n• Rain location: If the sketch-club picnic gets canceled, we will choose a replacement outing later.\n• Picnic menu: The sketch-club picnic will have sandwiches and fruit.\n• Picnic seat: For the sketch-club picnic I agreed to bring the folding stool rather than the picni...\n• Club supplies: Spare charcoal sticks are in the club cupboard.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q04-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q04-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q04-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q04-m07",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q04-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.4,
+            "ndcgAt5": 0.6509209298071326,
+            "essentialFactRecallAfterFormat": 0.5,
+            "essentialFactIdsRetained": [
+              "q04-f01"
+            ],
+            "selectedEssentialFactIds": [
+              "q04-f01",
+              "q04-f02"
+            ],
+            "selectedFactIdsLostToFormatter": [
+              "q04-f02"
+            ],
+            "selectedFactsLostToFormatter": 1,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": true,
+      "identicalSelectedSets": false,
+      "identicalFormattedContexts": false
+    },
+    {
+      "id": "q05",
+      "designSlice": "late evidence in a long memory",
+      "answerable": true,
+      "intendedAnswerable": true,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q05-m01",
+            "q05-m03",
+            "q05-m06",
+            "q05-m04",
+            "q05-m02",
+            "q05-m05",
+            "q05-m07",
+            "q05-m08"
+          ],
+          "scores": [
+            {
+              "id": "q05-m01",
+              "cosine": 0.1109478579253772,
+              "composite": 0.2735687147552263,
+              "eligible": false
+            },
+            {
+              "id": "q05-m03",
+              "cosine": 0.4838317122939515,
+              "composite": 0.4852990273763709,
+              "eligible": true
+            },
+            {
+              "id": "q05-m06",
+              "cosine": 0.4663884322968609,
+              "composite": 0.46283305937811653,
+              "eligible": true
+            },
+            {
+              "id": "q05-m04",
+              "cosine": 0.3708316932716601,
+              "composite": 0.4318323492963294,
+              "eligible": true
+            },
+            {
+              "id": "q05-m02",
+              "cosine": 0.17787991533991312,
+              "composite": 0.25372794920394787,
+              "eligible": false
+            },
+            {
+              "id": "q05-m05",
+              "cosine": 0.5062930317546249,
+              "composite": 0.4394424857194416,
+              "eligible": true
+            },
+            {
+              "id": "q05-m07",
+              "cosine": 0.3819605731564828,
+              "composite": 0.363509677227223,
+              "eligible": true
+            },
+            {
+              "id": "q05-m08",
+              "cosine": 0.4294661902266169,
+              "composite": 0.3146797141359701,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q05-m03",
+            "q05-m06",
+            "q05-m04",
+            "q05-m05",
+            "q05-m07",
+            "q05-m08"
+          ],
+          "selectedIds": [
+            "q05-m03",
+            "q05-m06",
+            "q05-m05",
+            "q05-m04",
+            "q05-m07"
+          ],
+          "formattedContext": "• Jigsaw evening notes: At the puzzle evening we cleared the round table, sorted edge pieces into s...\n• Puzzle taste: I prefer illustrated jigsaws over photographs of crowds.\n• Lighthouse painting: The lighthouse painting is on loan to the imaginary Seaglass Gallery for its...\n• Mountain jigsaw: The mountain jigsaw belongs to the library, not to me.\n• Borrowed castle puzzle: I borrowed the castle puzzle from the fictional Fern Lane Club.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q05-m03",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q05-m06",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q05-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q05-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q05-m07",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 41"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q05-m03: similarity=0.484, importance=0.650, composite=0.485"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q05-m06: similarity=0.466, importance=0.610, composite=0.463"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q05-m04: similarity=0.371, importance=0.520, composite=0.432"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q05-m05: similarity=0.506, importance=0.430, composite=0.439"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q05-m07: similarity=0.382, importance=0.270, composite=0.364"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q05-m08: similarity=0.429, importance=0.190, composite=0.315"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 5 relevant memories for user fictional-user (avg similarity: 0.442)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.2,
+            "ndcgAt5": 1.0,
+            "essentialFactRecallAfterFormat": 0.0,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [
+              "q05-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [
+              "q05-f01"
+            ],
+            "selectedFactsLostToFormatter": 1,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q05-m01",
+            "q05-m03",
+            "q05-m06",
+            "q05-m04",
+            "q05-m02",
+            "q05-m05",
+            "q05-m07",
+            "q05-m08"
+          ],
+          "scores": [
+            {
+              "id": "q05-m01",
+              "cosine": 0.1109478579253772,
+              "composite": 0.2735687147552263,
+              "eligible": false
+            },
+            {
+              "id": "q05-m03",
+              "cosine": 0.4838317122939515,
+              "composite": 0.4852990273763709,
+              "eligible": true
+            },
+            {
+              "id": "q05-m06",
+              "cosine": 0.4663884322968609,
+              "composite": 0.46283305937811653,
+              "eligible": true
+            },
+            {
+              "id": "q05-m04",
+              "cosine": 0.3708316932716601,
+              "composite": 0.4318323492963294,
+              "eligible": true
+            },
+            {
+              "id": "q05-m02",
+              "cosine": 0.17787991533991312,
+              "composite": 0.25372794920394787,
+              "eligible": false
+            },
+            {
+              "id": "q05-m05",
+              "cosine": 0.5062930317546249,
+              "composite": 0.4394424857194416,
+              "eligible": true
+            },
+            {
+              "id": "q05-m07",
+              "cosine": 0.3819605731564828,
+              "composite": 0.363509677227223,
+              "eligible": true
+            },
+            {
+              "id": "q05-m08",
+              "cosine": 0.4294661902266169,
+              "composite": 0.3146797141359701,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q05-m03",
+            "q05-m06",
+            "q05-m04",
+            "q05-m05",
+            "q05-m07",
+            "q05-m08"
+          ],
+          "selectedIds": [
+            "q05-m05",
+            "q05-m03",
+            "q05-m06",
+            "q05-m08",
+            "q05-m07"
+          ],
+          "formattedContext": "• Jigsaw evening notes: At the puzzle evening we cleared the round table, sorted edge pieces into s...\n• Puzzle taste: I prefer illustrated jigsaws over photographs of crowds.\n• Mountain jigsaw: The mountain jigsaw belongs to the library, not to me.\n• Borrowed castle puzzle: I borrowed the castle puzzle from the fictional Fern Lane Club.\n• Lighthouse frame: The empty lighthouse picture frame is wrapped in brown paper.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q05-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q05-m03",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q05-m06",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q05-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q05-m07",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.2,
+            "ndcgAt5": 0.6309297535714574,
+            "essentialFactRecallAfterFormat": 0.0,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [
+              "q05-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [
+              "q05-f01"
+            ],
+            "selectedFactsLostToFormatter": 1,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": true,
+      "identicalSelectedSets": false,
+      "identicalFormattedContexts": false
+    },
+    {
+      "id": "q06",
+      "designSlice": "preference with explicit negative constraint",
+      "answerable": true,
+      "intendedAnswerable": true,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q06-m01",
+            "q06-m06",
+            "q06-m07",
+            "q06-m05",
+            "q06-m03",
+            "q06-m08",
+            "q06-m04",
+            "q06-m02"
+          ],
+          "scores": [
+            {
+              "id": "q06-m01",
+              "cosine": 0.39003729835238166,
+              "composite": 0.519022379011429,
+              "eligible": true
+            },
+            {
+              "id": "q06-m06",
+              "cosine": 0.29480482094844435,
+              "composite": 0.4228828925690666,
+              "eligible": false
+            },
+            {
+              "id": "q06-m07",
+              "cosine": 0.3240459742943051,
+              "composite": 0.419427584576583,
+              "eligible": true
+            },
+            {
+              "id": "q06-m05",
+              "cosine": 0.5277638684045917,
+              "composite": 0.6153249877094217,
+              "eligible": true
+            },
+            {
+              "id": "q06-m03",
+              "cosine": 0.42333367536480637,
+              "composite": 0.5466668718855505,
+              "eligible": true
+            },
+            {
+              "id": "q06-m08",
+              "cosine": 0.7393639224677099,
+              "composite": 0.7286183534806259,
+              "eligible": true
+            },
+            {
+              "id": "q06-m04",
+              "cosine": 0.3625672494965777,
+              "composite": 0.3435403496979466,
+              "eligible": true
+            },
+            {
+              "id": "q06-m02",
+              "cosine": 0.5263892739188332,
+              "composite": 0.43516689768463324,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q06-m01",
+            "q06-m07",
+            "q06-m05",
+            "q06-m03",
+            "q06-m08",
+            "q06-m04",
+            "q06-m02"
+          ],
+          "selectedIds": [
+            "q06-m08",
+            "q06-m05",
+            "q06-m03",
+            "q06-m01",
+            "q06-m02"
+          ],
+          "formattedContext": "• Gift wrapping: I like plain paper tags on presents.\n• Gift bag pattern: The reusable gift bag pattern closes with a drawstring.\n• Bag handles: The shopping tote has sturdy woven handles.\n• Gift bag fabric: For reusable gift bags I prefer washed cotton; avoid shiny satin because I disli...\n• Apron fabric: For workshop aprons I like dark denim.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q06-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q06-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q06-m03",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q06-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q06-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 74"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q06-m01: similarity=0.390, importance=0.950, composite=0.519"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q06-m07: similarity=0.324, importance=0.750, composite=0.419"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q06-m05: similarity=0.528, importance=0.740, composite=0.615"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q06-m03: similarity=0.423, importance=0.720, composite=0.547"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q06-m08: similarity=0.739, importance=0.650, composite=0.729"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q06-m04: similarity=0.363, importance=0.420, composite=0.344"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q06-m02: similarity=0.526, importance=0.220, composite=0.435"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 5 relevant memories for user fictional-user (avg similarity: 0.521)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.2,
+            "ndcgAt5": 1.0,
+            "essentialFactRecallAfterFormat": 1.0,
+            "essentialFactIdsRetained": [
+              "q06-f01"
+            ],
+            "selectedEssentialFactIds": [
+              "q06-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q06-m01",
+            "q06-m06",
+            "q06-m07",
+            "q06-m05",
+            "q06-m03",
+            "q06-m08",
+            "q06-m04",
+            "q06-m02"
+          ],
+          "scores": [
+            {
+              "id": "q06-m01",
+              "cosine": 0.39003729835238166,
+              "composite": 0.519022379011429,
+              "eligible": true
+            },
+            {
+              "id": "q06-m06",
+              "cosine": 0.29480482094844435,
+              "composite": 0.4228828925690666,
+              "eligible": false
+            },
+            {
+              "id": "q06-m07",
+              "cosine": 0.3240459742943051,
+              "composite": 0.419427584576583,
+              "eligible": true
+            },
+            {
+              "id": "q06-m05",
+              "cosine": 0.5277638684045917,
+              "composite": 0.6153249877094217,
+              "eligible": true
+            },
+            {
+              "id": "q06-m03",
+              "cosine": 0.42333367536480637,
+              "composite": 0.5466668718855505,
+              "eligible": true
+            },
+            {
+              "id": "q06-m08",
+              "cosine": 0.7393639224677099,
+              "composite": 0.7286183534806259,
+              "eligible": true
+            },
+            {
+              "id": "q06-m04",
+              "cosine": 0.3625672494965777,
+              "composite": 0.3435403496979466,
+              "eligible": true
+            },
+            {
+              "id": "q06-m02",
+              "cosine": 0.5263892739188332,
+              "composite": 0.43516689768463324,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q06-m01",
+            "q06-m07",
+            "q06-m05",
+            "q06-m03",
+            "q06-m08",
+            "q06-m04",
+            "q06-m02"
+          ],
+          "selectedIds": [
+            "q06-m08",
+            "q06-m05",
+            "q06-m02",
+            "q06-m03",
+            "q06-m01"
+          ],
+          "formattedContext": "• Gift wrapping: I like plain paper tags on presents.\n• Gift bag pattern: The reusable gift bag pattern closes with a drawstring.\n• Bag handles: The shopping tote has sturdy woven handles.\n• Gift bag fabric: For reusable gift bags I prefer washed cotton; avoid shiny satin because I disli...\n• Apron fabric: For workshop aprons I like dark denim.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q06-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q06-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q06-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q06-m03",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q06-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.2,
+            "ndcgAt5": 1.0,
+            "essentialFactRecallAfterFormat": 1.0,
+            "essentialFactIdsRetained": [
+              "q06-f01"
+            ],
+            "selectedEssentialFactIds": [
+              "q06-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": true,
+      "identicalSelectedSets": true,
+      "identicalFormattedContexts": true
+    },
+    {
+      "id": "q07",
+      "designSlice": "near-identical entity names",
+      "answerable": true,
+      "intendedAnswerable": true,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q07-m04",
+            "q07-m03",
+            "q07-m06",
+            "q07-m02",
+            "q07-m05",
+            "q07-m07",
+            "q07-m01",
+            "q07-m08"
+          ],
+          "scores": [
+            {
+              "id": "q07-m04",
+              "cosine": 0.3992067867944667,
+              "composite": 0.5731907387433467,
+              "eligible": true
+            },
+            {
+              "id": "q07-m03",
+              "cosine": 0.2740627850148571,
+              "composite": 0.3931043376755809,
+              "eligible": false
+            },
+            {
+              "id": "q07-m06",
+              "cosine": 0.30390181414046225,
+              "composite": 0.46500775515094406,
+              "eligible": true
+            },
+            {
+              "id": "q07-m02",
+              "cosine": 0.5918748999551597,
+              "composite": 0.5644582733064292,
+              "eligible": true
+            },
+            {
+              "id": "q07-m05",
+              "cosine": 0.25196036773460523,
+              "composite": 0.27417622064076314,
+              "eligible": false
+            },
+            {
+              "id": "q07-m07",
+              "cosine": 0.28829477044415974,
+              "composite": 0.3326435289331625,
+              "eligible": false
+            },
+            {
+              "id": "q07-m01",
+              "cosine": 0.7296041748578671,
+              "composite": 0.5007625049147202,
+              "eligible": true
+            },
+            {
+              "id": "q07-m08",
+              "cosine": 0.45298930156547423,
+              "composite": 0.31746024760595115,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q07-m04",
+            "q07-m06",
+            "q07-m02",
+            "q07-m01",
+            "q07-m08"
+          ],
+          "selectedIds": [
+            "q07-m04",
+            "q07-m02",
+            "q07-m01",
+            "q07-m06",
+            "q07-m08"
+          ],
+          "formattedContext": "• Harbor sketch: The harbor sketch is on a landscape-format page.\n• Model shelf: Both harbor models will fit on the long display shelf.\n• Harbor Lantern scale: I chose 1:48 for the Harbor Lantern model so I could include interior details.\n• Harbor Market scale: The Harbor Market model uses a 1:100 scale.\n• Lantern color: The Harbor Lantern exterior will be pale blue.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q07-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q07-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q07-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q07-m06",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q07-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 92"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q07-m04: similarity=0.399, importance=0.790, composite=0.573"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q07-m06: similarity=0.304, importance=0.620, composite=0.465"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q07-m02: similarity=0.592, importance=0.520, composite=0.564"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q07-m01: similarity=0.730, importance=0.210, composite=0.501"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q07-m08: similarity=0.453, importance=0.130, composite=0.317"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 5 relevant memories for user fictional-user (avg similarity: 0.496)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.4,
+            "ndcgAt5": 0.6934264036172708,
+            "essentialFactRecallAfterFormat": 1.0,
+            "essentialFactIdsRetained": [
+              "q07-f01",
+              "q07-f02"
+            ],
+            "selectedEssentialFactIds": [
+              "q07-f01",
+              "q07-f02"
+            ],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q07-m04",
+            "q07-m03",
+            "q07-m06",
+            "q07-m02",
+            "q07-m05",
+            "q07-m07",
+            "q07-m01",
+            "q07-m08"
+          ],
+          "scores": [
+            {
+              "id": "q07-m04",
+              "cosine": 0.3992067867944667,
+              "composite": 0.5731907387433467,
+              "eligible": true
+            },
+            {
+              "id": "q07-m03",
+              "cosine": 0.2740627850148571,
+              "composite": 0.3931043376755809,
+              "eligible": false
+            },
+            {
+              "id": "q07-m06",
+              "cosine": 0.30390181414046225,
+              "composite": 0.46500775515094406,
+              "eligible": true
+            },
+            {
+              "id": "q07-m02",
+              "cosine": 0.5918748999551597,
+              "composite": 0.5644582733064292,
+              "eligible": true
+            },
+            {
+              "id": "q07-m05",
+              "cosine": 0.25196036773460523,
+              "composite": 0.27417622064076314,
+              "eligible": false
+            },
+            {
+              "id": "q07-m07",
+              "cosine": 0.28829477044415974,
+              "composite": 0.3326435289331625,
+              "eligible": false
+            },
+            {
+              "id": "q07-m01",
+              "cosine": 0.7296041748578671,
+              "composite": 0.5007625049147202,
+              "eligible": true
+            },
+            {
+              "id": "q07-m08",
+              "cosine": 0.45298930156547423,
+              "composite": 0.31746024760595115,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q07-m04",
+            "q07-m06",
+            "q07-m02",
+            "q07-m01",
+            "q07-m08"
+          ],
+          "selectedIds": [
+            "q07-m01",
+            "q07-m02",
+            "q07-m08",
+            "q07-m04",
+            "q07-m06"
+          ],
+          "formattedContext": "• Harbor sketch: The harbor sketch is on a landscape-format page.\n• Model shelf: Both harbor models will fit on the long display shelf.\n• Harbor Lantern scale: I chose 1:48 for the Harbor Lantern model so I could include interior details.\n• Harbor Market scale: The Harbor Market model uses a 1:100 scale.\n• Lantern color: The Harbor Lantern exterior will be pale blue.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q07-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q07-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q07-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q07-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q07-m06",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.4,
+            "ndcgAt5": 1.0,
+            "essentialFactRecallAfterFormat": 1.0,
+            "essentialFactIdsRetained": [
+              "q07-f01",
+              "q07-f02"
+            ],
+            "selectedEssentialFactIds": [
+              "q07-f01",
+              "q07-f02"
+            ],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": false,
+      "identicalSelectedSets": true,
+      "identicalFormattedContexts": true
+    },
+    {
+      "id": "q08",
+      "designSlice": "paraphrased cadence recall",
+      "answerable": true,
+      "intendedAnswerable": true,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q08-m01",
+            "q08-m03",
+            "q08-m05",
+            "q08-m06",
+            "q08-m04",
+            "q08-m07",
+            "q08-m08",
+            "q08-m02"
+          ],
+          "scores": [
+            {
+              "id": "q08-m01",
+              "cosine": 0.2826970690891197,
+              "composite": 0.44861824145347184,
+              "eligible": false
+            },
+            {
+              "id": "q08-m03",
+              "cosine": 0.38371441866999983,
+              "composite": 0.5168953178686666,
+              "eligible": true
+            },
+            {
+              "id": "q08-m05",
+              "cosine": 0.2527451025861395,
+              "composite": 0.3436470615516837,
+              "eligible": false
+            },
+            {
+              "id": "q08-m06",
+              "cosine": 0.3358054779386747,
+              "composite": 0.35148328676320484,
+              "eligible": true
+            },
+            {
+              "id": "q08-m04",
+              "cosine": 0.7545489307042386,
+              "composite": 0.5637293584225431,
+              "eligible": true
+            },
+            {
+              "id": "q08-m07",
+              "cosine": 0.5432489363821326,
+              "composite": 0.41294936182927955,
+              "eligible": true
+            },
+            {
+              "id": "q08-m08",
+              "cosine": 0.21988410797896576,
+              "composite": 0.20993046478737948,
+              "eligible": false
+            },
+            {
+              "id": "q08-m02",
+              "cosine": 0.23220012619932456,
+              "composite": 0.25265340905292805,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q08-m03",
+            "q08-m06",
+            "q08-m04",
+            "q08-m07"
+          ],
+          "selectedIds": [
+            "q08-m04",
+            "q08-m03",
+            "q08-m07",
+            "q08-m06"
+          ],
+          "formattedContext": "• Indoor pots: The large decorative pot is too wide for the windowsill.\n• Seed packet box: Unused seed packets go in the green tin.\n• Tray routine: My routine is to give the windowsill seedling tray a quarter-turn every other morni...\n• Photo routine: I take a picture of the seedling tray each Sunday.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q08-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q08-m03",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q08-m07",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q08-m06",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 84"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q08-m03: similarity=0.384, importance=0.700, composite=0.517"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q08-m06: similarity=0.336, importance=0.500, composite=0.351"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q08-m04: similarity=0.755, importance=0.370, composite=0.564"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q08-m07: similarity=0.543, importance=0.290, composite=0.413"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 4 relevant memories for user fictional-user (avg similarity: 0.504)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 4 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.25,
+            "ndcgAt5": 1.0,
+            "essentialFactRecallAfterFormat": 0.0,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [
+              "q08-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [
+              "q08-f01"
+            ],
+            "selectedFactsLostToFormatter": 1,
+            "supersededCount": 0,
+            "selectedCount": 4,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q08-m01",
+            "q08-m03",
+            "q08-m05",
+            "q08-m06",
+            "q08-m04",
+            "q08-m07",
+            "q08-m08",
+            "q08-m02"
+          ],
+          "scores": [
+            {
+              "id": "q08-m01",
+              "cosine": 0.2826970690891197,
+              "composite": 0.44861824145347184,
+              "eligible": false
+            },
+            {
+              "id": "q08-m03",
+              "cosine": 0.38371441866999983,
+              "composite": 0.5168953178686666,
+              "eligible": true
+            },
+            {
+              "id": "q08-m05",
+              "cosine": 0.2527451025861395,
+              "composite": 0.3436470615516837,
+              "eligible": false
+            },
+            {
+              "id": "q08-m06",
+              "cosine": 0.3358054779386747,
+              "composite": 0.35148328676320484,
+              "eligible": true
+            },
+            {
+              "id": "q08-m04",
+              "cosine": 0.7545489307042386,
+              "composite": 0.5637293584225431,
+              "eligible": true
+            },
+            {
+              "id": "q08-m07",
+              "cosine": 0.5432489363821326,
+              "composite": 0.41294936182927955,
+              "eligible": true
+            },
+            {
+              "id": "q08-m08",
+              "cosine": 0.21988410797896576,
+              "composite": 0.20993046478737948,
+              "eligible": false
+            },
+            {
+              "id": "q08-m02",
+              "cosine": 0.23220012619932456,
+              "composite": 0.25265340905292805,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q08-m03",
+            "q08-m06",
+            "q08-m04",
+            "q08-m07"
+          ],
+          "selectedIds": [
+            "q08-m04",
+            "q08-m07",
+            "q08-m03",
+            "q08-m06"
+          ],
+          "formattedContext": "• Indoor pots: The large decorative pot is too wide for the windowsill.\n• Seed packet box: Unused seed packets go in the green tin.\n• Tray routine: My routine is to give the windowsill seedling tray a quarter-turn every other morni...\n• Photo routine: I take a picture of the seedling tray each Sunday.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q08-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q08-m07",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q08-m03",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q08-m06",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 4 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.25,
+            "ndcgAt5": 1.0,
+            "essentialFactRecallAfterFormat": 0.0,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [
+              "q08-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [
+              "q08-f01"
+            ],
+            "selectedFactsLostToFormatter": 1,
+            "supersededCount": 0,
+            "selectedCount": 4,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": false,
+      "identicalSelectedSets": true,
+      "identicalFormattedContexts": true
+    },
+    {
+      "id": "q09",
+      "designSlice": "ordered workflow among topical distractors",
+      "answerable": true,
+      "intendedAnswerable": true,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q09-m02",
+            "q09-m04",
+            "q09-m03",
+            "q09-m06",
+            "q09-m05",
+            "q09-m07",
+            "q09-m08",
+            "q09-m01"
+          ],
+          "scores": [
+            {
+              "id": "q09-m02",
+              "cosine": 0.45030612478313,
+              "composite": 0.636183674869878,
+              "eligible": true
+            },
+            {
+              "id": "q09-m04",
+              "cosine": 0.3715032681621173,
+              "composite": 0.49823529423060375,
+              "eligible": true
+            },
+            {
+              "id": "q09-m03",
+              "cosine": 0.2463219898798286,
+              "composite": 0.38845986059456383,
+              "eligible": false
+            },
+            {
+              "id": "q09-m06",
+              "cosine": 0.48448656303585363,
+              "composite": 0.43469193782151216,
+              "eligible": true
+            },
+            {
+              "id": "q09-m05",
+              "cosine": 0.6463941799611103,
+              "composite": 0.4958365079766661,
+              "eligible": true
+            },
+            {
+              "id": "q09-m07",
+              "cosine": 0.4434063517247857,
+              "composite": 0.3470438110348714,
+              "eligible": true
+            },
+            {
+              "id": "q09-m08",
+              "cosine": 0.2691903011627655,
+              "composite": 0.29951418069765934,
+              "eligible": false
+            },
+            {
+              "id": "q09-m01",
+              "cosine": 0.5459080547326055,
+              "composite": 0.3575448328395633,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q09-m02",
+            "q09-m04",
+            "q09-m06",
+            "q09-m05",
+            "q09-m07",
+            "q09-m01"
+          ],
+          "selectedIds": [
+            "q09-m02",
+            "q09-m04",
+            "q09-m05",
+            "q09-m06",
+            "q09-m01"
+          ],
+          "formattedContext": "• Hole guide: The hole guide is a folded strip of card.\n• Binding supplies: The thick binding needle is in the small sewing tin.\n• Punch storage: The paper punch lives in the bottom drawer.\n• Binding sequence: My stitched travel notebook sequence is: fold the sheets, punch the holes, thre...\n• Notebook paper: The stitched travel notebook uses cream paper with a few blue divider sheets.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q09-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q09-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q09-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q09-m06",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q09-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 81"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q09-m02: similarity=0.450, importance=0.920, composite=0.636"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q09-m04: similarity=0.372, importance=0.740, composite=0.498"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q09-m06: similarity=0.484, importance=0.480, composite=0.435"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q09-m05: similarity=0.646, importance=0.360, composite=0.496"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q09-m07: similarity=0.443, importance=0.270, composite=0.347"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q09-m01: similarity=0.546, importance=0.100, composite=0.358"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 5 relevant memories for user fictional-user (avg similarity: 0.500)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.2,
+            "ndcgAt5": 0.5,
+            "essentialFactRecallAfterFormat": 0.0,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [
+              "q09-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [
+              "q09-f01"
+            ],
+            "selectedFactsLostToFormatter": 1,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q09-m02",
+            "q09-m04",
+            "q09-m03",
+            "q09-m06",
+            "q09-m05",
+            "q09-m07",
+            "q09-m08",
+            "q09-m01"
+          ],
+          "scores": [
+            {
+              "id": "q09-m02",
+              "cosine": 0.45030612478313,
+              "composite": 0.636183674869878,
+              "eligible": true
+            },
+            {
+              "id": "q09-m04",
+              "cosine": 0.3715032681621173,
+              "composite": 0.49823529423060375,
+              "eligible": true
+            },
+            {
+              "id": "q09-m03",
+              "cosine": 0.2463219898798286,
+              "composite": 0.38845986059456383,
+              "eligible": false
+            },
+            {
+              "id": "q09-m06",
+              "cosine": 0.48448656303585363,
+              "composite": 0.43469193782151216,
+              "eligible": true
+            },
+            {
+              "id": "q09-m05",
+              "cosine": 0.6463941799611103,
+              "composite": 0.4958365079766661,
+              "eligible": true
+            },
+            {
+              "id": "q09-m07",
+              "cosine": 0.4434063517247857,
+              "composite": 0.3470438110348714,
+              "eligible": true
+            },
+            {
+              "id": "q09-m08",
+              "cosine": 0.2691903011627655,
+              "composite": 0.29951418069765934,
+              "eligible": false
+            },
+            {
+              "id": "q09-m01",
+              "cosine": 0.5459080547326055,
+              "composite": 0.3575448328395633,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q09-m02",
+            "q09-m04",
+            "q09-m06",
+            "q09-m05",
+            "q09-m07",
+            "q09-m01"
+          ],
+          "selectedIds": [
+            "q09-m05",
+            "q09-m01",
+            "q09-m06",
+            "q09-m02",
+            "q09-m07"
+          ],
+          "formattedContext": "• Hole guide: The hole guide is a folded strip of card.\n• Punch storage: The paper punch lives in the bottom drawer.\n• Binding sequence: My stitched travel notebook sequence is: fold the sheets, punch the holes, thre...\n• Stapled notebook: For the small stapled notebook, I trim the pages before folding them.\n• Notebook paper: The stitched travel notebook uses cream paper with a few blue divider sheets.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q09-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q09-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q09-m06",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q09-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q09-m07",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.2,
+            "ndcgAt5": 1.0,
+            "essentialFactRecallAfterFormat": 0.0,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [
+              "q09-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [
+              "q09-f01"
+            ],
+            "selectedFactsLostToFormatter": 1,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": true,
+      "identicalSelectedSets": false,
+      "identicalFormattedContexts": false
+    },
+    {
+      "id": "q10",
+      "designSlice": "historical query despite a newer replacement",
+      "answerable": true,
+      "intendedAnswerable": true,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q10-m01",
+            "q10-m03",
+            "q10-m04",
+            "q10-m05",
+            "q10-m02",
+            "q10-m08",
+            "q10-m06",
+            "q10-m07"
+          ],
+          "scores": [
+            {
+              "id": "q10-m01",
+              "cosine": 0.6586272638511133,
+              "composite": 0.7671763583106679,
+              "eligible": true
+            },
+            {
+              "id": "q10-m03",
+              "cosine": 0.7125001819508938,
+              "composite": 0.6795001091705363,
+              "eligible": true
+            },
+            {
+              "id": "q10-m04",
+              "cosine": 0.10980920506900897,
+              "composite": 0.40555218970807205,
+              "eligible": false
+            },
+            {
+              "id": "q10-m05",
+              "cosine": 0.39056343551393335,
+              "composite": 0.4600047279750266,
+              "eligible": true
+            },
+            {
+              "id": "q10-m02",
+              "cosine": 0.6347873880928286,
+              "composite": 0.5878724328556971,
+              "eligible": true
+            },
+            {
+              "id": "q10-m08",
+              "cosine": 0.4166935881266829,
+              "composite": 0.4186828195426764,
+              "eligible": true
+            },
+            {
+              "id": "q10-m06",
+              "cosine": 0.4519705608513757,
+              "composite": 0.34384900317749206,
+              "eligible": true
+            },
+            {
+              "id": "q10-m07",
+              "cosine": 0.25867301506280105,
+              "composite": 0.19120380903768064,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q10-m01",
+            "q10-m03",
+            "q10-m05",
+            "q10-m02",
+            "q10-m08",
+            "q10-m06"
+          ],
+          "selectedIds": [
+            "q10-m01",
+            "q10-m03",
+            "q10-m02",
+            "q10-m05",
+            "q10-m08"
+          ],
+          "formattedContext": "• October banner revision: On 2026-10-01 I replaced the craft-fair banner wording with Made for Cur...\n• June banner wording: On 2026-06-01 I chose Small Things, Thoughtfully Made as the craft-fair bann...\n• Fair packing: Pack string, clips, and the folding display stand for the craft fair.\n• Banner material: The craft-fair banner will be printed on uncoated fabric.\n• Banner practice: I want to practice rolling the banner without creasing it.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q10-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q10-m03",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q10-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q10-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q10-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 81"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q10-m01: similarity=0.659, importance=0.940, composite=0.767"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q10-m03: similarity=0.713, importance=0.840, composite=0.680"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q10-m05: similarity=0.391, importance=0.730, composite=0.460"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q10-m02: similarity=0.635, importance=0.690, composite=0.588"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q10-m08: similarity=0.417, importance=0.240, composite=0.419"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q10-m06: similarity=0.452, importance=0.220, composite=0.344"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 5 relevant memories for user fictional-user (avg similarity: 0.563)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.4,
+            "ndcgAt5": 0.7967075809905066,
+            "essentialFactRecallAfterFormat": 1.0,
+            "essentialFactIdsRetained": [
+              "q10-f01"
+            ],
+            "selectedEssentialFactIds": [
+              "q10-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q10-m01",
+            "q10-m03",
+            "q10-m04",
+            "q10-m05",
+            "q10-m02",
+            "q10-m08",
+            "q10-m06",
+            "q10-m07"
+          ],
+          "scores": [
+            {
+              "id": "q10-m01",
+              "cosine": 0.6586272638511133,
+              "composite": 0.7671763583106679,
+              "eligible": true
+            },
+            {
+              "id": "q10-m03",
+              "cosine": 0.7125001819508938,
+              "composite": 0.6795001091705363,
+              "eligible": true
+            },
+            {
+              "id": "q10-m04",
+              "cosine": 0.10980920506900897,
+              "composite": 0.40555218970807205,
+              "eligible": false
+            },
+            {
+              "id": "q10-m05",
+              "cosine": 0.39056343551393335,
+              "composite": 0.4600047279750266,
+              "eligible": true
+            },
+            {
+              "id": "q10-m02",
+              "cosine": 0.6347873880928286,
+              "composite": 0.5878724328556971,
+              "eligible": true
+            },
+            {
+              "id": "q10-m08",
+              "cosine": 0.4166935881266829,
+              "composite": 0.4186828195426764,
+              "eligible": true
+            },
+            {
+              "id": "q10-m06",
+              "cosine": 0.4519705608513757,
+              "composite": 0.34384900317749206,
+              "eligible": true
+            },
+            {
+              "id": "q10-m07",
+              "cosine": 0.25867301506280105,
+              "composite": 0.19120380903768064,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q10-m01",
+            "q10-m03",
+            "q10-m05",
+            "q10-m02",
+            "q10-m08",
+            "q10-m06"
+          ],
+          "selectedIds": [
+            "q10-m03",
+            "q10-m01",
+            "q10-m02",
+            "q10-m06",
+            "q10-m08"
+          ],
+          "formattedContext": "• October banner revision: On 2026-10-01 I replaced the craft-fair banner wording with Made for Cur...\n• June banner wording: On 2026-06-01 I chose Small Things, Thoughtfully Made as the craft-fair bann...\n• Banner material: The craft-fair banner will be printed on uncoated fabric.\n• Banner practice: I want to practice rolling the banner without creasing it.\n• Banner colors: The banner background is dark green with cream lettering.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q10-m03",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q10-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q10-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q10-m06",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q10-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.4,
+            "ndcgAt5": 1.0,
+            "essentialFactRecallAfterFormat": 1.0,
+            "essentialFactIdsRetained": [
+              "q10-f01"
+            ],
+            "selectedEssentialFactIds": [
+              "q10-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": true,
+      "identicalSelectedSets": false,
+      "identicalFormattedContexts": false
+    },
+    {
+      "id": "q11",
+      "designSlice": "simple composition across capacity and attendance",
+      "answerable": true,
+      "intendedAnswerable": true,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q11-m05",
+            "q11-m03",
+            "q11-m01",
+            "q11-m07",
+            "q11-m02",
+            "q11-m04",
+            "q11-m08",
+            "q11-m06"
+          ],
+          "scores": [
+            {
+              "id": "q11-m05",
+              "cosine": 0.6063590778773583,
+              "composite": 0.645815446726415,
+              "eligible": true
+            },
+            {
+              "id": "q11-m03",
+              "cosine": 0.2778335858697331,
+              "composite": 0.5057001515218398,
+              "eligible": false
+            },
+            {
+              "id": "q11-m01",
+              "cosine": 0.26134828244324554,
+              "composite": 0.46580896946594735,
+              "eligible": false
+            },
+            {
+              "id": "q11-m07",
+              "cosine": 0.11525074422024931,
+              "composite": 0.24915044653214957,
+              "eligible": false
+            },
+            {
+              "id": "q11-m02",
+              "cosine": 0.6970487849229811,
+              "composite": 0.6592292709537886,
+              "eligible": true
+            },
+            {
+              "id": "q11-m04",
+              "cosine": 0.4431051677255215,
+              "composite": 0.3918631006353129,
+              "eligible": true
+            },
+            {
+              "id": "q11-m08",
+              "cosine": 0.3817114752309776,
+              "composite": 0.3166935518052532,
+              "eligible": true
+            },
+            {
+              "id": "q11-m06",
+              "cosine": 0.0033451596786287603,
+              "composite": 0.16100709580717726,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q11-m05",
+            "q11-m02",
+            "q11-m04",
+            "q11-m08"
+          ],
+          "selectedIds": [
+            "q11-m02",
+            "q11-m05",
+            "q11-m04",
+            "q11-m08"
+          ],
+          "formattedContext": "• Lantern Trails confirmations: For the upcoming Lantern Trails night, three players have confirmed...\n• Lantern Trails capacity: Our single Lantern Trails game-night table is set up for exactly five pl...\n• Other game table: The Cloud Orchard game table can seat four players.\n• Lantern crafting: Eight people attended the paper-lantern craft session.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q11-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q11-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q11-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q11-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 97"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q11-m05: similarity=0.606, importance=0.940, composite=0.646"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q11-m02: similarity=0.697, importance=0.470, composite=0.659"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q11-m04: similarity=0.443, importance=0.420, composite=0.392"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q11-m08: similarity=0.382, importance=0.270, composite=0.317"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 4 relevant memories for user fictional-user (avg similarity: 0.532)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 4 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.5,
+            "ndcgAt5": 1.0,
+            "essentialFactRecallAfterFormat": 0.0,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [
+              "q11-f01",
+              "q11-f02"
+            ],
+            "selectedFactIdsLostToFormatter": [
+              "q11-f01",
+              "q11-f02"
+            ],
+            "selectedFactsLostToFormatter": 2,
+            "supersededCount": 0,
+            "selectedCount": 4,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q11-m05",
+            "q11-m03",
+            "q11-m01",
+            "q11-m07",
+            "q11-m02",
+            "q11-m04",
+            "q11-m08",
+            "q11-m06"
+          ],
+          "scores": [
+            {
+              "id": "q11-m05",
+              "cosine": 0.6063590778773583,
+              "composite": 0.645815446726415,
+              "eligible": true
+            },
+            {
+              "id": "q11-m03",
+              "cosine": 0.2778335858697331,
+              "composite": 0.5057001515218398,
+              "eligible": false
+            },
+            {
+              "id": "q11-m01",
+              "cosine": 0.26134828244324554,
+              "composite": 0.46580896946594735,
+              "eligible": false
+            },
+            {
+              "id": "q11-m07",
+              "cosine": 0.11525074422024931,
+              "composite": 0.24915044653214957,
+              "eligible": false
+            },
+            {
+              "id": "q11-m02",
+              "cosine": 0.6970487849229811,
+              "composite": 0.6592292709537886,
+              "eligible": true
+            },
+            {
+              "id": "q11-m04",
+              "cosine": 0.4431051677255215,
+              "composite": 0.3918631006353129,
+              "eligible": true
+            },
+            {
+              "id": "q11-m08",
+              "cosine": 0.3817114752309776,
+              "composite": 0.3166935518052532,
+              "eligible": true
+            },
+            {
+              "id": "q11-m06",
+              "cosine": 0.0033451596786287603,
+              "composite": 0.16100709580717726,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q11-m05",
+            "q11-m02",
+            "q11-m04",
+            "q11-m08"
+          ],
+          "selectedIds": [
+            "q11-m02",
+            "q11-m05",
+            "q11-m04",
+            "q11-m08"
+          ],
+          "formattedContext": "• Lantern Trails confirmations: For the upcoming Lantern Trails night, three players have confirmed...\n• Lantern Trails capacity: Our single Lantern Trails game-night table is set up for exactly five pl...\n• Other game table: The Cloud Orchard game table can seat four players.\n• Lantern crafting: Eight people attended the paper-lantern craft session.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q11-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q11-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q11-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q11-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 4 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.5,
+            "ndcgAt5": 1.0,
+            "essentialFactRecallAfterFormat": 0.0,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [
+              "q11-f01",
+              "q11-f02"
+            ],
+            "selectedFactIdsLostToFormatter": [
+              "q11-f01",
+              "q11-f02"
+            ],
+            "selectedFactsLostToFormatter": 2,
+            "supersededCount": 0,
+            "selectedCount": 4,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": false,
+      "identicalSelectedSets": true,
+      "identicalFormattedContexts": true
+    },
+    {
+      "id": "q12",
+      "designSlice": "late evidence with semantically close distractors",
+      "answerable": true,
+      "intendedAnswerable": true,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q12-m02",
+            "q12-m01",
+            "q12-m08",
+            "q12-m03",
+            "q12-m06",
+            "q12-m07",
+            "q12-m05",
+            "q12-m04"
+          ],
+          "scores": [
+            {
+              "id": "q12-m02",
+              "cosine": 0.42791870705134,
+              "composite": 0.596751224230804,
+              "eligible": true
+            },
+            {
+              "id": "q12-m01",
+              "cosine": 0.4205674065039447,
+              "composite": 0.5890071105690335,
+              "eligible": true
+            },
+            {
+              "id": "q12-m08",
+              "cosine": 0.45073076343901747,
+              "composite": 0.5981051247300772,
+              "eligible": true
+            },
+            {
+              "id": "q12-m03",
+              "cosine": 0.24657184504578245,
+              "composite": 0.4346097736941361,
+              "eligible": false
+            },
+            {
+              "id": "q12-m06",
+              "cosine": 0.48760788720777454,
+              "composite": 0.4975647323246647,
+              "eligible": true
+            },
+            {
+              "id": "q12-m07",
+              "cosine": 0.29952986762404044,
+              "composite": 0.3110512539077576,
+              "eligible": false
+            },
+            {
+              "id": "q12-m05",
+              "cosine": 0.010828108296168825,
+              "composite": 0.0754968649777013,
+              "eligible": false
+            },
+            {
+              "id": "q12-m04",
+              "cosine": 0.2941527656399039,
+              "composite": 0.21249165938394232,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q12-m02",
+            "q12-m01",
+            "q12-m08",
+            "q12-m06"
+          ],
+          "selectedIds": [
+            "q12-m08",
+            "q12-m02",
+            "q12-m01",
+            "q12-m06"
+          ],
+          "formattedContext": "• Moon paper: The moon sketches go on gray paper so white pencil highlights show.\n• Star chart key: On the star chart, I use a small circle around each object I want to revisit.\n• Moon sketch goal: I want to put six moon sketches side by side on a display board.\n• Sketching notes: During the sketching practice I worked on keeping the page dim, making the broad...\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q12-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q12-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q12-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q12-m06",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 74"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q12-m02: similarity=0.428, importance=0.800, composite=0.597"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q12-m01: similarity=0.421, importance=0.800, composite=0.589"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q12-m08: similarity=0.451, importance=0.770, composite=0.598"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q12-m06: similarity=0.488, importance=0.350, composite=0.498"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 4 relevant memories for user fictional-user (avg similarity: 0.447)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 4 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.25,
+            "ndcgAt5": 0.4306765580733931,
+            "essentialFactRecallAfterFormat": 0.0,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [
+              "q12-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [
+              "q12-f01"
+            ],
+            "selectedFactsLostToFormatter": 1,
+            "supersededCount": 0,
+            "selectedCount": 4,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q12-m02",
+            "q12-m01",
+            "q12-m08",
+            "q12-m03",
+            "q12-m06",
+            "q12-m07",
+            "q12-m05",
+            "q12-m04"
+          ],
+          "scores": [
+            {
+              "id": "q12-m02",
+              "cosine": 0.42791870705134,
+              "composite": 0.596751224230804,
+              "eligible": true
+            },
+            {
+              "id": "q12-m01",
+              "cosine": 0.4205674065039447,
+              "composite": 0.5890071105690335,
+              "eligible": true
+            },
+            {
+              "id": "q12-m08",
+              "cosine": 0.45073076343901747,
+              "composite": 0.5981051247300772,
+              "eligible": true
+            },
+            {
+              "id": "q12-m03",
+              "cosine": 0.24657184504578245,
+              "composite": 0.4346097736941361,
+              "eligible": false
+            },
+            {
+              "id": "q12-m06",
+              "cosine": 0.48760788720777454,
+              "composite": 0.4975647323246647,
+              "eligible": true
+            },
+            {
+              "id": "q12-m07",
+              "cosine": 0.29952986762404044,
+              "composite": 0.3110512539077576,
+              "eligible": false
+            },
+            {
+              "id": "q12-m05",
+              "cosine": 0.010828108296168825,
+              "composite": 0.0754968649777013,
+              "eligible": false
+            },
+            {
+              "id": "q12-m04",
+              "cosine": 0.2941527656399039,
+              "composite": 0.21249165938394232,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q12-m02",
+            "q12-m01",
+            "q12-m08",
+            "q12-m06"
+          ],
+          "selectedIds": [
+            "q12-m06",
+            "q12-m08",
+            "q12-m02",
+            "q12-m01"
+          ],
+          "formattedContext": "• Moon paper: The moon sketches go on gray paper so white pencil highlights show.\n• Star chart key: On the star chart, I use a small circle around each object I want to revisit.\n• Moon sketch goal: I want to put six moon sketches side by side on a display board.\n• Sketching notes: During the sketching practice I worked on keeping the page dim, making the broad...\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q12-m06",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q12-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q12-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q12-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 4 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": 1.0,
+            "precisionAtReturnedCount": 0.25,
+            "ndcgAt5": 1.0,
+            "essentialFactRecallAfterFormat": 0.0,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [
+              "q12-f01"
+            ],
+            "selectedFactIdsLostToFormatter": [
+              "q12-f01"
+            ],
+            "selectedFactsLostToFormatter": 1,
+            "supersededCount": 0,
+            "selectedCount": 4,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": false,
+      "identicalSelectedSets": true,
+      "identicalFormattedContexts": true
+    },
+    {
+      "id": "q13",
+      "designSlice": "missing technical setting with related memories",
+      "answerable": false,
+      "intendedAnswerable": false,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q13-m01",
+            "q13-m02",
+            "q13-m06",
+            "q13-m07",
+            "q13-m08",
+            "q13-m03",
+            "q13-m05",
+            "q13-m04"
+          ],
+          "scores": [
+            {
+              "id": "q13-m01",
+              "cosine": 0.5186085185002964,
+              "composite": 0.6868317777668446,
+              "eligible": true
+            },
+            {
+              "id": "q13-m02",
+              "cosine": 0.028140484584518528,
+              "composite": 0.3558842907507111,
+              "eligible": false
+            },
+            {
+              "id": "q13-m06",
+              "cosine": -0.04691215910538235,
+              "composite": 0.2501860378701039,
+              "eligible": false
+            },
+            {
+              "id": "q13-m07",
+              "cosine": 0.13393149324714435,
+              "composite": 0.29335889594828657,
+              "eligible": false
+            },
+            {
+              "id": "q13-m08",
+              "cosine": 0.3292531784728622,
+              "composite": 0.4075519070837173,
+              "eligible": true
+            },
+            {
+              "id": "q13-m03",
+              "cosine": 0.18399209787986084,
+              "composite": 0.4143952587279165,
+              "eligible": false
+            },
+            {
+              "id": "q13-m05",
+              "cosine": 0.5507780193328011,
+              "composite": 0.5411334782663473,
+              "eligible": true
+            },
+            {
+              "id": "q13-m04",
+              "cosine": 0.25667081887491205,
+              "composite": 0.3530024913249472,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q13-m01",
+            "q13-m08",
+            "q13-m05"
+          ],
+          "selectedIds": [
+            "q13-m01",
+            "q13-m05",
+            "q13-m08"
+          ],
+          "formattedContext": "• Mug surface: I want a speckled appearance on the mug.\n• Studio display: Finished mugs will be photographed against a plain gray background.\n• Glaze notebook: My glaze notebook has color swatches but no kiln program or firing temperature fo...\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q13-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q13-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q13-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 63"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q13-m01: similarity=0.519, importance=0.930, composite=0.687"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q13-m08: similarity=0.329, importance=0.700, composite=0.408"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q13-m05: similarity=0.551, importance=0.380, composite=0.541"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 3 relevant memories for user fictional-user (avg similarity: 0.466)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 3 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": null,
+            "precisionAtReturnedCount": null,
+            "ndcgAt5": null,
+            "essentialFactRecallAfterFormat": null,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 3,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [
+            "q13-m03"
+          ],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q13-m01",
+            "q13-m02",
+            "q13-m06",
+            "q13-m07",
+            "q13-m08",
+            "q13-m03",
+            "q13-m05",
+            "q13-m04"
+          ],
+          "scores": [
+            {
+              "id": "q13-m01",
+              "cosine": 0.5186085185002964,
+              "composite": 0.6868317777668446,
+              "eligible": true
+            },
+            {
+              "id": "q13-m02",
+              "cosine": 0.028140484584518528,
+              "composite": 0.3558842907507111,
+              "eligible": false
+            },
+            {
+              "id": "q13-m06",
+              "cosine": -0.04691215910538235,
+              "composite": 0.2501860378701039,
+              "eligible": false
+            },
+            {
+              "id": "q13-m07",
+              "cosine": 0.13393149324714435,
+              "composite": 0.29335889594828657,
+              "eligible": false
+            },
+            {
+              "id": "q13-m08",
+              "cosine": 0.3292531784728622,
+              "composite": 0.4075519070837173,
+              "eligible": true
+            },
+            {
+              "id": "q13-m03",
+              "cosine": 0.18399209787986084,
+              "composite": 0.4143952587279165,
+              "eligible": false
+            },
+            {
+              "id": "q13-m05",
+              "cosine": 0.5507780193328011,
+              "composite": 0.5411334782663473,
+              "eligible": true
+            },
+            {
+              "id": "q13-m04",
+              "cosine": 0.25667081887491205,
+              "composite": 0.3530024913249472,
+              "eligible": false
+            }
+          ],
+          "eligibleIds": [
+            "q13-m01",
+            "q13-m08",
+            "q13-m05"
+          ],
+          "selectedIds": [
+            "q13-m05",
+            "q13-m01",
+            "q13-m08"
+          ],
+          "formattedContext": "• Mug surface: I want a speckled appearance on the mug.\n• Studio display: Finished mugs will be photographed against a plain gray background.\n• Glaze notebook: My glaze notebook has color swatches but no kiln program or firing temperature fo...\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q13-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q13-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q13-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 3 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": null,
+            "precisionAtReturnedCount": null,
+            "ndcgAt5": null,
+            "essentialFactRecallAfterFormat": null,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 3,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [
+            "q13-m03"
+          ],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": false,
+      "identicalSelectedSets": true,
+      "identicalFormattedContexts": true
+    },
+    {
+      "id": "q14",
+      "designSlice": "undecided attribute with tempting adjacent choices",
+      "answerable": false,
+      "intendedAnswerable": false,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q14-m06",
+            "q14-m02",
+            "q14-m05",
+            "q14-m03",
+            "q14-m08",
+            "q14-m01",
+            "q14-m07",
+            "q14-m04"
+          ],
+          "scores": [
+            {
+              "id": "q14-m06",
+              "cosine": 0.37482497298810197,
+              "composite": 0.4288949837928612,
+              "eligible": true
+            },
+            {
+              "id": "q14-m02",
+              "cosine": 0.7601073459819061,
+              "composite": 0.7480644075891436,
+              "eligible": true
+            },
+            {
+              "id": "q14-m05",
+              "cosine": 0.3776586492163497,
+              "composite": 0.5062618561964765,
+              "eligible": true
+            },
+            {
+              "id": "q14-m03",
+              "cosine": 0.5218079234250695,
+              "composite": 0.5067514207217083,
+              "eligible": true
+            },
+            {
+              "id": "q14-m08",
+              "cosine": 0.27301769620475036,
+              "composite": 0.26947728438951685,
+              "eligible": false
+            },
+            {
+              "id": "q14-m01",
+              "cosine": 0.6909410234307982,
+              "composite": 0.48656461405847895,
+              "eligible": true
+            },
+            {
+              "id": "q14-m07",
+              "cosine": 0.4496727298399805,
+              "composite": 0.417470304570655,
+              "eligible": true
+            },
+            {
+              "id": "q14-m04",
+              "cosine": 0.5364575347235896,
+              "composite": 0.4635411875008204,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q14-m06",
+            "q14-m02",
+            "q14-m05",
+            "q14-m03",
+            "q14-m01",
+            "q14-m07",
+            "q14-m04"
+          ],
+          "selectedIds": [
+            "q14-m02",
+            "q14-m03",
+            "q14-m05",
+            "q14-m01",
+            "q14-m04"
+          ],
+          "formattedContext": "• Old tote: My old library tote was red.\n• Library pouch: The little library-card pouch is navy.\n• Tote handles: I have settled on long handles for the new library tote.\n• Tote candidates: For the new library tote I am considering mustard yellow, forest green, and navy...\n• Color preference: I often like green accessories, but I want to see the new tote fabrics in perso...\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q14-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q14-m03",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q14-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q14-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q14-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 57"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q14-m06: similarity=0.375, importance=0.680, composite=0.429"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q14-m02: similarity=0.760, importance=0.640, composite=0.748"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q14-m05: similarity=0.378, importance=0.610, composite=0.506"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q14-m03: similarity=0.522, importance=0.390, composite=0.507"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q14-m01: similarity=0.691, importance=0.240, composite=0.487"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q14-m07: similarity=0.450, importance=0.170, composite=0.417"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q14-m04: similarity=0.536, importance=0.150, composite=0.464"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 5 relevant memories for user fictional-user (avg similarity: 0.577)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": null,
+            "precisionAtReturnedCount": null,
+            "ndcgAt5": null,
+            "essentialFactRecallAfterFormat": null,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q14-m06",
+            "q14-m02",
+            "q14-m05",
+            "q14-m03",
+            "q14-m08",
+            "q14-m01",
+            "q14-m07",
+            "q14-m04"
+          ],
+          "scores": [
+            {
+              "id": "q14-m06",
+              "cosine": 0.37482497298810197,
+              "composite": 0.4288949837928612,
+              "eligible": true
+            },
+            {
+              "id": "q14-m02",
+              "cosine": 0.7601073459819061,
+              "composite": 0.7480644075891436,
+              "eligible": true
+            },
+            {
+              "id": "q14-m05",
+              "cosine": 0.3776586492163497,
+              "composite": 0.5062618561964765,
+              "eligible": true
+            },
+            {
+              "id": "q14-m03",
+              "cosine": 0.5218079234250695,
+              "composite": 0.5067514207217083,
+              "eligible": true
+            },
+            {
+              "id": "q14-m08",
+              "cosine": 0.27301769620475036,
+              "composite": 0.26947728438951685,
+              "eligible": false
+            },
+            {
+              "id": "q14-m01",
+              "cosine": 0.6909410234307982,
+              "composite": 0.48656461405847895,
+              "eligible": true
+            },
+            {
+              "id": "q14-m07",
+              "cosine": 0.4496727298399805,
+              "composite": 0.417470304570655,
+              "eligible": true
+            },
+            {
+              "id": "q14-m04",
+              "cosine": 0.5364575347235896,
+              "composite": 0.4635411875008204,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q14-m06",
+            "q14-m02",
+            "q14-m05",
+            "q14-m03",
+            "q14-m01",
+            "q14-m07",
+            "q14-m04"
+          ],
+          "selectedIds": [
+            "q14-m02",
+            "q14-m01",
+            "q14-m04",
+            "q14-m03",
+            "q14-m07"
+          ],
+          "formattedContext": "• Old tote: My old library tote was red.\n• Tote handles: I have settled on long handles for the new library tote.\n• Tote candidates: For the new library tote I am considering mustard yellow, forest green, and navy...\n• Tote pattern: The new library tote will use the square-bottom pattern.\n• Color preference: I often like green accessories, but I want to see the new tote fabrics in perso...\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q14-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q14-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q14-m04",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q14-m03",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q14-m07",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": null,
+            "precisionAtReturnedCount": null,
+            "ndcgAt5": null,
+            "essentialFactRecallAfterFormat": null,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": true,
+      "identicalSelectedSets": false,
+      "identicalFormattedContexts": false
+    },
+    {
+      "id": "q15",
+      "designSlice": "missing schedule with nearby numeric lure",
+      "answerable": false,
+      "intendedAnswerable": false,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q15-m05",
+            "q15-m02",
+            "q15-m07",
+            "q15-m08",
+            "q15-m01",
+            "q15-m06",
+            "q15-m04",
+            "q15-m03"
+          ],
+          "scores": [
+            {
+              "id": "q15-m05",
+              "cosine": 0.6021654913024436,
+              "composite": 0.5772992947814661,
+              "eligible": true
+            },
+            {
+              "id": "q15-m02",
+              "cosine": 0.6422680987611453,
+              "composite": 0.5953608592566871,
+              "eligible": true
+            },
+            {
+              "id": "q15-m07",
+              "cosine": 0.4321391155557075,
+              "composite": 0.5339501360000911,
+              "eligible": true
+            },
+            {
+              "id": "q15-m08",
+              "cosine": 0.6180619075202516,
+              "composite": 0.6455038111788176,
+              "eligible": true
+            },
+            {
+              "id": "q15-m01",
+              "cosine": 0.6466586152672272,
+              "composite": 0.6459951691603363,
+              "eligible": true
+            },
+            {
+              "id": "q15-m06",
+              "cosine": 0.2682632442923411,
+              "composite": 0.22695794657540466,
+              "eligible": false
+            },
+            {
+              "id": "q15-m04",
+              "cosine": 0.46892694413019564,
+              "composite": 0.41802283314478406,
+              "eligible": true
+            },
+            {
+              "id": "q15-m03",
+              "cosine": 0.6350789440893514,
+              "composite": 0.4320473664536108,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q15-m05",
+            "q15-m02",
+            "q15-m07",
+            "q15-m08",
+            "q15-m01",
+            "q15-m04",
+            "q15-m03"
+          ],
+          "selectedIds": [
+            "q15-m01",
+            "q15-m08",
+            "q15-m02",
+            "q15-m05",
+            "q15-m07"
+          ],
+          "formattedContext": "• Museum interests: At the railway museum I mainly want to see the hand-built station models.\n• Museum arrival plan: I penciled in an arrival at 11:00, but this was only a personal guess and I ...\n• Museum gift: I plan to look for a postcard of the viaduct exhibit.\n• Station cafe: The fictional station cafe opens at 09:00 on Sundays; it is not part of the museum.\n• Museum visit idea: I would like to visit the fictional Copper Vale Model Railway Museum on a Sunday.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q15-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q15-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q15-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q15-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q15-m07",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 56"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q15-m05: similarity=0.602, importance=0.720, composite=0.577"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q15-m02: similarity=0.642, importance=0.700, composite=0.595"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q15-m07: similarity=0.432, importance=0.660, composite=0.534"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q15-m08: similarity=0.618, importance=0.660, composite=0.646"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q15-m01: similarity=0.647, importance=0.560, composite=0.646"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q15-m04: similarity=0.469, importance=0.200, composite=0.418"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q15-m03: similarity=0.635, importance=0.170, composite=0.432"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 5 relevant memories for user fictional-user (avg similarity: 0.588)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": null,
+            "precisionAtReturnedCount": null,
+            "ndcgAt5": null,
+            "essentialFactRecallAfterFormat": null,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q15-m05",
+            "q15-m02",
+            "q15-m07",
+            "q15-m08",
+            "q15-m01",
+            "q15-m06",
+            "q15-m04",
+            "q15-m03"
+          ],
+          "scores": [
+            {
+              "id": "q15-m05",
+              "cosine": 0.6021654913024436,
+              "composite": 0.5772992947814661,
+              "eligible": true
+            },
+            {
+              "id": "q15-m02",
+              "cosine": 0.6422680987611453,
+              "composite": 0.5953608592566871,
+              "eligible": true
+            },
+            {
+              "id": "q15-m07",
+              "cosine": 0.4321391155557075,
+              "composite": 0.5339501360000911,
+              "eligible": true
+            },
+            {
+              "id": "q15-m08",
+              "cosine": 0.6180619075202516,
+              "composite": 0.6455038111788176,
+              "eligible": true
+            },
+            {
+              "id": "q15-m01",
+              "cosine": 0.6466586152672272,
+              "composite": 0.6459951691603363,
+              "eligible": true
+            },
+            {
+              "id": "q15-m06",
+              "cosine": 0.2682632442923411,
+              "composite": 0.22695794657540466,
+              "eligible": false
+            },
+            {
+              "id": "q15-m04",
+              "cosine": 0.46892694413019564,
+              "composite": 0.41802283314478406,
+              "eligible": true
+            },
+            {
+              "id": "q15-m03",
+              "cosine": 0.6350789440893514,
+              "composite": 0.4320473664536108,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q15-m05",
+            "q15-m02",
+            "q15-m07",
+            "q15-m08",
+            "q15-m01",
+            "q15-m04",
+            "q15-m03"
+          ],
+          "selectedIds": [
+            "q15-m01",
+            "q15-m02",
+            "q15-m03",
+            "q15-m08",
+            "q15-m05"
+          ],
+          "formattedContext": "• Museum interests: At the railway museum I mainly want to see the hand-built station models.\n• Museum arrival plan: I penciled in an arrival at 11:00, but this was only a personal guess and I ...\n• Station cafe: The fictional station cafe opens at 09:00 on Sundays; it is not part of the museum.\n• Museum visit idea: I would like to visit the fictional Copper Vale Model Railway Museum on a Sunday.\n• Model club time: The model railway club begins its Saturday session at 10:00.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q15-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q15-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q15-m03",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q15-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q15-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": null,
+            "precisionAtReturnedCount": null,
+            "ndcgAt5": null,
+            "essentialFactRecallAfterFormat": null,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": true,
+      "identicalSelectedSets": false,
+      "identicalFormattedContexts": false
+    },
+    {
+      "id": "q16",
+      "designSlice": "no agreement despite proposals and prior event",
+      "answerable": false,
+      "intendedAnswerable": false,
+      "arms": {
+        "composite": {
+          "initialOrmOrder": [
+            "q16-m06",
+            "q16-m03",
+            "q16-m02",
+            "q16-m07",
+            "q16-m01",
+            "q16-m04",
+            "q16-m05",
+            "q16-m08"
+          ],
+          "scores": [
+            {
+              "id": "q16-m06",
+              "cosine": 0.21580204106755457,
+              "composite": 0.41814789130719937,
+              "eligible": false
+            },
+            {
+              "id": "q16-m03",
+              "cosine": 0.5507307072569915,
+              "composite": 0.5891050910208616,
+              "eligible": true
+            },
+            {
+              "id": "q16-m02",
+              "cosine": 0.8069022959354573,
+              "composite": 0.817808044227941,
+              "eligible": true
+            },
+            {
+              "id": "q16-m07",
+              "cosine": 0.32455063059084743,
+              "composite": 0.38973037835450847,
+              "eligible": true
+            },
+            {
+              "id": "q16-m01",
+              "cosine": 0.831452122144748,
+              "composite": 0.6728712732868487,
+              "eligible": true
+            },
+            {
+              "id": "q16-m04",
+              "cosine": 0.37675641428798595,
+              "composite": 0.37905384857279156,
+              "eligible": true
+            },
+            {
+              "id": "q16-m05",
+              "cosine": 0.7416551132686429,
+              "composite": 0.5469930679611857,
+              "eligible": true
+            },
+            {
+              "id": "q16-m08",
+              "cosine": 0.5865190792151751,
+              "composite": 0.4995781141957717,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q16-m03",
+            "q16-m02",
+            "q16-m07",
+            "q16-m01",
+            "q16-m04",
+            "q16-m05",
+            "q16-m08"
+          ],
+          "selectedIds": [
+            "q16-m02",
+            "q16-m01",
+            "q16-m03",
+            "q16-m05",
+            "q16-m08"
+          ],
+          "formattedContext": "• Paper selection: The next kite-making meetup will use lightweight blue and white paper.\n• Next session proposal: For the next kite-making meetup I suggested 13:00, while another suggestio...\n• Previous kite session: The previous kite-making meetup started at 14:00.\n• Kite meetup notes: We finished the last session by putting away paper, comparing different tail l...\n• Display deadline: I want the kite display board ready before the weekend.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q16-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q16-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q16-m03",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q16-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q16-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [
+            {
+              "user": "fictional-user",
+              "embedding__isnull": false
+            }
+          ],
+          "logs": [
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Searching memories for user fictional-user, query length: 63"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Generated query embedding with 384 dimensions"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q16-m03: similarity=0.551, importance=0.840, composite=0.589"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q16-m02: similarity=0.807, importance=0.790, composite=0.818"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q16-m07: similarity=0.325, importance=0.650, composite=0.390"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q16-m01: similarity=0.831, importance=0.580, composite=0.673"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q16-m04: similarity=0.377, importance=0.510, composite=0.379"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q16-m05: similarity=0.742, importance=0.340, composite=0.547"
+            },
+            {
+              "level": "debug",
+              "message": "[RAG RETRIEVAL] Memory q16-m08: similarity=0.587, importance=0.170, composite=0.500"
+            },
+            {
+              "level": "info",
+              "message": "[RAG RETRIEVAL] Found 5 relevant memories for user fictional-user (avg similarity: 0.703)"
+            },
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": null,
+            "precisionAtReturnedCount": null,
+            "ndcgAt5": null,
+            "essentialFactRecallAfterFormat": null,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        },
+        "cosine": {
+          "initialOrmOrder": [
+            "q16-m06",
+            "q16-m03",
+            "q16-m02",
+            "q16-m07",
+            "q16-m01",
+            "q16-m04",
+            "q16-m05",
+            "q16-m08"
+          ],
+          "scores": [
+            {
+              "id": "q16-m06",
+              "cosine": 0.21580204106755457,
+              "composite": 0.41814789130719937,
+              "eligible": false
+            },
+            {
+              "id": "q16-m03",
+              "cosine": 0.5507307072569915,
+              "composite": 0.5891050910208616,
+              "eligible": true
+            },
+            {
+              "id": "q16-m02",
+              "cosine": 0.8069022959354573,
+              "composite": 0.817808044227941,
+              "eligible": true
+            },
+            {
+              "id": "q16-m07",
+              "cosine": 0.32455063059084743,
+              "composite": 0.38973037835450847,
+              "eligible": true
+            },
+            {
+              "id": "q16-m01",
+              "cosine": 0.831452122144748,
+              "composite": 0.6728712732868487,
+              "eligible": true
+            },
+            {
+              "id": "q16-m04",
+              "cosine": 0.37675641428798595,
+              "composite": 0.37905384857279156,
+              "eligible": true
+            },
+            {
+              "id": "q16-m05",
+              "cosine": 0.7416551132686429,
+              "composite": 0.5469930679611857,
+              "eligible": true
+            },
+            {
+              "id": "q16-m08",
+              "cosine": 0.5865190792151751,
+              "composite": 0.4995781141957717,
+              "eligible": true
+            }
+          ],
+          "eligibleIds": [
+            "q16-m03",
+            "q16-m02",
+            "q16-m07",
+            "q16-m01",
+            "q16-m04",
+            "q16-m05",
+            "q16-m08"
+          ],
+          "selectedIds": [
+            "q16-m01",
+            "q16-m02",
+            "q16-m05",
+            "q16-m08",
+            "q16-m03"
+          ],
+          "formattedContext": "• Paper selection: The next kite-making meetup will use lightweight blue and white paper.\n• Next session proposal: For the next kite-making meetup I suggested 13:00, while another suggestio...\n• Previous kite session: The previous kite-making meetup started at 14:00.\n• Kite meetup notes: We finished the last session by putting away paper, comparing different tail l...\n• Display deadline: I want the kite display board ready before the weekend.\n",
+          "fakeAccessWrites": [
+            {
+              "id": "q16-m01",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q16-m02",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q16-m05",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q16-m08",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            },
+            {
+              "id": "q16-m03",
+              "update_fields": [
+                "access_count",
+                "last_accessed_at"
+              ],
+              "access_count": 1,
+              "last_accessed_at": "2026-10-04T00:00:00+00:00"
+            }
+          ],
+          "fakeFilters": [],
+          "logs": [
+            {
+              "level": "info",
+              "message": "Formatted 5 memories into concise personal_context context"
+            }
+          ],
+          "runtimeWarnings": [],
+          "metrics": {
+            "essentialRecall": null,
+            "precisionAtReturnedCount": null,
+            "ndcgAt5": null,
+            "essentialFactRecallAfterFormat": null,
+            "essentialFactIdsRetained": [],
+            "selectedEssentialFactIds": [],
+            "selectedFactIdsLostToFormatter": [],
+            "selectedFactsLostToFormatter": 0,
+            "supersededCount": 0,
+            "selectedCount": 5,
+            "anySelection": true
+          },
+          "relevantExcludedByThreshold": [],
+          "essentialExcludedByThreshold": []
+        }
+      },
+      "moreThanFiveEligible": true,
+      "identicalSelectedSets": true,
+      "identicalFormattedContexts": true
+    }
+  ],
+  "limits": [
+    "16 authored fictional cases; exploratory only, no confidence or generalization claim.",
+    "Surrogate local MiniLM embeddings, not the application's embedding provider.",
+    "No application imports, live database, network, account, or answer generation.",
+    "Fact retention is exact quote presence, not semantic answer correctness.",
+    "Fake ORM and access writes; extracted source ranking and formatter execute unchanged."
+  ],
+  "publicProjection": {
+    "privateRawResultSha256": "a16818575cc12dd14c603433b01c9d29c05dd51cb671c195a2ee39817601e119",
+    "changes": [
+      "Removed command-line arguments and executable path",
+      "Replaced absolute owner source paths with repository-relative paths"
+    ],
+    "numericResultsUnchanged": true
+  }
+}

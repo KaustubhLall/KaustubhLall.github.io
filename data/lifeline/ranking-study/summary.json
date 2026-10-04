@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-03",
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "modelRevision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "settings": {
+    "minSimilarity": 0.3,
+    "limit": 5
+  },
+  "sample": {
+    "cases": 16,
+    "memories": 128,
+    "answerable": 12,
+    "unanswerable": 4
+  },
+  "metrics": {
+    "composite": {
+      "essentialSelected": 15,
+      "essentialTotal": 15,
+      "exactQuotesRetained": 7,
+      "quoteTotal": 15,
+      "meanPrecision": 0.28750000000000003,
+      "ndcg": 0.7689486782553251
+    },
+    "cosine": {
+      "essentialSelected": 15,
+      "essentialTotal": 15,
+      "exactQuotesRetained": 7,
+      "quoteTotal": 15,
+      "meanPrecision": 0.28750000000000003,
+      "ndcg": 0.8786425158767921
+    }
+  },
+  "opportunity": {
+    "overFiveAnswerable": 6,
+    "overFiveAll": 9,
+    "identicalSelectedSets": 9,
+    "identicalFormattedContexts": 9
+  },
+  "pairedNdcg": {
+    "compositeWins": 2,
+    "ties": 4,
+    "compositeLosses": 6
+  },
+  "example": {
+    "query": "Who has the lighthouse jigsaw I lent out?",
+    "fullMemory": "At the puzzle evening we cleared the round table, sorted edge pieces into shallow trays, and talked about swapping boxes once everyone had finished their current scene. The mountain puzzle went back into storage, and we counted the spare sorting trays before closing. I lent the lighthouse jigsaw to the Riverbend Craft Circle.",
+    "essentialQuote": "I lent the lighthouse jigsaw to the Riverbend Craft Circle.",
+    "formattedEntry": "Jigsaw evening notes: At the puzzle evening we cleared the round table, sorted edge pieces into s...",
+    "selectedInBoth": true
+  }
+}

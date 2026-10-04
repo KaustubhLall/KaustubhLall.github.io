@@ -1,0 +1,1288 @@
+{
+  "schema": "lifeline-fictional-corpus/v1",
+  "createdBy": "Astra corpus author",
+  "fictional": true,
+  "clock": "2026-10-04T00:00:00Z",
+  "cases": [
+    {
+      "id": "q01",
+      "query": "Where did I put the narrow watercolor brushes?",
+      "designSlice": "direct object-location recall",
+      "intendedAnswerable": true,
+      "memories": [
+        {
+          "id": "q01-m01",
+          "title": "Paper cupboard",
+          "content": "The watercolor paper is in the tall cupboard beside the desk.",
+          "memoryType": "fact",
+          "importance": 0.43,
+          "ageDays": 540,
+          "createdDays": 631
+        },
+        {
+          "id": "q01-m02",
+          "title": "Brush storage",
+          "content": "My narrow watercolor brushes are in the blue pencil roll on the top shelf.",
+          "memoryType": "fact",
+          "importance": 0.69,
+          "ageDays": 90,
+          "createdDays": 125
+        },
+        {
+          "id": "q01-m03",
+          "title": "Workshop sketchbook",
+          "content": "I carry the small sketchbook in the outside pocket of my canvas bag.",
+          "memoryType": "context",
+          "importance": 0.87,
+          "ageDays": 540,
+          "createdDays": 615
+        },
+        {
+          "id": "q01-m04",
+          "title": "Wide brushes",
+          "content": "The wide house-painting brushes hang above the utility sink.",
+          "memoryType": "fact",
+          "importance": 0.58,
+          "ageDays": 90,
+          "createdDays": 144
+        },
+        {
+          "id": "q01-m05",
+          "title": "Favorite paint",
+          "content": "I prefer muted greens for landscape studies.",
+          "memoryType": "preference",
+          "importance": 0.39,
+          "ageDays": 28,
+          "createdDays": 74
+        },
+        {
+          "id": "q01-m06",
+          "title": "Pencil roll repair",
+          "content": "The red pencil roll needs a new tie before the drawing trip.",
+          "memoryType": "goal",
+          "importance": 0.94,
+          "ageDays": 14,
+          "createdDays": 42
+        },
+        {
+          "id": "q01-m07",
+          "title": "Weekend painting",
+          "content": "I want to finish the harbor watercolor this weekend.",
+          "memoryType": "goal",
+          "importance": 0.84,
+          "ageDays": 14,
+          "createdDays": 67
+        },
+        {
+          "id": "q01-m08",
+          "title": "Drying rack",
+          "content": "The tabletop drying rack folds flat behind the cupboard.",
+          "memoryType": "fact",
+          "importance": 0.77,
+          "ageDays": 7,
+          "createdDays": 75
+        }
+      ]
+    },
+    {
+      "id": "q02",
+      "query": "What sort of room should I book for a session where I need to concentrate on a tricky model?",
+      "designSlice": "durable preference with paraphrase",
+      "intendedAnswerable": true,
+      "memories": [
+        {
+          "id": "q02-m01",
+          "title": "Showcase room",
+          "content": "For showing finished models to visitors, I like the bright room next to the cafe.",
+          "memoryType": "preference",
+          "importance": 0.86,
+          "ageDays": 28,
+          "createdDays": 47
+        },
+        {
+          "id": "q02-m02",
+          "title": "Workshop poster",
+          "content": "The poster for the model club should use a large picture and very little text.",
+          "memoryType": "goal",
+          "importance": 0.16,
+          "ageDays": 730,
+          "createdDays": 831
+        },
+        {
+          "id": "q02-m03",
+          "title": "Desk position",
+          "content": "I usually put the cutting mat at the left end of the bench.",
+          "memoryType": "context",
+          "importance": 0.46,
+          "ageDays": 540,
+          "createdDays": 659
+        },
+        {
+          "id": "q02-m04",
+          "title": "Building conditions",
+          "content": "For fiddly model assembly I have always preferred a quiet enclosed room without background music; that preference still stands.",
+          "memoryType": "preference",
+          "importance": 0.48,
+          "ageDays": 720,
+          "createdDays": 720
+        },
+        {
+          "id": "q02-m05",
+          "title": "Club social",
+          "content": "The model club social is more fun in a lively shared space.",
+          "memoryType": "preference",
+          "importance": 0.58,
+          "ageDays": 1,
+          "createdDays": 75
+        },
+        {
+          "id": "q02-m06",
+          "title": "Display cabinet",
+          "content": "The display cabinet has three adjustable shelves.",
+          "memoryType": "fact",
+          "importance": 0.67,
+          "ageDays": 3,
+          "createdDays": 39
+        },
+        {
+          "id": "q02-m07",
+          "title": "Public demo",
+          "content": "I volunteered to demonstrate paper gliders at the noisy exhibition hall.",
+          "memoryType": "context",
+          "importance": 0.48,
+          "ageDays": 7,
+          "createdDays": 90
+        },
+        {
+          "id": "q02-m08",
+          "title": "Library room",
+          "content": "The library has a meeting room with a projector; I have not tried working there.",
+          "memoryType": "fact",
+          "importance": 0.75,
+          "ageDays": 90,
+          "createdDays": 167
+        }
+      ]
+    },
+    {
+      "id": "q03",
+      "query": "When does my pottery group meet now?",
+      "designSlice": "explicit supersession of schedule",
+      "intendedAnswerable": true,
+      "memories": [
+        {
+          "id": "q03-m01",
+          "title": "Pottery supplies",
+          "content": "I bring my own apron to pottery group.",
+          "memoryType": "preference",
+          "importance": 0.35,
+          "ageDays": 90,
+          "createdDays": 112
+        },
+        {
+          "id": "q03-m02",
+          "title": "Pottery spring schedule",
+          "content": "As of 2026-05-03, pottery group meets Tuesdays at 18:00.",
+          "memoryType": "fact",
+          "importance": 0.61,
+          "ageDays": 154,
+          "createdDays": 154
+        },
+        {
+          "id": "q03-m03",
+          "title": "Sketch group",
+          "content": "The sketch group meets on Wednesdays at 19:00.",
+          "memoryType": "fact",
+          "importance": 0.68,
+          "ageDays": 0,
+          "createdDays": 10
+        },
+        {
+          "id": "q03-m04",
+          "title": "Glazing plan",
+          "content": "I want to try a speckled finish on the little bowl.",
+          "memoryType": "goal",
+          "importance": 0.29,
+          "ageDays": 14,
+          "createdDays": 115
+        },
+        {
+          "id": "q03-m05",
+          "title": "Studio shelf",
+          "content": "My unfinished pottery sits on shelf B.",
+          "memoryType": "fact",
+          "importance": 0.18,
+          "ageDays": 365,
+          "createdDays": 375
+        },
+        {
+          "id": "q03-m06",
+          "title": "Pottery schedule change",
+          "content": "On 2026-09-30 the pottery group moved to Thursdays at 18:30, replacing its Tuesday 18:00 slot from that date onward.",
+          "memoryType": "fact",
+          "importance": 0.17,
+          "ageDays": 4,
+          "createdDays": 4
+        },
+        {
+          "id": "q03-m07",
+          "title": "Room cleanup",
+          "content": "We stack stools after the pottery group leaves.",
+          "memoryType": "context",
+          "importance": 0.71,
+          "ageDays": 365,
+          "createdDays": 435
+        },
+        {
+          "id": "q03-m08",
+          "title": "Pottery exhibition",
+          "content": "The pottery exhibition opens Saturday at 11:00; this is a one-off exhibition rather than a group meeting.",
+          "memoryType": "fact",
+          "importance": 0.55,
+          "ageDays": 540,
+          "createdDays": 573
+        }
+      ]
+    },
+    {
+      "id": "q04",
+      "query": "For the sketch-club picnic, what should I bring to sit on and where are we meeting?",
+      "designSlice": "two independent supporting facts",
+      "intendedAnswerable": true,
+      "memories": [
+        {
+          "id": "q04-m01",
+          "title": "Picnic seat",
+          "content": "For the sketch-club picnic I agreed to bring the folding stool rather than the picnic blanket.",
+          "memoryType": "context",
+          "importance": 0.52,
+          "ageDays": 1,
+          "createdDays": 68
+        },
+        {
+          "id": "q04-m02",
+          "title": "Picnic menu",
+          "content": "The sketch-club picnic will have sandwiches and fruit.",
+          "memoryType": "fact",
+          "importance": 0.64,
+          "ageDays": 730,
+          "createdDays": 730
+        },
+        {
+          "id": "q04-m03",
+          "title": "Solo sketching",
+          "content": "On solo outings I prefer a blanket under a shady tree.",
+          "memoryType": "preference",
+          "importance": 0.66,
+          "ageDays": 14,
+          "createdDays": 133
+        },
+        {
+          "id": "q04-m04",
+          "title": "Rain location",
+          "content": "If the sketch-club picnic gets canceled, we will choose a replacement outing later.",
+          "memoryType": "context",
+          "importance": 0.8,
+          "ageDays": 7,
+          "createdDays": 98
+        },
+        {
+          "id": "q04-m05",
+          "title": "Club supplies",
+          "content": "Spare charcoal sticks are in the club cupboard.",
+          "memoryType": "fact",
+          "importance": 0.34,
+          "ageDays": 60,
+          "createdDays": 86
+        },
+        {
+          "id": "q04-m06",
+          "title": "Walking meetup",
+          "content": "The walking group meets at the east gate of the park.",
+          "memoryType": "fact",
+          "importance": 0.71,
+          "ageDays": 28,
+          "createdDays": 117
+        },
+        {
+          "id": "q04-m07",
+          "title": "Picnic meeting point",
+          "content": "The sketch-club picnic meeting point is the fountain by the park south entrance.",
+          "memoryType": "fact",
+          "importance": 0.87,
+          "ageDays": 1,
+          "createdDays": 51
+        },
+        {
+          "id": "q04-m08",
+          "title": "Stool repair",
+          "content": "The wooden kitchen stool has a loose decorative rung.",
+          "memoryType": "goal",
+          "importance": 0.17,
+          "ageDays": 7,
+          "createdDays": 95
+        }
+      ]
+    },
+    {
+      "id": "q05",
+      "query": "Who has the lighthouse jigsaw I lent out?",
+      "designSlice": "late evidence in a long memory",
+      "intendedAnswerable": true,
+      "memories": [
+        {
+          "id": "q05-m01",
+          "title": "Puzzle shelf",
+          "content": "The top puzzle shelf holds small boxes and the lower shelf holds large flat boxes.",
+          "memoryType": "fact",
+          "importance": 0.69,
+          "ageDays": 60,
+          "createdDays": 84
+        },
+        {
+          "id": "q05-m02",
+          "title": "Library project",
+          "content": "The hobby library wants a better sign for the board-game section.",
+          "memoryType": "goal",
+          "importance": 0.49,
+          "ageDays": 90,
+          "createdDays": 96
+        },
+        {
+          "id": "q05-m03",
+          "title": "Jigsaw evening notes",
+          "content": "At the puzzle evening we cleared the round table, sorted edge pieces into shallow trays, and talked about swapping boxes once everyone had finished their current scene. The mountain puzzle went back into storage, and we counted the spare sorting trays before closing. I lent the lighthouse jigsaw to the Riverbend Craft Circle.",
+          "memoryType": "context",
+          "importance": 0.65,
+          "ageDays": 365,
+          "createdDays": 386
+        },
+        {
+          "id": "q05-m04",
+          "title": "Lighthouse painting",
+          "content": "The lighthouse painting is on loan to the imaginary Seaglass Gallery for its autumn wall display.",
+          "memoryType": "fact",
+          "importance": 0.52,
+          "ageDays": 14,
+          "createdDays": 111
+        },
+        {
+          "id": "q05-m05",
+          "title": "Mountain jigsaw",
+          "content": "The mountain jigsaw belongs to the library, not to me.",
+          "memoryType": "fact",
+          "importance": 0.43,
+          "ageDays": 28,
+          "createdDays": 117
+        },
+        {
+          "id": "q05-m06",
+          "title": "Puzzle taste",
+          "content": "I prefer illustrated jigsaws over photographs of crowds.",
+          "memoryType": "preference",
+          "importance": 0.61,
+          "ageDays": 730,
+          "createdDays": 740
+        },
+        {
+          "id": "q05-m07",
+          "title": "Borrowed castle puzzle",
+          "content": "I borrowed the castle puzzle from the fictional Fern Lane Club.",
+          "memoryType": "context",
+          "importance": 0.27,
+          "ageDays": 14,
+          "createdDays": 100
+        },
+        {
+          "id": "q05-m08",
+          "title": "Lighthouse frame",
+          "content": "The empty lighthouse picture frame is wrapped in brown paper.",
+          "memoryType": "fact",
+          "importance": 0.19,
+          "ageDays": 60,
+          "createdDays": 62
+        }
+      ]
+    },
+    {
+      "id": "q06",
+      "query": "Which fabric do I prefer for reusable gift bags, and which should I avoid?",
+      "designSlice": "preference with explicit negative constraint",
+      "intendedAnswerable": true,
+      "memories": [
+        {
+          "id": "q06-m01",
+          "title": "Gift wrapping",
+          "content": "I like plain paper tags on presents.",
+          "memoryType": "preference",
+          "importance": 0.95,
+          "ageDays": 60,
+          "createdDays": 176
+        },
+        {
+          "id": "q06-m02",
+          "title": "Apron fabric",
+          "content": "For workshop aprons I like dark denim.",
+          "memoryType": "preference",
+          "importance": 0.22,
+          "ageDays": 14,
+          "createdDays": 44
+        },
+        {
+          "id": "q06-m03",
+          "title": "Bag handles",
+          "content": "The shopping tote has sturdy woven handles.",
+          "memoryType": "fact",
+          "importance": 0.72,
+          "ageDays": 7,
+          "createdDays": 94
+        },
+        {
+          "id": "q06-m04",
+          "title": "Scrap box",
+          "content": "The striped fabric scraps are in the shallow drawer.",
+          "memoryType": "fact",
+          "importance": 0.42,
+          "ageDays": 60,
+          "createdDays": 156
+        },
+        {
+          "id": "q06-m05",
+          "title": "Gift bag pattern",
+          "content": "The reusable gift bag pattern closes with a drawstring.",
+          "memoryType": "fact",
+          "importance": 0.74,
+          "ageDays": 7,
+          "createdDays": 41
+        },
+        {
+          "id": "q06-m06",
+          "title": "Ribbon experiment",
+          "content": "I want to compare ribbon and cotton cord on the next sample.",
+          "memoryType": "goal",
+          "importance": 0.82,
+          "ageDays": 730,
+          "createdDays": 763
+        },
+        {
+          "id": "q06-m07",
+          "title": "Curtain choice",
+          "content": "I chose shiny satin for the miniature theater curtains.",
+          "memoryType": "context",
+          "importance": 0.75,
+          "ageDays": 90,
+          "createdDays": 184
+        },
+        {
+          "id": "q06-m08",
+          "title": "Gift bag fabric",
+          "content": "For reusable gift bags I prefer washed cotton; avoid shiny satin because I dislike how slippery it is to sew for this project.",
+          "memoryType": "preference",
+          "importance": 0.65,
+          "ageDays": 3,
+          "createdDays": 116
+        }
+      ]
+    },
+    {
+      "id": "q07",
+      "query": "What scale did I choose for the Harbor Lantern model, as opposed to the Harbor Market model?",
+      "designSlice": "near-identical entity names",
+      "intendedAnswerable": true,
+      "memories": [
+        {
+          "id": "q07-m01",
+          "title": "Harbor Market scale",
+          "content": "The Harbor Market model uses a 1:100 scale.",
+          "memoryType": "fact",
+          "importance": 0.21,
+          "ageDays": 180,
+          "createdDays": 203
+        },
+        {
+          "id": "q07-m02",
+          "title": "Harbor Lantern scale",
+          "content": "I chose 1:48 for the Harbor Lantern model so I could include interior details.",
+          "memoryType": "fact",
+          "importance": 0.52,
+          "ageDays": 14,
+          "createdDays": 42
+        },
+        {
+          "id": "q07-m03",
+          "title": "Lantern paper",
+          "content": "Translucent yellow paper is set aside for the paper lantern workshop.",
+          "memoryType": "context",
+          "importance": 0.74,
+          "ageDays": 28,
+          "createdDays": 112
+        },
+        {
+          "id": "q07-m04",
+          "title": "Harbor sketch",
+          "content": "The harbor sketch is on a landscape-format page.",
+          "memoryType": "fact",
+          "importance": 0.79,
+          "ageDays": 1,
+          "createdDays": 108
+        },
+        {
+          "id": "q07-m05",
+          "title": "Market roof",
+          "content": "The Harbor Market roof will be removable.",
+          "memoryType": "goal",
+          "importance": 0.41,
+          "ageDays": 180,
+          "createdDays": 269
+        },
+        {
+          "id": "q07-m06",
+          "title": "Model shelf",
+          "content": "Both harbor models will fit on the long display shelf.",
+          "memoryType": "goal",
+          "importance": 0.62,
+          "ageDays": 1,
+          "createdDays": 42
+        },
+        {
+          "id": "q07-m07",
+          "title": "Lighthouse kit",
+          "content": "The unrelated cliff lighthouse kit is marked 1:72 on its box.",
+          "memoryType": "fact",
+          "importance": 0.21,
+          "ageDays": 1,
+          "createdDays": 107
+        },
+        {
+          "id": "q07-m08",
+          "title": "Lantern color",
+          "content": "The Harbor Lantern exterior will be pale blue.",
+          "memoryType": "goal",
+          "importance": 0.13,
+          "ageDays": 28,
+          "createdDays": 143
+        }
+      ]
+    },
+    {
+      "id": "q08",
+      "query": "How often did I decide to turn the windowsill seedling tray so it gets light evenly?",
+      "designSlice": "paraphrased cadence recall",
+      "intendedAnswerable": true,
+      "memories": [
+        {
+          "id": "q08-m01",
+          "title": "Seedling labels",
+          "content": "The seedling labels are written in pencil on wooden sticks.",
+          "memoryType": "fact",
+          "importance": 0.93,
+          "ageDays": 90,
+          "createdDays": 124
+        },
+        {
+          "id": "q08-m02",
+          "title": "Garden notebook",
+          "content": "I keep the garden notebook on the kitchen shelf.",
+          "memoryType": "context",
+          "importance": 0.2,
+          "ageDays": 14,
+          "createdDays": 108
+        },
+        {
+          "id": "q08-m03",
+          "title": "Indoor pots",
+          "content": "The large decorative pot is too wide for the windowsill.",
+          "memoryType": "fact",
+          "importance": 0.7,
+          "ageDays": 7,
+          "createdDays": 48
+        },
+        {
+          "id": "q08-m04",
+          "title": "Tray routine",
+          "content": "My routine is to give the windowsill seedling tray a quarter-turn every other morning to even out its exposure to the window.",
+          "memoryType": "preference",
+          "importance": 0.37,
+          "ageDays": 90,
+          "createdDays": 109
+        },
+        {
+          "id": "q08-m05",
+          "title": "Balcony cleanup",
+          "content": "I sweep the balcony once a week.",
+          "memoryType": "context",
+          "importance": 0.64,
+          "ageDays": 730,
+          "createdDays": 737
+        },
+        {
+          "id": "q08-m06",
+          "title": "Seed packet box",
+          "content": "Unused seed packets go in the green tin.",
+          "memoryType": "fact",
+          "importance": 0.5,
+          "ageDays": 180,
+          "createdDays": 298
+        },
+        {
+          "id": "q08-m07",
+          "title": "Photo routine",
+          "content": "I take a picture of the seedling tray each Sunday.",
+          "memoryType": "goal",
+          "importance": 0.29,
+          "ageDays": 90,
+          "createdDays": 115
+        },
+        {
+          "id": "q08-m08",
+          "title": "Pottery turntable",
+          "content": "The pottery turntable is stored under the workbench.",
+          "memoryType": "fact",
+          "importance": 0.26,
+          "ageDays": 180,
+          "createdDays": 282
+        }
+      ]
+    },
+    {
+      "id": "q09",
+      "query": "For my stitched travel notebook, what comes immediately after punching the holes?",
+      "designSlice": "ordered workflow among topical distractors",
+      "intendedAnswerable": true,
+      "memories": [
+        {
+          "id": "q09-m01",
+          "title": "Notebook paper",
+          "content": "The stitched travel notebook uses cream paper with a few blue divider sheets.",
+          "memoryType": "fact",
+          "importance": 0.1,
+          "ageDays": 180,
+          "createdDays": 264
+        },
+        {
+          "id": "q09-m02",
+          "title": "Hole guide",
+          "content": "The hole guide is a folded strip of card.",
+          "memoryType": "fact",
+          "importance": 0.92,
+          "ageDays": 3,
+          "createdDays": 110
+        },
+        {
+          "id": "q09-m03",
+          "title": "Cover decoration",
+          "content": "The travel notebook cover will have a simple stamped compass.",
+          "memoryType": "goal",
+          "importance": 0.48,
+          "ageDays": 1,
+          "createdDays": 107
+        },
+        {
+          "id": "q09-m04",
+          "title": "Binding supplies",
+          "content": "The thick binding needle is in the small sewing tin.",
+          "memoryType": "fact",
+          "importance": 0.74,
+          "ageDays": 14,
+          "createdDays": 54
+        },
+        {
+          "id": "q09-m05",
+          "title": "Binding sequence",
+          "content": "My stitched travel notebook sequence is: fold the sheets, punch the holes, thread the needle, sew the spine, then trim the edges.",
+          "memoryType": "context",
+          "importance": 0.36,
+          "ageDays": 90,
+          "createdDays": 197
+        },
+        {
+          "id": "q09-m06",
+          "title": "Punch storage",
+          "content": "The paper punch lives in the bottom drawer.",
+          "memoryType": "fact",
+          "importance": 0.48,
+          "ageDays": 90,
+          "createdDays": 138
+        },
+        {
+          "id": "q09-m07",
+          "title": "Stapled notebook",
+          "content": "For the small stapled notebook, I trim the pages before folding them.",
+          "memoryType": "context",
+          "importance": 0.27,
+          "ageDays": 540,
+          "createdDays": 555
+        },
+        {
+          "id": "q09-m08",
+          "title": "Travel list",
+          "content": "The travel sketch list includes bridges, gates, and old shop fronts.",
+          "memoryType": "goal",
+          "importance": 0.16,
+          "ageDays": 3,
+          "createdDays": 8
+        }
+      ]
+    },
+    {
+      "id": "q10",
+      "query": "Before the October revision, what wording had I chosen for the craft-fair banner?",
+      "designSlice": "historical query despite a newer replacement",
+      "intendedAnswerable": true,
+      "memories": [
+        {
+          "id": "q10-m01",
+          "title": "October banner revision",
+          "content": "On 2026-10-01 I replaced the craft-fair banner wording with Made for Curious Hands. This supersedes the June wording.",
+          "memoryType": "fact",
+          "importance": 0.94,
+          "ageDays": 3,
+          "createdDays": 3
+        },
+        {
+          "id": "q10-m02",
+          "title": "Banner material",
+          "content": "The craft-fair banner will be printed on uncoated fabric.",
+          "memoryType": "fact",
+          "importance": 0.69,
+          "ageDays": 180,
+          "createdDays": 236
+        },
+        {
+          "id": "q10-m03",
+          "title": "June banner wording",
+          "content": "On 2026-06-01 I chose Small Things, Thoughtfully Made as the craft-fair banner wording.",
+          "memoryType": "fact",
+          "importance": 0.84,
+          "ageDays": 125,
+          "createdDays": 125
+        },
+        {
+          "id": "q10-m04",
+          "title": "Workshop motto",
+          "content": "The workshop wall sign says Leave Room to Experiment.",
+          "memoryType": "fact",
+          "importance": 0.81,
+          "ageDays": 1,
+          "createdDays": 23
+        },
+        {
+          "id": "q10-m05",
+          "title": "Fair packing",
+          "content": "Pack string, clips, and the folding display stand for the craft fair.",
+          "memoryType": "goal",
+          "importance": 0.73,
+          "ageDays": 28,
+          "createdDays": 68
+        },
+        {
+          "id": "q10-m06",
+          "title": "Banner colors",
+          "content": "The banner background is dark green with cream lettering.",
+          "memoryType": "fact",
+          "importance": 0.22,
+          "ageDays": 28,
+          "createdDays": 82
+        },
+        {
+          "id": "q10-m07",
+          "title": "Card wording",
+          "content": "The small thank-you cards say Thanks for Stopping By.",
+          "memoryType": "fact",
+          "importance": 0.12,
+          "ageDays": 180,
+          "createdDays": 203
+        },
+        {
+          "id": "q10-m08",
+          "title": "Banner practice",
+          "content": "I want to practice rolling the banner without creasing it.",
+          "memoryType": "goal",
+          "importance": 0.24,
+          "ageDays": 1,
+          "createdDays": 111
+        }
+      ]
+    },
+    {
+      "id": "q11",
+      "query": "How many people can our Lantern Trails game night accommodate, and how many seats are still free?",
+      "designSlice": "simple composition across capacity and attendance",
+      "intendedAnswerable": true,
+      "memories": [
+        {
+          "id": "q11-m01",
+          "title": "Snack bowls",
+          "content": "There are six small snack bowls in the game-night crate.",
+          "memoryType": "fact",
+          "importance": 0.73,
+          "ageDays": 3,
+          "createdDays": 68
+        },
+        {
+          "id": "q11-m02",
+          "title": "Lantern Trails capacity",
+          "content": "Our single Lantern Trails game-night table is set up for exactly five players, with no spectator seats.",
+          "memoryType": "fact",
+          "importance": 0.47,
+          "ageDays": 0,
+          "createdDays": 113
+        },
+        {
+          "id": "q11-m03",
+          "title": "Game preferences",
+          "content": "I prefer cooperative games on weeknights.",
+          "memoryType": "preference",
+          "importance": 0.83,
+          "ageDays": 3,
+          "createdDays": 8
+        },
+        {
+          "id": "q11-m04",
+          "title": "Other game table",
+          "content": "The Cloud Orchard game table can seat four players.",
+          "memoryType": "fact",
+          "importance": 0.42,
+          "ageDays": 90,
+          "createdDays": 171
+        },
+        {
+          "id": "q11-m05",
+          "title": "Lantern Trails confirmations",
+          "content": "For the upcoming Lantern Trails night, three players have confirmed. Nobody else has a reserved place.",
+          "memoryType": "context",
+          "importance": 0.94,
+          "ageDays": 90,
+          "createdDays": 198
+        },
+        {
+          "id": "q11-m06",
+          "title": "Table cloth",
+          "content": "The round blue tablecloth is in the hall cupboard.",
+          "memoryType": "fact",
+          "importance": 0.23,
+          "ageDays": 3,
+          "createdDays": 25
+        },
+        {
+          "id": "q11-m07",
+          "title": "Game night cleanup",
+          "content": "Put counters back into their labeled bags before folding the board.",
+          "memoryType": "goal",
+          "importance": 0.6,
+          "ageDays": 365,
+          "createdDays": 471
+        },
+        {
+          "id": "q11-m08",
+          "title": "Lantern crafting",
+          "content": "Eight people attended the paper-lantern craft session.",
+          "memoryType": "context",
+          "importance": 0.27,
+          "ageDays": 28,
+          "createdDays": 112
+        }
+      ]
+    },
+    {
+      "id": "q12",
+      "query": "What symbol should I put next to an uncertain feature in my moon sketches?",
+      "designSlice": "late evidence with semantically close distractors",
+      "intendedAnswerable": true,
+      "memories": [
+        {
+          "id": "q12-m01",
+          "title": "Star chart key",
+          "content": "On the star chart, I use a small circle around each object I want to revisit.",
+          "memoryType": "preference",
+          "importance": 0.8,
+          "ageDays": 1,
+          "createdDays": 69
+        },
+        {
+          "id": "q12-m02",
+          "title": "Moon paper",
+          "content": "The moon sketches go on gray paper so white pencil highlights show.",
+          "memoryType": "preference",
+          "importance": 0.8,
+          "ageDays": 0,
+          "createdDays": 46
+        },
+        {
+          "id": "q12-m03",
+          "title": "Sketchbook storage",
+          "content": "The astronomy sketchbook lives in the soft green sleeve.",
+          "memoryType": "fact",
+          "importance": 0.7,
+          "ageDays": 7,
+          "createdDays": 96
+        },
+        {
+          "id": "q12-m04",
+          "title": "Cloud log",
+          "content": "I describe cloud cover with short words rather than percentages in my casual sky journal.",
+          "memoryType": "preference",
+          "importance": 0.12,
+          "ageDays": 60,
+          "createdDays": 80
+        },
+        {
+          "id": "q12-m05",
+          "title": "Observing stool",
+          "content": "The observing stool folds underneath the low shelf.",
+          "memoryType": "fact",
+          "importance": 0.23,
+          "ageDays": 90,
+          "createdDays": 198
+        },
+        {
+          "id": "q12-m06",
+          "title": "Sketching notes",
+          "content": "During the sketching practice I worked on keeping the page dim, making the broad shapes first, and comparing the shadows after a short break. I want the record to show what I actually noticed rather than fill every empty patch. In moon sketches, a small question mark beside a feature means I am uncertain about it.",
+          "memoryType": "preference",
+          "importance": 0.35,
+          "ageDays": 0,
+          "createdDays": 58
+        },
+        {
+          "id": "q12-m07",
+          "title": "Map symbols",
+          "content": "For walking maps, a triangle marks a viewpoint and a square marks a rest stop.",
+          "memoryType": "fact",
+          "importance": 0.26,
+          "ageDays": 14,
+          "createdDays": 16
+        },
+        {
+          "id": "q12-m08",
+          "title": "Moon sketch goal",
+          "content": "I want to put six moon sketches side by side on a display board.",
+          "memoryType": "goal",
+          "importance": 0.77,
+          "ageDays": 1,
+          "createdDays": 37
+        }
+      ]
+    },
+    {
+      "id": "q13",
+      "query": "What exact temperature should I set for firing my speckled mug?",
+      "designSlice": "missing technical setting with related memories",
+      "intendedAnswerable": false,
+      "memories": [
+        {
+          "id": "q13-m01",
+          "title": "Mug surface",
+          "content": "I want a speckled appearance on the mug.",
+          "memoryType": "goal",
+          "importance": 0.93,
+          "ageDays": 1,
+          "createdDays": 79
+        },
+        {
+          "id": "q13-m02",
+          "title": "Clay box",
+          "content": "The clay box sits below the wedging table.",
+          "memoryType": "fact",
+          "importance": 0.83,
+          "ageDays": 3,
+          "createdDays": 15
+        },
+        {
+          "id": "q13-m03",
+          "title": "Studio routine",
+          "content": "The studio supervisor handles firing; I only recorded my decorating plans.",
+          "memoryType": "context",
+          "importance": 0.68,
+          "ageDays": 0,
+          "createdDays": 99
+        },
+        {
+          "id": "q13-m04",
+          "title": "Mug handle",
+          "content": "The mug handle is a plain loop shape.",
+          "memoryType": "fact",
+          "importance": 0.33,
+          "ageDays": 0,
+          "createdDays": 112
+        },
+        {
+          "id": "q13-m05",
+          "title": "Glaze notebook",
+          "content": "My glaze notebook has color swatches but no kiln program or firing temperature for this mug.",
+          "memoryType": "fact",
+          "importance": 0.38,
+          "ageDays": 1,
+          "createdDays": 110
+        },
+        {
+          "id": "q13-m06",
+          "title": "Pottery tools",
+          "content": "The wooden modeling tools are in the canvas pouch.",
+          "memoryType": "fact",
+          "importance": 0.75,
+          "ageDays": 14,
+          "createdDays": 126
+        },
+        {
+          "id": "q13-m07",
+          "title": "Bowl plan",
+          "content": "The next bowl will have a wavy rim.",
+          "memoryType": "goal",
+          "importance": 0.71,
+          "ageDays": 90,
+          "createdDays": 148
+        },
+        {
+          "id": "q13-m08",
+          "title": "Studio display",
+          "content": "Finished mugs will be photographed against a plain gray background.",
+          "memoryType": "goal",
+          "importance": 0.7,
+          "ageDays": 730,
+          "createdDays": 758
+        }
+      ]
+    },
+    {
+      "id": "q14",
+      "query": "What color did I finally choose for the new library tote?",
+      "designSlice": "undecided attribute with tempting adjacent choices",
+      "intendedAnswerable": false,
+      "memories": [
+        {
+          "id": "q14-m01",
+          "title": "Tote candidates",
+          "content": "For the new library tote I am considering mustard yellow, forest green, and navy; I have not picked one.",
+          "memoryType": "context",
+          "importance": 0.24,
+          "ageDays": 730,
+          "createdDays": 775
+        },
+        {
+          "id": "q14-m02",
+          "title": "Old tote",
+          "content": "My old library tote was red.",
+          "memoryType": "fact",
+          "importance": 0.64,
+          "ageDays": 0,
+          "createdDays": 12
+        },
+        {
+          "id": "q14-m03",
+          "title": "Tote handles",
+          "content": "I have settled on long handles for the new library tote.",
+          "memoryType": "fact",
+          "importance": 0.39,
+          "ageDays": 7,
+          "createdDays": 125
+        },
+        {
+          "id": "q14-m04",
+          "title": "Color preference",
+          "content": "I often like green accessories, but I want to see the new tote fabrics in person before deciding.",
+          "memoryType": "preference",
+          "importance": 0.15,
+          "ageDays": 1,
+          "createdDays": 74
+        },
+        {
+          "id": "q14-m05",
+          "title": "Library pouch",
+          "content": "The little library-card pouch is navy.",
+          "memoryType": "fact",
+          "importance": 0.61,
+          "ageDays": 1,
+          "createdDays": 22
+        },
+        {
+          "id": "q14-m06",
+          "title": "Fabric shop list",
+          "content": "At the fabric shop I need to compare the tote samples and look for cord.",
+          "memoryType": "goal",
+          "importance": 0.68,
+          "ageDays": 60,
+          "createdDays": 70
+        },
+        {
+          "id": "q14-m07",
+          "title": "Tote pattern",
+          "content": "The new library tote will use the square-bottom pattern.",
+          "memoryType": "fact",
+          "importance": 0.17,
+          "ageDays": 1,
+          "createdDays": 73
+        },
+        {
+          "id": "q14-m08",
+          "title": "Book covering",
+          "content": "I wrapped the poetry notebook in mustard yellow paper.",
+          "memoryType": "context",
+          "importance": 0.33,
+          "ageDays": 28,
+          "createdDays": 56
+        }
+      ]
+    },
+    {
+      "id": "q15",
+      "query": "What time does the model railway museum open on Sundays?",
+      "designSlice": "missing schedule with nearby numeric lure",
+      "intendedAnswerable": false,
+      "memories": [
+        {
+          "id": "q15-m01",
+          "title": "Museum visit idea",
+          "content": "I would like to visit the fictional Copper Vale Model Railway Museum on a Sunday.",
+          "memoryType": "goal",
+          "importance": 0.56,
+          "ageDays": 3,
+          "createdDays": 22
+        },
+        {
+          "id": "q15-m02",
+          "title": "Museum arrival plan",
+          "content": "I penciled in an arrival at 11:00, but this was only a personal guess and I have not checked the museum opening hours.",
+          "memoryType": "context",
+          "importance": 0.7,
+          "ageDays": 540,
+          "createdDays": 560
+        },
+        {
+          "id": "q15-m03",
+          "title": "Model club time",
+          "content": "The model railway club begins its Saturday session at 10:00.",
+          "memoryType": "fact",
+          "importance": 0.17,
+          "ageDays": 60,
+          "createdDays": 178
+        },
+        {
+          "id": "q15-m04",
+          "title": "Museum leaflet",
+          "content": "The old museum leaflet lists exhibits but the opening-hours panel is missing.",
+          "memoryType": "fact",
+          "importance": 0.2,
+          "ageDays": 7,
+          "createdDays": 69
+        },
+        {
+          "id": "q15-m05",
+          "title": "Museum interests",
+          "content": "At the railway museum I mainly want to see the hand-built station models.",
+          "memoryType": "preference",
+          "importance": 0.72,
+          "ageDays": 365,
+          "createdDays": 417
+        },
+        {
+          "id": "q15-m06",
+          "title": "Train room",
+          "content": "My home train room has two small display tables.",
+          "memoryType": "fact",
+          "importance": 0.22,
+          "ageDays": 730,
+          "createdDays": 800
+        },
+        {
+          "id": "q15-m07",
+          "title": "Museum gift",
+          "content": "I plan to look for a postcard of the viaduct exhibit.",
+          "memoryType": "goal",
+          "importance": 0.66,
+          "ageDays": 7,
+          "createdDays": 40
+        },
+        {
+          "id": "q15-m08",
+          "title": "Station cafe",
+          "content": "The fictional station cafe opens at 09:00 on Sundays; it is not part of the museum.",
+          "memoryType": "fact",
+          "importance": 0.66,
+          "ageDays": 7,
+          "createdDays": 73
+        }
+      ]
+    },
+    {
+      "id": "q16",
+      "query": "What start time have we agreed for the next kite-making meetup?",
+      "designSlice": "no agreement despite proposals and prior event",
+      "intendedAnswerable": false,
+      "memories": [
+        {
+          "id": "q16-m01",
+          "title": "Previous kite session",
+          "content": "The previous kite-making meetup started at 14:00.",
+          "memoryType": "context",
+          "importance": 0.58,
+          "ageDays": 180,
+          "createdDays": 264
+        },
+        {
+          "id": "q16-m02",
+          "title": "Next session proposal",
+          "content": "For the next kite-making meetup I suggested 13:00, while another suggestion was 15:00. Neither time has been accepted.",
+          "memoryType": "context",
+          "importance": 0.79,
+          "ageDays": 1,
+          "createdDays": 92
+        },
+        {
+          "id": "q16-m03",
+          "title": "Paper selection",
+          "content": "The next kite-making meetup will use lightweight blue and white paper.",
+          "memoryType": "fact",
+          "importance": 0.84,
+          "ageDays": 28,
+          "createdDays": 58
+        },
+        {
+          "id": "q16-m04",
+          "title": "Room reservation",
+          "content": "The room can be used all afternoon; the reservation does not set the meetup start time.",
+          "memoryType": "fact",
+          "importance": 0.51,
+          "ageDays": 730,
+          "createdDays": 784
+        },
+        {
+          "id": "q16-m05",
+          "title": "Kite meetup notes",
+          "content": "We finished the last session by putting away paper, comparing different tail lengths, and setting aside reusable offcuts. The next session will focus on decorating the finished frames rather than starting new ones. The next kite-making meetup still has no agreed start time.",
+          "memoryType": "context",
+          "importance": 0.34,
+          "ageDays": 90,
+          "createdDays": 145
+        },
+        {
+          "id": "q16-m06",
+          "title": "Kite handles",
+          "content": "The string handles are in a cardboard box marked flying kit.",
+          "memoryType": "fact",
+          "importance": 0.94,
+          "ageDays": 28,
+          "createdDays": 69
+        },
+        {
+          "id": "q16-m07",
+          "title": "Afternoon preference",
+          "content": "I generally prefer hobby meetups after lunch.",
+          "memoryType": "preference",
+          "importance": 0.65,
+          "ageDays": 60,
+          "createdDays": 114
+        },
+        {
+          "id": "q16-m08",
+          "title": "Display deadline",
+          "content": "I want the kite display board ready before the weekend.",
+          "memoryType": "goal",
+          "importance": 0.17,
+          "ageDays": 1,
+          "createdDays": 102
+        }
+      ]
+    }
+  ]
+}

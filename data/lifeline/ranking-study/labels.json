@@ -1,0 +1,989 @@
+{
+  "schema": "lifeline-relevance-labels/v1",
+  "judge": "Astra blinded reviewer",
+  "cases": [
+    {
+      "id": "q01",
+      "answerable": true,
+      "memories": [
+        {
+          "id": "q01-m01",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Locates paper, not brushes."
+        },
+        {
+          "id": "q01-m02",
+          "relevance": 2,
+          "superseded": false,
+          "reason": "Directly locates the requested narrow watercolor brushes."
+        },
+        {
+          "id": "q01-m03",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Locates a sketchbook, not brushes."
+        },
+        {
+          "id": "q01-m04",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different brushes: wide house-painting brushes."
+        },
+        {
+          "id": "q01-m05",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Paint preference does not locate brushes."
+        },
+        {
+          "id": "q01-m06",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different pencil roll and no requested brush location."
+        },
+        {
+          "id": "q01-m07",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Painting goal does not locate brushes."
+        },
+        {
+          "id": "q01-m08",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Locates a drying rack, not brushes."
+        }
+      ],
+      "essentialFacts": [
+        {
+          "id": "q01-f01",
+          "memoryId": "q01-m02",
+          "quote": "My narrow watercolor brushes are in the blue pencil roll on the top shelf."
+        }
+      ],
+      "rationale": "Answerable: explicit brush storage is the blue pencil roll on the top shelf; no change is recorded."
+    },
+    {
+      "id": "q02",
+      "answerable": true,
+      "memories": [
+        {
+          "id": "q02-m01",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Showcase preference concerns visitors, not concentrated assembly."
+        },
+        {
+          "id": "q02-m02",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Poster design does not establish room requirements."
+        },
+        {
+          "id": "q02-m03",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Bench layout does not answer what room to book."
+        },
+        {
+          "id": "q02-m04",
+          "relevance": 2,
+          "superseded": false,
+          "reason": "Explicit enduring preference for concentrated fiddly assembly conditions."
+        },
+        {
+          "id": "q02-m05",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Social-event preference concerns a different activity."
+        },
+        {
+          "id": "q02-m06",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Cabinet shelves do not establish room requirements."
+        },
+        {
+          "id": "q02-m07",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Demonstration commitment does not establish concentration preferences."
+        },
+        {
+          "id": "q02-m08",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Room existence and projector do not establish suitable concentration conditions."
+        }
+      ],
+      "essentialFacts": [
+        {
+          "id": "q02-f01",
+          "memoryId": "q02-m04",
+          "quote": "a quiet enclosed room without background music"
+        }
+      ],
+      "rationale": "Answerable: the enduring assembly preference specifies a quiet enclosed room without background music. Social preferences do not override it."
+    },
+    {
+      "id": "q03",
+      "answerable": true,
+      "memories": [
+        {
+          "id": "q03-m01",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Apron preference does not establish meeting time."
+        },
+        {
+          "id": "q03-m02",
+          "relevance": 0,
+          "superseded": true,
+          "reason": "Tuesday schedule was explicitly replaced before the query clock."
+        },
+        {
+          "id": "q03-m03",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different group."
+        },
+        {
+          "id": "q03-m04",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Glazing goal does not establish meeting time."
+        },
+        {
+          "id": "q03-m05",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Shelf location does not establish meeting time."
+        },
+        {
+          "id": "q03-m06",
+          "relevance": 2,
+          "superseded": false,
+          "reason": "Explicit replacement schedule is effective before the query clock."
+        },
+        {
+          "id": "q03-m07",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Cleanup routine does not establish meeting time."
+        },
+        {
+          "id": "q03-m08",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "One-off exhibition is explicitly not the group meeting."
+        }
+      ],
+      "essentialFacts": [
+        {
+          "id": "q03-f01",
+          "memoryId": "q03-m06",
+          "quote": "On 2026-09-30 the pottery group moved to Thursdays at 18:30"
+        }
+      ],
+      "rationale": "Answerable: the September 30 change is effective by the October 4 clock, giving Thursdays at 18:30."
+    },
+    {
+      "id": "q04",
+      "answerable": true,
+      "memories": [
+        {
+          "id": "q04-m01",
+          "relevance": 2,
+          "superseded": false,
+          "reason": "Direct agreement identifies what to bring for seating."
+        },
+        {
+          "id": "q04-m02",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Menu does not answer seating or meeting location."
+        },
+        {
+          "id": "q04-m03",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Solo-outing preference does not apply to the agreed club plan."
+        },
+        {
+          "id": "q04-m04",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Conditional cancellation supplies neither requested fact nor an actual cancellation."
+        },
+        {
+          "id": "q04-m05",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Charcoal storage does not answer the picnic question."
+        },
+        {
+          "id": "q04-m06",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different group and event."
+        },
+        {
+          "id": "q04-m07",
+          "relevance": 2,
+          "superseded": false,
+          "reason": "Directly states this picnic meeting point."
+        },
+        {
+          "id": "q04-m08",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different stool; no evidence this affects the folding stool."
+        }
+      ],
+      "essentialFacts": [
+        {
+          "id": "q04-f01",
+          "memoryId": "q04-m01",
+          "quote": "For the sketch-club picnic I agreed to bring the folding stool"
+        },
+        {
+          "id": "q04-f02",
+          "memoryId": "q04-m07",
+          "quote": "The sketch-club picnic meeting point is the fountain by the park south entrance."
+        }
+      ],
+      "rationale": "Answerable: two memories jointly establish the folding stool and the fountain by the park south entrance."
+    },
+    {
+      "id": "q05",
+      "answerable": true,
+      "memories": [
+        {
+          "id": "q05-m01",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "General shelf layout does not identify the borrower."
+        },
+        {
+          "id": "q05-m02",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Library signage goal does not identify the borrower."
+        },
+        {
+          "id": "q05-m03",
+          "relevance": 2,
+          "superseded": false,
+          "reason": "Explicit loan of the requested jigsaw to the named recipient."
+        },
+        {
+          "id": "q05-m04",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different object: painting rather than jigsaw."
+        },
+        {
+          "id": "q05-m05",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different jigsaw and ownership relation."
+        },
+        {
+          "id": "q05-m06",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Puzzle taste does not establish who borrowed this puzzle."
+        },
+        {
+          "id": "q05-m07",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different puzzle, with borrowing in the opposite direction."
+        },
+        {
+          "id": "q05-m08",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Picture frame is not the loaned jigsaw."
+        }
+      ],
+      "essentialFacts": [
+        {
+          "id": "q05-f01",
+          "memoryId": "q05-m03",
+          "quote": "I lent the lighthouse jigsaw to the Riverbend Craft Circle."
+        }
+      ],
+      "rationale": "Answerable from the recorded loan: Riverbend Craft Circle is the recipient; no return or transfer is recorded."
+    },
+    {
+      "id": "q06",
+      "answerable": true,
+      "memories": [
+        {
+          "id": "q06-m01",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Tag preference does not establish bag fabric choice."
+        },
+        {
+          "id": "q06-m02",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Fabric preference applies to aprons."
+        },
+        {
+          "id": "q06-m03",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Shopping-tote handles do not establish gift-bag fabric preference."
+        },
+        {
+          "id": "q06-m04",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Scrap storage does not establish fabric preference."
+        },
+        {
+          "id": "q06-m05",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Drawstring construction does not answer which fabric to use or avoid."
+        },
+        {
+          "id": "q06-m06",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Ribbon-versus-cord experiment does not answer the fabric question."
+        },
+        {
+          "id": "q06-m07",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Satin choice concerns a different project."
+        },
+        {
+          "id": "q06-m08",
+          "relevance": 2,
+          "superseded": false,
+          "reason": "Explicitly states both preferred and avoided gift-bag fabrics."
+        }
+      ],
+      "essentialFacts": [
+        {
+          "id": "q06-f01",
+          "memoryId": "q06-m08",
+          "quote": "For reusable gift bags I prefer washed cotton; avoid shiny satin"
+        }
+      ],
+      "rationale": "Answerable: washed cotton is preferred and shiny satin is to be avoided for these bags."
+    },
+    {
+      "id": "q07",
+      "answerable": true,
+      "memories": [
+        {
+          "id": "q07-m01",
+          "relevance": 2,
+          "superseded": false,
+          "reason": "Provides Market scale for the explicitly named contrast."
+        },
+        {
+          "id": "q07-m02",
+          "relevance": 2,
+          "superseded": false,
+          "reason": "Provides requested Lantern scale and identifies its model."
+        },
+        {
+          "id": "q07-m03",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Paper lantern workshop is a different entity."
+        },
+        {
+          "id": "q07-m04",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Sketch page orientation is not model scale."
+        },
+        {
+          "id": "q07-m05",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Roof construction does not answer the scale comparison."
+        },
+        {
+          "id": "q07-m06",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Shelf fit does not establish either scale."
+        },
+        {
+          "id": "q07-m07",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Explicitly unrelated kit."
+        },
+        {
+          "id": "q07-m08",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Exterior color does not establish scale."
+        }
+      ],
+      "essentialFacts": [
+        {
+          "id": "q07-f01",
+          "memoryId": "q07-m01",
+          "quote": "The Harbor Market model uses a 1:100 scale."
+        },
+        {
+          "id": "q07-f02",
+          "memoryId": "q07-m02",
+          "quote": "I chose 1:48 for the Harbor Lantern model"
+        }
+      ],
+      "rationale": "Answerable: Lantern is 1:48 and Market is 1:100. The phrase as opposed to can be read as entity disambiguation alone; I interpret its explicit contrast as requesting both scales and grade both essential."
+    },
+    {
+      "id": "q08",
+      "answerable": true,
+      "memories": [
+        {
+          "id": "q08-m01",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Label material does not establish turning frequency."
+        },
+        {
+          "id": "q08-m02",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Notebook location does not establish turning frequency."
+        },
+        {
+          "id": "q08-m03",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different pot and no turning routine."
+        },
+        {
+          "id": "q08-m04",
+          "relevance": 2,
+          "superseded": false,
+          "reason": "Directly gives rotation frequency and amount for this tray."
+        },
+        {
+          "id": "q08-m05",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Balcony cleaning is a different routine."
+        },
+        {
+          "id": "q08-m06",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Seed packet storage is unrelated to rotation."
+        },
+        {
+          "id": "q08-m07",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Photograph frequency is not rotation frequency."
+        },
+        {
+          "id": "q08-m08",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Pottery turntable is a different object and task."
+        }
+      ],
+      "essentialFacts": [
+        {
+          "id": "q08-f01",
+          "memoryId": "q08-m04",
+          "quote": "windowsill seedling tray a quarter-turn every other morning"
+        }
+      ],
+      "rationale": "Answerable: the specified routine is a quarter-turn every other morning."
+    },
+    {
+      "id": "q09",
+      "answerable": true,
+      "memories": [
+        {
+          "id": "q09-m01",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Paper choice does not establish the next binding step."
+        },
+        {
+          "id": "q09-m02",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Guide construction does not establish sequence."
+        },
+        {
+          "id": "q09-m03",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Cover decoration does not establish binding order."
+        },
+        {
+          "id": "q09-m04",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Needle storage does not say when to thread or use it."
+        },
+        {
+          "id": "q09-m05",
+          "relevance": 2,
+          "superseded": false,
+          "reason": "Explicit sequence places threading the needle immediately after punching holes."
+        },
+        {
+          "id": "q09-m06",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Punch location does not establish the next step."
+        },
+        {
+          "id": "q09-m07",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different notebook and binding construction."
+        },
+        {
+          "id": "q09-m08",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Sketch subjects do not establish binding order."
+        }
+      ],
+      "essentialFacts": [
+        {
+          "id": "q09-f01",
+          "memoryId": "q09-m05",
+          "quote": "punch the holes, thread the needle"
+        }
+      ],
+      "rationale": "Answerable: the ordered sequence explicitly places threading the needle after punching holes."
+    },
+    {
+      "id": "q10",
+      "answerable": true,
+      "memories": [
+        {
+          "id": "q10-m01",
+          "relevance": 1,
+          "superseded": false,
+          "reason": "Confirms October replaced June wording, supporting the historical cutoff."
+        },
+        {
+          "id": "q10-m02",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Banner material does not establish wording."
+        },
+        {
+          "id": "q10-m03",
+          "relevance": 2,
+          "superseded": false,
+          "reason": "Records wording before October; historically correct for this query."
+        },
+        {
+          "id": "q10-m04",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different sign."
+        },
+        {
+          "id": "q10-m05",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Packing list does not establish banner wording."
+        },
+        {
+          "id": "q10-m06",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Colors do not establish wording."
+        },
+        {
+          "id": "q10-m07",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different printed object."
+        },
+        {
+          "id": "q10-m08",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Rolling practice does not establish wording."
+        }
+      ],
+      "essentialFacts": [
+        {
+          "id": "q10-f01",
+          "memoryId": "q10-m03",
+          "quote": "On 2026-06-01 I chose Small Things, Thoughtfully Made"
+        }
+      ],
+      "rationale": "Answerable historically: Small Things, Thoughtfully Made was chosen in June before the October revision. Its replacement does not make it outdated for this historical question."
+    },
+    {
+      "id": "q11",
+      "answerable": true,
+      "memories": [
+        {
+          "id": "q11-m01",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Snack-bowl count does not establish seating capacity."
+        },
+        {
+          "id": "q11-m02",
+          "relevance": 2,
+          "superseded": false,
+          "reason": "States player capacity and excludes additional spectator seats."
+        },
+        {
+          "id": "q11-m03",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Game preference does not establish seat counts."
+        },
+        {
+          "id": "q11-m04",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different game table."
+        },
+        {
+          "id": "q11-m05",
+          "relevance": 2,
+          "superseded": false,
+          "reason": "States confirmed players and absence of other reservations, permitting free-seat calculation."
+        },
+        {
+          "id": "q11-m06",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Tablecloth storage does not establish seat counts."
+        },
+        {
+          "id": "q11-m07",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Cleanup instructions do not establish seat counts."
+        },
+        {
+          "id": "q11-m08",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different event; attendance is not game-night capacity."
+        }
+      ],
+      "essentialFacts": [
+        {
+          "id": "q11-f01",
+          "memoryId": "q11-m02",
+          "quote": "exactly five players, with no spectator seats"
+        },
+        {
+          "id": "q11-f02",
+          "memoryId": "q11-m05",
+          "quote": "three players have confirmed. Nobody else has a reserved place."
+        }
+      ],
+      "rationale": "Answerable: capacity is five people, all players; three confirmed and no other reservations leave two free seats. The recorded upcoming-event context supplies the count despite its age."
+    },
+    {
+      "id": "q12",
+      "answerable": true,
+      "memories": [
+        {
+          "id": "q12-m01",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Star-chart revisit symbol has a different meaning and context."
+        },
+        {
+          "id": "q12-m02",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Paper choice does not specify an uncertainty symbol."
+        },
+        {
+          "id": "q12-m03",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Sketchbook location does not specify a symbol."
+        },
+        {
+          "id": "q12-m04",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Cloud-cover notation concerns a different observation and journal."
+        },
+        {
+          "id": "q12-m05",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Stool storage does not specify a symbol."
+        },
+        {
+          "id": "q12-m06",
+          "relevance": 2,
+          "superseded": false,
+          "reason": "Explicitly defines the uncertainty symbol for moon-sketch features."
+        },
+        {
+          "id": "q12-m07",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Walking-map symbols do not apply to moon sketches."
+        },
+        {
+          "id": "q12-m08",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Display goal does not specify a notation convention."
+        }
+      ],
+      "essentialFacts": [
+        {
+          "id": "q12-f01",
+          "memoryId": "q12-m06",
+          "quote": "a small question mark beside a feature means I am uncertain about it."
+        }
+      ],
+      "rationale": "Answerable: a small question mark marks an uncertain moon-sketch feature."
+    },
+    {
+      "id": "q13",
+      "answerable": false,
+      "memories": [
+        {
+          "id": "q13-m01",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Desired appearance alone does not establish firing temperature."
+        },
+        {
+          "id": "q13-m02",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Clay storage supplies no firing specification."
+        },
+        {
+          "id": "q13-m03",
+          "relevance": 1,
+          "superseded": false,
+          "reason": "Explains why recorded decorating plans do not supply firing instructions."
+        },
+        {
+          "id": "q13-m04",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Handle shape supplies no firing specification."
+        },
+        {
+          "id": "q13-m05",
+          "relevance": 1,
+          "superseded": false,
+          "reason": "Confirms relevant notebook lacks a program or temperature."
+        },
+        {
+          "id": "q13-m06",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Tool storage supplies no firing specification."
+        },
+        {
+          "id": "q13-m07",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different vessel and no firing specification."
+        },
+        {
+          "id": "q13-m08",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Photography plan supplies no firing specification."
+        }
+      ],
+      "essentialFacts": [],
+      "rationale": "Not answerable: no exact firing temperature or kiln program is supplied; appearance and decorating plans cannot determine it."
+    },
+    {
+      "id": "q14",
+      "answerable": false,
+      "memories": [
+        {
+          "id": "q14-m01",
+          "relevance": 1,
+          "superseded": false,
+          "reason": "Records candidates without a selection, supporting uncertainty."
+        },
+        {
+          "id": "q14-m02",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Old tote color does not establish new tote choice."
+        },
+        {
+          "id": "q14-m03",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Decided handles do not establish a decided color."
+        },
+        {
+          "id": "q14-m04",
+          "relevance": 1,
+          "superseded": false,
+          "reason": "Recent preference still defers this tote decision; green preference is not a final choice."
+        },
+        {
+          "id": "q14-m05",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different object: library-card pouch."
+        },
+        {
+          "id": "q14-m06",
+          "relevance": 1,
+          "superseded": false,
+          "reason": "Pending sample comparison supports absence of final fabric/color decision."
+        },
+        {
+          "id": "q14-m07",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Chosen pattern does not establish a chosen color."
+        },
+        {
+          "id": "q14-m08",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Notebook covering is a different object."
+        }
+      ],
+      "essentialFacts": [],
+      "rationale": "Not answerable: the memories record candidates and deferred choice, with no final color selection."
+    },
+    {
+      "id": "q15",
+      "answerable": false,
+      "memories": [
+        {
+          "id": "q15-m01",
+          "relevance": 1,
+          "superseded": false,
+          "reason": "Identifies the intended museum and Sunday visit but supplies no hours."
+        },
+        {
+          "id": "q15-m02",
+          "relevance": 1,
+          "superseded": false,
+          "reason": "Identifies 11:00 as an unchecked personal guess, supporting uncertainty."
+        },
+        {
+          "id": "q15-m03",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Different entity and day."
+        },
+        {
+          "id": "q15-m04",
+          "relevance": 1,
+          "superseded": false,
+          "reason": "Confirms available leaflet lacks opening-hours evidence."
+        },
+        {
+          "id": "q15-m05",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Exhibit preference does not establish hours."
+        },
+        {
+          "id": "q15-m06",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Home room is unrelated to museum hours."
+        },
+        {
+          "id": "q15-m07",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Souvenir plan does not establish hours."
+        },
+        {
+          "id": "q15-m08",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Cafe is explicitly not part of the museum."
+        }
+      ],
+      "essentialFacts": [],
+      "rationale": "Not answerable: the only museum arrival time is explicitly an unchecked guess and the leaflet lacks hours; another venue cannot supply them."
+    },
+    {
+      "id": "q16",
+      "answerable": false,
+      "memories": [
+        {
+          "id": "q16-m01",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Previous session time does not establish the next agreed time."
+        },
+        {
+          "id": "q16-m02",
+          "relevance": 1,
+          "superseded": false,
+          "reason": "Both next-session proposals are explicitly unaccepted."
+        },
+        {
+          "id": "q16-m03",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Paper selection does not establish start time."
+        },
+        {
+          "id": "q16-m04",
+          "relevance": 1,
+          "superseded": false,
+          "reason": "Clarifies afternoon availability is not an agreed meetup start."
+        },
+        {
+          "id": "q16-m05",
+          "relevance": 1,
+          "superseded": false,
+          "reason": "Explicitly confirms the next session has no agreed start time."
+        },
+        {
+          "id": "q16-m06",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Equipment location does not establish start time."
+        },
+        {
+          "id": "q16-m07",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "General personal preference is not a collective agreement."
+        },
+        {
+          "id": "q16-m08",
+          "relevance": 0,
+          "superseded": false,
+          "reason": "Display deadline does not establish meetup start time."
+        }
+      ],
+      "essentialFacts": [],
+      "rationale": "Not answerable as a requested agreed time: proposals are unaccepted and the notes explicitly say there is no agreed start time."
+    }
+  ]
+}
