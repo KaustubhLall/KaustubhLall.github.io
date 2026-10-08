@@ -1,0 +1,85 @@
+{
+  "schema": "agent-toolkit-installer-ownership/v1",
+  "checkedAt": "2026-10-07T04:07:11.815Z",
+  "release": "v1.0.0",
+  "license": "MIT",
+  "sourceCommit": "ef4c2928ce6971f6c3ffd9a68e76273130676709",
+  "repository": "https://github.com/KaustubhLall/agent-toolkit",
+  "source": {
+    "release": "https://github.com/KaustubhLall/agent-toolkit/tree/ef4c2928ce6971f6c3ffd9a68e76273130676709",
+    "tests": "https://github.com/KaustubhLall/agent-toolkit/blob/ef4c2928ce6971f6c3ffd9a68e76273130676709/tests/install.test.mjs",
+    "installer": "https://github.com/KaustubhLall/agent-toolkit/blob/ef4c2928ce6971f6c3ffd9a68e76273130676709/tools/install.mjs"
+  },
+  "testRun": {
+    "command": "node --test tests/install.test.mjs",
+    "node": "v24.12.0",
+    "tests": 9,
+    "passed": 9,
+    "failed": 0,
+    "fixtureRunOffline": true,
+    "passedNames": [
+      "installs codex and claude targets, verifies hashes, and is idempotent",
+      "updates from v1 to v2 and uninstall restores the original bytes",
+      "dry run performs no writes and unmanaged conflicts fail before writes",
+      "preserves surrounding instructions and detects managed edits",
+      "tampered manifest and traversal entries are rejected",
+      "actual bundle hash mismatch and forged receipt are rejected",
+      "later conflict causes no partial writes",
+      "CLI supports --uninstall --apply",
+      "drift is preserved on uninstall while unchanged outputs are removed"
+    ]
+  },
+  "fixture": {
+    "root": "os.tmpdir()/agent-toolkit-*/bundle",
+    "home": "os.tmpdir()/agent-toolkit-*/home",
+    "targets": ["codex"],
+    "cleanup": "fs.rm(tmp, { recursive: true, force: true })",
+    "credentialsUsed": false,
+    "realUserHomeUsed": false
+  },
+  "scenarios": [
+    {
+      "id": "managed-instruction-edit",
+      "title": "Surrounding instructions stay local",
+      "before": ".codex/AGENTS.md contains: before\n",
+      "action": "installBundle({ targets: ['codex'], apply: true })",
+      "after": [
+        "mode = applied",
+        "the original before\n prefix remains",
+        "<!-- agent-toolkit:start --> and <!-- agent-toolkit:end --> are added",
+        "local edit: Use toolkit -> User changed",
+        "next apply: managed instruction block was edited: <fresh-temp>/home/.codex/AGENTS.md"
+      ],
+      "outcome": "preserve-local-edit"
+    },
+    {
+      "id": "unmanaged-file-conflict",
+      "title": "Unmanaged skill bytes are not overwritten",
+      "before": ".agents/skills/demo/SKILL.md contains: user file",
+      "action": "dry-run, then installBundle({ targets: ['codex'], apply: true })",
+      "after": [
+        "dry-run mode = dry-run",
+        "apply: destination conflict (existing unmanaged file): <fresh-temp>/home/.agents/skills/demo/SKILL.md",
+        "original bytes = user file"
+      ],
+      "outcome": "reject-and-preserve"
+    },
+    {
+      "id": "later-conflict-no-partial-write",
+      "title": "A later conflict leaves no partial write",
+      "before": ".agents/skills/demo/SKILL.md contains: conflict",
+      "action": "installBundle({ targets: ['codex'], apply: true })",
+      "after": [
+        "apply: destination conflict (existing unmanaged file): <fresh-temp>/home/.agents/skills/demo/SKILL.md",
+        ".codex/AGENTS.md exists = false"
+      ],
+      "outcome": "preflight-before-write"
+    }
+  ],
+  "limits": [
+    "This is a synthetic fixture run, not a real-user installation or a Codex screenshot.",
+    "The capture used explicit temporary homes and no real profile, account session, credential, persistent access, or networked tool.",
+    "It exercises file ownership and managed-instruction behavior for the pinned codex fixture. It does not establish skill invocation, productivity, security review, cross-platform parity, or real-user home safety beyond these checks.",
+    "The test file and installer were fetched from the pinned public source first. The fixture run itself was offline, and its writes and cleanup stayed inside fresh temporary directories."
+  ]
+}
