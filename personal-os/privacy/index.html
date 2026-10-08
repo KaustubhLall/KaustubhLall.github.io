@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Personal OS Privacy Policy</title>
+    <link rel="canonical" href="https://kaustubh-lall.dev/personal-os/privacy/">
+    <style>
+      :root { color-scheme: dark; background: #07100b; color: #e4efe6; font-family: system-ui, sans-serif; }
+      body { margin: 0; }
+      main { box-sizing: border-box; max-width: 48rem; margin: 0 auto; padding: 3rem clamp(1rem, 4vw, 2rem); }
+      h1, h2 { font-family: ui-monospace, monospace; line-height: 1.3; color: #c4e862; }
+      h1 { font-size: clamp(1.7rem, 5vw, 2.3rem); margin: 0 0 1rem; }
+      h2 { font-size: 1.25rem; margin: 2.25rem 0 0.75rem; }
+      p { line-height: 1.75; margin: 0 0 1.1rem; overflow-wrap: anywhere; }
+      code { font-size: 0.95em; color: #e8c67a; }
+      a { color: #c4e862; text-underline-offset: 0.2em; }
+      a:focus-visible { outline: 2px solid #c4e862; outline-offset: 4px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article aria-labelledby="policy-title">
+        <h1 id="policy-title">Personal OS Privacy Policy</h1>
+        <p>Updated: October 8, 2026</p>
+
+        <h2>About Personal OS</h2>
+        <p>Personal OS is a private personal-use app operated by Kaustubh Lall. Access is limited to admitted users. Each user signs in with their own identity, and app records are scoped to that identity. It is not a medical service.</p>
+
+        <h2>Information and purpose</h2>
+        <p>The app stores your sign-in identity, including the name and email supplied by the hosting platform, and information you choose to enter, such as notes, tasks, project records, photos, and voice recordings. It uses this information to provide your personal workspace.</p>
+        <p>WHOOP and Ultrahuman connections are not currently configured. The intended WHOOP connection requests sleep and recovery access (<code>read:sleep</code>, <code>read:recovery</code>) and <code>offline</code> permission to renew access without another sign-in. The intended Ultrahuman connection requests <code>ring_data</code>, not CGM or profile access. These permissions would support a personal wellbeing view. You would approve access on the provider's official consent page before a connection is established. Permission to connect does not itself authorize AI use or permanent storage of provider data.</p>
+
+        <h2>Storage and access</h2>
+        <p>Personal OS is hosted through OpenAI Sites, with server-side Cloudflare Workers and D1 storage. Media features use private R2 storage. Information is not stored only on your device. These services handle information needed to operate the app under their own terms and policies.</p>
+        <p>The OAuth implementation is designed to keep provider client secrets and access and refresh tokens on the server, with encrypted token storage. These controls still require deployment configuration and verification before real connections are enabled. Tokens are excluded from the app's recovery export and are not intended for browser display or sharing in chat.</p>
+
+        <h2>Export and ChatGPT</h2>
+        <p>You can choose to download app exports or manually share selected content with ChatGPT. Downloads and chat copies are then handled outside this app. The app also has a ChatGPT connector for bounded project/source information and explicitly selected plant consultations. That connector is separate from manual sharing; it does not provide a wearable-data tool. This release does not automatically send WHOOP or Ultrahuman data to an AI service.</p>
+
+        <h2>Retention, disconnection, and removal</h2>
+        <p>Saved app records persist on the server; there is no verified automatic deletion schedule. Some item controls archive or mark records as deleted, so removing an item from view does not always permanently erase it.</p>
+        <p>Once a provider connection is configured, Disconnect is designed to revoke provider access and remove its server-side tokens after successful revocation. It does not erase your provider account, downloaded files, chat copies, or previously saved app records. Provider-history ingestion and a dedicated wearable-history deletion control are not currently available.</p>
+        <p>Contact the operator to request access to or removal of information held by this app. No fixed removal deadline or complete backup-erasure guarantee is stated here.</p>
+
+        <h2>Contact and updates</h2>
+        <p>Privacy questions and access or removal requests: <a href="mailto:kaustubhlall@gmail.com">kaustubhlall@gmail.com</a>.</p>
+        <p>This policy will be updated when the app's information handling changes, including before wearable-data collection is enabled.</p>
+      </article>
+    </main>
+  </body>
+</html>
