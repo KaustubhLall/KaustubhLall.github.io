@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540" role="img" aria-labelledby="title desc">
+<title id="title">R6 Replay Lab planned workflow</title>
+<desc id="desc">Preserve recordings, validate a decoder, and review round evidence. This is a proposed design, with native validation pending.</desc>
+<rect width="960" height="540" fill="#07110d"/>
+<g font-family="monospace">
+<text x="54" y="78" fill="#7ee7a1" font-size="20">R6 REPLAY LAB</text>
+<text x="54" y="124" fill="#e0e8e3" font-size="32">Evidence before interpretation</text>
+<text x="54" y="166" fill="#a3b6aa" font-size="18">Planned workflow · native validation pending</text>
+<g fill="#0f2118" stroke="#3f6950" stroke-width="2"><rect x="54" y="224" width="250" height="174" rx="8"/><rect x="355" y="224" width="250" height="174" rx="8"/><rect x="656" y="224" width="250" height="174" rx="8"/></g>
+<g fill="#7ee7a1" font-size="22"><text x="78" y="269">01 Preserve</text><text x="379" y="269">02 Validate</text><text x="680" y="269">03 Review</text></g>
+<g fill="#c2d0c7" font-size="16"><text x="78" y="310">Stable match folders</text><text x="78" y="339">SHA-256 manifests</text><text x="78" y="368">Originals untouched</text><text x="379" y="310">Build compatibility</text><text x="379" y="339">Independent evidence</text><text x="379" y="368">Field coverage</text><text x="680" y="310">Rounds and timestamps</text><text x="680" y="339">Role and lobby context</text><text x="680" y="368">Visible uncertainty</text></g>
+<g stroke="#7ee7a1" stroke-width="2" fill="none"><path d="M316 311h25m-8-7 8 7-8 7"/><path d="M617 311h25m-8-7 8 7-8 7"/></g>
+<text x="54" y="469" fill="#d7ae69" font-size="18">Private recordings · public methods and evidence limits</text>
+</g></svg>
